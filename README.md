@@ -46,3 +46,15 @@ Internet Explorer is not supported.
 
 ## Documentation
 Browse the [online documentation here.](#todo)
+
+# Development
+For build library from source:
+
+``` sh
+git clone https://github.com/friktor/mielo
+cd mielo
+
+npm install # or "yarn"
+npm run fmt # format & linting styles
+npm build # build css & minify
+```
