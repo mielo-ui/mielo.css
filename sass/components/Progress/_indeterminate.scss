@@ -1,6 +1,6 @@
-.adw.progress-bar.indeterminate {
+.mie.progress-bar.indeterminate {
   &::before {
-    border-radius: var(--adw-progress-rounded);
+    border-radius: var(--mie-progress-rounded);
     position: absolute;
     content: "";
 
@@ -17,28 +17,28 @@
     animation-name: progress-pulsating;
     animation-duration: 2s;
 
-    background-color: var(--adw-progress-bar-indeterminate-bg);
+    background-color: var(--mie-progress-bar-indeterminate-bg);
   }
 
   &.filling::before {
     animation-name: progress-filling;
     animation-duration: 2s;
 
-    background-color: var(--adw-progress-bar-indeterminate-bg);
+    background-color: var(--mie-progress-bar-indeterminate-bg);
   }
 
   &.sliding::before {
     animation-name: progress-sliding;
     animation-duration: 3s;
 
-    background-color: var(--adw-progress-bar-indeterminate-bg);
+    background-color: var(--mie-progress-bar-indeterminate-bg);
   }
 
   &.swinging::before {
     animation-name: progress-swinging;
     animation-duration: 3s;
 
-    background-color: var(--adw-progress-bar-indeterminate-bg);
+    background-color: var(--mie-progress-bar-indeterminate-bg);
   }
 }
 

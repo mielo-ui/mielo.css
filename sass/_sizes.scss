@@ -1,6 +1,6 @@
 @use "sass:map";
 
-$adw-text-size: (
+$mie-text-size: (
   "mini": 0.8rem,
   "tiny": 1rem,
   "small": 1.2rem,
@@ -11,7 +11,7 @@ $adw-text-size: (
   "massive": 2.6rem,
 );
 
-$adw-icon-size: (
+$mie-icon-size: (
   "mini": 0.4rem,
   "tiny": 0.8rem,
   "small": 1.2rem,
@@ -22,20 +22,20 @@ $adw-icon-size: (
   "massive": 3.2rem,
 );
 
-$adw-rounded-size: (
+$mie-rounded-size: (
   "small": 0.2rem,
   "medium": 0.6rem,
   "large": 1.2rem,
 );
 
-@function adw-text-fs($name: medium) {
-  @return _get($adw-text-size, quote($name));
+@function mie-text-fs($name: medium) {
+  @return _get($mie-text-size, quote($name));
 }
 
-@function adw-icon-size($name: medium) {
-  @return _get($adw-icon-size, quote($name));
+@function mie-icon-size($name: medium) {
+  @return _get($mie-icon-size, quote($name));
 }
 
-@function adw-rounded($name: medium) {
-  @return _get($adw-rounded-size, quote($name));
+@function mie-rounded($name: medium) {
+  @return _get($mie-rounded-size, quote($name));
 }

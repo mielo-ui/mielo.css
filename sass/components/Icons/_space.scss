@@ -1,4 +1,4 @@
-$adw-icons-space: (
+$mie-icons-space: (
   "small": (
     "space": 0.2rem,
   ),
@@ -15,7 +15,7 @@ $adw-icons-space: (
 
 @include variants-map-to-component(
   "icon",
-  $adw-icons-space,
+  $mie-icons-space,
   "default",
   "space",
   true

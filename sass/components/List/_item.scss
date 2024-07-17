@@ -1,6 +1,6 @@
-.adw.list.item {
-  padding: var(--adw-list-item-padding-v) 0;
-  margin: var(--adw-list-item-margin) 0;
+.mie.list.item {
+  padding: var(--mie-list-item-padding-v) 0;
+  margin: var(--mie-list-item-margin) 0;
   text-decoration: none;
 
   &:first-child {
@@ -13,24 +13,24 @@
 }
 
 // States
-.adw.list > .item.activatable {
-  padding: var(--adw-list-item-padding-v) var(--adw-list-item-padding-h);
-  border-radius: var(--adw-list-item-rounded);
-  background-color: var(--adw-list-item-bg-main);
+.mie.list > .item.activatable {
+  padding: var(--mie-list-item-padding-v) var(--mie-list-item-padding-h);
+  border-radius: var(--mie-list-item-rounded);
+  background-color: var(--mie-list-item-bg-main);
   transition: all 0.4s ease;
 
   user-select: none;
   cursor: pointer;
 
   &:hover {
-    background-color: var(--adw-list-item-bg-hover) !important;
+    background-color: var(--mie-list-item-bg-hover) !important;
   }
 
   &:active {
-    background-color: var(--adw-list-item-bg-active) !important;
+    background-color: var(--mie-list-item-bg-active) !important;
   }
 }
 
-.adw.list > .item.active {
-  background-color: var(--adw-list-item-bg-hover) !important;
+.mie.list > .item.active {
+  background-color: var(--mie-list-item-bg-hover) !important;
 }

@@ -5,12 +5,12 @@
 // Mixin declare variants declarations by class flag.
 // Output declaration like
 //
-// .adw.<component>.<variant | empty> - for declaration variables
+// .mie.<component>.<variant | empty> - for declaration variables
 //
-// .adw.button.large {
-//   --adw-<component>-<property> -- = var(--adw-<component>-<variant>-<property>);
+// .mie.button.large {
+//   --mie-<component>-<property> -- = var(--mie-<component>-<variant>-<property>);
 //   /*__________________________________________________________________________*/
-//   --adw-button-height: var(--adw-button-large-height);
+//   --mie-button-height: var(--mie-button-large-height);
 // }
 
 // Simple expand variant properties as variables
@@ -21,7 +21,7 @@
   @each $item in $list {
     $key: _join(_get($item, 1), "-");
 
-    $property: --adw-#{$name}-#{$key};
+    $property: --mie-#{$name}-#{$key};
     $value: _get($item, 2);
 
     #{$property}: #{$value};
@@ -33,8 +33,8 @@
   @each $keys in $vars {
     $key: _join($keys, "-");
 
-    $value: var(--adw-#{$name}-#{$variant}-#{$key});
-    $property: --adw-#{$name}-#{$key};
+    $value: var(--mie-#{$name}-#{$variant}-#{$key});
+    $property: --mie-#{$name}-#{$key};
 
     #{$property}: #{$value};
   }
@@ -45,8 +45,8 @@
 // You can declare variant directly
 // $declare-class-prefix: "prefix"
 // Variants: (default, )
-// default: .adw.<class> {}
-// basic: .adw.<class>.<prefix>-<variant> {}
+// default: .mie.<class> {}
+// basic: .mie.<class>.<prefix>-<variant> {}
 
 @mixin SEPARATE_variants-assign-to-component(
   $class,
@@ -66,7 +66,7 @@
     );
     $vars: map-flatten-keys(_get($variants, $variant));
 
-    .adw.#{$class}#{$class-name} {
+    .mie.#{$class}#{$class-name} {
       @include variants-assign-variables($class, $vars);
     }
   }

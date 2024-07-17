@@ -1,11 +1,11 @@
-.adw.progress {
-  border-radius: var(--adw-progress-rounded);
-  background-color: var(--adw-progress-bg);
+.mie.progress {
+  border-radius: var(--mie-progress-rounded);
+  background-color: var(--mie-progress-bg);
   position: relative;
 
   align-items: center;
   display: flex;
 
-  height: var(--adw-progress-size);
+  height: var(--mie-progress-size);
   width: 100%;
 }

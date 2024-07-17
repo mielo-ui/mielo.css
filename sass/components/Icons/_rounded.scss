@@ -1,12 +1,12 @@
-$adw-icon-rounded: (
+$mie-icon-rounded: (
   "small": (
-    "rounded": adw-rounded(small),
+    "rounded": mie-rounded(small),
   ),
   "default": (
-    "rounded": adw-rounded(medium),
+    "rounded": mie-rounded(medium),
   ),
   "large": (
-    "rounded": adw-rounded(large),
+    "rounded": mie-rounded(large),
   ),
   "circle": (
     "rounded": 50%,
@@ -15,7 +15,7 @@ $adw-icon-rounded: (
 
 @include variants-map-to-component(
   "icon",
-  $adw-icon-rounded,
+  $mie-icon-rounded,
   "default",
   "rounded",
   true

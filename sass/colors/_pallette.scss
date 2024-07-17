@@ -4,7 +4,7 @@
 // Pallete
 // Default gnome color pallete
 
-$adw-colors: (
+$mie-colors: (
   // Gnome colors
   "blue": (#99c1f1, #62a0ea, #3584e4, #1c71d8, #1a5fb4),
   "green": (#8ff0a4, #57e389, #33d17a, #2ec27e, #26a269),
@@ -24,7 +24,7 @@ $adw-colors: (
   "dark": (#77767b, #5e5c64, #3d3846, #241f31, #000000)
 );
 
-@function adw-color($name, $level) {
-  $color: map-get($adw-colors, $name);
+@function mie-color($name, $level) {
+  $color: map-get($mie-colors, $name);
   @return list.nth($color, $level);
 }

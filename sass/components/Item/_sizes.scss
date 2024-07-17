@@ -1,22 +1,22 @@
-$adw-item-sizes: (
+$mie-item-sizes: (
   "medium": (
     "margin-between": 1.2rem,
 
-    "description-fs": adw-text-fs(small),
-    "title-fs": adw-text-fs(medium),
+    "description-fs": mie-text-fs(small),
+    "title-fs": mie-text-fs(medium),
   ),
   "small": (
     "margin-between": 0.8rem,
 
-    "description-fs": adw-text-fs(mini),
-    "title-fs": adw-text-fs(small),
+    "description-fs": mie-text-fs(mini),
+    "title-fs": mie-text-fs(small),
   ),
   "large": (
     "margin-between": 1.6rem,
 
-    "description-fs": adw-text-fs(medium),
-    "title-fs": adw-text-fs(large),
+    "description-fs": mie-text-fs(medium),
+    "title-fs": mie-text-fs(large),
   ),
 );
 
-@include variants-map-to-component("item", $adw-item-sizes, "medium");
+@include variants-map-to-component("item", $mie-item-sizes, "medium");

@@ -5,12 +5,12 @@
 // Mixin declare variants declarations by class flag.
 // Output declaration like
 //
-// .adw.<component>.<variant | empty> - for declaration variables
+// .mie.<component>.<variant | empty> - for declaration variables
 //
-// .adw.button.large {
-//   --adw-<component>-<property> -- = <property_value>;
+// .mie.button.large {
+//   --mie-<component>-<property> -- = <property_value>;
 //   /*__________________________________________________________________________*/
-//   --adw-button-height: 3.4rem;
+//   --mie-button-height: 3.4rem;
 // }
 
 @mixin variants-assign-variables($class, $vars) {
@@ -21,7 +21,7 @@
     $keys: _get($item, 1);
     $key: _join($keys, "-");
 
-    --adw-#{$name}-#{$key}: #{$value};
+    --mie-#{$name}-#{$key}: #{$value};
   }
 }
 
@@ -42,7 +42,7 @@
     );
     $vars: map-flatten(_get($variants, $variant));
 
-    .adw.#{$class}#{$class-name} {
+    .mie.#{$class}#{$class-name} {
       @include variants-assign-variables($class, $vars);
     }
   }

@@ -1,4 +1,4 @@
-$adw-view-default-colors: (
+$mie-view-default-colors: (
   "dark": (
     "sidebar": #2a2a2a,
     "window": #242424,
@@ -24,6 +24,6 @@ $adw-view-default-colors: (
 
 @include accents-map-to-component(
   "view",
-  $adw-view-default-colors,
+  $mie-view-default-colors,
   map-accents-to-view
 );

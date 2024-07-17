@@ -1,4 +1,4 @@
-.adw.select {
+.mie.select {
   $menu-offset: 0.6rem;
   $menu-height: 12rem;
 
@@ -6,19 +6,19 @@
     // prettier-ignore
     background-image:
             linear-gradient(
-                var(--adw-select-bg-overlay),
-                var(--adw-select-bg-overlay)
+                var(--mie-select-bg-overlay),
+                var(--mie-select-bg-overlay)
             ),
             linear-gradient(
-                var(--adw-select-bg-menu),
-                var(--adw-select-bg-menu)
+                var(--mie-select-bg-menu),
+                var(--mie-select-bg-menu)
             );
 
     transition:
       height 0.2s ease,
       top 0.2s ease;
 
-    border-radius: var(--adw-select-rounded);
+    border-radius: var(--mie-select-rounded);
     overflow: hidden;
 
     position: absolute;
@@ -33,7 +33,7 @@
     }
 
     &.opened {
-      top: calc(var(--adw-select-height) + $menu-offset);
+      top: calc(var(--mie-select-height) + $menu-offset);
       padding-top: $menu-offset;
       height: $menu-height;
     }

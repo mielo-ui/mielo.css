@@ -1,18 +1,18 @@
 :root,
 [data-theme="light"] {
-  --adw-tooltip-shade: #{rgba(#000, 0.07)};
-  --adw-tooltip-bg: #ffffff;
-  --adw-tooltip-fg: #{rgba(#000, 0.8)};
+  --mie-tooltip-shade: #{rgba(#000, 0.07)};
+  --mie-tooltip-bg: #ffffff;
+  --mie-tooltip-fg: #{rgba(#000, 0.8)};
 }
 
 [data-theme="dark"] {
-  --adw-tooltip-shade: #{rgba(#000, 0.25)};
-  --adw-tooltip-bg: #383838;
-  --adw-tooltip-fg: white;
+  --mie-tooltip-shade: #{rgba(#000, 0.25)};
+  --mie-tooltip-bg: #383838;
+  --mie-tooltip-fg: white;
 }
 
 :root,
 [data-theme="light"],
 [data-theme="dark"] {
-  --adw-tooltip-fs: 1.4rem;
+  --mie-tooltip-fs: 1.4rem;
 }

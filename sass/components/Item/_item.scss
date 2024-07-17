@@ -1,4 +1,4 @@
-.adw.item {
+.mie.item {
   @include flex(row, "", center);
   text-decoration: none;
 
@@ -8,12 +8,12 @@
     flex-direction: column;
 
     > .indicator {
-      margin-bottom: var(--adw-item-margin-between);
+      margin-bottom: var(--mie-item-margin-between);
       margin-right: 0;
     }
 
     > .side {
-      margin-left: var(--adw-item-margin-between);
+      margin-left: var(--mie-item-margin-between);
       margin-left: 0;
     }
   }
@@ -27,7 +27,7 @@
   }
 
   > .indicator {
-    margin-right: var(--adw-item-margin-between);
+    margin-right: var(--mie-item-margin-between);
   }
 
   > .content {
@@ -36,31 +36,31 @@
 
     &.inverted {
       > .title {
-        font-size: var(--adw-item-description-fs);
-        color: var(--adw-item-description-fg);
+        font-size: var(--mie-item-description-fs);
+        color: var(--mie-item-description-fg);
       }
 
       > .description {
-        font-size: var(--adw-item-title-fs);
-        color: var(--adw-item-title-fg);
+        font-size: var(--mie-item-title-fs);
+        color: var(--mie-item-title-fg);
       }
     }
 
     > .title {
-      font-size: var(--adw-item-title-fs);
-      color: var(--adw-item-title-fg);
+      font-size: var(--mie-item-title-fs);
+      color: var(--mie-item-title-fg);
       font-weight: 400;
     }
 
     > .description {
-      font-size: var(--adw-item-description-fs);
-      color: var(--adw-item-description-fg);
+      font-size: var(--mie-item-description-fs);
+      color: var(--mie-item-description-fg);
       font-weight: 400;
     }
   }
 
   > .side {
     @include flex(row, flex-end, center);
-    margin-left: var(--adw-item-margin-between);
+    margin-left: var(--mie-item-margin-between);
   }
 }

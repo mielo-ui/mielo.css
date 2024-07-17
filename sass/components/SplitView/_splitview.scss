@@ -1,4 +1,4 @@
-.adw.split-view {
+.mie.split-view {
   overflow: hidden;
   display: flex;
 
@@ -7,8 +7,8 @@
   width: 100%;
 
   > .sidebar {
-    border-right: 1px solid var(--adw-split-view-divider-color);
-    background-color: var(--adw-split-view-sidebar-bg);
+    border-right: 1px solid var(--mie-split-view-divider-color);
+    background-color: var(--mie-split-view-sidebar-bg);
     transition: margin-left 0.3s ease;
 
     flex-direction: column;
@@ -23,7 +23,7 @@
   }
 
   > .content {
-    background-color: var(--adw-split-view-content-bg);
+    background-color: var(--mie-split-view-content-bg);
 
     flex-direction: column;
     display: flex;

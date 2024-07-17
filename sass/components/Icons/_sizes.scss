@@ -1,28 +1,28 @@
-$adw-icon-sizes: (
+$mie-icon-sizes: (
   "mini": (
-    "size": adw-icon-size(mini),
+    "size": mie-icon-size(mini),
   ),
   "tiny": (
-    "size": adw-icon-size(tiny),
+    "size": mie-icon-size(tiny),
   ),
   "small": (
-    "size": adw-icon-size(small),
+    "size": mie-icon-size(small),
   ),
   "medium": (
-    "size": adw-icon-size(medium),
+    "size": mie-icon-size(medium),
   ),
   "large": (
-    "size": adw-icon-size(large),
+    "size": mie-icon-size(large),
   ),
   "big": (
-    "size": adw-icon-size(big),
+    "size": mie-icon-size(big),
   ),
   "huge": (
-    "size": adw-icon-size(huge),
+    "size": mie-icon-size(huge),
   ),
   "massive": (
-    "size": adw-icon-size(massive),
+    "size": mie-icon-size(massive),
   ),
 );
 
-@include variants-map-to-component("icon", $adw-icon-sizes, "medium");
+@include variants-map-to-component("icon", $mie-icon-sizes, "medium");

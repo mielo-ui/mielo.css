@@ -32,13 +32,13 @@
     $class-ext: if($accent != "default", "." + $accent, "");
     $flat: map-flatten($vars);
 
-    .adw.#{$class}#{$class-ext} {
+    .mie.#{$class}#{$class-ext} {
       @each $item in $flat {
         $value: _get($item, 2);
         $keys: _get($item, 1);
         $key: _join($keys, "-");
 
-        --adw-#{$name}-#{$key}: #{$value};
+        --mie-#{$name}-#{$key}: #{$value};
       }
     }
   }
@@ -53,7 +53,7 @@
   $class,
   $default,
   $cb,
-  $accents-by-theme: $adw-accents-by-theme
+  $accents-by-theme: $mie-accents-by-theme
 ) {
   $light: accents-map-to-vars(
     $accents-by-theme,

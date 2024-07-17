@@ -1,4 +1,4 @@
-$adw-component-default-colors: (
+$mie-component-default-colors: (
   "dark": (),
   "light": (),
 );
@@ -12,6 +12,6 @@ $adw-component-default-colors: (
 
 @include accents-map-to-component(
   "component",
-  $adw-slider-default-colors,
+  $mie-slider-default-colors,
   map-accents-to-slider
 );

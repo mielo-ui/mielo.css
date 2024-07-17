@@ -1,4 +1,4 @@
-.adw.select {
+.mie.select {
   > .content {
     // Base button content trigger
     > .base {
@@ -7,20 +7,20 @@
       // prettier-ignore
       background-image:
                 linear-gradient(
-                    var(--adw-select-bg-overlay),
-                    var(--adw-select-bg-overlay)
+                    var(--mie-select-bg-overlay),
+                    var(--mie-select-bg-overlay)
                 ),
                 linear-gradient(
-                    var(--adw-select-bg-main),
-                    var(--adw-select-bg-main)
+                    var(--mie-select-bg-main),
+                    var(--mie-select-bg-main)
                 );
 
       @include flex(row, space-between, center);
-      border-radius: var(--adw-select-rounded);
-      height: var(--adw-select-height);
+      border-radius: var(--mie-select-rounded);
+      height: var(--mie-select-height);
       transition: outline 0.2s ease;
 
-      outline-color: var(--adw-select-bg-outline);
+      outline-color: var(--mie-select-bg-outline);
       outline-style: solid;
       outline-width: 0;
 
@@ -29,7 +29,7 @@
       }
 
       > .header {
-        padding: 0 var(--adw-select-padding);
+        padding: 0 var(--mie-select-padding);
         @include flex(column, center);
         position: relative;
         height: 100%;
@@ -39,36 +39,36 @@
           transition: 300ms ease font-size;
           pointer-events: none;
 
-          font-size: var(--adw-select-value-fs);
-          color: var(--adw-select-label-fg);
+          font-size: var(--mie-select-value-fs);
+          color: var(--mie-select-label-fg);
         }
 
         > .value {
-          margin-top: var(--adw-select-value-margin);
-          font-size: var(--adw-select-value-fs);
-          color: var(--adw-select-value-fg);
+          margin-top: var(--mie-select-value-margin);
+          font-size: var(--mie-select-value-fs);
+          color: var(--mie-select-value-fg);
         }
       }
 
       > .button {
-        margin-right: var(--adw-select-indicator-right);
+        margin-right: var(--mie-select-indicator-right);
 
         svg {
-          color: var(--adw-select-value-fg);
+          color: var(--mie-select-value-fg);
         }
       }
 
       > .arrow {
         transition: transform 0.2s ease-in-out;
-        margin-right: var(--adw-select-padding);
-        color: var(--adw-select-value-fg);
+        margin-right: var(--mie-select-padding);
+        color: var(--mie-select-value-fg);
       }
 
       &.selected {
         > .header {
           > .label {
-            top: var(--adw-select-label-top-active);
-            font-size: var(--adw-select-label-fs);
+            top: var(--mie-select-label-top-active);
+            font-size: var(--mie-select-label-fs);
           }
         }
       }

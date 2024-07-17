@@ -1,4 +1,4 @@
-$adw-headerbar-layout: (
+$mie-headerbar-layout: (
   "medium": (
     "size": 4.6rem,
     "ph": 0.8rem,
@@ -7,6 +7,6 @@ $adw-headerbar-layout: (
 
 @include variants-map-to-component(
   "headerbar",
-  $adw-headerbar-layout,
+  $mie-headerbar-layout,
   "medium"
 );

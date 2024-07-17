@@ -1,4 +1,4 @@
-.adw.button {
+.mie.button {
   transition: all 0.3s ease;
   text-decoration: none;
   user-select: none;
@@ -7,8 +7,8 @@
   outline: none;
   border: none;
 
-  padding: 0 var(--adw-button-ph);
-  height: var(--adw-button-size);
+  padding: 0 var(--mie-button-ph);
+  height: var(--mie-button-size);
 
   justify-content: center;
   align-items: center;
@@ -16,22 +16,22 @@
   display: inline-flex;
   position: relative;
 
-  font-size: var(--adw-button-fs);
-  color: var(--adw-button-fg);
+  font-size: var(--mie-button-fs);
+  color: var(--mie-button-fg);
   font-weight: 700;
 
-  border-radius: var(--adw-button-rounded);
-  background-color: var(--adw-button-bg-main);
+  border-radius: var(--mie-button-rounded);
+  background-color: var(--mie-button-bg-main);
 
   // States
   &.hover,
   &:hover {
-    background-color: var(--adw-button-bg-hover) !important;
+    background-color: var(--mie-button-bg-hover) !important;
   }
 
   &.active,
   &:active {
-    background-color: var(--adw-button-bg-active) !important;
+    background-color: var(--mie-button-bg-active) !important;
   }
 
   &:disabled,
@@ -40,31 +40,31 @@
 
     &:hover,
     &:active {
-      background-color: var(--adw-button-bg-main) !important;
+      background-color: var(--mie-button-bg-main) !important;
     }
   }
 
   // Circular
   &.circular {
-    min-height: var(--adw-button-size);
-    min-width: var(--adw-button-size);
-    height: var(--adw-button-size);
-    width: var(--adw-button-size);
+    min-height: var(--mie-button-size);
+    min-width: var(--mie-button-size);
+    height: var(--mie-button-size);
+    width: var(--mie-button-size);
     border-radius: 50%;
     padding: 0;
   }
 
   // Pilled Style
   &.pilled {
-    --adw-button-rounded: 3.4rem;
-    --adw-button-pv: 0.856665rem;
-    --adw-button-ph: 1.2rem;
+    --mie-button-rounded: 3.4rem;
+    --mie-button-pv: 0.856665rem;
+    --mie-button-ph: 1.2rem;
   }
 
   // With Icons
   &.content {
-    .adw.icon {
-      margin-right: var(--adw-button-icon-ph);
+    .mie.icon {
+      margin-right: var(--mie-button-icon-ph);
     }
   }
 
@@ -72,18 +72,18 @@
     justify-content: flex-start;
     padding: 0;
 
-    .adw.icon {
+    .mie.icon {
       background-color: rgba(#000, 0.1);
-      padding: 0 var(--adw-button-icon-ph);
-      height: var(--adw-button-size);
+      padding: 0 var(--mie-button-icon-ph);
+      height: var(--mie-button-size);
     }
 
     > .content {
-      padding-left: var(--adw-button-icon-ph);
-      padding-right: var(--adw-button-ph);
+      padding-left: var(--mie-button-icon-ph);
+      padding-right: var(--mie-button-ph);
 
-      font-size: var(--adw-button-fs);
-      color: var(--adw-button-fg);
+      font-size: var(--mie-button-fs);
+      color: var(--mie-button-fg);
       font-weight: 700;
     }
   }

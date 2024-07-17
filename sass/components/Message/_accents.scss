@@ -1,4 +1,4 @@
-$adw-message-default-colors: (
+$mie-message-default-colors: (
   "light": (
     "description-fg": #{rgba(#000, 0.6)},
     "title-fg": #{rgba(#000, 0.8)},
@@ -30,7 +30,7 @@ $adw-message-default-colors: (
 
 @include accents-map-to-component(
   "message",
-  $adw-message-default-colors,
+  $mie-message-default-colors,
   map-accents-to-message,
-  $adw-accents-by-theme
+  $mie-accents-by-theme
 );

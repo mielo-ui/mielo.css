@@ -1,4 +1,4 @@
-$adw-header-default-colors: (
+$mie-header-default-colors: (
   "dark": (
     "subtitle-fg": rgba(#fff, 0.6),
     "title-fg": #fff,
@@ -17,7 +17,7 @@ $adw-header-default-colors: (
 
 @include accents-map-to-component(
   "header",
-  $adw-header-default-colors,
+  $mie-header-default-colors,
   map-accents-to-header,
-  _omit($adw-accents-by-theme, "accent")
+  _omit($mie-accents-by-theme, "accent")
 );

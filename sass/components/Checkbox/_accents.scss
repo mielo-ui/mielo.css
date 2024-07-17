@@ -1,4 +1,4 @@
-$adw-checkbox-default-colors: (
+$mie-checkbox-default-colors: (
   "dark": (
     "border": #{rgba(#000, 0.36)},
     "label-fg": #{rgba(#fff, 0.6)},
@@ -26,7 +26,7 @@ $adw-checkbox-default-colors: (
 
 @include accents-map-to-component(
   "checkbox",
-  $adw-checkbox-default-colors,
+  $mie-checkbox-default-colors,
   map-accents-to-checkbox,
-  _omit($adw-accents-by-theme, "accent")
+  _omit($mie-accents-by-theme, "accent")
 );

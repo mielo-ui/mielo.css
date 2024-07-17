@@ -1,4 +1,4 @@
-$adw-icon-default-colors: (
+$mie-icon-default-colors: (
   "light": (
     "fg": rgba(#000, 0.8),
     "bg": (
@@ -30,7 +30,7 @@ $adw-icon-default-colors: (
 
 @include accents-map-to-component(
   "icon",
-  $adw-icon-default-colors,
+  $mie-icon-default-colors,
   map-accents-to-icon,
-  $adw-accents-by-theme
+  $mie-accents-by-theme
 );

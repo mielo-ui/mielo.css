@@ -1,4 +1,4 @@
-$adw-dialog-sizes: (
+$mie-dialog-sizes: (
   "medium": (
     "padding-h": 1.2rem,
     "padding-v": 1.2rem,
@@ -34,4 +34,4 @@ $adw-dialog-sizes: (
   ),
 );
 
-@include variants-map-to-component("dialog", $adw-dialog-sizes, "medium");
+@include variants-map-to-component("dialog", $mie-dialog-sizes, "medium");

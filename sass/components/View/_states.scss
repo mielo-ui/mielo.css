@@ -1,4 +1,4 @@
-$adw-view-states: (
+$mie-view-states: (
   "medium": (
     "pv": 1.2rem,
     "ph": 1.2rem,
@@ -8,4 +8,4 @@ $adw-view-states: (
   ),
 );
 
-@include variants-map-to-component("view", $adw-view-states, "medium");
+@include variants-map-to-component("view", $mie-view-states, "medium");

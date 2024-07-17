@@ -1,6 +1,6 @@
-$adw-toggle-sizes: (
+$mie-toggle-sizes: (
   "medium": (
-    "label-fs": adw-text-fs(medium),
+    "label-fs": mie-text-fs(medium),
     "content-margin": 0.8rem,
 
     "rounded": 3.4rem,
@@ -18,7 +18,7 @@ $adw-toggle-sizes: (
     ),
   ),
   "small": (
-    "label-fs": adw-text-fs(small),
+    "label-fs": mie-text-fs(small),
     "content-margin": 0.6rem,
 
     "rounded": 2.4rem,
@@ -36,7 +36,7 @@ $adw-toggle-sizes: (
     ),
   ),
   "large": (
-    "label-fs": adw-text-fs(large),
+    "label-fs": mie-text-fs(large),
     "content-margin": 1rem,
 
     "rounded": 4.4rem,
@@ -55,4 +55,4 @@ $adw-toggle-sizes: (
   ),
 );
 
-@include variants-map-to-component("toggle", $adw-toggle-sizes, "medium");
+@include variants-map-to-component("toggle", $mie-toggle-sizes, "medium");

@@ -10,10 +10,10 @@
 :root,
 [data-theme="light"],
 [data-theme="dark"] {
-  --adw-h4-fs: #{adw-text-fs(medium)};
-  --adw-h3-fs: #{adw-text-fs(large)};
-  --adw-h2-fs: #{adw-text-fs(big)};
-  --adw-h1-fs: #{adw-text-fs(huge)};
+  --mie-h4-fs: #{mie-text-fs(medium)};
+  --mie-h3-fs: #{mie-text-fs(large)};
+  --mie-h2-fs: #{mie-text-fs(big)};
+  --mie-h1-fs: #{mie-text-fs(huge)};
 
-  --adw-text-fs: #{adw-text-fs(medium)};
+  --mie-text-fs: #{mie-text-fs(medium)};
 }

@@ -1,19 +1,19 @@
 :root,
 [data-theme="light"] {
-  --adw-scrollbar-default-color: 0, 0, 0;
+  --mie-scrollbar-default-color: 0, 0, 0;
 
-  --adw-scrollbar-bg: rgba(var(--adw-scrollbar-default-color), 0.15);
+  --mie-scrollbar-bg: rgba(var(--mie-scrollbar-default-color), 0.15);
 }
 
 [data-theme="dark"] {
-  --adw-scrollbar-default-color: 255, 255, 255;
+  --mie-scrollbar-default-color: 255, 255, 255;
 
-  --adw-scrollbar-bg: rgba(var(--adw-scrollbar-default-color), 0.15);
+  --mie-scrollbar-bg: rgba(var(--mie-scrollbar-default-color), 0.15);
 }
 
 :root,
 [data-theme="light"],
 [data-theme="dark"] {
-  --adw-scrollbar-width: 0.4rem;
-  --adw-scrollbar-offset: 0.4rem;
+  --mie-scrollbar-width: 0.4rem;
+  --mie-scrollbar-offset: 0.4rem;
 }

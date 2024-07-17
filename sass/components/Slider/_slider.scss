@@ -1,15 +1,15 @@
-.adw.slider {
+.mie.slider {
   min-width: 20rem;
   display: block;
 
-  padding: var(--adw-slider-padding-v) 0;
+  padding: var(--mie-slider-padding-v) 0;
 
   &:not(.range) {
     .range-slider {
       &:before {
-        border-radius: var(--adw-slider-height);
-        background: var(--adw-slider-range-bg);
-        height: var(--adw-slider-height);
+        border-radius: var(--mie-slider-height);
+        background: var(--mie-slider-range-bg);
+        height: var(--mie-slider-height);
         position: absolute;
         content: "";
         width: 6%;
@@ -30,17 +30,17 @@
     position: relative;
     display: block;
 
-    min-width: var(--adw-slider-min-length);
-    height: var(--adw-slider-height);
+    min-width: var(--mie-slider-min-length);
+    height: var(--mie-slider-height);
     min-height: auto;
     width: 100%;
 
-    border-radius: var(--adw-slider-height);
-    background: var(--adw-slider-bg-slider);
+    border-radius: var(--mie-slider-height);
+    background: var(--mie-slider-bg-slider);
 
     &[data-vertical] {
-      min-height: var(--adw-slider-min-length);
-      width: var(--adw-slider-height);
+      min-height: var(--mie-slider-min-length);
+      width: var(--mie-slider-height);
       min-width: auto;
       height: 100%;
 
@@ -60,8 +60,8 @@
     }
 
     .range-slider__thumb {
-      border: 0.1rem solid var(--adw-slider-thumb-border);
-      background: var(--adw-slider-bg-thumb);
+      border: 0.1rem solid var(--mie-slider-thumb-border);
+      background: var(--mie-slider-bg-thumb);
       border-radius: 50%;
 
       transform: translate(-50%, -50%);
@@ -69,8 +69,8 @@
       position: absolute;
       z-index: 3;
 
-      height: var(--adw-slider-thumb-size);
-      width: var(--adw-slider-thumb-size);
+      height: var(--mie-slider-thumb-size);
+      width: var(--mie-slider-thumb-size);
       top: 50%;
 
       &:focus-visible {
@@ -89,7 +89,7 @@
     }
 
     .range-slider__range {
-      background: var(--adw-slider-bg-range);
+      background: var(--mie-slider-bg-range);
       transform: translate(0, -50%);
       position: absolute;
       z-index: 1;

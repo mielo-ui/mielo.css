@@ -1,9 +1,9 @@
-.adw.select {
+.mie.select {
   position: relative;
   z-index: 10;
   margin: 0;
 
-  min-width: var(--adw-select-min-width);
+  min-width: var(--mie-select-min-width);
 
   // Show outline when focused
   &.opened,
@@ -16,14 +16,14 @@
   }
 
   > .content {
-    height: var(--adw-select-height);
+    height: var(--mie-select-height);
     position: relative;
     z-index: 10;
     width: 100%;
   }
 
   > .menu {
-    background-color: var(--adw-select-bg-main);
+    background-color: var(--mie-select-bg-main);
     transition: height 0.3s ease;
 
     position: absolute;

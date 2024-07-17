@@ -1,4 +1,4 @@
-.adw.header {
+.mie.header {
   flex-direction: row;
   align-items: center;
   display: flex;
@@ -11,37 +11,37 @@
     flex: 1;
 
     > .title {
-      font-size: var(--adw-header-title-fs);
-      color: var(--adw-header-title-fg);
+      font-size: var(--mie-header-title-fs);
+      color: var(--mie-header-title-fg);
       font-weight: 700;
       margin: 0;
     }
 
     .subtitle {
-      font-size: var(--adw-header-subtitle-fs);
-      color: var(--adw-header-title-fg);
+      font-size: var(--mie-header-subtitle-fs);
+      color: var(--mie-header-title-fg);
       font-weight: 400;
     }
   }
 
   // Icon
-  > .adw.icon {
-    margin-right: var(--adw-header-icon-space);
+  > .mie.icon {
+    margin-right: var(--mie-header-icon-space);
   }
 
-  > .heading > .adw.icon {
-    margin-bottom: var(--adw-header-icon-space);
+  > .heading > .mie.icon {
+    margin-bottom: var(--mie-header-icon-space);
   }
 
   // Inverted
   .inverted > .heading {
     > .title {
-      font-size: var(--adw-header-subtitle-fs);
+      font-size: var(--mie-header-subtitle-fs);
       font-weight: 400;
     }
 
     > .subtitle {
-      font-size: var(--adw-header-title-fs);
+      font-size: var(--mie-header-title-fs);
       font-weight: 700;
     }
   }

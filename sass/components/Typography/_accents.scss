@@ -1,4 +1,4 @@
-$adw-text-default-colors: (
+$mie-text-default-colors: (
   "dark": (
     "fg": #fff,
   ),
@@ -16,6 +16,6 @@ $adw-text-default-colors: (
 
 @include accents-map-to-component(
   "text",
-  $adw-text-default-colors,
+  $mie-text-default-colors,
   map-accents-to-text
 );

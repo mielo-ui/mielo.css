@@ -1,4 +1,4 @@
-$adw-progress-default-colors: (
+$mie-progress-default-colors: (
   "dark": (
     "bg": #282828,
   ),
@@ -7,7 +7,7 @@ $adw-progress-default-colors: (
   ),
 );
 
-$adw-progress-bar-default-colors: (
+$mie-progress-bar-default-colors: (
   "dark": (
     "indeterminate-bg": #{rgb(#000, 0.3)},
     "bg": #15539e,
@@ -34,11 +34,11 @@ $adw-progress-bar-default-colors: (
 
 @include accents-map-to-component(
   "progress",
-  $adw-progress-default-colors,
+  $mie-progress-default-colors,
   map-accents-to-progress
 );
 @include accents-map-to-component(
   "progress-bar",
-  $adw-progress-bar-default-colors,
+  $mie-progress-bar-default-colors,
   map-accents-to-progress-bar
 );

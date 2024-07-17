@@ -1,4 +1,4 @@
-.adw.radio {
+.mie.radio {
   display: inline-block;
   position: relative;
   cursor: pointer;
@@ -14,20 +14,20 @@
     display: flex;
 
     > .content {
-      font-size: var(--adw-radio-label-fs);
-      color: var(--adw-radio-label-fg);
+      font-size: var(--mie-radio-label-fs);
+      color: var(--mie-radio-label-fg);
       font-weight: 400;
 
-      margin-left: var(--adw-radio-content-margin);
+      margin-left: var(--mie-radio-content-margin);
     }
   }
 }
 
 // Default radio style
-.adw.radio {
+.mie.radio {
   > .label {
     > .indicator {
-      border: 0.2rem solid var(--adw-radio-border-active);
+      border: 0.2rem solid var(--mie-radio-border-active);
       background-color: rgba(0, 0, 0, 0);
       border-radius: 50%;
 
@@ -36,16 +36,16 @@
       position: relative;
       display: block;
 
-      height: var(--adw-radio-size);
-      width: var(--adw-radio-size);
+      height: var(--mie-radio-size);
+      width: var(--mie-radio-size);
 
       &::before {
         transition: opacity 0.2s ease;
 
-        height: var(--adw-radio-inner-size);
-        width: var(--adw-radio-inner-size);
-        left: var(--adw-radio-inner-mh);
-        top: var(--adw-radio-inner-mv);
+        height: var(--mie-radio-inner-size);
+        width: var(--mie-radio-inner-size);
+        left: var(--mie-radio-inner-mh);
+        top: var(--mie-radio-inner-mv);
 
         background-color: #fff;
         border-radius: 50%;
@@ -60,8 +60,8 @@
   // When checked
   .input:checked + .label {
     > .indicator {
-      border-color: var(--adw-radio-border-active);
-      background-color: var(--adw-radio-bg);
+      border-color: var(--mie-radio-border-active);
+      background-color: var(--mie-radio-bg);
 
       &::before {
         opacity: 1;

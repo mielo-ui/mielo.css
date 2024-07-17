@@ -1,17 +1,17 @@
 // Common row for use with custom components
-.adw.rows > .adw.row.item.property {
+.mie.rows > .mie.row.item.property {
   // prettier-ignore
   background-image:
         linear-gradient(
-            var(--adw-row-item-overlay),
-            var(--adw-row-item-overlay)
+            var(--mie-row-item-overlay),
+            var(--mie-row-item-overlay)
         ),
         linear-gradient(
-            var(--adw-row-item-bg),
-            var(--adw-row-item-bg)
+            var(--mie-row-item-bg),
+            var(--mie-row-item-bg)
         );
 
-  padding: var(--adw-row-item-padding-v) var(--adw-row-item-padding-h);
+  padding: var(--mie-row-item-padding-v) var(--mie-row-item-padding-h);
   height: 5.6rem;
 
   align-items: center;
@@ -23,8 +23,8 @@
   }
 }
 
-.adw.rows > .adw.row {
-  border-bottom: 0.1rem solid var(--adw-rows-border);
+.mie.rows > .mie.row {
+  border-bottom: 0.1rem solid var(--mie-rows-border);
 
   &:last-child {
     border-bottom: none;

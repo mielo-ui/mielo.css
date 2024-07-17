@@ -1,5 +1,5 @@
 .progress-bar {
-  background-color: var(--adw-progress-bar-bg);
+  background-color: var(--mie-progress-bar-bg);
   transition: width 0.3s ease;
 
   position: relative;
@@ -10,17 +10,17 @@
   height: 100%;
 
   &:first-child {
-    border-bottom-left-radius: var(--adw-progress-rounded);
-    border-top-left-radius: var(--adw-progress-rounded);
+    border-bottom-left-radius: var(--mie-progress-rounded);
+    border-top-left-radius: var(--mie-progress-rounded);
   }
 
   &:last-child {
-    border-bottom-right-radius: var(--adw-progress-rounded);
-    border-top-right-radius: var(--adw-progress-rounded);
+    border-bottom-right-radius: var(--mie-progress-rounded);
+    border-top-right-radius: var(--mie-progress-rounded);
   }
 
   &.transparent {
-    --adw-progress-bar-bg: transparent !important;
+    --mie-progress-bar-bg: transparent !important;
   }
 
   > .label {
@@ -33,8 +33,8 @@
     padding: 0 0.8rem;
     z-index: 10;
 
-    font-size: var(--adw-progress-bar-fs);
-    color: var(--adw-progress-bar-fg);
+    font-size: var(--mie-progress-bar-fs);
+    color: var(--mie-progress-bar-fg);
     font-weight: 400;
 
     transition: opacity 0.3s ease;

@@ -1,8 +1,8 @@
-h1.adw.text.title,
-h2.adw.text.title,
-h3.adw.text.title,
-h4.adw.text.title {
-  color: var(--adw-text-fg);
+h1.mie.text.title,
+h2.mie.text.title,
+h3.mie.text.title,
+h4.mie.text.title {
+  color: var(--mie-text-fg);
   font-weight: 800;
 
   margin-bottom: 1.2rem;
@@ -10,39 +10,39 @@ h4.adw.text.title {
 }
 
 h1,
-h1.adw.title,
-.adw.title.h1 {
-  font-size: var(--adw-h1-fs);
+h1.mie.title,
+.mie.title.h1 {
+  font-size: var(--mie-h1-fs);
 }
 
 h2,
-h2.adw.title,
-.adw.title.h2 {
-  font-size: var(--adw-h2-fs);
+h2.mie.title,
+.mie.title.h2 {
+  font-size: var(--mie-h2-fs);
 }
 
 h3,
-h3.adw.title,
-.adw.title.h3 {
-  font-size: var(--adw-h3-fs);
+h3.mie.title,
+.mie.title.h3 {
+  font-size: var(--mie-h3-fs);
 }
 
 h4,
-h4.adw.title,
-.adw.title.h4 {
-  font-size: var(--adw-h4-fs);
+h4.mie.title,
+.mie.title.h4 {
+  font-size: var(--mie-h4-fs);
 }
 
-.adw.text {
-  font-size: var(--adw-text-fs);
-  color: var(--adw-text-fg);
+.mie.text {
+  font-size: var(--mie-text-fs);
+  color: var(--mie-text-fg);
   font-weight: 400;
 
   &.center {
     text-align: center;
   }
 
-  &.adw.paragraph {
+  &.mie.paragraph {
     margin-bottom: 1.2rem;
     margin-top: 0;
   }

@@ -1,4 +1,4 @@
-$adw-slider-sizes: (
+$mie-slider-sizes: (
   "medium": (
     "min-length": 12rem,
     "thumb-size": 2rem,
@@ -25,4 +25,4 @@ $adw-slider-sizes: (
   ),
 );
 
-@include variants-map-to-component("slider", $adw-slider-sizes, "medium");
+@include variants-map-to-component("slider", $mie-slider-sizes, "medium");

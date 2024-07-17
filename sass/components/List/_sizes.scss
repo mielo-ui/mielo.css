@@ -1,11 +1,11 @@
-$adw-list-sizes: (
+$mie-list-sizes: (
   "medium": (
     "margin-h": 0.8rem,
     "margin-v": 0.8rem,
   ),
 );
 
-$adw-list-item-sizes: (
+$mie-list-item-sizes: (
   "medium": (
     "padding-v": 0.856665rem,
     "padding-h": 1rem,
@@ -13,5 +13,5 @@ $adw-list-item-sizes: (
   ),
 );
 
-@include variants-map-to-component("list", $adw-list-sizes, "medium");
-@include variants-map-to-component("list.item", $adw-list-item-sizes, "medium");
+@include variants-map-to-component("list", $mie-list-sizes, "medium");
+@include variants-map-to-component("list.item", $mie-list-item-sizes, "medium");

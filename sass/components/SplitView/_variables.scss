@@ -1,16 +1,16 @@
 :root,
 [data-theme="light"] {
-  --adw-split-view-content-bg: #fafafa;
-  --adw-split-view-sidebar-bg: #ebebeb;
+  --mie-split-view-content-bg: #fafafa;
+  --mie-split-view-sidebar-bg: #ebebeb;
 
-  --adw-split-view-divider-color: rgba(0, 0, 0, 0.07);
+  --mie-split-view-divider-color: rgba(0, 0, 0, 0.07);
 }
 
 [data-theme="dark"] {
-  --adw-split-view-content-bg: #242424;
-  --adw-split-view-sidebar-bg: #303030;
+  --mie-split-view-content-bg: #242424;
+  --mie-split-view-sidebar-bg: #303030;
 
-  --adw-split-view-divider-color: rgba(0, 0, 0, 0.36);
+  --mie-split-view-divider-color: rgba(0, 0, 0, 0.36);
 }
 
 :root,

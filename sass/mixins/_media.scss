@@ -1,4 +1,4 @@
-$adw-grid-breakpoints: (
+$mie-grid-breakpoints: (
   "xs": 0,
   "sm": 576px,
   "md": 768px,
@@ -40,7 +40,7 @@ $adw-grid-breakpoints: (
 }
 
 @mixin media-breakpoint-up($key: "xs") {
-  $down: _get($adw-grid-breakpoints, quote($key));
+  $down: _get($mie-grid-breakpoints, quote($key));
 
   @media (min-width: $down) {
     @content;
@@ -48,7 +48,7 @@ $adw-grid-breakpoints: (
 }
 
 @mixin media-breakpoint-down($key: "xs") {
-  $down: _get($adw-grid-breakpoints, quote($key));
+  $down: _get($mie-grid-breakpoints, quote($key));
 
   @media (max-width: $down) {
     @content;
@@ -57,14 +57,14 @@ $adw-grid-breakpoints: (
 
 @mixin media-breakpoint-only($key: "xs") {
   @if $key == "xxl" {
-    $xxl: _get($adw-grid-breakpoints, "xxl");
+    $xxl: _get($mie-grid-breakpoints, "xxl");
 
     @media (min-width: $xxl) {
       @content;
     }
   } @else {
-    $min: _get($adw-grid-breakpoints, $key);
-    $max: _get($adw-grid-breakpoints, upper-breakpoint($key));
+    $min: _get($mie-grid-breakpoints, $key);
+    $max: _get($mie-grid-breakpoints, upper-breakpoint($key));
 
     @media (min-width: #{$min}) and (max-width: #{$max}) {
       @content;
@@ -73,8 +73,8 @@ $adw-grid-breakpoints: (
 }
 
 @mixin media-breakpoint-between($start: "xs", $end: "xxl") {
-  $start: _get($adw-grid-breakpoints, $start);
-  $end: _get($adw-grid-breakpoints, $end);
+  $start: _get($mie-grid-breakpoints, $start);
+  $end: _get($mie-grid-breakpoints, $end);
 
   @media (min-width: #{$start}) and (max-width: #{$end}) {
     @content;

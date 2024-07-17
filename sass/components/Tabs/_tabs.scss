@@ -1,6 +1,6 @@
 $active-tab-color: #e6e6e6;
 
-.adw.tabs {
+.mie.tabs {
   height: 34px;
   width: auto;
   @include flex(row);
@@ -26,7 +26,7 @@ $active-tab-color: #e6e6e6;
 
     background-color: transparentize($active-tab-color, 1);
     // color: $default-text-color;
-    font-size: var(adw-text-fs(large));
+    font-size: var(mie-text-fs(large));
     border-radius: 6px;
     font-weight: 700;
 

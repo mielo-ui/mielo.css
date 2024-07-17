@@ -1,6 +1,6 @@
-$adw-radio-sizes: (
+$mie-radio-sizes: (
   "medium": (
-    "label-fs": adw-text-fs(medium),
+    "label-fs": mie-text-fs(medium),
     "content-margin": 0.8rem,
     "inner-size": 0.8rem,
     "inner-mv": 0.4rem,
@@ -8,7 +8,7 @@ $adw-radio-sizes: (
     "size": 2rem,
   ),
   "small": (
-    "label-fs": adw-text-fs(small),
+    "label-fs": mie-text-fs(small),
     "content-margin": 0.6rem,
     "inner-size": 0.4rem,
     "inner-mv": 0.45rem,
@@ -16,7 +16,7 @@ $adw-radio-sizes: (
     "size": 1.6rem,
   ),
   "large": (
-    "label-fs": adw-text-fs(large),
+    "label-fs": mie-text-fs(large),
     "content-margin": 1rem,
     "inner-size": 1.2rem,
     "inner-mv": 0.5rem,
@@ -25,4 +25,4 @@ $adw-radio-sizes: (
   ),
 );
 
-@include variants-map-to-component("radio", $adw-radio-sizes, "medium");
+@include variants-map-to-component("radio", $mie-radio-sizes, "medium");

@@ -1,24 +1,24 @@
-$adw-button-sizes: (
+$mie-button-sizes: (
   "small": (
-    "fs": adw-text-fs(small),
+    "fs": mie-text-fs(small),
     "icon-ph": 0.4rem,
     "size": 2.8rem,
     "ph": 0.8rem,
   ),
 
   "medium": (
-    "fs": adw-text-fs(medium),
+    "fs": mie-text-fs(medium),
     "icon-ph": 0.6rem,
     "size": 3.4rem,
     "ph": 1.2rem,
   ),
 
   "large": (
-    "fs": adw-text-fs(large),
+    "fs": mie-text-fs(large),
     "icon-ph": 0.8rem,
     "size": 4.4rem,
     "ph": 1.6rem,
   ),
 );
 
-@include variants-map-to-component("button", $adw-button-sizes, "medium");
+@include variants-map-to-component("button", $mie-button-sizes, "medium");

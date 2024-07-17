@@ -1,20 +1,20 @@
-$adw-checkbox-sizes: (
+$mie-checkbox-sizes: (
   "medium": (
-    "label-fs": adw-text-fs(medium),
+    "label-fs": mie-text-fs(medium),
     "content-margin": 0.8rem,
     "icon-offset": 0.15rem,
     "icon-size": 1.4rem,
     "size": 2rem,
   ),
   "small": (
-    "label-fs": adw-text-fs(small),
+    "label-fs": mie-text-fs(small),
     "content-margin": 0.6rem,
     "icon-offset": 0.06rem,
     "icon-size": 1rem,
     "size": 1.6rem,
   ),
   "large": (
-    "label-fs": adw-text-fs(large),
+    "label-fs": mie-text-fs(large),
     "content-margin": 1rem,
     "icon-offset": 0.3rem,
     "icon-size": 1.6rem,
@@ -22,4 +22,4 @@ $adw-checkbox-sizes: (
   ),
 );
 
-@include variants-map-to-component("checkbox", $adw-checkbox-sizes, "medium");
+@include variants-map-to-component("checkbox", $mie-checkbox-sizes, "medium");

@@ -1,4 +1,4 @@
-$adw-list-item-default-colors: (
+$mie-list-item-default-colors: (
   "dark": (
     "bg": opacity-button-bg(#fff, true, (0.1, 0.15, 0.2)),
   ),
@@ -15,6 +15,6 @@ $adw-list-item-default-colors: (
 
 @include accents-map-to-component(
   "list.item",
-  $adw-list-item-default-colors,
+  $mie-list-item-default-colors,
   map-accents-to-list-item
 );

@@ -1,50 +1,50 @@
-$adw-accents-colors: (
+$mie-accents-colors: (
   "orange": (
-    "color": adw-color("orange", 4),
-    "bg": adw-color("orange", 3),
+    "color": mie-color("orange", 4),
+    "bg": mie-color("orange", 3),
     "fg": #fff,
   ),
   "purple": (
-    "color": adw-color("purple", 4),
-    "bg": adw-color("purple", 3),
+    "color": mie-color("purple", 4),
+    "bg": mie-color("purple", 3),
     "fg": #fff,
   ),
   "pink": (
-    "color": adw-color("pink", 4),
-    "bg": adw-color("pink", 3),
+    "color": mie-color("pink", 4),
+    "bg": mie-color("pink", 3),
     "fg": #fff,
   ),
   "deeppurple": (
-    "color": adw-color("deeppurple", 4),
-    "bg": adw-color("deeppurple", 3),
+    "color": mie-color("deeppurple", 4),
+    "bg": mie-color("deeppurple", 3),
     "fg": #fff,
   ),
   "indigo": (
-    "color": adw-color("indigo", 4),
-    "bg": adw-color("indigo", 3),
+    "color": mie-color("indigo", 4),
+    "bg": mie-color("indigo", 3),
     "fg": #fff,
   ),
   "lightgreen": (
-    "color": adw-color("lightgreen", 4),
-    "bg": adw-color("lightgreen", 3),
+    "color": mie-color("lightgreen", 4),
+    "bg": mie-color("lightgreen", 3),
     "fg": rgba(#000, 0.8),
   ),
   "deeporange": (
-    "color": adw-color("deeporange", 4),
-    "bg": adw-color("deeporange", 3),
+    "color": mie-color("deeporange", 4),
+    "bg": mie-color("deeporange", 3),
     "fg": rgba(#000, 0.8),
   ),
 );
 
-@function adw-accent-color($accent, $color_type) {
-  $properties: map-get($adw-button-accents, $accent);
+@function mie-accent-color($accent, $color_type) {
+  $properties: map-get($mie-button-accents, $accent);
   @return map-get($properties, $color_type);
 }
 
-// @each $accent, $values in $adw-accents-colors {
+// @each $accent, $values in $mie-accents-colors {
 //     :root, [data-theme="light"] {
 //         @each $prop, $color in $values {
-//             --adw-#{$accent}-#{$prop}: #{$color};
+//             --mie-#{$accent}-#{$prop}: #{$color};
 //         }
 //     }
 // }

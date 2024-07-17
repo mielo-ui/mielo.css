@@ -1,4 +1,4 @@
-$adw-button-default-colors: (
+$mie-button-default-colors: (
   "dark": (
     "fill": filled-button-bg(#fff, "lighten"),
     "bg": opacity-button-bg(#fff),
@@ -25,25 +25,25 @@ $adw-button-default-colors: (
 
 @include accents-map-to-component(
   "button",
-  $adw-button-default-colors,
+  $mie-button-default-colors,
   map-accents-to-button
 );
 
-.adw.button.filled {
-  --adw-button-bg-active: var(--adw-button-fill-active) !important;
-  --adw-button-bg-hover: var(--adw-button-fill-hover) !important;
-  --adw-button-bg-main: var(--adw-button-fill-main) !important;
-  --adw-button-fg: #fff !important;
+.mie.button.filled {
+  --mie-button-bg-active: var(--mie-button-fill-active) !important;
+  --mie-button-bg-hover: var(--mie-button-fill-hover) !important;
+  --mie-button-bg-main: var(--mie-button-fill-main) !important;
+  --mie-button-fg: #fff !important;
 
   &:not(.accent):not(.success):not(.error):not(.warning) {
-    --adw-button-fg: var(--adw-button-fg-invert) !important;
+    --mie-button-fg: var(--mie-button-fg-invert) !important;
   }
 }
 
-.adw.button.transparent {
-  --adw-button-bg-main: var(--adw-button-bg-transparent) !important;
+.mie.button.transparent {
+  --mie-button-bg-main: var(--mie-button-bg-transparent) !important;
 }
 
-.adw.button.tertiary {
-  --adw-button-fg: var(--adw-button-fill-main) !important;
+.mie.button.tertiary {
+  --mie-button-fg: var(--mie-button-fill-main) !important;
 }

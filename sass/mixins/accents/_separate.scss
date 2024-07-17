@@ -38,7 +38,7 @@
       $key: _join(_get($item, 1), "-");
       $value: _get($item, 2);
 
-      --adw-#{$name}-#{$accent}-#{$key}: #{$value};
+      --mie-#{$name}-#{$accent}-#{$key}: #{$value};
     }
   }
 }
@@ -50,11 +50,11 @@
     $class-ext: if($accent != "default", "." + $accent, "");
     $flat: map-flatten-keys($vars);
 
-    .adw.#{$class}#{$class-ext} {
+    .mie.#{$class}#{$class-ext} {
       @each $key in $flat {
         $key: _join($key, "-");
 
-        --adw-#{$name}-#{$key}: var(--adw-#{$name}-#{$accent}-#{$key});
+        --mie-#{$name}-#{$key}: var(--mie-#{$name}-#{$accent}-#{$key});
       }
     }
   }
@@ -69,7 +69,7 @@
   $class,
   $default,
   $cb,
-  $accents-by-theme: $adw-accents-by-theme
+  $accents-by-theme: $mie-accents-by-theme
 ) {
   $name: _kebab-case($class);
 

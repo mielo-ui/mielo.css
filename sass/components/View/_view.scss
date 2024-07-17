@@ -1,22 +1,22 @@
-.adw.view {
-  --adw-view-bg: transparent;
-  background-color: var(--adw-view-bg);
+.mie.view {
+  --mie-view-bg: transparent;
+  background-color: var(--mie-view-bg);
 
   // Background appearance
   &.sidebar {
-    --adw-view-bg: var(--adw-view-sidebar);
+    --mie-view-bg: var(--mie-view-sidebar);
   }
 
   &.window {
-    --adw-view-bg: var(--adw-view-window);
+    --mie-view-bg: var(--mie-view-window);
   }
 
   &.content {
-    --adw-view-bg: var(--adw-view-content);
+    --mie-view-bg: var(--mie-view-content);
   }
 
   &.osd {
-    --adw-view-bg: var(--adw-view-osd);
+    --mie-view-bg: var(--mie-view-osd);
   }
 
   // Shadows
@@ -35,10 +35,10 @@
 
   // Rounded Views
   &.rounded {
-    border-radius: var(--adw-view-rounded);
+    border-radius: var(--mie-view-rounded);
 
     &-extra {
-      border-radius: var(--adw-view-rounded-extra);
+      border-radius: var(--mie-view-rounded-extra);
     }
   }
 
@@ -49,6 +49,6 @@
 
   // Inner paddings type
   &.padding {
-    padding: var(--adw-view-pv) var(--adw-view-ph);
+    padding: var(--mie-view-pv) var(--mie-view-ph);
   }
 }

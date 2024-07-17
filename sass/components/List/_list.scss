@@ -1,8 +1,8 @@
-.adw.list:not(.item) {
+.mie.list:not(.item) {
   list-style-type: none;
   display: block;
 
-  margin: var(--adw-list-margin-v) var(--adw-list-margin-h);
+  margin: var(--mie-list-margin-v) var(--mie-list-margin-h);
   padding: 0;
 
   // States

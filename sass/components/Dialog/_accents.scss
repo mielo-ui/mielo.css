@@ -1,4 +1,4 @@
-$adw-dialog-default-colors: (
+$mie-dialog-default-colors: (
   "dark": (
     "action-border": rgba(#fff, 0.07),
     "bg": #383838,
@@ -18,7 +18,7 @@ $adw-dialog-default-colors: (
 
 @include accents-map-to-component(
   "dialog",
-  $adw-dialog-default-colors,
+  $mie-dialog-default-colors,
   map-accents-to-dialog,
-  _omit($adw-accents-by-theme, "accent")
+  _omit($mie-accents-by-theme, "accent")
 );

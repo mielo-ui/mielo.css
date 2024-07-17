@@ -1,4 +1,4 @@
-$adw-row-item-default-colors: (
+$mie-row-item-default-colors: (
   "light": (
     "overlay": transparent,
     "bg": #ebebeb,
@@ -9,7 +9,7 @@ $adw-row-item-default-colors: (
   ),
 );
 
-$adw-rows-default-colors: (
+$mie-rows-default-colors: (
   "light": (
     "border": rgba(#000, 0.07),
   ),
@@ -31,13 +31,13 @@ $adw-rows-default-colors: (
 
 @include accents-map-to-component(
   "row.item",
-  $adw-row-item-default-colors,
+  $mie-row-item-default-colors,
   map-accents-to-row-item
 );
 
 @include accents-map-to-component(
   "rows",
-  $adw-rows-default-colors,
+  $mie-rows-default-colors,
   map-accents-to-rows,
-  $adw-empty-accents-by-theme
+  $mie-empty-accents-by-theme
 );

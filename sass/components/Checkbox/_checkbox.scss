@@ -1,4 +1,4 @@
-.adw.checkbox {
+.mie.checkbox {
   display: inline-block;
   position: relative;
   cursor: pointer;
@@ -14,37 +14,37 @@
     display: flex;
 
     > .content {
-      font-size: var(--adw-checkbox-label-fs);
-      color: var(--adw-checkbox-label-fg);
+      font-size: var(--mie-checkbox-label-fs);
+      color: var(--mie-checkbox-label-fg);
       font-weight: 400;
 
-      margin-left: var(--adw-checkbox-content-margin);
+      margin-left: var(--mie-checkbox-content-margin);
     }
   }
 }
 
 // Default checkbox style
-.adw.checkbox {
+.mie.checkbox {
   > .label {
     > .indicator {
-      border: 0.2rem solid var(--adw-checkbox-border);
-      border-radius: var(--adw-checkbox-rounded);
+      border: 0.2rem solid var(--mie-checkbox-border);
+      border-radius: var(--mie-checkbox-rounded);
       background-color: rgba(0, 0, 0, 0);
 
       transition: all 0.2s ease;
       display: block;
 
-      height: var(--adw-checkbox-size);
-      width: var(--adw-checkbox-size);
+      height: var(--mie-checkbox-size);
+      width: var(--mie-checkbox-size);
 
       > .icon {
         > svg {
-          color: var(--adw-checkbox-icon-fg);
+          color: var(--mie-checkbox-icon-fg);
           transition: color 0.2s ease;
 
-          margin: var(--adw-checkbox-icon-offset);
-          height: var(--adw-checkbox-icon-size);
-          width: var(--adw-checkbox-icon-size);
+          margin: var(--mie-checkbox-icon-offset);
+          height: var(--mie-checkbox-icon-size);
+          width: var(--mie-checkbox-icon-size);
 
           opacity: 0;
         }
@@ -55,8 +55,8 @@
   // When checked
   .input:checked + .label {
     > .indicator {
-      border-color: var(--adw-checkbox-border-active);
-      background-color: var(--adw-checkbox-bg);
+      border-color: var(--mie-checkbox-border-active);
+      background-color: var(--mie-checkbox-bg);
 
       > .icon {
         > svg {

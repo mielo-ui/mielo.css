@@ -1,46 +1,46 @@
-$adw-header-sizes: (
+$mie-header-sizes: (
   "tiny": (
-    "subtitle-fs": adw-text-fs(mini),
-    "title-fs": adw-text-fs(tiny),
+    "subtitle-fs": mie-text-fs(mini),
+    "title-fs": mie-text-fs(tiny),
     "icon-space": 0.6rem,
     "margin-v": 0.6rem,
   ),
   "small": (
-    "subtitle-fs": adw-text-fs(tiny),
-    "title-fs": adw-text-fs(small),
+    "subtitle-fs": mie-text-fs(tiny),
+    "title-fs": mie-text-fs(small),
     "icon-space": 0.6rem,
     "margin-v": 0.6rem,
   ),
   "medium": (
-    "subtitle-fs": adw-text-fs(small),
-    "title-fs": adw-text-fs(medium),
+    "subtitle-fs": mie-text-fs(small),
+    "title-fs": mie-text-fs(medium),
     "icon-space": 0.8rem,
     "margin-v": 0.8rem,
   ),
   "large": (
     "subtitle-fs": 1.5rem,
-    "title-fs": adw-text-fs(large),
+    "title-fs": mie-text-fs(large),
     "icon-space": 1.2rem,
     "margin-v": 1.2rem,
   ),
   "big": (
-    "subtitle-fs": adw-text-fs(large),
-    "title-fs": adw-text-fs(big),
+    "subtitle-fs": mie-text-fs(large),
+    "title-fs": mie-text-fs(big),
     "icon-space": 1.2rem,
     "margin-v": 1.2rem,
   ),
   "huge": (
-    "subtitle-fs": adw-text-fs(large),
-    "title-fs": adw-text-fs(huge),
+    "subtitle-fs": mie-text-fs(large),
+    "title-fs": mie-text-fs(huge),
     "icon-space": 1.2rem,
     "margin-v": 1.2rem,
   ),
   "massive": (
-    "subtitle-fs": adw-text-fs(large),
-    "title-fs": adw-text-fs(massive),
+    "subtitle-fs": mie-text-fs(large),
+    "title-fs": mie-text-fs(massive),
     "icon-space": 1.2rem,
     "margin-v": 1.2rem,
   ),
 );
 
-@include variants-map-to-component("header", $adw-header-sizes, "medium");
+@include variants-map-to-component("header", $mie-header-sizes, "medium");

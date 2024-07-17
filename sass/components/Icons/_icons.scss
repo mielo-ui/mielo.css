@@ -1,23 +1,23 @@
-.adw.icon {
-  border-radius: var(--adw-icon-rounded);
-  padding: var(--adw-icon-space);
+.mie.icon {
+  border-radius: var(--mie-icon-rounded);
+  padding: var(--mie-icon-space);
   justify-content: center;
   align-items: center;
   display: flex;
 
   svg {
-    max-height: var(--adw-icon-size);
-    max-width: var(--adw-icon-size);
-    height: var(--adw-icon-size);
-    width: var(--adw-icon-size);
-    color: var(--adw-icon-fg);
+    max-height: var(--mie-icon-size);
+    max-width: var(--mie-icon-size);
+    height: var(--mie-icon-size);
+    width: var(--mie-icon-size);
+    color: var(--mie-icon-fg);
   }
 
   &.filled {
-    background-color: var(--adw-icon-bg-filled);
+    background-color: var(--mie-icon-bg-filled);
   }
 
   &.bg {
-    background-color: var(--adw-icon-bg-main);
+    background-color: var(--mie-icon-bg-main);
   }
 }

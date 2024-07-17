@@ -1,4 +1,4 @@
-$adw-slider-default-colors: (
+$mie-slider-default-colors: (
   "dark": (
     "bg": (
       "slider": rgb(40, 40, 40),
@@ -33,6 +33,6 @@ $adw-slider-default-colors: (
 
 @include accents-map-to-component(
   "slider",
-  $adw-slider-default-colors,
+  $mie-slider-default-colors,
   map-accents-to-slider
 );

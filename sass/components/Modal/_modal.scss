@@ -1,4 +1,4 @@
-.adw.overlay {
+.mie.overlay {
   background-color: rgba(0, 0, 0, 0.2);
 
   height: 100vh;
@@ -10,7 +10,7 @@
   top: 0;
 }
 
-.adw.modal {
+.mie.modal {
   z-index: 100;
 
   &.modal {
@@ -22,7 +22,7 @@
 
     &-enter-active {
       > .window {
-        animation: adwMoveUp 300ms ease-out forwards;
+        animation: mieMoveUp 300ms ease-out forwards;
         // transition: opacity 300ms;
         // opacity: 1;
       }
@@ -36,7 +36,7 @@
 
     &-exit-active {
       > .window {
-        animation: adwMoveDown 300ms ease-out forwards;
+        animation: mieMoveDown 300ms ease-out forwards;
         // transition: opacity 300ms;
         // opacity: 0;
       }
@@ -59,7 +59,7 @@
   }
 }
 
-@keyframes adwMoveUp {
+@keyframes mieMoveUp {
   0% {
     transform: translate(-50%, 100%);
     opacity: 0;
@@ -71,7 +71,7 @@
   }
 }
 
-@keyframes adwMoveDown {
+@keyframes mieMoveDown {
   0% {
     transform: translate(-50%, -50%);
     opacity: 1;

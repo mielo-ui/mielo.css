@@ -1,64 +1,64 @@
 :root,
 [data-theme="light"] {
   // Window
-  --adw-window-bg: #fafafa;
-  --adw-window-fg: rgba(0, 0, 0, 0.8);
+  --mie-window-bg: #fafafa;
+  --mie-window-fg: rgba(0, 0, 0, 0.8);
 
   // Views - e.g. text view or tree view
-  --adw-view-bg: #ffffff;
-  --adw-view-fg: rgba(0, 0, 0, 0.8);
+  --mie-view-bg: #ffffff;
+  --mie-view-fg: rgba(0, 0, 0, 0.8);
 
   // Cards, boxed lists
-  --adw-card-bg: #ffffff;
-  --adw-card-fg: rgba(0, 0, 0, 0.8);
-  --adw-card-shade-color: rgba(0, 0, 0, 0.07);
+  --mie-card-bg: #ffffff;
+  --mie-card-fg: rgba(0, 0, 0, 0.8);
+  --mie-card-shade-color: rgba(0, 0, 0, 0.07);
 
   // Dialogs
-  --adw-dialog-bg: #fafafa;
-  --adw-dialog-fg: rgba(0, 0, 0, 0.8);
+  --mie-dialog-bg: #fafafa;
+  --mie-dialog-fg: rgba(0, 0, 0, 0.8);
 
   // Popovers
-  --adw-popover-bg: #ffffff;
-  --adw-popover-fg: rgba(0, 0, 0, 0.8);
-  --adw-popover-shade-color: rgb(0, 0, 0, 0.07);
+  --mie-popover-bg: #ffffff;
+  --mie-popover-fg: rgba(0, 0, 0, 0.8);
+  --mie-popover-shade-color: rgb(0, 0, 0, 0.07);
 
   // Thumbnails
-  --adw-thumbnail-bg: #ffffff;
-  --adw-thumbnail-fg: rgba(0, 0, 0, 0.8);
+  --mie-thumbnail-bg: #ffffff;
+  --mie-thumbnail-fg: rgba(0, 0, 0, 0.8);
 
   // Miscellaneous
-  --adw-shade_color: rgba(0, 0, 0, 0.07);
-  --adw-scrollbar-outline-color: white;
+  --mie-shade_color: rgba(0, 0, 0, 0.07);
+  --mie-scrollbar-outline-color: white;
 }
 
 [data-theme="dark"] {
   // Window
-  --adw-window-bg: #242424;
-  --adw-window-fg: white;
+  --mie-window-bg: #242424;
+  --mie-window-fg: white;
 
   // Views - e.g. text view or tree view
-  --adw-view-bg: #1e1e1e;
-  --adw-view-fg: white;
+  --mie-view-bg: #1e1e1e;
+  --mie-view-fg: white;
 
   // Cards, boxed lists
-  --adw-card-bg: rgba(255, 255, 255, 0.08);
-  --adw-card-fg: white;
-  --adw-card-shade-color: rgba(0, 0, 0, 0.36);
+  --mie-card-bg: rgba(255, 255, 255, 0.08);
+  --mie-card-fg: white;
+  --mie-card-shade-color: rgba(0, 0, 0, 0.36);
 
   // Dialogs
-  --adw-dialog-bg: #383838;
-  --adw-dialog-fg: white;
+  --mie-dialog-bg: #383838;
+  --mie-dialog-fg: white;
 
   // Popovers
-  --adw-popover-bg: #383838;
-  --adw-popover-fg: white;
-  --adw-popover-shade-color: rgba(0, 0, 0, 0.25);
+  --mie-popover-bg: #383838;
+  --mie-popover-fg: white;
+  --mie-popover-shade-color: rgba(0, 0, 0, 0.25);
 
   // Thumbnails
-  --adw-thumbnail-bg: #383838;
-  --adw-thumbnail-fg: white;
+  --mie-thumbnail-bg: #383838;
+  --mie-thumbnail-fg: white;
 
   // Miscellaneous
-  --adw-shade_color: rgba(0, 0, 0, 0.25);
-  --adw-scrollbar-outline-color: rgba(0, 0, 0, 0.95);
+  --mie-shade_color: rgba(0, 0, 0, 0.25);
+  --mie-scrollbar-outline-color: rgba(0, 0, 0, 0.95);
 }

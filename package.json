@@ -39,7 +39,7 @@
     "minify-mielo": "postcss css/mielo.css --no-map --use cssnano --output css/mielo.min.css",
     "build-all": "npm run build-mielo && npm run minify-mielo",
     "clean": "rimraf css",
-    "deploy": "npm run clean && npm run build-all"
+    "build": "npm run clean && npm run build-all"
   },
   "devDependencies": {
     "copyfiles": "^2.4.1",

@@ -1,13 +1,13 @@
-.adw.headerbar {
+.mie.headerbar {
   // prettier-ignore
   background-image:
         linear-gradient(
-            var(--adw-headerbar-bg-overlay),
-            var(--adw-headerbar-bg-overlay)
+            var(--mie-headerbar-bg-overlay),
+            var(--mie-headerbar-bg-overlay)
         ),
         linear-gradient(
-            var(--adw-headerbar-bg-main),
-            var(--adw-headerbar-bg-main)
+            var(--mie-headerbar-bg-main),
+            var(--mie-headerbar-bg-main)
         );
 
   position: relative;
@@ -18,16 +18,16 @@
   flex-direction: row;
   display: flex;
 
-  padding: 0 var(--adw-headerbar-ph);
-  height: var(--adw-headerbar-size);
+  padding: 0 var(--mie-headerbar-ph);
+  height: var(--mie-headerbar-size);
   width: 100%;
 
   &.transparent {
-    --adw-headerbar-bg-main: transparent;
+    --mie-headerbar-bg-main: transparent;
   }
 
   &.bordered {
-    border-bottom: 0.1rem solid var(--adw-headerbar-border);
+    border-bottom: 0.1rem solid var(--mie-headerbar-border);
   }
 
   .left,
@@ -53,7 +53,7 @@
     align-items: center;
     display: flex;
 
-    .adw.header.attached {
+    .mie.header.attached {
       .title {
         margin-bottom: 0.2rem;
       }

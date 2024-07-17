@@ -1,4 +1,4 @@
-$adw-item-default-colors: (
+$mie-item-default-colors: (
   "dark": (
     "description-fg": #{rgba(#fff, 0.6)},
     "title-fg": #{rgba(#fff, 1)},
@@ -21,6 +21,6 @@ $adw-item-default-colors: (
 
 @include accents-map-to-component(
   "item",
-  $adw-item-default-colors,
+  $mie-item-default-colors,
   map-accents-to-item
 );
