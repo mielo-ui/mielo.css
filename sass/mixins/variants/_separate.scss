@@ -1,0 +1,96 @@
+@use "sass:list";
+@use "sass:map";
+@use "sass:meta";
+
+// Mixin declare variants declarations by class flag.
+// Output declaration like
+//
+// .adw.<component>.<variant | empty> - for declaration variables
+//
+// .adw.button.large {
+//   --adw-<component>-<property> -- = var(--adw-<component>-<variant>-<property>);
+//   /*__________________________________________________________________________*/
+//   --adw-button-height: var(--adw-button-large-height);
+// }
+
+// Simple expand variant properties as variables
+@mixin SEPARATE_variants-expand-variables($class, $variants) {
+  $list: map-flatten($variants);
+  $name: _kebab-case($class);
+
+  @each $item in $list {
+    $key: _join(_get($item, 1), "-");
+
+    $property: --adw-#{$name}-#{$key};
+    $value: _get($item, 2);
+
+    #{$property}: #{$value};
+  }
+}
+
+// Assign variables scheme in target element state
+@mixin SEPARATE_variants-assign-variables($vars) {
+  @each $keys in $vars {
+    $key: _join($keys, "-");
+
+    $value: var(--adw-#{$name}-#{$variant}-#{$key});
+    $property: --adw-#{$name}-#{$key};
+
+    #{$property}: #{$value};
+  }
+}
+
+// Assign variant properties to component by class state
+//
+// You can declare variant directly
+// $declare-class-prefix: "prefix"
+// Variants: (default, )
+// default: .adw.<class> {}
+// basic: .adw.<class>.<prefix>-<variant> {}
+
+@mixin SEPARATE_variants-assign-to-component(
+  $class,
+  $variants,
+  $default-variant: "default",
+  $prefix: "",
+  $prefix-directly: false
+) {
+  $name: _kebab-case($class);
+
+  @each $variant in _keys($variants) {
+    $class-name: variant-classname(
+      $variant,
+      $default-variant,
+      $prefix,
+      $prefix-directly
+    );
+    $vars: map-flatten-keys(_get($variants, $variant));
+
+    .adw.#{$class}#{$class-name} {
+      @include variants-assign-variables($class, $vars);
+    }
+  }
+}
+
+// This variant declare all variants variables separate from style
+@mixin SEPARATE_variants-map-to-component(
+  $component,
+  $variants,
+  $default-name: "default",
+  $prefix: "",
+  $prefix-directly: false
+) {
+  :root,
+  [data-theme="light"],
+  [data-theme="dark"] {
+    @include SEPARATE_variants-expand-variables($component, $variants);
+  }
+
+  @include SEPARATE_variants-assign-to-component(
+    $component,
+    $variants,
+    $default-name,
+    $prefix,
+    $prefix-directly
+  );
+}

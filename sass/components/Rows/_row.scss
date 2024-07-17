@@ -1,0 +1,32 @@
+// Common row for use with custom components
+.adw.rows > .adw.row.item.property {
+  // prettier-ignore
+  background-image:
+        linear-gradient(
+            var(--adw-row-item-overlay),
+            var(--adw-row-item-overlay)
+        ),
+        linear-gradient(
+            var(--adw-row-item-bg),
+            var(--adw-row-item-bg)
+        );
+
+  padding: var(--adw-row-item-padding-v) var(--adw-row-item-padding-h);
+  height: 5.6rem;
+
+  align-items: center;
+  flex-direction: row;
+  display: flex;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.adw.rows > .adw.row {
+  border-bottom: 0.1rem solid var(--adw-rows-border);
+
+  &:last-child {
+    border-bottom: none;
+  }
+}

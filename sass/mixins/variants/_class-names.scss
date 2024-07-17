@@ -1,0 +1,43 @@
+// prettier-ignore
+@function variant-classname(
+  $variant, 
+  $default-variant: "default",
+  $prefix: "", 
+  $prefix-directly: false
+) {
+  $variant-ext: null;
+  $prefix-ext: null;
+
+  @if _is_empty($prefix) and $prefix-directly {
+    @error "Invalid variations: empty prefix cant declare in directly style";
+  }
+
+  @if $prefix-directly {
+    $variant-ext: if-or-empty($variant != $default-variant, $variant);
+    $prefix-ext: prefix-if(if(_is_empty($variant-ext), $prefix, $prefix + "-"), ".");
+  } @else {
+    $variant-ext: if-or-empty($variant != $default-variant, ".#{$variant}");
+    $prefix-ext: prefix-if($prefix, ".");
+  } 
+
+  @return "#{$prefix-ext}#{$variant-ext}";
+}
+
+// $variant-classname-test: (
+//   // ""
+//   variant-classname("default", "default", "", false),
+//   // ".variant"
+//   variant-classname("variant", "default", "", false),
+
+//   // ".prefix"
+//   variant-classname("default", "default", "prefix", true),
+//   // ".prefix-variant"
+//   variant-classname("variant", "default", "prefix", true),
+
+//   // ".prefix"
+//   variant-classname("default", "default", "prefix", false),
+//   // ".prefix.variant"
+//   variant-classname("variant", "default", "prefix", false),
+// );
+
+// @debug $variant-classname-test;

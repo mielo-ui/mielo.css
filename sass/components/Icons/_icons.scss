@@ -1,0 +1,23 @@
+.adw.icon {
+  border-radius: var(--adw-icon-rounded);
+  padding: var(--adw-icon-space);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+
+  svg {
+    max-height: var(--adw-icon-size);
+    max-width: var(--adw-icon-size);
+    height: var(--adw-icon-size);
+    width: var(--adw-icon-size);
+    color: var(--adw-icon-fg);
+  }
+
+  &.filled {
+    background-color: var(--adw-icon-bg-filled);
+  }
+
+  &.bg {
+    background-color: var(--adw-icon-bg-main);
+  }
+}

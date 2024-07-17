@@ -1,0 +1,32 @@
+$adw-checkbox-default-colors: (
+  "dark": (
+    "border": #{rgba(#000, 0.36)},
+    "label-fg": #{rgba(#fff, 0.6)},
+    "icon-fg": #{rgba(#fff, 1)},
+
+    "border-active": #{rgba(#3584e4, 1)},
+    "bg": #{rgba(#3584e4, 1)},
+  ),
+  "light": (
+    "border": #{rgba(#000, 0.36)},
+    "label-fg": #{rgba(#fff, 0.6)},
+    "icon-fg": #{rgba(#fff, 1)},
+
+    "border-active": #{rgba(#3584e4, 1)},
+    "bg": #{rgba(#3584e4, 1)},
+  ),
+);
+
+@function map-accents-to-checkbox($theme, $accent, $colors) {
+  $color: _get($colors, "color");
+  $bg: _get($colors, "bg");
+
+  @return ("border-active": #{rgba($bg, 1)}, "bg": #{rgba($bg, 1)});
+}
+
+@include accents-map-to-component(
+  "checkbox",
+  $adw-checkbox-default-colors,
+  map-accents-to-checkbox,
+  _omit($adw-accents-by-theme, "accent")
+);

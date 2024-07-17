@@ -1,0 +1,17 @@
+$adw-component-default-colors: (
+  "dark": (),
+  "light": (),
+);
+
+@function map-accents-to-slider($theme, $accent, $colors) {
+  $color: _get($colors, "color");
+  $bg: _get($colors, "bg");
+
+  @return ();
+}
+
+@include accents-map-to-component(
+  "component",
+  $adw-slider-default-colors,
+  map-accents-to-slider
+);

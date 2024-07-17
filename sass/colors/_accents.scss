@@ -1,0 +1,90 @@
+$adw-core-accents: (
+  // The main accent color and the matching text value
+  "accent":
+    (
+      "light": (
+        "color": adw-color("blue", 4),
+        "bg": adw-color("blue", 3),
+        "fg": white,
+      ),
+      "dark": (
+        "color": #78aeed,
+        "bg": adw-color("blue", 3),
+        "fg": white,
+      ),
+    ),
+
+  // destructive-action buttons
+  "destructive":
+    (
+      "light": (
+        "color": adw-color("red", 4),
+        "bg": adw-color("red", 3),
+        "fg": white,
+      ),
+      "dark": (
+        "color": #ff7b63,
+        "bg": adw-color("red", 4),
+        "fg": white,
+      ),
+    )
+);
+
+$adw-empty-accents-by-theme: (
+  "light": (),
+  "dark": (),
+);
+
+$adw-accents-by-theme: (
+  "light": (
+    "accent": (
+      "color": adw-color("blue", 4),
+      "bg": adw-color("blue", 3),
+      "fg": white,
+    ),
+    "success": (
+      "color": #1b8553,
+      "bg": adw-color("green", 4),
+      "fg": white,
+    ),
+    "warning": (
+      "color": #9c6e03,
+      "bg": adw-color("yellow", 5),
+      "fg": rgb(#000, 0.8),
+    ),
+    "error": (
+      "color": adw-color("red", 4),
+      "bg": adw-color("red", 3),
+      "fg": white,
+    ),
+  ),
+  "dark": (
+    "accent": (
+      "color": #78aeed,
+      "bg": adw-color("blue", 3),
+      "fg": white,
+    ),
+    "success": (
+      "color": adw-color("green", 1),
+      "bg": adw-color("green", 5),
+      "fg": white,
+    ),
+    "warning": (
+      "color": adw-color("yellow", 2),
+      "bg": #cd9309,
+      "fg": rgba(#000, 0.8),
+    ),
+    "error": (
+      "color": #ff7b63,
+      "bg": adw-color("red", 4),
+      "fg": white,
+    ),
+  ),
+);
+
+@function adw-accent($accent, $color_type, $theme: "light") {
+  $themes: map-get($adw-button-accents, $accent);
+  $colors: map-get($themes, $theme);
+
+  @return map-get($colors, $color_type);
+}

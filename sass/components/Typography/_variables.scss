@@ -1,0 +1,19 @@
+:root,
+[data-theme="light"] {
+  // @TODO
+}
+
+[data-theme="dark"] {
+  // @TODO
+}
+
+:root,
+[data-theme="light"],
+[data-theme="dark"] {
+  --adw-h4-fs: #{adw-text-fs(medium)};
+  --adw-h3-fs: #{adw-text-fs(large)};
+  --adw-h2-fs: #{adw-text-fs(big)};
+  --adw-h1-fs: #{adw-text-fs(huge)};
+
+  --adw-text-fs: #{adw-text-fs(medium)};
+}

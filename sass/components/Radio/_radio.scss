@@ -1,0 +1,71 @@
+.adw.radio {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+
+  > .input {
+    display: none;
+  }
+
+  > .label {
+    position: relative;
+
+    align-items: center;
+    display: flex;
+
+    > .content {
+      font-size: var(--adw-radio-label-fs);
+      color: var(--adw-radio-label-fg);
+      font-weight: 400;
+
+      margin-left: var(--adw-radio-content-margin);
+    }
+  }
+}
+
+// Default radio style
+.adw.radio {
+  > .label {
+    > .indicator {
+      border: 0.2rem solid var(--adw-radio-border-active);
+      background-color: rgba(0, 0, 0, 0);
+      border-radius: 50%;
+
+      transition: background-color 0.2s ease;
+      box-sizing: border-box;
+      position: relative;
+      display: block;
+
+      height: var(--adw-radio-size);
+      width: var(--adw-radio-size);
+
+      &::before {
+        transition: opacity 0.2s ease;
+
+        height: var(--adw-radio-inner-size);
+        width: var(--adw-radio-inner-size);
+        left: var(--adw-radio-inner-mh);
+        top: var(--adw-radio-inner-mv);
+
+        background-color: #fff;
+        border-radius: 50%;
+        position: absolute;
+        content: "";
+
+        opacity: 0;
+      }
+    }
+  }
+
+  // When checked
+  .input:checked + .label {
+    > .indicator {
+      border-color: var(--adw-radio-border-active);
+      background-color: var(--adw-radio-bg);
+
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+}

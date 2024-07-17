@@ -1,0 +1,36 @@
+$adw-icon-default-colors: (
+  "light": (
+    "fg": rgba(#000, 0.8),
+    "bg": (
+      "main": transparent,
+      "filled": #fafafa,
+    ),
+  ),
+  "dark": (
+    "fg": #fff,
+    "bg": (
+      "main": transparent,
+      "filled": #383838,
+    ),
+  ),
+);
+
+@function map-accents-to-icon($theme, $accent, $colors) {
+  $color: _get($colors, "color");
+  $bg: _get($colors, "bg");
+
+  @return (
+    "fg": $color,
+    "bg": (
+      "main": rgba($color, 0.3),
+      "filled": $bg,
+    )
+  );
+}
+
+@include accents-map-to-component(
+  "icon",
+  $adw-icon-default-colors,
+  map-accents-to-icon,
+  $adw-accents-by-theme
+);

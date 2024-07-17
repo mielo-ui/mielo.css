@@ -1,0 +1,41 @@
+.adw.select {
+  $menu-offset: 0.6rem;
+  $menu-height: 12rem;
+
+  > .menu {
+    // prettier-ignore
+    background-image:
+            linear-gradient(
+                var(--adw-select-bg-overlay),
+                var(--adw-select-bg-overlay)
+            ),
+            linear-gradient(
+                var(--adw-select-bg-menu),
+                var(--adw-select-bg-menu)
+            );
+
+    transition:
+      height 0.2s ease,
+      top 0.2s ease;
+
+    border-radius: var(--adw-select-rounded);
+    overflow: hidden;
+
+    position: absolute;
+    height: 0;
+    top: 0;
+
+    z-index: 5;
+
+    > .content {
+      max-height: $menu-height;
+      overflow: hidden;
+    }
+
+    &.opened {
+      top: calc(var(--adw-select-height) + $menu-offset);
+      padding-top: $menu-offset;
+      height: $menu-height;
+    }
+  }
+}

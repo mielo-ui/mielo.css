@@ -1,0 +1,22 @@
+$adw-icon-rounded: (
+  "small": (
+    "rounded": adw-rounded(small),
+  ),
+  "default": (
+    "rounded": adw-rounded(medium),
+  ),
+  "large": (
+    "rounded": adw-rounded(large),
+  ),
+  "circle": (
+    "rounded": 50%,
+  ),
+);
+
+@include variants-map-to-component(
+  "icon",
+  $adw-icon-rounded,
+  "default",
+  "rounded",
+  true
+);

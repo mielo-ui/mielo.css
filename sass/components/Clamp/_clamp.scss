@@ -1,0 +1,23 @@
+.adw.clamp {
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+
+  padding: var(--adw-clamp-container-padding-v)
+    var(--adw-clamp-container-padding-h);
+
+  > .header {
+    flex-direction: column;
+    display: flex;
+
+    max-width: var(--adw-clamp-size);
+    width: var(--adw-clamp-size);
+
+    margin-bottom: 2.5rem;
+  }
+
+  > .content {
+    max-width: var(--adw-clamp-size);
+    width: var(--adw-clamp-size);
+  }
+}

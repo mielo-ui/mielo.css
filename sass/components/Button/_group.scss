@@ -1,0 +1,28 @@
+/* Group */
+.adw.buttons {
+  display: inline-flex;
+  flex-direction: row;
+
+  .adw.button {
+    border-right: 0.1rem solid var(--adw-button-border-color);
+    border-radius: 0;
+
+    &:first-child {
+      border-top-left-radius: var(--adw-button-rounded);
+      border-bottom-left-radius: var(--adw-button-rounded);
+    }
+
+    &:last-child {
+      border-top-right-radius: var(--adw-button-rounded);
+      border-bottom-right-radius: var(--adw-button-rounded);
+      border-right: none;
+    }
+  }
+
+  // Relaxed state for fluid buttons
+  &.relaxed {
+    .adw.button {
+      flex: 1;
+    }
+  }
+}

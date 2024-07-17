@@ -1,0 +1,12 @@
+$adw-headerbar-layout: (
+  "medium": (
+    "size": 4.6rem,
+    "ph": 0.8rem,
+  ),
+);
+
+@include variants-map-to-component(
+  "headerbar",
+  $adw-headerbar-layout,
+  "medium"
+);

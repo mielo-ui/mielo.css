@@ -1,0 +1,123 @@
+.adw.toggle {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+
+  > .input {
+    display: none;
+  }
+
+  > .label {
+    position: relative;
+
+    align-items: center;
+    display: flex;
+
+    > .content {
+      font-size: var(--adw-toggle-label-fs);
+      color: var(--adw-toggle-label-fg);
+      font-weight: 400;
+
+      margin-left: var(--adw-toggle-content-margin);
+    }
+  }
+}
+
+.adw.toggle {
+  > .label {
+    > .indicator {
+      background-color: var(--adw-toggle-bg-inactive);
+      border-radius: var(--adw-toggle-rounded);
+
+      transition: background-color 0.2s ease;
+      position: relative;
+      display: block;
+
+      height: var(--adw-toggle-height);
+      width: var(--adw-toggle-width);
+
+      > .dot {
+        box-shadow: 0rem 0.2rem 0.5rem 0rem rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s;
+        background-color: #fff;
+        border-radius: 50%;
+
+        position: absolute;
+        z-index: 10;
+
+        height: var(--adw-toggle-indicator-height);
+        width: var(--adw-toggle-indicator-width);
+
+        left: var(--adw-toggle-indicator-offset-h);
+        top: var(--adw-toggle-indicator-offset-v);
+
+        justify-content: center;
+        align-items: center;
+        display: flex;
+
+        > .icon {
+          > svg {
+            max-height: var(--adw-toggle-indicator-icon-size);
+            max-width: var(--adw-toggle-indicator-icon-size);
+
+            height: var(--adw-toggle-indicator-icon-size);
+            width: var(--adw-toggle-indicator-icon-size);
+
+            color: var(--adw-toggle-indicator-icon-color);
+          }
+        }
+      }
+
+      > .icon.layout {
+        position: absolute;
+
+        height: 100%;
+        width: 100%;
+
+        z-index: 8;
+
+        svg {
+          max-height: var(--adw-toggle-indicator-icon-size);
+          max-width: var(--adw-toggle-indicator-icon-size);
+
+          height: var(--adw-toggle-indicator-icon-size);
+          width: var(--adw-toggle-indicator-icon-size);
+
+          color: var(--adw-toggle-indicator-icon-fg);
+        }
+
+        .checked,
+        .unchecked {
+          height: var(--adw-toggle-indicator-height);
+          width: var(--adw-toggle-indicator-width);
+          position: absolute;
+
+          justify-content: center;
+          align-items: center;
+          display: flex;
+        }
+
+        .checked {
+          top: var(--adw-toggle-indicator-offset-v);
+          left: 0;
+        }
+
+        .unchecked {
+          top: var(--adw-toggle-indicator-offset-v);
+          right: 0;
+        }
+      }
+    }
+  }
+
+  // When checked
+  .input:checked + .label {
+    > .indicator {
+      background-color: var(--adw-toggle-bg-active);
+
+      > .dot {
+        transform: translateX(var(--adw-toggle-indicator-active-offset));
+      }
+    }
+  }
+}

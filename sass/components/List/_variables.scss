@@ -1,0 +1,13 @@
+:root,
+[data-theme="light"] {
+}
+
+[data-theme="dark"] {
+}
+
+:root,
+[data-theme="light"],
+[data-theme="dark"] {
+  // Layout
+  --adw-list-item-rounded: 0.6rem;
+}

@@ -1,0 +1,36 @@
+$adw-message-default-colors: (
+  "light": (
+    "description-fg": #{rgba(#000, 0.6)},
+    "title-fg": #{rgba(#000, 0.8)},
+    "shade": #{rgba(#000, 0.05)},
+    "overlay": transparent,
+    "bg": #ebebeb,
+  ),
+  "dark": (
+    "description-fg": #{rgba(#fff, 0.6)},
+    "shade": #{rgba(#000, 0.1)},
+    "title-fg": #fff,
+    "overlay": transparent,
+    "bg": #383838,
+  ),
+);
+
+@function map-accents-to-message($theme, $accent, $colors) {
+  $color: _get($colors, "color");
+  $bg: _get($colors, "bg");
+
+  @return (
+    "description-fg": #{rgba($color, 0.6)},
+    "title-fg": #{rgba($color, 0.8)},
+    "shade": #{rgba($color, 0.05)},
+    "overlay": rgba($bg, 0.08),
+    "outline": $color
+  );
+}
+
+@include accents-map-to-component(
+  "message",
+  $adw-message-default-colors,
+  map-accents-to-message,
+  $adw-accents-by-theme
+);

@@ -1,0 +1,14 @@
+@use "sass:color";
+
+:root,
+[data-theme="light"] {
+}
+
+[data-theme="dark"] {
+}
+
+:root,
+[data-theme="light"],
+[data-theme="dark"] {
+  --adw-select-rounded: 0.6rem;
+}

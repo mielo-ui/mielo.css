@@ -1,0 +1,43 @@
+$adw-headerbar-default-colors: (
+  "dark": (
+    "label-fg": #{rgba(#fff, 0.6)},
+    "value-fg": #{rgba(#fff, 1)},
+    "border": #{rgba(#000, 0.37)},
+    "bg": (
+      "outline": #78aeed,
+      "overlay": transparent,
+      "main": #434343,
+    ),
+  ),
+  "light": (
+    "label-fg": #{rgba(#000, 0.6)},
+    "value-fg": #{rgba(#000, 0.8)},
+    "border": #{rgba(#000, 0.07)},
+    "bg": (
+      "outline": adw-color("blue", 4),
+      "overlay": transparent,
+      "main": #fff,
+    ),
+  ),
+);
+
+@function map-accents-to-headerbar($theme, $accent, $colors) {
+  $color: _get($colors, "color");
+  $bg: _get($colors, "bg");
+
+  @return (
+    "label-fg": #{rgba($color, 0.6)},
+    "value-fg": #{rgba($color, 0.8)},
+    "border": #{rgba($color, 0.07)},
+    "bg": (
+      "overlay": #{rgba($bg, 0.08)},
+      "outline": #{$color},
+    )
+  );
+}
+
+@include accents-map-to-component(
+  "headerbar",
+  $adw-headerbar-default-colors,
+  map-accents-to-headerbar
+);

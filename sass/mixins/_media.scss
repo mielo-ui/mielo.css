@@ -1,0 +1,82 @@
+$adw-grid-breakpoints: (
+  "xs": 0,
+  "sm": 576px,
+  "md": 768px,
+  "lg": 992px,
+  "xl": 1200px,
+  "xxl": 1400px,
+);
+
+@function upper-breakpoint($key: "xs") {
+  @if $key == "xs" {
+    @return "sm";
+  } @else if $key == "sm" {
+    @return "md";
+  } @else if $key == "md" {
+    @return "lg";
+  } @else if $key == "lg" {
+    @return "xl";
+  } @else if $key == "xl" {
+    @return "xxl";
+  } @else {
+    @return null;
+  }
+}
+
+@function lower-breakpoint($key: "xs") {
+  @if $key == "xxl" {
+    @return "xl";
+  } @else if $key == "xl" {
+    @return "lg";
+  } @else if $key == "lg" {
+    @return "md";
+  } @else if $key == "md" {
+    @return "sm";
+  } @else if $key == "sm" {
+    @return "xs";
+  } @else {
+    @return null;
+  }
+}
+
+@mixin media-breakpoint-up($key: "xs") {
+  $down: _get($adw-grid-breakpoints, quote($key));
+
+  @media (min-width: $down) {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-down($key: "xs") {
+  $down: _get($adw-grid-breakpoints, quote($key));
+
+  @media (max-width: $down) {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-only($key: "xs") {
+  @if $key == "xxl" {
+    $xxl: _get($adw-grid-breakpoints, "xxl");
+
+    @media (min-width: $xxl) {
+      @content;
+    }
+  } @else {
+    $min: _get($adw-grid-breakpoints, $key);
+    $max: _get($adw-grid-breakpoints, upper-breakpoint($key));
+
+    @media (min-width: #{$min}) and (max-width: #{$max}) {
+      @content;
+    }
+  }
+}
+
+@mixin media-breakpoint-between($start: "xs", $end: "xxl") {
+  $start: _get($adw-grid-breakpoints, $start);
+  $end: _get($adw-grid-breakpoints, $end);
+
+  @media (min-width: #{$start}) and (max-width: #{$end}) {
+    @content;
+  }
+}

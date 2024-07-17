@@ -1,0 +1,49 @@
+$adw-entry-sizes: (
+  "medium": (
+    "padding": 2.5rem 1.6rem 0.7rem 1.6rem,
+    "min-width": 10rem,
+    "height": 5.4rem,
+
+    "label-top-active": 0.9rem,
+    "label-top-empty": 1.6rem,
+    "label-ph": 1.6rem,
+
+    "indicator-top": 1rem,
+    "indicator-right": 1.2rem,
+
+    "label-fs": adw-text-fs(small),
+    "value-fs": adw-text-fs(medium),
+  ),
+  "small": (
+    "padding": 1.4rem 1rem 0.4rem 1rem,
+    "min-width": 8rem,
+    "height": 3.4rem,
+
+    "label-top-active": 0.3rem,
+    "label-top-empty": 1rem,
+    "label-ph": 1rem,
+
+    "indicator-top": 0.3rem,
+    "indicator-right": 0.6rem,
+
+    "label-fs": adw-text-fs(mini),
+    "value-fs": adw-text-fs(small),
+  ),
+  "large": (
+    "padding": 2.6rem 1.8rem 0.6rem 1.8rem,
+    "min-width": 14rem,
+    "height": 6.4rem,
+
+    "label-top-active": 1rem,
+    "label-top-empty": 2.1rem,
+    "label-ph": 1.8rem,
+
+    "indicator-top": 1rem,
+    "indicator-right": 1.2rem,
+
+    "label-fs": adw-text-fs(medium),
+    "value-fs": adw-text-fs(large),
+  ),
+);
+
+@include variants-map-to-component("entry", $adw-entry-sizes, "medium");

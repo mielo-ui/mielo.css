@@ -1,0 +1,29 @@
+$adw-view-default-colors: (
+  "dark": (
+    "sidebar": #2a2a2a,
+    "window": #242424,
+    "content": #{rgba(#fff, 0.08)},
+    "osd": #0b0b0b,
+  ),
+  "light": (
+    "sidebar": #f2f2f2,
+    "window": #fafafa,
+    "content": #fff,
+    "osd": #4b4b4b,
+  ),
+);
+
+@function map-accents-to-view($theme, $accent, $colors) {
+  $bg: _get($colors, "bg");
+
+  @return (
+    "bg": if($theme == "dark", darken($bg, 20%), lighten($bg, 20%)),
+    "container": $bg
+  );
+}
+
+@include accents-map-to-component(
+  "view",
+  $adw-view-default-colors,
+  map-accents-to-view
+);

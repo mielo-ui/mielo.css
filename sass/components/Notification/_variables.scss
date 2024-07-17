@@ -1,0 +1,13 @@
+:root,
+[data-theme="light"] {
+  --adw-title-default-color: 0, 0, 0;
+}
+
+[data-theme="dark"] {
+  --adw-title-default-color: 255, 255, 255;
+}
+
+:root,
+[data-theme="light"],
+[data-theme="dark"] {
+}

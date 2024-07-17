@@ -1,0 +1,43 @@
+$adw-row-item-default-colors: (
+  "light": (
+    "overlay": transparent,
+    "bg": #ebebeb,
+  ),
+  "dark": (
+    "overlay": transparent,
+    "bg": #383838,
+  ),
+);
+
+$adw-rows-default-colors: (
+  "light": (
+    "border": rgba(#000, 0.07),
+  ),
+  "dark": (
+    "border": rgba(#000, 0.37),
+  ),
+);
+
+@function map-accents-to-row-item($theme, $accent, $colors) {
+  $color: _get($colors, "color");
+  $bg: _get($colors, "bg");
+
+  @return ("overlay": rgba($bg, 0.08), "outline": $color);
+}
+
+@function map-accents-to-rows($theme, $accent, $colors) {
+  @return ();
+}
+
+@include accents-map-to-component(
+  "row.item",
+  $adw-row-item-default-colors,
+  map-accents-to-row-item
+);
+
+@include accents-map-to-component(
+  "rows",
+  $adw-rows-default-colors,
+  map-accents-to-rows,
+  $adw-empty-accents-by-theme
+);

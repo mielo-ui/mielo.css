@@ -1,0 +1,35 @@
+.adw.select {
+  position: relative;
+  z-index: 10;
+  margin: 0;
+
+  min-width: var(--adw-select-min-width);
+
+  // Show outline when focused
+  &.opened,
+  &:focus {
+    > .content {
+      > .base {
+        outline-width: 0.2rem;
+      }
+    }
+  }
+
+  > .content {
+    height: var(--adw-select-height);
+    position: relative;
+    z-index: 10;
+    width: 100%;
+  }
+
+  > .menu {
+    background-color: var(--adw-select-bg-main);
+    transition: height 0.3s ease;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+  }
+}

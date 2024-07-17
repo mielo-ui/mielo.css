@@ -1,0 +1,28 @@
+$adw-slider-sizes: (
+  "medium": (
+    "min-length": 12rem,
+    "thumb-size": 2rem,
+    "height": 0.4rem,
+
+    // ($thumb-size - var($slider-height) / 2
+    "padding-v": calc((2rem - 0.4rem) / 2),
+  ),
+  "small": (
+    "min-length": 8rem,
+    "thumb-size": 1.4rem,
+    "height": 0.2rem,
+
+    // ($thumb-size - var($slider-height) / 2
+    "padding-v": calc((1.4rem - 0.2rem) / 2),
+  ),
+  "large": (
+    "min-length": 14rem,
+    "thumb-size": 2.6rem,
+    "height": 0.8rem,
+
+    // ($thumb-size - var($slider-height) / 2
+    "padding-v": calc((2.6rem - 0.8rem) / 2),
+  ),
+);
+
+@include variants-map-to-component("slider", $adw-slider-sizes, "medium");

@@ -1,0 +1,65 @@
+$active-tab-color: #e6e6e6;
+
+.adw.tabs {
+  height: 34px;
+  width: auto;
+  @include flex(row);
+
+  .tab {
+    margin-right: 10px;
+
+    &:last-child {
+      margin-right: 0px;
+    }
+  }
+
+  .tab {
+    @include flex(row, center, center);
+    transition: all 0.3s ease;
+    padding: 0 16px;
+    min-width: 80;
+    height: 34px;
+
+    text-decoration: none;
+    user-select: none;
+    cursor: pointer;
+
+    background-color: transparentize($active-tab-color, 1);
+    // color: $default-text-color;
+    font-size: var(adw-text-fs(large));
+    border-radius: 6px;
+    font-weight: 700;
+
+    .icon {
+      margin-right: 12px;
+
+      svg {
+        max-height: 16px;
+        width: 16px;
+      }
+    }
+
+    &.active,
+    &:hover {
+      background-color: #e6e6e6;
+    }
+  }
+
+  &.dynamic-overlay {
+    position: relative;
+
+    .active-overlay {
+      background-color: #e6e6e6;
+      border-radius: 6px;
+      position: absolute;
+      height: 34px;
+      width: 0px;
+    }
+
+    .tab {
+      &.active {
+        background-color: transparentize($active-tab-color, 1);
+      }
+    }
+  }
+}

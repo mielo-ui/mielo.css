@@ -1,0 +1,11 @@
+$adw-view-states: (
+  "medium": (
+    "pv": 1.2rem,
+    "ph": 1.2rem,
+
+    "rounded-extra": 1.2rem,
+    "rounded": 0.6rem,
+  ),
+);
+
+@include variants-map-to-component("view", $adw-view-states, "medium");

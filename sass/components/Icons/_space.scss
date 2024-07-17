@@ -1,0 +1,22 @@
+$adw-icons-space: (
+  "small": (
+    "space": 0.2rem,
+  ),
+  "default": (
+    "space": 0.4rem,
+  ),
+  "large": (
+    "space": 0.6rem,
+  ),
+  "big": (
+    "space": 0.8rem,
+  ),
+);
+
+@include variants-map-to-component(
+  "icon",
+  $adw-icons-space,
+  "default",
+  "space",
+  true
+);

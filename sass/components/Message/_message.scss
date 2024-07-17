@@ -1,0 +1,54 @@
+.adw.message {
+  // prettier-ignore
+  background-image:
+        linear-gradient(
+            var(--adw-message-overlay),
+            var(--adw-message-overlay)
+        ),
+        linear-gradient(
+            var(--adw-message-bg),
+            var(--adw-message-bg)
+        );
+
+  display: flex;
+
+  border: 0.1rem solid var(--adw-message-shade);
+  border-radius: var(--adw-message-rounded);
+
+  margin: var(--adw-message-margin-v) 0;
+  padding: var(--adw-message-padding);
+
+  > .content {
+    flex: 1;
+
+    > .title {
+      font-size: var(--adw-message-title-fs);
+      color: var(--adw-message-title-fg);
+      font-weight: 700;
+    }
+
+    > .description {
+      margin-top: var(--adw-message-title-space);
+
+      font-size: var(--adw-message-description-fs);
+      color: var(--adw-message-description-fg);
+      font-weight: 400;
+    }
+  }
+
+  > .icon {
+    margin-right: var(--adw-message-icon-space);
+
+    .adw.icon {
+      --adw-icon-fg: var(--adw-message-title-fg);
+    }
+  }
+
+  > .adw.button.close {
+    margin-left: var(--adw-message-icon-space);
+
+    .adw.icon {
+      --adw-icon-fg: var(--adw-message-description-fg);
+    }
+  }
+}

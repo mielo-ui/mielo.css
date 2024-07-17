@@ -1,0 +1,75 @@
+.adw.checkbox {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+
+  > .input {
+    display: none;
+  }
+
+  > .label {
+    position: relative;
+
+    align-items: center;
+    display: flex;
+
+    > .content {
+      font-size: var(--adw-checkbox-label-fs);
+      color: var(--adw-checkbox-label-fg);
+      font-weight: 400;
+
+      margin-left: var(--adw-checkbox-content-margin);
+    }
+  }
+}
+
+// Default checkbox style
+.adw.checkbox {
+  > .label {
+    > .indicator {
+      border: 0.2rem solid var(--adw-checkbox-border);
+      border-radius: var(--adw-checkbox-rounded);
+      background-color: rgba(0, 0, 0, 0);
+
+      transition: all 0.2s ease;
+      display: block;
+
+      height: var(--adw-checkbox-size);
+      width: var(--adw-checkbox-size);
+
+      > .icon {
+        > svg {
+          color: var(--adw-checkbox-icon-fg);
+          transition: color 0.2s ease;
+
+          margin: var(--adw-checkbox-icon-offset);
+          height: var(--adw-checkbox-icon-size);
+          width: var(--adw-checkbox-icon-size);
+
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  // When checked
+  .input:checked + .label {
+    > .indicator {
+      border-color: var(--adw-checkbox-border-active);
+      background-color: var(--adw-checkbox-bg);
+
+      > .icon {
+        > svg {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  // Circular checkbox style
+  &.circular {
+    > .label > .indicator {
+      border-radius: 50%;
+    }
+  }
+}

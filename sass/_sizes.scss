@@ -1,0 +1,41 @@
+@use "sass:map";
+
+$adw-text-size: (
+  "mini": 0.8rem,
+  "tiny": 1rem,
+  "small": 1.2rem,
+  "medium": 1.4rem,
+  "large": 1.6rem,
+  "big": 2rem,
+  "huge": 2.3rem,
+  "massive": 2.6rem,
+);
+
+$adw-icon-size: (
+  "mini": 0.4rem,
+  "tiny": 0.8rem,
+  "small": 1.2rem,
+  "medium": 1.6rem,
+  "large": 2rem,
+  "big": 2.4rem,
+  "huge": 2.8rem,
+  "massive": 3.2rem,
+);
+
+$adw-rounded-size: (
+  "small": 0.2rem,
+  "medium": 0.6rem,
+  "large": 1.2rem,
+);
+
+@function adw-text-fs($name: medium) {
+  @return _get($adw-text-size, quote($name));
+}
+
+@function adw-icon-size($name: medium) {
+  @return _get($adw-icon-size, quote($name));
+}
+
+@function adw-rounded($name: medium) {
+  @return _get($adw-rounded-size, quote($name));
+}

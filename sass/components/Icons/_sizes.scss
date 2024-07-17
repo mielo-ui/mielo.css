@@ -1,0 +1,28 @@
+$adw-icon-sizes: (
+  "mini": (
+    "size": adw-icon-size(mini),
+  ),
+  "tiny": (
+    "size": adw-icon-size(tiny),
+  ),
+  "small": (
+    "size": adw-icon-size(small),
+  ),
+  "medium": (
+    "size": adw-icon-size(medium),
+  ),
+  "large": (
+    "size": adw-icon-size(large),
+  ),
+  "big": (
+    "size": adw-icon-size(big),
+  ),
+  "huge": (
+    "size": adw-icon-size(huge),
+  ),
+  "massive": (
+    "size": adw-icon-size(massive),
+  ),
+);
+
+@include variants-map-to-component("icon", $adw-icon-sizes, "medium");

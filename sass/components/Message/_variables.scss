@@ -1,0 +1,15 @@
+:root,
+[data-theme="light"] {
+  // @TODO
+}
+
+[data-theme="dark"] {
+  // @TODO
+}
+
+:root,
+[data-theme="light"],
+[data-theme="dark"] {
+  --adw-message-rounded: 1.2rem;
+  --adw-message-margin-v: 1.2rem;
+}

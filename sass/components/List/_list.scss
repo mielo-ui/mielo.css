@@ -1,0 +1,12 @@
+.adw.list:not(.item) {
+  list-style-type: none;
+  display: block;
+
+  margin: var(--adw-list-margin-v) var(--adw-list-margin-h);
+  padding: 0;
+
+  // States
+  &.no-offset {
+    margin: 0;
+  }
+}

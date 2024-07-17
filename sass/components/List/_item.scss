@@ -1,0 +1,36 @@
+.adw.list.item {
+  padding: var(--adw-list-item-padding-v) 0;
+  margin: var(--adw-list-item-margin) 0;
+  text-decoration: none;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// States
+.adw.list > .item.activatable {
+  padding: var(--adw-list-item-padding-v) var(--adw-list-item-padding-h);
+  border-radius: var(--adw-list-item-rounded);
+  background-color: var(--adw-list-item-bg-main);
+  transition: all 0.4s ease;
+
+  user-select: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--adw-list-item-bg-hover) !important;
+  }
+
+  &:active {
+    background-color: var(--adw-list-item-bg-active) !important;
+  }
+}
+
+.adw.list > .item.active {
+  background-color: var(--adw-list-item-bg-hover) !important;
+}

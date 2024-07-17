@@ -1,0 +1,14 @@
+:root,
+[data-theme="light"] {
+  --adw-modal-default-color: 0, 0, 0;
+}
+
+[data-theme="dark"] {
+  --adw-modal-default-color: 255, 255, 255;
+}
+
+:root,
+[data-theme="light"],
+[data-theme="dark"] {
+  --adw-modal-overlay-bg: rgba(var(--adw-modal-default-color), 0.3);
+}

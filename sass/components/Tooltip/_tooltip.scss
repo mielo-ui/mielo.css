@@ -1,0 +1,11 @@
+.adw.tooltip {
+  border: 0.1rem solid var(--adw-tooltip-shade);
+  background-color: var(--adw-tooltip-bg);
+  color: var(--adw-tooltip-fg);
+
+  > .content {
+    font-size: var(--adw-tooltip-fs);
+    flex-direction: column;
+    display: flex;
+  }
+}

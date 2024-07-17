@@ -1,0 +1,66 @@
+.adw.item {
+  @include flex(row, "", center);
+  text-decoration: none;
+
+  &.vertical {
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+
+    > .indicator {
+      margin-bottom: var(--adw-item-margin-between);
+      margin-right: 0;
+    }
+
+    > .side {
+      margin-left: var(--adw-item-margin-between);
+      margin-left: 0;
+    }
+  }
+
+  &.center {
+    justify-content: center;
+
+    &.vertical {
+      align-items: center;
+    }
+  }
+
+  > .indicator {
+    margin-right: var(--adw-item-margin-between);
+  }
+
+  > .content {
+    @include flex(column);
+    flex: 1;
+
+    &.inverted {
+      > .title {
+        font-size: var(--adw-item-description-fs);
+        color: var(--adw-item-description-fg);
+      }
+
+      > .description {
+        font-size: var(--adw-item-title-fs);
+        color: var(--adw-item-title-fg);
+      }
+    }
+
+    > .title {
+      font-size: var(--adw-item-title-fs);
+      color: var(--adw-item-title-fg);
+      font-weight: 400;
+    }
+
+    > .description {
+      font-size: var(--adw-item-description-fs);
+      color: var(--adw-item-description-fg);
+      font-weight: 400;
+    }
+  }
+
+  > .side {
+    @include flex(row, flex-end, center);
+    margin-left: var(--adw-item-margin-between);
+  }
+}

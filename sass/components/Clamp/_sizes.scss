@@ -1,0 +1,9 @@
+$adw-clamp-sizes: (
+  "medium": (
+    "container-padding-h": 1.2rem,
+    "container-padding-v": 1.2rem,
+    "size": 55rem,
+  ),
+);
+
+@include variants-map-to-component("clamp", $adw-clamp-sizes, "medium");

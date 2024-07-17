@@ -1,0 +1,28 @@
+.adw.rows {
+  border: 0.1rem solid var(--adw-rows-border-color);
+  border-radius: var(--adw-rows-border-radius);
+  background-color: var(--adw-rows-bg);
+  background-clip: padding-box;
+  position: relative;
+  margin: 0;
+
+  min-width: 20rem;
+  width: 100%;
+
+  flex-direction: column;
+  display: flex;
+}
+
+.rows > .row {
+  border-radius: 0;
+
+  &:first-child {
+    border-top-right-radius: var(--adw-rows-border-radius) !important;
+    border-top-left-radius: var(--adw-rows-border-radius) !important;
+  }
+
+  &:last-child {
+    border-bottom-left-radius: var(--adw-rows-border-radius) !important;
+    border-bottom-right-radius: var(--adw-rows-border-radius) !important;
+  }
+}

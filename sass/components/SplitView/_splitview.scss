@@ -1,0 +1,39 @@
+.adw.split-view {
+  overflow: hidden;
+  display: flex;
+
+  max-height: 100%;
+  height: 100%;
+  width: 100%;
+
+  > .sidebar {
+    border-right: 1px solid var(--adw-split-view-divider-color);
+    background-color: var(--adw-split-view-sidebar-bg);
+    transition: margin-left 0.3s ease;
+
+    flex-direction: column;
+    display: flex;
+
+    margin-left: -28rem;
+    width: 28rem;
+
+    &.opened {
+      margin-left: 0;
+    }
+  }
+
+  > .content {
+    background-color: var(--adw-split-view-content-bg);
+
+    flex-direction: column;
+    display: flex;
+    flex: 1;
+
+    max-height: 100%;
+    height: 100%;
+    width: 100%;
+
+    min-height: 0;
+    min-width: 0;
+  }
+}

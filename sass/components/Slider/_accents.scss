@@ -1,0 +1,38 @@
+$adw-slider-default-colors: (
+  "dark": (
+    "bg": (
+      "slider": rgb(40, 40, 40),
+      "range": rgb(21, 83, 158),
+      "thumb": rgb(56, 56, 56),
+    ),
+
+    "thumb-border": rgb(27, 27, 27),
+  ),
+  "light": (
+    "bg": (
+      "slider": rgb(222, 221, 218),
+      "range": rgb(53, 132, 228),
+      "thumb": rgb(255, 255, 255),
+    ),
+
+    "thumb-border": rgb(193, 186, 181),
+  ),
+);
+
+@function map-accents-to-slider($theme, $accent, $colors) {
+  $color: _get($colors, "color");
+  $bg: _get($colors, "bg");
+
+  @return (
+    "bg": (
+      "thumb": darken($bg, 25%),
+      "range": $bg,
+    )
+  );
+}
+
+@include accents-map-to-component(
+  "slider",
+  $adw-slider-default-colors,
+  map-accents-to-slider
+);

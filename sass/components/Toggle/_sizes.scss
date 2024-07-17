@@ -1,0 +1,58 @@
+$adw-toggle-sizes: (
+  "medium": (
+    "label-fs": adw-text-fs(medium),
+    "content-margin": 0.8rem,
+
+    "rounded": 3.4rem,
+    "height": 2.4rem,
+    "width": 4rem,
+
+    "indicator": (
+      "icon-size": 1.2rem,
+      "height": 2rem,
+      "width": 2rem,
+
+      "active-offset": 1.6rem,
+      "offset-v": 0.2rem,
+      "offset-h": 0.2rem,
+    ),
+  ),
+  "small": (
+    "label-fs": adw-text-fs(small),
+    "content-margin": 0.6rem,
+
+    "rounded": 2.4rem,
+    "height": 1.8rem,
+    "width": 3.4rem,
+
+    "indicator": (
+      "icon-size": 0.8rem,
+      "height": 1.5rem,
+      "width": 1.5rem,
+
+      "active-offset": 1.55rem,
+      "offset-v": 0.09rem,
+      "offset-h": 0.2rem,
+    ),
+  ),
+  "large": (
+    "label-fs": adw-text-fs(large),
+    "content-margin": 1rem,
+
+    "rounded": 4.4rem,
+    "height": 2.8rem,
+    "width": 4.4rem,
+
+    "indicator": (
+      "icon-size": 1.6rem,
+      "height": 2.4rem,
+      "width": 2.4rem,
+
+      "active-offset": 1.6rem,
+      "offset-v": 0.2rem,
+      "offset-h": 0.2rem,
+    ),
+  ),
+);
+
+@include variants-map-to-component("toggle", $adw-toggle-sizes, "medium");

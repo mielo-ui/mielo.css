@@ -1,0 +1,79 @@
+@use "sass:list";
+@use "sass:map";
+@use "sass:meta";
+
+// in:
+//   $theme: ("dark" | "light")                  | name for access to core declaration styles
+//   $default: vars_map                          | initial default variables
+//   $cb: ($theme, $accent, $colors) -> vars_map | callback that returns appearance variables
+// out: map<accent_name, vars_map>               | its map with mapped variables by accent
+@function accents-map-to-vars($accents-by-theme, $theme, $default, $cb) {
+  $accents: _get($accents-by-theme, $theme);
+  $map: (
+    "default": $default,
+  );
+
+  @each $accent, $colors in $accents {
+    $vars: _exec($cb, $theme, $accent, $colors);
+    $map: map.set($map, $accent, $vars);
+  }
+
+  @return $map;
+}
+
+// in:
+//   $name: string                               | component name in kebab-case
+//   $theme-vars-map: map<accent_name, vars_map> | component variables by accent
+// out: component css variables by accent
+@mixin accents-expand-mapped-vars($class, $theme-vars-map) {
+  $name: _kebab-case($class);
+
+  @each $accent, $vars in $theme-vars-map {
+    $class-ext: if($accent != "default", "." + $accent, "");
+    $flat: map-flatten($vars);
+
+    .adw.#{$class}#{$class-ext} {
+      @each $item in $flat {
+        $value: _get($item, 2);
+        $keys: _get($item, 1);
+        $key: _join($keys, "-");
+
+        --adw-#{$name}-#{$key}: #{$value};
+      }
+    }
+  }
+}
+
+// in:
+//   $class: string                              | target component class name
+//   $default: (dark: vars_map, light: vars_map) | default variables for component
+//   $cb: ($theme, $accent, $colors) -> vars_map | callback that returns appearance variables
+// out: declare accent vars for component, and apperance
+@mixin accents-map-to-component(
+  $class,
+  $default,
+  $cb,
+  $accents-by-theme: $adw-accents-by-theme
+) {
+  $light: accents-map-to-vars(
+    $accents-by-theme,
+    "light",
+    _get($default, "light"),
+    $cb
+  );
+  $dark: accents-map-to-vars(
+    $accents-by-theme,
+    "dark",
+    _get($default, "dark"),
+    $cb
+  );
+
+  :root,
+  [data-theme="light"] {
+    @include accents-expand-mapped-vars($class, $light);
+  }
+
+  [data-theme="dark"] {
+    @include accents-expand-mapped-vars($class, $dark);
+  }
+}

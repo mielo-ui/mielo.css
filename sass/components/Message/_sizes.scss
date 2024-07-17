@@ -1,0 +1,53 @@
+$adw-message-sizes: (
+  "tiny": (
+    "description-fs": adw-text-fs(mini),
+    "title-fs": adw-text-fs(tiny),
+    "padding": 0.8rem 1.2rem,
+    "title-space": 0rem,
+    "icon-space": 0.4rem,
+  ),
+  "small": (
+    "description-fs": adw-text-fs(tiny),
+    "title-fs": adw-text-fs(small),
+    "padding": 1rem 1.4rem,
+    "title-space": 0.2rem,
+    "icon-space": 0.4rem,
+  ),
+  "medium": (
+    "description-fs": adw-text-fs(small),
+    "title-fs": adw-text-fs(medium),
+    "padding": 1.2rem 1.6rem,
+    "title-space": 0.4rem,
+    "icon-space": 0.6rem,
+  ),
+  "large": (
+    "title-fs": adw-text-fs(large),
+    "description-fs": 1.5rem,
+    "padding": 1.4rem 1.8rem,
+    "title-space": 0.6rem,
+    "icon-space": 0.8rem,
+  ),
+  "big": (
+    "description-fs": adw-text-fs(large),
+    "title-fs": adw-text-fs(big),
+    "padding": 1.6rem 2rem,
+    "title-space": 0.6rem,
+    "icon-space": 1rem,
+  ),
+  "huge": (
+    "description-fs": adw-text-fs(large),
+    "title-fs": adw-text-fs(huge),
+    "padding": 1.8rem 2.2rem,
+    "title-space": 0.6rem,
+    "icon-space": 1.2rem,
+  ),
+  "massive": (
+    "description-fs": adw-text-fs(large),
+    "title-fs": adw-text-fs(massive),
+    "padding": 2rem 2.4rem,
+    "title-space": 0.6rem,
+    "icon-space": 1.4rem,
+  ),
+);
+
+@include variants-map-to-component("message", $adw-message-sizes, "medium");

@@ -1,0 +1,31 @@
+$adw-radio-default-colors: (
+  "dark": (
+    "label-fg": #{rgba(#fff, 0.6)},
+
+    "border-active": #{rgba(#1a5fb4, 1)},
+    "bg": #{rgba(#3584e4, 1)},
+  ),
+  "light": (
+    "label-fg": #{rgba(#fff, 0.6)},
+
+    "border-active": #{rgba(#1a5fb4, 1)},
+    "bg": #{rgba(#3584e4, 1)},
+  ),
+);
+
+@function map-accents-to-radio($theme, $accent, $colors) {
+  $color: _get($colors, "color");
+  $bg: _get($colors, "bg");
+
+  @return (
+    "border-active": #{rgba(darken($bg, 15%), 1)},
+    "bg": #{rgba($bg, 1)}
+  );
+}
+
+@include accents-map-to-component(
+  "radio",
+  $adw-radio-default-colors,
+  map-accents-to-radio,
+  _omit($adw-accents-by-theme, "accent")
+);

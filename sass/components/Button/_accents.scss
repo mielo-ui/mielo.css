@@ -1,0 +1,49 @@
+$adw-button-default-colors: (
+  "dark": (
+    "fill": filled-button-bg(#fff, "lighten"),
+    "bg": opacity-button-bg(#fff),
+    "fg-invert": rgba(#000, 0.8),
+    "fg": #fff,
+  ),
+  "light": (
+    "fill": filled-button-bg(#000, "darken"),
+    "bg": opacity-button-bg(#000),
+    "fg-invert": rgba(#fff, 0.8),
+    "fg": rgba(#000, 0.8),
+  ),
+);
+
+@function map-accents-to-button($theme, $accent, $colors) {
+  $color: _get($colors, "color");
+  $bg: _get($colors, "bg");
+
+  $fill: filled-button-bg($bg, $theme);
+  $main: opacity-button-bg($bg);
+
+  @return ("fill": $fill, "bg": $main);
+}
+
+@include accents-map-to-component(
+  "button",
+  $adw-button-default-colors,
+  map-accents-to-button
+);
+
+.adw.button.filled {
+  --adw-button-bg-active: var(--adw-button-fill-active) !important;
+  --adw-button-bg-hover: var(--adw-button-fill-hover) !important;
+  --adw-button-bg-main: var(--adw-button-fill-main) !important;
+  --adw-button-fg: #fff !important;
+
+  &:not(.accent):not(.success):not(.error):not(.warning) {
+    --adw-button-fg: var(--adw-button-fg-invert) !important;
+  }
+}
+
+.adw.button.transparent {
+  --adw-button-bg-main: var(--adw-button-bg-transparent) !important;
+}
+
+.adw.button.tertiary {
+  --adw-button-fg: var(--adw-button-fill-main) !important;
+}

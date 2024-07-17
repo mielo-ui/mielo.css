@@ -1,0 +1,62 @@
+.adw.headerbar {
+  // prettier-ignore
+  background-image:
+        linear-gradient(
+            var(--adw-headerbar-bg-overlay),
+            var(--adw-headerbar-bg-overlay)
+        ),
+        linear-gradient(
+            var(--adw-headerbar-bg-main),
+            var(--adw-headerbar-bg-main)
+        );
+
+  position: relative;
+
+  justify-content: space-between;
+  align-items: center;
+
+  flex-direction: row;
+  display: flex;
+
+  padding: 0 var(--adw-headerbar-ph);
+  height: var(--adw-headerbar-size);
+  width: 100%;
+
+  &.transparent {
+    --adw-headerbar-bg-main: transparent;
+  }
+
+  &.bordered {
+    border-bottom: 0.1rem solid var(--adw-headerbar-border);
+  }
+
+  .left,
+  .right {
+    align-items: center;
+    display: flex;
+    flex: 1;
+  }
+
+  .left {
+    justify-content: flex-start;
+  }
+
+  .right {
+    justify-content: flex-end;
+  }
+
+  > .center {
+    max-width: 20rem;
+    width: 20rem;
+
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+    .adw.header.attached {
+      .title {
+        margin-bottom: 0.2rem;
+      }
+    }
+  }
+}

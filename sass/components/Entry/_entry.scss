@@ -1,0 +1,94 @@
+.adw.entry {
+  // prettier-ignore
+  background-image:
+        linear-gradient(
+            var(--adw-entry-bg-overlay),
+            var(--adw-entry-bg-overlay)
+        ),
+        linear-gradient(
+            var(--adw-entry-bg-main),
+            var(--adw-entry-bg-main)
+        );
+
+  border-radius: var(--adw-entry-rounded);
+  background-clip: padding-box;
+  position: relative;
+  margin: 0;
+
+  min-width: var(--adw-entry-padding);
+  width: var(--adw-entry-padding);
+  height: var(--adw-entry-height);
+
+  label {
+    transition: 300ms ease all;
+    pointer-events: none;
+    position: absolute;
+
+    font-size: var(--adw-entry-value-fs);
+    color: var(--adw-entry-label-fg);
+    font-weight: normal;
+
+    top: var(--adw-entry-label-top-empty);
+    left: var(--adw-entry-label-ph);
+  }
+
+  textarea {
+    resize: none;
+  }
+
+  > input,
+  textarea {
+    transition: outline-width 100ms ease;
+    color: var(--adw-entry-value-fg);
+    background: none;
+    display: block;
+
+    font-size: var(--adw-entry-value-fs);
+    padding: var(--adw-entry-padding);
+    height: 100%;
+    width: 100%;
+
+    border-radius: var(--adw-entry-rounded);
+    border: none;
+
+    outline-color: var(--adw-entry-bg-outline);
+    outline-style: solid;
+    outline-width: 0;
+
+    &:focus {
+      color: var(--adw-entry-value-fg);
+      outline-width: 0.2rem;
+    }
+
+    &:focus ~ label,
+    &.filled ~ label {
+      top: var(--adw-entry-label-top-active);
+      font-size: var(--adw-entry-label-fs);
+      color: var(--adw-entry-label-fg);
+    }
+
+    &[type="password"] {
+      letter-spacing: 0.1rem;
+    }
+  }
+
+  // States
+  &.disabled {
+    opacity: 0.65;
+  }
+
+  &.fluid {
+    width: 100%;
+  }
+
+  // Indicator
+  .indicator {
+    right: var(--adw-entry-indicator-right);
+    top: var(--adw-entry-indicator-top);
+    position: absolute;
+
+    svg {
+      color: var(--adw-entry-value-fg);
+    }
+  }
+}

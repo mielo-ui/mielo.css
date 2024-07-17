@@ -1,0 +1,21 @@
+$adw-text-default-colors: (
+  "dark": (
+    "fg": #fff,
+  ),
+  "light": (
+    "fg": rgba(#000, 0.8),
+  ),
+);
+
+@function map-accents-to-text($theme, $accent, $colors) {
+  $color: _get($colors, "color");
+  $bg: _get($colors, "bg");
+
+  @return ("fg": $color);
+}
+
+@include accents-map-to-component(
+  "text",
+  $adw-text-default-colors,
+  map-accents-to-text
+);
