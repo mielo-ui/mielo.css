@@ -1,11 +1,5 @@
-.mie.scrollable-view {
-  .rcs-custom-scrollbar {
-    right: var(--mie-scrollbar-offset);
-    width: var(--mie-scrollbar-width);
-  }
-
-  .rcs-inner-handle {
-    background-color: var(--mie-scrollbar-default-color) !important;
-    border-radius: var(--mie-scrollbar-width);
-  }
+.mie.scrollable {
+  scrollbar-color: var(--adw-scrollable-thumb-bg) var(--adw-scrollable-track-bg);
+  scrollbar-width: thin;
+  overflow: scroll;
 }

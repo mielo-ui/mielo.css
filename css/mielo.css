@@ -2304,31 +2304,57 @@ h4.mie.title,
   opacity: 1;
 }
 
-:root,
-[data-theme=light] {
-  --mie-scrollbar-default-color: 0, 0, 0;
-  --mie-scrollbar-bg: rgba(var(--mie-scrollbar-default-color), 0.15);
+:root .mie.scrollable,
+[data-theme=light] .mie.scrollable {
+  --mie-scrollable-thumb-bg: rgba(0, 0, 0, 0.2);
+  --mie-scrollable-track-bg: rgba(0, 0, 0, 0.05);
+}
+:root .mie.scrollable.accent,
+[data-theme=light] .mie.scrollable.accent {
+  --mie-scrollable-thumb-bg: rgba(53, 132, 228, 0.2);
+  --mie-scrollable-track-bg: rgba(53, 132, 228, 0.05);
+}
+:root .mie.scrollable.success,
+[data-theme=light] .mie.scrollable.success {
+  --mie-scrollable-thumb-bg: rgba(46, 194, 126, 0.2);
+  --mie-scrollable-track-bg: rgba(46, 194, 126, 0.05);
+}
+:root .mie.scrollable.warning,
+[data-theme=light] .mie.scrollable.warning {
+  --mie-scrollable-thumb-bg: rgba(229, 165, 10, 0.2);
+  --mie-scrollable-track-bg: rgba(229, 165, 10, 0.05);
+}
+:root .mie.scrollable.error,
+[data-theme=light] .mie.scrollable.error {
+  --mie-scrollable-thumb-bg: rgba(224, 27, 36, 0.2);
+  --mie-scrollable-track-bg: rgba(224, 27, 36, 0.05);
 }
 
-[data-theme=dark] {
-  --mie-scrollbar-default-color: 255, 255, 255;
-  --mie-scrollbar-bg: rgba(var(--mie-scrollbar-default-color), 0.15);
+[data-theme=dark] .mie.scrollable {
+  --mie-scrollable-thumb-bg: rgba(255, 255, 255, 0.2);
+  --mie-scrollable-track-bg: rgba(255, 255, 255, 0.05);
+}
+[data-theme=dark] .mie.scrollable.accent {
+  --mie-scrollable-thumb-bg: rgba(53, 132, 228, 0.2);
+  --mie-scrollable-track-bg: rgba(53, 132, 228, 0.05);
+}
+[data-theme=dark] .mie.scrollable.success {
+  --mie-scrollable-thumb-bg: rgba(38, 162, 105, 0.2);
+  --mie-scrollable-track-bg: rgba(38, 162, 105, 0.05);
+}
+[data-theme=dark] .mie.scrollable.warning {
+  --mie-scrollable-thumb-bg: rgba(205, 147, 9, 0.2);
+  --mie-scrollable-track-bg: rgba(205, 147, 9, 0.05);
+}
+[data-theme=dark] .mie.scrollable.error {
+  --mie-scrollable-thumb-bg: rgba(192, 28, 40, 0.2);
+  --mie-scrollable-track-bg: rgba(192, 28, 40, 0.05);
 }
 
-:root,
-[data-theme=light],
-[data-theme=dark] {
-  --mie-scrollbar-width: 0.4rem;
-  --mie-scrollbar-offset: 0.4rem;
-}
-
-.mie.scrollable-view .rcs-custom-scrollbar {
-  right: var(--mie-scrollbar-offset);
-  width: var(--mie-scrollbar-width);
-}
-.mie.scrollable-view .rcs-inner-handle {
-  background-color: var(--mie-scrollbar-default-color) !important;
-  border-radius: var(--mie-scrollbar-width);
+.mie.scrollable {
+  scrollbar-color: var(--adw-scrollable-thumb-bg) var(--adw-scrollable-track-bg);
+  scrollbar-width: thin;
+  overflow: scroll;
 }
 
 :root,
@@ -2622,6 +2648,7 @@ h4.mie.title,
   flex-direction: row;
   display: flex;
   padding: 0 var(--mie-headerbar-ph);
+  min-height: var(--mie-headerbar-size);
   height: var(--mie-headerbar-size);
   width: 100%;
 }
