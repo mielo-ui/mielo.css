@@ -28,12 +28,29 @@ $mie-rounded-size: (
   "large": 1.2rem,
 );
 
+// margin/padding for views
+$mie-indent-size: (
+  "none": 0rem,
+  "mini": 0.4rem,
+  "tiny": 0.6rem,
+  "small": 0.8rem,
+  "medium": 1rem,
+  "large": 1.2rem,
+  "big": 1.6rem,
+  "huge": 2.0rem,
+  "massive": 2.4rem,
+);
+
 @function mie-text-fs($name: medium) {
   @return _get($mie-text-size, quote($name));
 }
 
 @function mie-icon-size($name: medium) {
   @return _get($mie-icon-size, quote($name));
+}
+
+@function mie-indent-size($name: medium) {
+  @return _get($mie-indent-size, quote($name));
 }
 
 @function mie-rounded($name: medium) {

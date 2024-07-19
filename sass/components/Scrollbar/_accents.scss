@@ -1,0 +1,27 @@
+$mie-scrollbar-default-colors: (
+  "dark": (
+    "thumb-bg": #{rgba(#FFF, 0.2)},
+    "track-bg": #{rgba(#FFF, 0.05)},
+  ),
+  "light": (
+    "thumb-bg": #{rgba(#000, 0.2)},
+    "track-bg": #{rgba(#000, 0.05)},
+  ),
+);
+
+@function map-accents-to-scrollbar($theme, $accent, $colors) {
+  $color: _get($colors, "color");
+  $bg: _get($colors, "bg");
+
+  @return (
+    "thumb-bg": #{rgba($bg, 0.2)},
+    "track-bg": #{rgba($bg, 0.05)},
+  );
+}
+
+@include accents-map-to-component(
+  "scrollable",
+  $mie-scrollbar-default-colors,
+  map-accents-to-scrollbar,
+  _omit($mie-accents-by-theme, "accent")
+);
