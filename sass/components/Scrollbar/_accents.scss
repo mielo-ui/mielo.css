@@ -1,7 +1,7 @@
 $mie-scrollbar-default-colors: (
   "dark": (
-    "thumb-bg": #{rgba(#FFF, 0.2)},
-    "track-bg": #{rgba(#FFF, 0.05)},
+    "thumb-bg": #{rgba(#fff, 0.2)},
+    "track-bg": #{rgba(#fff, 0.05)},
   ),
   "light": (
     "thumb-bg": #{rgba(#000, 0.2)},
@@ -13,10 +13,7 @@ $mie-scrollbar-default-colors: (
   $color: _get($colors, "color");
   $bg: _get($colors, "bg");
 
-  @return (
-    "thumb-bg": #{rgba($bg, 0.2)},
-    "track-bg": #{rgba($bg, 0.05)},
-  );
+  @return ("thumb-bg": #{rgba($bg, 0.2)}, "track-bg": #{rgba($bg, 0.05)});
 }
 
 @include accents-map-to-component(
