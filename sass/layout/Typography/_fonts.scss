@@ -1,0 +1,9 @@
+:root {
+  --mie-font-family: "Inter";
+}
+
+*,
+body {
+  font-family: var(--mie-font-family);
+  font-size: 10px;
+}

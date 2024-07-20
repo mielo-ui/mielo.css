@@ -1,29 +1,24 @@
-@import "Typography";
-@import "Item";
+// Core
 @import "Header";
 
-@import "Tooltip";
-@import "Icons";
+// Triggers
+@import "Activatable";
 @import "Button";
+
+// Checkbox
 @import "Checkbox";
 @import "Toggle";
 @import "Radio";
-@import "Entry";
+
+// Controls
 @import "Select";
+@import "Entry";
 @import "Slider";
+
+// Appearance
 @import "Progress";
+@import "Icons";
 
-@import "Scrollbar";
-@import "SplitView";
-@import "Clamp";
-@import "View";
-
-@import "HeaderBar";
-@import "Tabs";
-@import "List";
-@import "Rows";
-
-@import "Modal";
-@import "Message";
-@import "Notification";
-@import "Dialog";
+// Helpers
+@import "Divider";
+@import "Tooltip";

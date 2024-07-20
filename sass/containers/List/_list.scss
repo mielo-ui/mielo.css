@@ -1,0 +1,17 @@
+.mie.list:not(.item) {
+  list-style-type: none;
+  display: block;
+  padding: 0;
+
+  > .mie.list.item {
+    text-decoration: none;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

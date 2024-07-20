@@ -1,0 +1,10 @@
+// Make string with prefix if that string isnt empty
+@function prefix-if($source: "", $prefix: "", $is-postfix: false) {
+  $prefixed: if($is-postfix, $source + $prefix, $prefix + $source);
+  @return if(_is_empty($source), "", $prefixed);
+}
+
+// If condition is true - return value, otherwise - empty string
+@function if-or-empty($cond, $value) {
+  @return if($cond, $value, "");
+}

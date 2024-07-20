@@ -1,0 +1,24 @@
+$mie-activatable-default-colors: (
+  "dark": (
+    "bg": opacity-button-bg(#fff, true, (0.1, 0.15, 0.2)),
+  ),
+  "light": (
+    "bg": opacity-button-bg(#000, true, (0.1, 0.15, 0.2)),
+  ),
+);
+
+@function map-accents-to-activatable($theme, $accent, $colors) {
+  $color: _get($colors, "color");
+  $bg: _get($colors, "bg");
+
+  // prettier-ignore
+  @return (
+    "bg": opacity-button-bg($bg, true, (0.1, 0.15, 0.2))
+  );
+}
+
+@include accents-map-to-component(
+  "activatable",
+  $mie-activatable-default-colors,
+  map-accents-to-activatable
+);

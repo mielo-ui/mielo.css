@@ -1,0 +1,31 @@
+@use "sass:string";
+@use "sass:list";
+@use "sass:meta";
+@use "sass:map";
+
+// Mixin expand variables from nested map
+// @in: map<key, map | value>
+// @out: array<[array<keys>, value]>
+@function map-flatten($map, $prefix: ()) {
+  $result: ();
+
+  @each $key, $value in $map {
+    @if _is-map($value) {
+      $flatArray: map-flatten($value, _push($prefix, $key));
+      $result: _concat($result, $flatArray);
+    } @else {
+      $flat: (_push($prefix, $key), $value);
+      $result: _push($result, $flat);
+    }
+  }
+
+  @return $result;
+}
+
+// Mixin expand variables from nested map
+// @in: map<key, map | value>
+// @out: array<array<keys>>
+@function map-flatten-keys($map) {
+  $flatten: map-flatten($map);
+  @return _map($flatten, _first);
+}

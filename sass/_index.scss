@@ -1,11 +1,9 @@
 @import "../node_modules/reseter.css/css/reseter";
 @import "../node_modules/sassdash/index";
 
-@import "global";
-
-@import "mixins";
+@import "utils";
 @import "colors";
-@import "sizes";
-@import "fonts";
 
+@import "layout";
+@import "containers";
 @import "components";

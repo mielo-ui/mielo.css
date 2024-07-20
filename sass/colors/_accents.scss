@@ -1,35 +1,3 @@
-$mie-core-accents: (
-  // The main accent color and the matching text value
-  "accent":
-    (
-      "light": (
-        "color": mie-color("blue", 4),
-        "bg": mie-color("blue", 3),
-        "fg": white,
-      ),
-      "dark": (
-        "color": #78aeed,
-        "bg": mie-color("blue", 3),
-        "fg": white,
-      ),
-    ),
-
-  // destructive-action buttons
-  "destructive":
-    (
-      "light": (
-        "color": mie-color("red", 4),
-        "bg": mie-color("red", 3),
-        "fg": white,
-      ),
-      "dark": (
-        "color": #ff7b63,
-        "bg": mie-color("red", 4),
-        "fg": white,
-      ),
-    )
-);
-
 $mie-empty-accents-by-theme: (
   "light": (),
   "dark": (),

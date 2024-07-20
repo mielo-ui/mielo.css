@@ -1,0 +1,12 @@
+@mixin mie-light-theme() {
+  :root,
+  [data-theme="light"] {
+    @content;
+  }
+}
+
+@mixin mie-dark-theme() {
+  [data-theme="dark"] {
+    @content;
+  }
+}
