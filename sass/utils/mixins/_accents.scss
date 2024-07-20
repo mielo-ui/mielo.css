@@ -9,6 +9,7 @@
 // out: map<accent_name, vars_map>               | its map with mapped variables by accent
 @function accents-map-to-vars($accents-by-theme, $theme, $default, $cb) {
   $accents: _get($accents-by-theme, $theme);
+
   $map: (
     "default": $default,
   );
@@ -61,6 +62,7 @@
     _get($default, "light"),
     $cb
   );
+
   $dark: accents-map-to-vars(
     $accents-by-theme,
     "dark",
