@@ -1,3 +1,12 @@
+:root {
+  --mie-h4-fs: #{mie-text-fs(medium)};
+  --mie-h3-fs: #{mie-text-fs(large)};
+  --mie-h2-fs: #{mie-text-fs(big)};
+  --mie-h1-fs: #{mie-text-fs(huge)};
+
+  --mie-text-fs: #{mie-text-fs(medium)};
+}
+
 h1.mie.text.title,
 h2.mie.text.title,
 h3.mie.text.title,

@@ -23,7 +23,7 @@ $mie-progress-bar-default-colors: (
 @function map-accents-to-progress($theme, $accent, $colors) {
   $bg: _get($colors, "bg");
 
-  @return ("bg": #{rgba($bg, 0.2)});
+  @return ("bg": rgba($bg, 0.2));
 }
 
 @function map-accents-to-progress-bar($theme, $accent, $colors) {

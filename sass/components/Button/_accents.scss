@@ -2,14 +2,14 @@ $mie-button-default-colors: (
   "dark": (
     "fill": filled-button-bg(#fff, "lighten"),
     "bg": opacity-button-bg(#fff),
-    "fg-invert": rgba(#000, 0.8),
-    "fg": #fff,
+    "fg-invert": var(--mie-inverted-fg),
+    "fg": var(--mie-fg),
   ),
   "light": (
     "fill": filled-button-bg(#000, "darken"),
     "bg": opacity-button-bg(#000),
-    "fg-invert": rgba(#fff, 0.8),
-    "fg": rgba(#000, 0.8),
+    "fg-invert": var(--mie-inverted-fg),
+    "fg": var(--mie-fg),
   ),
 );
 

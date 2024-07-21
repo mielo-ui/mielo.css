@@ -29,7 +29,7 @@
 
   @if $prefix-directly {
     $variant-ext: if-or-empty($variant != $default-variant, $variant);
-    
+
     $prefix-ext: prefix-if(
       if(_is_empty($variant-ext), $prefix, $prefix + "-"),
       "."

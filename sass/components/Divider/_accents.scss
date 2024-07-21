@@ -1,16 +1,19 @@
 $mie-divider-default-colors: (
   "dark": (
-    "bg": #{rgba(#fff, 0.07)},
+    "bg": rgba(#fff, 0.07),
   ),
   "light": (
-    "bg": #{rgba(#000, 0.07)},
+    "bg": rgba(#000, 0.07),
   ),
 );
 
 @function map-accents-to-divider($theme, $accent, $colors) {
   $color: _get($colors, "color");
 
-  @return ("bg": #{rgba($color, 0.07)});
+  // prettier-ignore
+  @return (
+    "bg": rgba($color, 0.07)
+  );
 }
 
 @include accents-map-to-component(

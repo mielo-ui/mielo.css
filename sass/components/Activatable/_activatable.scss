@@ -1,19 +1,19 @@
 .mie.activatable {
-  background-color: var(--mie-item-bg-main);
+  background-color: var(--mie-activatable-bg-main);
   transition: all 0.4s ease;
 
   user-select: none;
   cursor: pointer;
 
   &:hover {
-    background-color: var(--mie-item-bg-hover) !important;
+    background-color: var(--mie-activatable-bg-hover) !important;
   }
 
   &:active {
-    background-color: var(--mie-item-bg-active) !important;
+    background-color: var(--mie-activatable-bg-active) !important;
   }
 }
 
 .mie.activatable.active {
-  background-color: var(--mie-item-bg-hover) !important;
+  background-color: var(--mie-activatable-bg-hover) !important;
 }

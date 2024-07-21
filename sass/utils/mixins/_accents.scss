@@ -30,10 +30,23 @@
   $name: _kebab-case($class);
 
   @each $accent, $vars in $theme-vars-map {
-    $class-ext: if($accent != "default", "." + $accent, "");
     $flat: map-flatten($vars);
 
-    .mie.#{$class}#{$class-ext} {
+    $accent-class: if($accent != "default", "." + $accent, "");
+    $class-name: if($class != "", "." + $class, "");
+    $ext: $accent-class + $class-name;
+
+    @if $ext != "" {
+      .mie#{$ext} {
+        @each $item in $flat {
+          $value: _get($item, 2);
+          $keys: _get($item, 1);
+          $key: _join($keys, "-");
+
+          --mie-#{$name}-#{$key}: #{$value};
+        }
+      }
+    } @else {
       @each $item in $flat {
         $value: _get($item, 2);
         $keys: _get($item, 1);
@@ -56,26 +69,22 @@
   $cb,
   $accents-by-theme: $mie-accents-by-theme
 ) {
-  $light: accents-map-to-vars(
-    $accents-by-theme,
-    "light",
-    _get($default, "light"),
-    $cb
-  );
+  @each $theme in ("light", "dark") {
+    $selector: if(
+      $theme == "dark",
+      '[data-theme="dark"]',
+      ':root, [data-theme="light"]'
+    );
 
-  $dark: accents-map-to-vars(
-    $accents-by-theme,
-    "dark",
-    _get($default, "dark"),
-    $cb
-  );
+    $properties: accents-map-to-vars(
+      $accents-by-theme,
+      $theme,
+      _get($default, $theme),
+      $cb
+    );
 
-  :root,
-  [data-theme="light"] {
-    @include accents-expand-mapped-vars($class, $light);
-  }
-
-  [data-theme="dark"] {
-    @include accents-expand-mapped-vars($class, $dark);
+    #{$selector} {
+      @include accents-expand-mapped-vars($class, $properties);
+    }
   }
 }

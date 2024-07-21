@@ -1,8 +1,14 @@
 $mie-text-default-colors: (
   "dark": (
+    "inverted-fg-muted": rgba(#000, 0.65),
+    "inverted-fg": rgba(#000, 0.8),
+    "fg-muted": rgba(#fff, 0.65),
     "fg": #fff,
   ),
   "light": (
+    "inverted-fg-muted": rgba(#fff, 0.65),
+    "inverted-fg": #fff,
+    "fg-muted": rgba(#000, 0.65),
     "fg": rgba(#000, 0.8),
   ),
 );
@@ -19,3 +25,24 @@ $mie-text-default-colors: (
   $mie-text-default-colors,
   map-accents-to-text
 );
+
+// Globals
+@each $theme, $props in $mie-text-default-colors {
+  $flat: map-flatten($props);
+
+  $selector: if(
+    $theme == "dark",
+    '[data-theme="dark"]',
+    ':root, [data-theme="light"]'
+  );
+
+  #{$selector} {
+    @each $item in $flat {
+      $value: _get($item, 2);
+      $keys: _get($item, 1);
+      $key: _join($keys, "-");
+
+      --mie-#{$key}: #{$value};
+    }
+  }
+}

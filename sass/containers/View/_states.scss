@@ -1,8 +1,0 @@
-$mie-view-states: (
-  "medium": (
-    "rounded-extra": 1.2rem,
-    "rounded": 0.6rem,
-  ),
-);
-
-@include variants-map-to-component("view", $mie-view-states, "medium");

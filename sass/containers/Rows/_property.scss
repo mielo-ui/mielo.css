@@ -1,0 +1,21 @@
+// Common row for use with custom components
+.mie.rows > .mie.row.item.property {
+  // prettier-ignore
+  background-image:
+    linear-gradient(
+        var(--mie-row-item-overlay),
+        var(--mie-row-item-overlay)
+    ),
+    linear-gradient(
+        var(--mie-row-item-bg),
+        var(--mie-row-item-bg)
+    );
+
+  padding: 0 var(--mie-row-item-ph);
+  @include flex(row, "", center);
+  height: var(--mie-row-item-mh);
+
+  &:last-child {
+    border-bottom: none;
+  }
+}

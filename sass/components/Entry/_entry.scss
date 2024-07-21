@@ -1,23 +1,22 @@
 .mie.entry {
   // prettier-ignore
   background-image:
-        linear-gradient(
-            var(--mie-entry-bg-overlay),
-            var(--mie-entry-bg-overlay)
-        ),
-        linear-gradient(
-            var(--mie-entry-bg-main),
-            var(--mie-entry-bg-main)
-        );
+    linear-gradient(
+        var(--mie-entry-bg-overlay),
+        var(--mie-entry-bg-overlay)
+    ),
+    linear-gradient(
+        var(--mie-entry-bg-main),
+        var(--mie-entry-bg-main)
+    );
 
-  border-radius: var(--mie-entry-rounded);
   background-clip: padding-box;
   position: relative;
   margin: 0;
 
-  min-width: var(--mie-entry-padding);
-  width: var(--mie-entry-padding);
-  height: var(--mie-entry-height);
+  min-width: var(--mie-entry-mw);
+  height: var(--mie-entry-h);
+  width: var(--mie-entry-p);
 
   label {
     transition: 300ms ease all;
@@ -28,7 +27,7 @@
     color: var(--mie-entry-label-fg);
     font-weight: normal;
 
-    top: var(--mie-entry-label-top-empty);
+    top: var(--mie-entry-label-offset-empty);
     left: var(--mie-entry-label-ph);
   }
 
@@ -37,18 +36,16 @@
   }
 
   > input,
-  textarea {
+  > textarea {
     transition: outline-width 100ms ease;
     color: var(--mie-entry-value-fg);
     background: none;
     display: block;
 
     font-size: var(--mie-entry-value-fs);
-    padding: var(--mie-entry-padding);
+    padding: var(--mie-entry-p);
     height: 100%;
     width: 100%;
-
-    border-radius: var(--mie-entry-rounded);
     border: none;
 
     outline-color: var(--mie-entry-bg-outline);
@@ -58,17 +55,18 @@
     &:focus {
       color: var(--mie-entry-value-fg);
       outline-width: 0.2rem;
+      z-index: 100;
     }
 
     &:focus ~ label,
     &.filled ~ label {
-      top: var(--mie-entry-label-top-active);
+      top: var(--mie-entry-label-offset-active);
       font-size: var(--mie-entry-label-fs);
       color: var(--mie-entry-label-fg);
     }
 
     &[type="password"] {
-      letter-spacing: 0.1rem;
+      letter-spacing: 0.15rem;
     }
   }
 
@@ -83,8 +81,8 @@
 
   // Indicator
   .indicator {
-    right: var(--mie-entry-indicator-right);
-    top: var(--mie-entry-indicator-top);
+    right: var(--mie-entry-tooltip-r);
+    top: var(--mie-entry-tooltip-t);
     position: absolute;
 
     svg {

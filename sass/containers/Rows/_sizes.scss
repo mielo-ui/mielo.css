@@ -1,0 +1,8 @@
+$mie-row-item-sizes: (
+  "medium": (
+    "ph": mie-indent-size(),
+    "mh": 5.4rem,
+  ),
+);
+
+@include variants-map-to-component("row.item", $mie-row-item-sizes, "medium");

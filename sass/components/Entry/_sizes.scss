@@ -1,48 +1,66 @@
 $mie-entry-sizes: (
   "medium": (
-    "padding": 2.5rem 1.6rem 0.7rem 1.6rem,
-    "min-width": 10rem,
-    "height": 5.4rem,
-
-    "label-top-active": 0.9rem,
-    "label-top-empty": 1.6rem,
-    "label-ph": 1.6rem,
-
-    "indicator-top": 1rem,
-    "indicator-right": 1.2rem,
-
-    "label-fs": mie-text-fs(small),
     "value-fs": mie-text-fs(medium),
+    "p": 2.5rem 1.6rem 0.7rem 1.6rem,
+    "mw": 10rem,
+    "h": 5.4rem,
+
+    "label": (
+      "fs": mie-text-fs(small),
+      "ph": 1.6rem,
+
+      "offset": (
+        "active": 0.9rem,
+        "empty": 1.7rem,
+      ),
+    ),
+
+    "tooltip": (
+      "t": 1rem,
+      "r": 1.2rem,
+    ),
   ),
   "small": (
-    "padding": 1.4rem 1rem 0.4rem 1rem,
-    "min-width": 8rem,
-    "height": 3.4rem,
-
-    "label-top-active": 0.3rem,
-    "label-top-empty": 1rem,
-    "label-ph": 1rem,
-
-    "indicator-top": 0.3rem,
-    "indicator-right": 0.6rem,
-
-    "label-fs": mie-text-fs(mini),
     "value-fs": mie-text-fs(small),
+    "p": 1.4rem 1rem 0.4rem 1rem,
+    "mw": 8rem,
+    "h": 3.4rem,
+
+    "label": (
+      "fs": mie-text-fs(mini),
+      "ph": 1rem,
+
+      "offset": (
+        "active": 0.3rem,
+        "empty": 1rem,
+      ),
+    ),
+
+    "tooltip": (
+      "t": 0.3rem,
+      "r": 0.6rem,
+    ),
   ),
   "large": (
-    "padding": 2.6rem 1.8rem 0.6rem 1.8rem,
-    "min-width": 14rem,
-    "height": 6.4rem,
-
-    "label-top-active": 1rem,
-    "label-top-empty": 2.1rem,
-    "label-ph": 1.8rem,
-
-    "indicator-top": 1rem,
-    "indicator-right": 1.2rem,
-
-    "label-fs": mie-text-fs(medium),
     "value-fs": mie-text-fs(large),
+    "p": 2.6rem 1.8rem 0.6rem 1.8rem,
+    "mw": 14rem,
+    "h": 6.4rem,
+
+    "label": (
+      "fs": mie-text-fs(medium),
+      "ph": 1.8rem,
+
+      "offset": (
+        "active": 1rem,
+        "empty": 2.2rem,
+      ),
+    ),
+
+    "tooltip": (
+      "t": 1rem,
+      "r": 1.2rem,
+    ),
   ),
 );
 

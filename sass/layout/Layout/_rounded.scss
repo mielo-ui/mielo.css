@@ -1,0 +1,74 @@
+$rounded-attached-classes: ("default", "row", "view");
+
+$rounded-corner-props: (
+  "tl": "border-top-left-radius",
+  "tr": "border-top-right-radius",
+  "bl": "border-bottom-left-radius",
+  "br": "border-bottom-right-radius",
+);
+
+// prettier-ignore
+$rounded-sides: (
+  "default": true,
+
+  "top": ("tl","tr"),
+  "bottom": ("bl", "br"),
+  "left": ("tl","bl"),
+  "right": ("tr","br"),
+);
+
+@mixin rounded-expand-properties($side-corners, $size) {
+  @if _is-list($side-corners) {
+    @each $corner in $side-corners {
+      $prop: _get($rounded-corner-props, $corner);
+      #{$prop}: $size;
+    }
+  } @else {
+    border-radius: $size;
+  }
+}
+
+@function rounded-selector($class-prefix: "") {
+  $selectors: ();
+
+  @each $ext-class in $rounded-attached-classes {
+    $prefix: if($ext-class != "default", "." + $ext-class, "");
+    $selector: "&#{$prefix}.r#{$class-prefix}";
+    $selectors: _push($selectors, $selector);
+  }
+
+  @return _join($selectors, ", ");
+}
+
+.mie {
+  @each $side, $side-corners in $rounded-sides {
+    $round-prefix: if($side != "default", _get($side, 1), "");
+
+    @each $size-name, $size in $mie-rounded-size {
+      $size-postfix: if($size-name != "medium", "-" + $size-name, "");
+      $class-prefix: $round-prefix + $size-postfix;
+      $selector: rounded-selector($class-prefix);
+
+      #{$selector} {
+        @include rounded-expand-properties($side-corners, $size);
+      }
+
+      &.select.r#{$class-prefix} {
+        > .content {
+          > .base {
+            @include rounded-expand-properties($side-corners, $size);
+          }
+        }
+      }
+
+      &.entry.r#{$class-prefix} {
+        @include rounded-expand-properties($side-corners, $size);
+
+        > input,
+        > textarea {
+          @include rounded-expand-properties($side-corners, $size);
+        }
+      }
+    }
+  }
+}

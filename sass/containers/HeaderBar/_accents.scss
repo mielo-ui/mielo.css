@@ -1,8 +1,8 @@
 $mie-headerbar-default-colors: (
   "dark": (
-    "label-fg": #{rgba(#fff, 0.6)},
-    "value-fg": #{rgba(#fff, 1)},
-    "border": #{rgba(#000, 0.37)},
+    "label-fg": rgba(#fff, 0.6),
+    "value-fg": rgba(#fff, 1),
+    "border": rgba(#000, 0.37),
     "bg": (
       "outline": #78aeed,
       "overlay": transparent,
@@ -10,9 +10,9 @@ $mie-headerbar-default-colors: (
     ),
   ),
   "light": (
-    "label-fg": #{rgba(#000, 0.6)},
-    "value-fg": #{rgba(#000, 0.8)},
-    "border": #{rgba(#000, 0.07)},
+    "label-fg": rgba(#000, 0.6),
+    "value-fg": rgba(#000, 0.8),
+    "border": rgba(#000, 0.07),
     "bg": (
       "outline": mie-color("blue", 4),
       "overlay": transparent,
@@ -26,11 +26,11 @@ $mie-headerbar-default-colors: (
   $bg: _get($colors, "bg");
 
   @return (
-    "label-fg": #{rgba($color, 0.6)},
-    "value-fg": #{rgba($color, 0.8)},
-    "border": #{rgba($color, 0.07)},
+    "label-fg": rgba($color, 0.6),
+    "value-fg": rgba($color, 0.8),
+    "border": rgba($color, 0.07),
     "bg": (
-      "overlay": #{rgba($bg, 0.08)},
+      "overlay": rgba($bg, 0.08),
       "outline": #{$color},
     )
   );
