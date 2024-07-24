@@ -1,4 +1,6 @@
-![logo](https://github.com/mielo-ui/mielo/blob/main/logo.svg?raw=true)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/mielo-ui/mielo.css/main/logo.png" />
+</p>
 
 <h1 align="center">
   Mielo UI
