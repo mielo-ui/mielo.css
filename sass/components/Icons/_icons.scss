@@ -1,6 +1,4 @@
 .mie.icon {
-  border-radius: var(--mie-icon-rounded);
-  padding: var(--mie-icon-space);
   justify-content: center;
   align-items: center;
   display: flex;
@@ -15,6 +13,10 @@
 
   &.filled {
     background-color: var(--mie-icon-bg-filled);
+  }
+
+  &.circular {
+    border-radius: 50%;
   }
 
   &.bg {

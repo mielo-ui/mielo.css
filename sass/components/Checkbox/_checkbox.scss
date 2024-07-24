@@ -14,17 +14,19 @@
     display: flex;
 
     > .content {
-      font-size: var(--mie-checkbox-label-fs);
-      color: var(--mie-checkbox-label-fg);
+      font-size: var(--mie-checkbox-fs);
+      color: var(--mie-checkbox-fg);
       font-weight: 400;
 
-      margin-left: var(--mie-checkbox-content-margin);
+      margin-left: var(--mie-checkbox-content-space);
     }
   }
 }
 
 // Default checkbox style
 .mie.checkbox {
+  --mie-checkbox-rounded: 0.6rem;
+
   > .label {
     > .indicator {
       border: 0.2rem solid var(--mie-checkbox-border);

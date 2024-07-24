@@ -1,7 +1,7 @@
 $mie-toggle-default-colors: (
   "dark": (
     "border": rgba(#000, 0.36),
-    "label-fg": rgba(#fff, 0.6),
+    "fg": rgba(#fff, 0.6),
     "icon-fg": rgba(#fff, 1),
     "bg": (
       "active": #3584e4,
@@ -10,7 +10,7 @@ $mie-toggle-default-colors: (
   ),
   "light": (
     "border": rgba(#000, 0.36),
-    "label-fg": rgba(#000, 0.6),
+    "fg": rgba(#000, 0.6),
     "icon-fg": rgba(#fff, 1),
     "bg": (
       "active": #3584e4,

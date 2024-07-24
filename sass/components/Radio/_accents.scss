@@ -1,13 +1,13 @@
 $mie-radio-default-colors: (
   "dark": (
-    "label-fg": rgba(#fff, 0.6),
     "border-active": rgba(#1a5fb4, 1),
     "bg": rgba(#3584e4, 1),
+    "fg": rgba(#fff, 0.6),
   ),
   "light": (
-    "label-fg": rgba(#fff, 0.6),
     "border-active": rgba(#1a5fb4, 1),
     "bg": rgba(#3584e4, 1),
+    "fg": rgba(#000, 0.6),
   ),
 );
 

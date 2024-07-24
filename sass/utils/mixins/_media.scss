@@ -1,3 +1,5 @@
+@use "sass:map";
+
 $mie-grid-breakpoints: (
   "xs": 0,
   "sm": 576px,
@@ -7,7 +9,9 @@ $mie-grid-breakpoints: (
   "xxl": 1400px,
 );
 
-@function upper-breakpoint($key: "xs") {
+@function upper-breakpoint($key: xs) {
+  $key: quote($key);
+
   @if $key == "xs" {
     @return "sm";
   } @else if $key == "sm" {
@@ -23,7 +27,9 @@ $mie-grid-breakpoints: (
   }
 }
 
-@function lower-breakpoint($key: "xs") {
+@function lower-breakpoint($key: xs) {
+  $key: quote($key);
+
   @if $key == "xxl" {
     @return "xl";
   } @else if $key == "xl" {
@@ -39,32 +45,32 @@ $mie-grid-breakpoints: (
   }
 }
 
-@mixin media-breakpoint-up($key: "xs") {
-  $down: _get($mie-grid-breakpoints, quote($key));
+@mixin media-breakpoint-up($key: xs) {
+  $down: map.get($mie-grid-breakpoints, quote($key));
 
   @media (min-width: $down) {
     @content;
   }
 }
 
-@mixin media-breakpoint-down($key: "xs") {
-  $down: _get($mie-grid-breakpoints, quote($key));
+@mixin media-breakpoint-down($key: xs) {
+  $down: map.get($mie-grid-breakpoints, quote($key));
 
   @media (max-width: $down) {
     @content;
   }
 }
 
-@mixin media-breakpoint-only($key: "xs") {
-  @if $key == "xxl" {
-    $xxl: _get($mie-grid-breakpoints, "xxl");
+@mixin media-breakpoint-only($key: xs) {
+  $key: quote($key);
+  $min: map.get($mie-grid-breakpoints, $key);
 
-    @media (min-width: $xxl) {
+  @if $key == "xxl" {
+    @media (min-width: $min) {
       @content;
     }
   } @else {
-    $min: _get($mie-grid-breakpoints, $key);
-    $max: _get($mie-grid-breakpoints, upper-breakpoint($key));
+    $max: map.get($mie-grid-breakpoints, upper-breakpoint($key));
 
     @media (min-width: #{$min}) and (max-width: #{$max}) {
       @content;
@@ -72,9 +78,9 @@ $mie-grid-breakpoints: (
   }
 }
 
-@mixin media-breakpoint-between($start: "xs", $end: "xxl") {
-  $start: _get($mie-grid-breakpoints, $start);
-  $end: _get($mie-grid-breakpoints, $end);
+@mixin media-breakpoint-between($start: xs, $end: xxl) {
+  $start: map.get($mie-grid-breakpoints, $start);
+  $end: map.get($mie-grid-breakpoints, $end);
 
   @media (min-width: #{$start}) and (max-width: #{$end}) {
     @content;

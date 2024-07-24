@@ -18,14 +18,14 @@ $mie-shadow-states: (
 );
 
 .mie.shadow {
-  --mie-shadow: var(--mie-shadow-outer);
+  box-shadow: var(--mie-shadow-outer);
 
-  &-outer {
-    --mie-shadow: var(--mie-shadow-outer);
+  &.outer {
+    box-shadow: var(--mie-shadow-outer);
   }
 
-  &-inner {
-    --mie-shadow: var(--mie-shadow-inner);
+  &.inner {
+    box-shadow: var(--mie-shadow-inner);
   }
 }
 

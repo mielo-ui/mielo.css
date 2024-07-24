@@ -14,11 +14,11 @@
     display: flex;
 
     > .content {
-      font-size: var(--mie-radio-label-fs);
-      color: var(--mie-radio-label-fg);
+      font-size: var(--mie-radio-fs);
+      color: var(--mie-radio-fg);
       font-weight: 400;
 
-      margin-left: var(--mie-radio-content-margin);
+      margin-left: var(--mie-radio-content-space);
     }
   }
 }

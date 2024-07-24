@@ -1,65 +1,13 @@
-$active-tab-color: #e6e6e6;
-
 .mie.tabs {
-  height: 34px;
-  width: auto;
   @include flex(row);
+  position: relative;
 
-  .tab {
-    margin-right: 10px;
+  border-radius: var(--mie-tabs-rounded);
+  background-color: var(--mie-tabs-bg);
 
-    &:last-child {
-      margin-right: 0px;
-    }
-  }
+  padding: var(--mie-tabs-pv) var(--mie-tabs-ph);
 
-  .tab {
-    @include flex(row, center, center);
-    transition: all 0.3s ease;
-    padding: 0 16px;
-    min-width: 80;
-    height: 34px;
-
-    text-decoration: none;
-    user-select: none;
-    cursor: pointer;
-
-    background-color: transparentize($active-tab-color, 1);
-    // color: $default-text-color;
-    font-size: var(mie-text-fs(large));
-    border-radius: 6px;
-    font-weight: 700;
-
-    .icon {
-      margin-right: 12px;
-
-      svg {
-        max-height: 16px;
-        width: 16px;
-      }
-    }
-
-    &.active,
-    &:hover {
-      background-color: #e6e6e6;
-    }
-  }
-
-  &.dynamic-overlay {
-    position: relative;
-
-    .active-overlay {
-      background-color: #e6e6e6;
-      border-radius: 6px;
-      position: absolute;
-      height: 34px;
-      width: 0px;
-    }
-
-    .tab {
-      &.active {
-        background-color: transparentize($active-tab-color, 1);
-      }
-    }
+  &.transparent {
+    background-color: transparent;
   }
 }

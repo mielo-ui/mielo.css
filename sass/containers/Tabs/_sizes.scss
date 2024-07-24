@@ -1,0 +1,20 @@
+$mie-tabs-sizes: (
+  "medium": (
+    "rounded": mie-rounded(large),
+    "ph": mie-indent-size(small),
+    "pv": mie-indent-size(small),
+  ),
+);
+
+$mie-tab-sizes: (
+  "medium": (
+    "icon-offset": mie-indent-size(small),
+    "rounded": mie-rounded(large),
+    "pv": mie-indent-size(small),
+    "ph": mie-indent-size(big),
+    "fs": mie-text-fs(),
+  ),
+);
+
+@include variants-map-to-component("tabs", $mie-tabs-sizes, "medium");
+@include variants-map-to-component("tab", $mie-tab-sizes, "medium");

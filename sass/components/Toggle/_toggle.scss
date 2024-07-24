@@ -14,11 +14,11 @@
     display: flex;
 
     > .content {
-      font-size: var(--mie-toggle-label-fs);
-      color: var(--mie-toggle-label-fg);
+      font-size: var(--mie-toggle-fs);
+      color: var(--mie-toggle-fg);
       font-weight: 400;
 
-      margin-left: var(--mie-toggle-content-margin);
+      margin-left: var(--mie-toggle-content-space);
     }
   }
 }

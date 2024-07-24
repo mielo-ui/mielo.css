@@ -1,0 +1,42 @@
+.mie.tabs > .mie.tab {
+  @include flex(row, center, center);
+  transition: left 0.3s ease;
+
+  padding: var(--mie-tab-pv) var(--mie-tab-ph);
+  border-radius: var(--mie-tab-rounded);
+  font-size: var(--mie-tab-fs);
+  font-weight: 700;
+
+  background-color: var(--mie-tab-bg-main);
+  color: var(--mie-tab-fg);
+
+  user-select: none;
+  cursor: pointer;
+
+  &:hover,
+  &.active {
+    background-color: var(--mie-tab-bg-hover);
+  }
+
+  &:active {
+    background-color: var(--mie-tab-bg-active);
+  }
+
+  &.background {
+    background-color: var(--mie-tab-bg-hover);
+    position: absolute;
+    z-index: 8;
+    left: 0;
+
+    height: 0;
+    width: 0;
+  }
+
+  &.transparent {
+    background-color: transparent;
+  }
+
+  > .adw.icon {
+    margin-right: var(--mie-tab-icon-offset);
+  }
+}
