@@ -1,5 +1,12 @@
-# Mielo UI
-Experimental modern web css framework, inspired by LibAdwaita.
+![logo](https://github.com/mielo-ui/mielo/blob/main/logo.svg?raw=true)
+
+<h1 align="center">
+  Mielo UI
+</h1>
+
+<p align="center">
+  Modern UI framework for web, inspired desktop design.
+</p>
 
 ## Motivation
 The project is inspired by the solution in the design of desktop applications on LibAdwaita interface library, and is a set of components and containers for quickly creating interfaces in web, similar to those found in the native desktop.
