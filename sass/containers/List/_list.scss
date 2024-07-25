@@ -1,6 +1,6 @@
 .mie.list:not(.item) {
+  @include flex(column);
   list-style-type: none;
-  display: block;
   padding: 0;
 
   > .mie.list.item {

@@ -1,16 +1,16 @@
-.mie.flex {
+.mie.f {
   flex-direction: row;
   display: flex;
 
-  &.row {
+  &.fr {
     flex-direction: row;
   }
 
-  &.column {
+  &.fc {
     flex-direction: column;
   }
 
-  &.justify-content {
+  &.fjc {
     &-center {
       justify-content: center !important;
     }
@@ -25,7 +25,7 @@
     }
   }
 
-  &.align-items {
+  &.fai {
     &-center {
       align-items: center !important;
     }
@@ -40,7 +40,11 @@
     }
   }
 
-  &.flex-1 {
+  &.fw {
+    flex-wrap: wrap !important;
+  }
+
+  &.f1 {
     flex: 1 !important;
   }
 }

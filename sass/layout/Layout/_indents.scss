@@ -9,7 +9,7 @@
       $class-name: $indent-short-key + $size-postfix;
 
       &.#{$class-name} {
-        #{$indent-type}: $size;
+        #{$indent-type}: $size !important;
       }
     }
 

@@ -1,0 +1,30 @@
+@use "sass:math";
+
+.mie {
+  @each $side in ("horizontal", "vertical") {
+    $side-short-key: _get($side, 1);
+
+    @each $name, $size in $mie-indent-size {
+      $size-postfix: if($name != "medium", "-" + $name, "");
+
+      $start: "margin-" + if($side == "horizontal", "left", "top");
+      $end: "margin-" + if($side == "horizontal", "right", "bottom");
+      $class-name: "sb" + $side-short-key + $size-postfix;
+
+      &.#{$class-name} {
+        > * {
+          #{$start}: #{math.div($size, 2)} !important;
+          #{$end}: #{math.div($size, 2)} !important;
+
+          &:first-child {
+            margin-top: 0 !important;
+          }
+
+          &:last-child {
+            margin-bottom: 0 !important;
+          }
+        }
+      }
+    }
+  }
+}

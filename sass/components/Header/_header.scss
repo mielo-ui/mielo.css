@@ -19,8 +19,10 @@
 
     .subtitle {
       font-size: var(--mie-header-subtitle-fs);
-      color: var(--mie-header-title-fg);
+      color: var(--mie-header-subtitle-fg);
       font-weight: 400;
+
+      margin-top: var(--mie-header-text-space);
     }
   }
 
