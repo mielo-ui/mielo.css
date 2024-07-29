@@ -1,0 +1,13 @@
+.mie.window {
+  border-radius: var(--mie-window-rounded);
+  background-color: var(--mie-window-bg);
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+
+  @include flex(column);
+
+  &.transparent {
+    --mie-window-bg: transparent;
+  }
+}

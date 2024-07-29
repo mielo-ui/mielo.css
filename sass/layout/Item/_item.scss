@@ -1,6 +1,7 @@
 .mie.item {
   @include flex(row, "", center);
   text-decoration: none;
+  position: relative;
 
   &.vertical {
     justify-content: center;

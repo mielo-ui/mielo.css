@@ -1,11 +1,11 @@
 $mie-scrollbar-default-colors: (
   "dark": (
-    "thumb-bg": rgba(#fff, 0.2),
-    "track-bg": rgba(#fff, 0.05),
+    "scroll-thumb-bg": rgba(#fff, 0.15),
+    "scroll-track-bg": rgba(#fff, 0),
   ),
   "light": (
-    "thumb-bg": rgba(#000, 0.2),
-    "track-bg": rgba(#000, 0.05),
+    "scroll-thumb-bg": rgba(#000, 0.15),
+    "scroll-track-bg": rgba(#000, 0),
   ),
 );
 
@@ -15,13 +15,13 @@ $mie-scrollbar-default-colors: (
 
   // prettier-ignore
   @return (
-    "track-bg": rgba($bg, 0.05),
-    "thumb-bg": rgba($bg, 0.2), 
+    "scroll-track-bg": rgba($bg, 0.02),
+    "scroll-thumb-bg": rgba($bg, 0.15), 
   );
 }
 
 @include accents-map-to-component(
-  "scrollable",
+  "",
   $mie-scrollbar-default-colors,
   map-accents-to-scrollbar,
   _omit($mie-accents-by-theme, "accent")

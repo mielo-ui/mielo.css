@@ -1,28 +1,21 @@
-$mie-icon-sizes: (
-  "mini": (
-    "size": mie-icon-size(mini),
-  ),
-  "tiny": (
-    "size": mie-icon-size(tiny),
-  ),
-  "small": (
-    "size": mie-icon-size(small),
-  ),
-  "medium": (
-    "size": mie-icon-size(medium),
-  ),
-  "large": (
-    "size": mie-icon-size(large),
-  ),
-  "big": (
-    "size": mie-icon-size(big),
-  ),
-  "huge": (
-    "size": mie-icon-size(huge),
-  ),
-  "massive": (
-    "size": mie-icon-size(massive),
-  ),
-);
+@use "sass:map";
+
+@function icon-size-mapper($sizes) {
+  $map: ();
+
+  @each $size, $value in $sizes {
+    $map: map.set(
+      $map,
+      $size,
+      (
+        "size": $value,
+      )
+    );
+  }
+
+  @return $map;
+}
+
+$mie-icon-sizes: icon-size-mapper($mie-icon-size);
 
 @include variants-map-to-component("icon", $mie-icon-sizes, "medium");

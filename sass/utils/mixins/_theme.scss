@@ -1,4 +1,4 @@
-@mixin mie-light-theme() {
+@mixin mie-default-theme() {
   :root,
   [data-theme="light"] {
     @content;

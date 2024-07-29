@@ -43,7 +43,9 @@
           $keys: _get($item, 1);
           $key: _join($keys, "-");
 
-          --mie-#{$name}-#{$key}: #{$value};
+          $name-prop: if($name != "", "-#{$name}", "");
+
+          --mie#{$name-prop}-#{$key}: #{$value};
         }
       }
     } @else {
@@ -52,7 +54,9 @@
         $keys: _get($item, 1);
         $key: _join($keys, "-");
 
-        --mie-#{$name}-#{$key}: #{$value};
+        $name-prop: if($name != "", "-#{$name}", "");
+
+        --mie#{$name-prop}-#{$key}: #{$value};
       }
     }
   }

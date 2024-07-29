@@ -1,0 +1,22 @@
+$mie-sidebar-default-colors: (
+  "light": (
+    "bg": #ebebeb,
+  ),
+  "dark": (
+    "bg": #303030,
+  ),
+);
+
+@function map-accents-to-sidebar($theme, $accent, $colors) {
+  $bg: _get($colors, "bg");
+  $fg: _get($colors, "fg");
+
+  @return ("bg": if($theme == "dark", lighten($bg, 40%), lighten($bg, 60%)));
+}
+
+@include accents-map-to-component(
+  "sidebar",
+  $mie-sidebar-default-colors,
+  map-accents-to-sidebar,
+  $mie-accents-by-theme
+);

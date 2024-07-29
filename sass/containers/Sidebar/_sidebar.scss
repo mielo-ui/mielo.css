@@ -1,0 +1,49 @@
+.mie.sidebar {
+  background-color: var(--mie-sidebar-bg);
+  transition: all 0.3s ease;
+
+  flex-direction: column;
+  display: flex;
+
+  width: var(--mie-sidebar-w);
+
+  // Layout Styles & Animations
+  &.width {
+    margin-left: calc(var(--mie-sidebar-w) * -1);
+
+    &.opened {
+      margin-left: 0;
+    }
+  }
+
+  &.shift {
+    margin-left: calc(var(--mie-sidebar-w) * -1);
+    z-index: 100;
+
+    &.opened {
+      margin-left: 0;
+
+      & + .container {
+        margin-right: calc(var(--mie-sidebar-w) * -1);
+      }
+    }
+  }
+
+  &.overlap {
+    position: absolute;
+    height: 100%;
+    bottom: 0;
+    top: 0;
+
+    left: calc(var(--mie-sidebar-w) * -1);
+    z-index: 100;
+
+    &.opened {
+      left: 0;
+
+      & + .container {
+        left: calc(var(--mie-sidebar-w) * -1);
+      }
+    }
+  }
+}

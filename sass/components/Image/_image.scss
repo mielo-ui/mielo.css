@@ -1,0 +1,21 @@
+.mie.image {
+  border: 0 solid var(--mie-image-border-bg);
+  background-color: var(--mie-image-bg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  width: var(--mie-image-size);
+  display: inline-block;
+
+  &.transparent {
+    --mie-image-bg: transparent;
+  }
+
+  &.bordered {
+    border-width: var(--mie-image-border-w);
+  }
+
+  &.circular {
+    border-radius: 500rem;
+  }
+}

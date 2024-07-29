@@ -24,4 +24,8 @@
   &.fluid {
     width: 100%;
   }
+
+  &.scrollable {
+    overflow: auto;
+  }
 }

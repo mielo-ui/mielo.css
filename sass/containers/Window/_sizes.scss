@@ -1,0 +1,7 @@
+$mie-window-sizes: (
+  "medium": (
+    "rounded": mie-rounded(),
+  ),
+);
+
+@include variants-map-to-component("window", $mie-window-sizes, "medium");

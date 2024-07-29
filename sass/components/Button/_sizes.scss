@@ -1,21 +1,28 @@
 $mie-button-sizes: (
-  "small": (
+  "tiny": (
+    "icon-ph": mie-indent-size(mini),
     "fs": mie-text-fs(small),
-    "icon-ph": 0.4rem,
+    "size": 2.4rem,
+    "ph": 0.4rem,
+  ),
+
+  "small": (
+    "icon-ph": mie-indent-size(mini),
+    "fs": mie-text-fs(small),
     "size": 2.8rem,
     "ph": 0.8rem,
   ),
 
   "medium": (
+    "icon-ph": mie-indent-size(tiny),
     "fs": mie-text-fs(medium),
-    "icon-ph": 0.6rem,
     "size": 3.4rem,
     "ph": 1.2rem,
   ),
 
   "large": (
+    "icon-ph": mie-indent-size(small),
     "fs": mie-text-fs(large),
-    "icon-ph": 0.8rem,
     "size": 4.4rem,
     "ph": 1.6rem,
   ),

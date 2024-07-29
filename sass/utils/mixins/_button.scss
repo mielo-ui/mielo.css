@@ -1,7 +1,7 @@
 @function opacity-button-bg(
   $bg,
   $transparent: false,
-  $opacity: (0.1, 0.2, 0.3)
+  $opacity: (0.2, 0.3, 0.35)
 ) {
   $opacity-main: _get($opacity, 1);
   $opacity-hover: _get($opacity, 2);

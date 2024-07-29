@@ -1,39 +1,39 @@
-.mie.split-view {
+.mie.splitview {
+  position: relative;
   overflow: hidden;
+
+  align-items: stretch;
   display: flex;
 
   max-height: 100%;
   height: 100%;
   width: 100%;
 
-  > .sidebar {
-    border-right: 1px solid var(--mie-split-view-divider-color);
-    background-color: var(--mie-split-view-sidebar-bg);
-    transition: margin-left 0.3s ease;
-
-    flex-direction: column;
-    display: flex;
-
-    margin-left: -28rem;
-    width: 28rem;
-
-    &.opened {
-      margin-left: 0;
-    }
+  > .overlay {
+    background-color: var(--mie-splitview-overlay-bg);
+    position: absolute;
+    height: 100%;
+    z-index: 50;
+    width: 100%;
+    left: 0;
+    top: 0;
   }
 
-  > .content {
-    background-color: var(--mie-split-view-content-bg);
+  > .sidebar {
+    border-right: 1px solid var(--mie-divider-bg);
+  }
 
-    flex-direction: column;
-    display: flex;
-    flex: 1;
+  > .container {
+    background-color: var(--mie-splitview-bg);
+    transition: all 0.3s ease;
 
-    max-height: 100%;
+    @include flex(column, stretch, stretch);
     height: 100%;
     width: 100%;
+    flex: 1;
 
-    min-height: 0;
-    min-width: 0;
+    > .content {
+      overflow: auto;
+    }
   }
 }

@@ -1,0 +1,20 @@
+$mie-window-default-colors: (
+  "dark": (
+    "bg": #242424,
+  ),
+  "light": (
+    "bg": #fafafa,
+  ),
+);
+
+@function map-accents-to-window($theme, $accent, $colors) {
+  $bg: _get($colors, "bg");
+
+  @return ("bg": if($theme == "dark", darken($bg, 20%), lighten($bg, 20%)));
+}
+
+@include accents-map-to-component(
+  "window",
+  $mie-window-default-colors,
+  map-accents-to-window
+);

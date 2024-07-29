@@ -17,10 +17,10 @@ $mie-button-default-colors: (
   $color: _get($colors, "color");
   $bg: _get($colors, "bg");
 
-  $fill: filled-button-bg($bg, $theme);
-  $main: opacity-button-bg($bg);
-
-  @return ("fill": $fill, "bg": $main);
+  @return (
+    "fill": filled-button-bg($bg, $theme),
+    "bg": opacity-button-bg($bg, false)
+  );
 }
 
 @include accents-map-to-component(

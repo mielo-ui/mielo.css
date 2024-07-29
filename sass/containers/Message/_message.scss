@@ -19,6 +19,7 @@
   padding: var(--mie-message-padding);
 
   > .content {
+    @include flex(column, center, flex-start);
     flex: 1;
 
     > .title {

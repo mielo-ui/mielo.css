@@ -1,0 +1,28 @@
+@use "sass:map";
+
+@function image-size-mapper($sizes) {
+  $map: ();
+
+  @each $size, $value in $sizes {
+    $map: map.set(
+      $map,
+      $size,
+      (
+        "size": $value,
+      )
+    );
+  }
+
+  @return $map;
+}
+
+$mie-image-sizes: _merge(
+  image-size-mapper($mie-image-size),
+  (
+    "medium": (
+      "border-w": 0.2rem,
+    ),
+  )
+);
+
+@include variants-map-to-component("image", $mie-image-sizes, "medium");

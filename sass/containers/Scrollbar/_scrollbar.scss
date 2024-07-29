@@ -1,5 +1,42 @@
-.mie.scrollable {
-  scrollbar-color: var(--adw-scrollable-thumb-bg) var(--adw-scrollable-track-bg);
-  scrollbar-width: thin;
-  overflow: scroll;
+:root {
+  --mie-scroll-w: 0.4rem;
+}
+
+* {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+// prettier-ignore
+@supports not selector(::-webkit-scrollbar) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: 
+      var(--mie-scroll-thumb-bg)
+      var(--mie-scroll-track-bg);
+  }
+}
+
+*:hover {
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--mie-scroll-thumb-bg);
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: var(--mie-scroll-track-bg);
+  }
+}
+
+::-webkit-scrollbar {
+  width: var(--mie-scroll-w);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: var(--mie-scroll-w);
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: var(--mie-scroll-w);
 }

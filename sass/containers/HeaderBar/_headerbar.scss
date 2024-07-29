@@ -31,30 +31,31 @@
     border-bottom: 0.1rem solid var(--mie-headerbar-border);
   }
 
-  .left,
-  .right {
-    align-items: center;
-    display: flex;
+  > .left {
+    @include flex(row, flex-start, center);
+    z-index: 100;
     flex: 1;
   }
 
-  .left {
-    justify-content: flex-start;
-  }
-
-  .right {
-    justify-content: flex-end;
+  > .right {
+    @include flex(row, flex-end, center);
+    z-index: 100;
+    > .content {
+      flex: 1;
+    }
   }
 
   > .center {
-    max-width: 20rem;
-    width: 20rem;
+    @include flex(row, center, center);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
 
-    justify-content: center;
-    align-items: center;
-    display: flex;
+    z-index: 50;
 
-    .mie.header.attached {
+    > .mie.header {
       .title {
         margin-bottom: 0.2rem;
       }

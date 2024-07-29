@@ -1,0 +1,26 @@
+$mie-label-default-colors: (
+  "light": (
+    "border-bg": rgba(#000, 0.1),
+    "bg": rgba(#000, 0.6),
+    "fg": rgba(#fff, 0.8),
+  ),
+  "dark": (
+    "border-bg": rgba(#fff, 0.1),
+    "bg": rgba(#fff, 0.6),
+    "fg": rgba(#000, 0.8),
+  ),
+);
+
+@function map-accents-to-label($theme, $accent, $colors) {
+  $bg: _get($colors, "bg");
+  $fg: _get($colors, "fg");
+
+  @return ("border-bg": darken($bg, 20%), "bg": $bg, "fg": $fg);
+}
+
+@include accents-map-to-component(
+  "label",
+  $mie-label-default-colors,
+  map-accents-to-label,
+  $mie-accents-by-theme
+);

@@ -1,0 +1,11 @@
+.mie.window-controls {
+  @include flex(row, flex-end, center);
+
+  > .mie.button {
+    margin-right: mie-indent-size(tiny);
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
