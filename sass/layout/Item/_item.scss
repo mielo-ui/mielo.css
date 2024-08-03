@@ -22,8 +22,17 @@
   &.center {
     justify-content: center;
 
+    > .content {
+      justify-content: center;
+      text-align: center;
+    }
+
     &.vertical {
       align-items: center;
+
+      > .content {
+        align-items: center;
+      }
     }
   }
 

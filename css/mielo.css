@@ -249,7 +249,6 @@ template {
   --mie-h3-fs: 1.6rem;
   --mie-h2-fs: 2rem;
   --mie-h1-fs: 2.3rem;
-  --mie-text-fs: 1.4rem;
 }
 
 h1.mie.text.title,
@@ -349,6 +348,34 @@ h4.mie.title,
   --mie-inverted-fg: #fff;
   --mie-fg-muted: rgba(0, 0, 0, 0.65);
   --mie-fg: rgba(0, 0, 0, 0.8);
+}
+
+.mie.text.tiny {
+  --mie-text-fs: 1rem;
+}
+
+.mie.text.small {
+  --mie-text-fs: 1.2rem;
+}
+
+.mie.text {
+  --mie-text-fs: 1.4rem;
+}
+
+.mie.text.large {
+  --mie-text-fs: 1.6rem;
+}
+
+.mie.text.big {
+  --mie-text-fs: 2rem;
+}
+
+.mie.text.huge {
+  --mie-text-fs: 2.3rem;
+}
+
+.mie.text.massive {
+  --mie-text-fs: 2.6rem;
 }
 
 :root {
@@ -1540,7 +1567,14 @@ body {
 .mie.item.center {
   justify-content: center;
 }
+.mie.item.center > .content {
+  justify-content: center;
+  text-align: center;
+}
 .mie.item.center.vertical {
+  align-items: center;
+}
+.mie.item.center.vertical > .content {
   align-items: center;
 }
 .mie.item > .indicator {
@@ -1859,6 +1893,7 @@ body {
 .mie.splitview > .container {
   background-color: var(--mie-splitview-bg);
   transition: all 0.3s ease;
+  position: relative;
   display: flex;
   justify-content: stretch;
   flex-direction: column;
@@ -1896,7 +1931,7 @@ body {
 }
 
 :root .mie.view, [data-theme=light] .mie.view {
-  --mie-view-sidebar: #f2f2f2;
+  --mie-view-panel: #f2f2f2;
   --mie-view-window: #fafafa;
   --mie-view-content: #fff;
   --mie-view-osd: #4b4b4b;
@@ -1919,7 +1954,7 @@ body {
 }
 
 [data-theme=dark] .mie.view {
-  --mie-view-sidebar: #2a2a2a;
+  --mie-view-panel: #2a2a2a;
   --mie-view-window: #242424;
   --mie-view-content: rgba(255, 255, 255, 0.08);
   --mie-view-osd: #0b0b0b;
@@ -1945,8 +1980,8 @@ body {
   --mie-view-bg: transparent;
   background-color: var(--mie-view-bg);
 }
-.mie.view.sidebar {
-  --mie-view-bg: var(--mie-view-sidebar);
+.mie.view.panel {
+  --mie-view-bg: var(--mie-view-panel);
 }
 .mie.view.window {
   --mie-view-bg: var(--mie-view-window);
@@ -2888,7 +2923,7 @@ body {
 }
 
 .mie.activatable.active {
-  background-color: var(--mie-activatable-bg-hover) !important;
+  background-color: var(--mie-activatable-bg-hover);
 }
 
 :root .mie.activatable, [data-theme=light] .mie.activatable {

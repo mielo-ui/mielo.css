@@ -26,6 +26,7 @@
   > .container {
     background-color: var(--mie-splitview-bg);
     transition: all 0.3s ease;
+    position: relative;
 
     @include flex(column, stretch, stretch);
     height: 100%;

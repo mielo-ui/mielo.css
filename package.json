@@ -1,6 +1,6 @@
 {
   "name": "mielo",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Mielo UI - scss based components library",
   "main": "mielo.scss",
   "unpkg": "css/mielo.css",

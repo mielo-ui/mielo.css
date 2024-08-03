@@ -4,8 +4,8 @@
   background-color: var(--mie-view-bg);
 
   // Background appearance
-  &.sidebar {
-    --mie-view-bg: var(--mie-view-sidebar);
+  &.panel {
+    --mie-view-bg: var(--mie-view-panel);
   }
 
   &.window {
