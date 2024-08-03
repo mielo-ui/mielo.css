@@ -22,7 +22,7 @@ Mielo is constantly in development! Try it out now:
 ### NPM
 
 ```sh
-npm install mielo
+npm install @mielo-ui/mielo
 ```
 
 **or**
@@ -30,7 +30,7 @@ npm install mielo
 ### Yarn
 
 ```sh
-yarn add mielo
+yarn add @mielo-ui/mielo
 ```
 
 ### Import
@@ -54,13 +54,13 @@ Mielo is compatible with **recent** versions of:
 Internet Explorer is not supported.
 
 ## Documentation
-Browse the [online documentation here.](#todo)
+Browse the [online documentation here.](https://mielo-ui.github.io/)
 
 # Development
 For build library from source:
 
 ``` sh
-git clone https://github.com/friktor/mielo
+git clone https://github.com/mielo-ui/mielo
 cd mielo
 
 npm install # or "yarn"
