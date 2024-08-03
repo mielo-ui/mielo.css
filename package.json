@@ -1,18 +1,17 @@
 {
   "name": "@mielo-ui/mielo",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Mielo UI - scss based components library inspired by LibAdwaita",
   "main": "mielo.scss",
   "unpkg": "css/mielo.css",
   "style": "css/mielo.min.css",
   "author": "Anton Shramko <antonshramko@yandex.ru>",
   "repository": {
-    "url": "https://github.com/mielo-ui/mielo"
+    "url": "https://github.com/mielo-ui/mielo.css"
   },
   "license": "MIT",
-  "private": false,
   "bugs": {
-    "url": "https://github.com/mielo-ui/mielo/issues"
+    "url": "https://github.com/mielo-ui/mielo.css/issues"
   },
   "keywords": [
     "gnome",
