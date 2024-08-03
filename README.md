@@ -10,6 +10,9 @@
   Modern UI framework for web, inspired desktop design.
 </p>
 
+## Documentation
+Browse the [online documentation and demo here.](https://mielo-ui.github.io/)
+
 ## Motivation
 The project is inspired by the solution in the design of desktop applications on LibAdwaita interface library, and is a set of components and containers for quickly creating interfaces in web, similar to those found in the native desktop.
 
@@ -52,9 +55,6 @@ Mielo is compatible with **recent** versions of:
 - Safari
 
 Internet Explorer is not supported.
-
-## Documentation
-Browse the [online documentation here.](https://mielo-ui.github.io/)
 
 # Development
 For build library from source:
