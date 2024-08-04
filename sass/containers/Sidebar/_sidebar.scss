@@ -5,7 +5,9 @@
   flex-direction: column;
   display: flex;
 
+  min-width: var(--mie-sidebar-w);
   width: var(--mie-sidebar-w);
+  z-index: 1000;
 
   // Layout Styles & Animations
   &.width {

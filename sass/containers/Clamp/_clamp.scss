@@ -13,11 +13,18 @@
     max-width: var(--mie-clamp-size);
     width: var(--mie-clamp-size);
 
+    margin-right: mie-indent-size();
+    margin-left: mie-indent-size();
     margin-bottom: 2.5rem;
   }
 
   > .content {
     max-width: var(--mie-clamp-size);
     width: var(--mie-clamp-size);
+
+    @include media-breakpoint-down(md) {
+      max-width: auto;
+      width: 100%;
+    }
   }
 }

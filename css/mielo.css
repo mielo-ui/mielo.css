@@ -297,6 +297,12 @@ h4.mie.title,
   margin-bottom: 1.2rem;
   margin-top: 0;
 }
+.mie.text.bold {
+  font-weight: 700;
+}
+.mie.text.semibold {
+  font-weight: 500;
+}
 
 :root .mie.text, [data-theme=light] .mie.text {
   --mie-text-inverted-fg-muted: rgba(255, 255, 255, 0.65);
@@ -1693,32 +1699,32 @@ body {
   --mie-window-bg: #fafafa;
 }
 :root .mie.accent.window, [data-theme=light] .mie.accent.window {
-  --mie-window-bg: #8fbbf0;
+  --mie-window-bg: #e9f2fc;
 }
 :root .mie.success.window, [data-theme=light] .mie.success.window {
-  --mie-window-bg: #77dfaf;
+  --mie-window-bg: #caf2e0;
 }
 :root .mie.warning.window, [data-theme=light] .mie.warning.window {
-  --mie-window-bg: #f8cb5d;
+  --mie-window-bg: #fceabf;
 }
 :root .mie.error.window, [data-theme=light] .mie.error.window {
-  --mie-window-bg: #ee7379;
+  --mie-window-bg: #f9ced0;
 }
 
 [data-theme=dark] .mie.window {
   --mie-window-bg: #242424;
 }
 [data-theme=dark] .mie.accent.window {
-  --mie-window-bg: #15539e;
+  --mie-window-bg: #8fbbf0;
 }
 [data-theme=dark] .mie.success.window {
-  --mie-window-bg: #134f33;
+  --mie-window-bg: #57d79c;
 }
 [data-theme=dark] .mie.warning.window {
-  --mie-window-bg: #6b4d05;
+  --mie-window-bg: #f7c245;
 }
 [data-theme=dark] .mie.error.window {
-  --mie-window-bg: #670f15;
+  --mie-window-bg: #e75b65;
 }
 
 .mie.window {
@@ -1755,32 +1761,32 @@ body {
   --mie-sidebar-bg: #ebebeb;
 }
 :root .mie.accent.sidebar, [data-theme=light] .mie.accent.sidebar {
-  --mie-sidebar-bg: white;
+  --mie-sidebar-bg: #8fbbf0;
 }
 :root .mie.success.sidebar, [data-theme=light] .mie.success.sidebar {
-  --mie-sidebar-bg: white;
+  --mie-sidebar-bg: #77dfaf;
 }
 :root .mie.warning.sidebar, [data-theme=light] .mie.warning.sidebar {
-  --mie-sidebar-bg: white;
+  --mie-sidebar-bg: #f8cb5d;
 }
 :root .mie.error.sidebar, [data-theme=light] .mie.error.sidebar {
-  --mie-sidebar-bg: white;
+  --mie-sidebar-bg: #ee7379;
 }
 
 [data-theme=dark] .mie.sidebar {
   --mie-sidebar-bg: #303030;
 }
 [data-theme=dark] .mie.accent.sidebar {
-  --mie-sidebar-bg: #e9f2fc;
+  --mie-sidebar-bg: #629fea;
 }
 [data-theme=dark] .mie.success.sidebar {
-  --mie-sidebar-bg: #a9ebcd;
+  --mie-sidebar-bg: #30cb84;
 }
 [data-theme=dark] .mie.warning.sidebar {
-  --mie-sidebar-bg: #fbe2a7;
+  --mie-sidebar-bg: #f5b214;
 }
 [data-theme=dark] .mie.error.sidebar {
-  --mie-sidebar-bg: #f4b4b9;
+  --mie-sidebar-bg: #e12e3b;
 }
 
 .mie.sidebar.small {
@@ -1800,7 +1806,9 @@ body {
   transition: all 0.3s ease;
   flex-direction: column;
   display: flex;
+  min-width: var(--mie-sidebar-w);
   width: var(--mie-sidebar-w);
+  z-index: 1000;
 }
 .mie.sidebar.width {
   margin-left: calc(var(--mie-sidebar-w) * -1);
@@ -1835,7 +1843,7 @@ body {
 
 :root .mie.splitview, [data-theme=light] .mie.splitview {
   --mie-splitview-divider-bg: rgba(0, 0, 0, 0.07);
-  --mie-splitview-overlay-bg: rgba(255, 255, 255, 0.15);
+  --mie-splitview-overlay-bg: rgba(255, 255, 255, 0.3);
   --mie-splitview-bg: #fafafa;
 }
 :root .mie.accent.splitview, [data-theme=light] .mie.accent.splitview {
@@ -1853,7 +1861,7 @@ body {
 
 [data-theme=dark] .mie.splitview {
   --mie-splitview-divider-bg: rgba(22, 11, 11, 0.36);
-  --mie-splitview-overlay-bg: rgba(0, 0, 0, 0.1);
+  --mie-splitview-overlay-bg: rgba(0, 0, 0, 0.3);
   --mie-splitview-bg: #242424;
 }
 [data-theme=dark] .mie.accent.splitview {
@@ -1923,11 +1931,19 @@ body {
   display: flex;
   max-width: var(--mie-clamp-size);
   width: var(--mie-clamp-size);
+  margin-right: 1rem;
+  margin-left: 1rem;
   margin-bottom: 2.5rem;
 }
 .mie.clamp > .content {
   max-width: var(--mie-clamp-size);
   width: var(--mie-clamp-size);
+}
+@media (max-width: 768px) {
+  .mie.clamp > .content {
+    max-width: auto;
+    width: 100%;
+  }
 }
 
 :root .mie.view, [data-theme=light] .mie.view {
@@ -2579,10 +2595,13 @@ body {
   align-items: center;
   position: absolute;
   height: 100%;
-  width: 100%;
-  left: 0;
+  left: 50%;
   top: 0;
+  transform: translateX(-50%);
   z-index: 50;
+}
+.mie.headerbar > .center > .mie.header {
+  user-select: none;
 }
 .mie.headerbar > .center > .mie.header .title {
   margin-bottom: 0.2rem;

@@ -11,7 +11,7 @@ $mie-sidebar-default-colors: (
   $bg: _get($colors, "bg");
   $fg: _get($colors, "fg");
 
-  @return ("bg": if($theme == "dark", lighten($bg, 40%), lighten($bg, 60%)));
+  @return ("bg": if($theme == "dark", lighten($bg, 10%), lighten($bg, 20%)));
 }
 
 @include accents-map-to-component(

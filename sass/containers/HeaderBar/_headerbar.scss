@@ -49,13 +49,15 @@
     @include flex(row, center, center);
     position: absolute;
     height: 100%;
-    width: 100%;
-    left: 0;
+    left: 50%;
     top: 0;
 
+    transform: translateX(-50%);
     z-index: 50;
 
     > .mie.header {
+      user-select: none;
+
       .title {
         margin-bottom: 0.2rem;
       }

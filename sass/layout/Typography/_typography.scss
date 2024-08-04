@@ -53,4 +53,12 @@ h4.mie.title,
     margin-bottom: 1.2rem;
     margin-top: 0;
   }
+
+  &.bold {
+    font-weight: 700;
+  }
+
+  &.semibold {
+    font-weight: 500;
+  }
 }
