@@ -1,6 +1,6 @@
-@import "accents";
-@import "sizes";
+@forward "accents";
+@forward "sizes";
 
-@import "indeterminate";
-@import "progress";
-@import "bar";
+@forward "indeterminate";
+@forward "progress";
+@forward "bar";

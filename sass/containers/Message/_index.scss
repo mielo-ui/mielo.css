@@ -1,4 +1,4 @@
-@import "variables";
-@import "accents";
-@import "sizes";
-@import "message";
+@forward "variables";
+@forward "accents";
+@forward "sizes";
+@forward "message";

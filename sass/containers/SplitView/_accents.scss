@@ -1,3 +1,8 @@
+@use "sass:meta";
+@use "sass:map";
+
+@use "../../utils" as *;
+
 $mie-splitview-default-colors: (
   "light": (
     "divider-bg": rgba(#000, 0.07),
@@ -12,8 +17,8 @@ $mie-splitview-default-colors: (
 );
 
 @function map-accents-to-splitview($theme, $accent, $colors) {
-  $bg: _get($colors, "bg");
-  $fg: _get($colors, "fg");
+  $bg: map.get($colors, "bg");
+  $fg: map.get($colors, "fg");
 
   @return ("bg": if($theme == "dark", lighten($bg, 20%), lighten($bg, 40%)));
 }
@@ -21,6 +26,6 @@ $mie-splitview-default-colors: (
 @include accents-map-to-component(
   "splitview",
   $mie-splitview-default-colors,
-  map-accents-to-splitview,
+  meta.get-function("map-accents-to-splitview"),
   $mie-accents-by-theme
 );

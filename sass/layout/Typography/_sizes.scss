@@ -1,3 +1,5 @@
+@use "../../utils" as *;
+
 $mie-text-sizes: (
   "tiny": (
     "fs": mie-text-fs(tiny),

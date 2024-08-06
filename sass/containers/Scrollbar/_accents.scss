@@ -1,3 +1,8 @@
+@use "sass:meta";
+@use "sass:map";
+
+@use "../../utils" as *;
+
 $mie-scrollbar-default-colors: (
   "dark": (
     "scroll-thumb-bg": rgba(#fff, 0.15),
@@ -10,8 +15,8 @@ $mie-scrollbar-default-colors: (
 );
 
 @function map-accents-to-scrollbar($theme, $accent, $colors) {
-  $color: _get($colors, "color");
-  $bg: _get($colors, "bg");
+  $color: map.get($colors, "color");
+  $bg: map.get($colors, "bg");
 
   // prettier-ignore
   @return (
@@ -23,6 +28,6 @@ $mie-scrollbar-default-colors: (
 @include accents-map-to-component(
   "",
   $mie-scrollbar-default-colors,
-  map-accents-to-scrollbar,
-  _omit($mie-accents-by-theme, "accent")
+  meta.get-function("map-accents-to-scrollbar"),
+  $mie-accents-by-theme
 );

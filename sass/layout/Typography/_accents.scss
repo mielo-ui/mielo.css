@@ -1,3 +1,9 @@
+@use "sass:meta";
+@use "sass:list";
+@use "sass:map";
+
+@use "../../utils" as *;
+
 $mie-text-default-colors: (
   "dark": (
     "inverted-fg-muted": rgba(#000, 0.65),
@@ -11,11 +17,11 @@ $mie-text-default-colors: (
     "fg-muted": rgba(#000, 0.65),
     "fg": rgba(#000, 0.8),
   ),
-);
+) !default;
 
 @function map-accents-to-text($theme, $accent, $colors) {
-  $color: _get($colors, "color");
-  $bg: _get($colors, "bg");
+  $color: map.get($colors, "color");
+  $bg: map.get($colors, "bg");
 
   @return ("fg": $color);
 }
@@ -23,7 +29,8 @@ $mie-text-default-colors: (
 @include accents-map-to-component(
   "text",
   $mie-text-default-colors,
-  map-accents-to-text
+  meta.get-function("map-accents-to-text"),
+  $mie-accents-by-theme
 );
 
 // Globals
@@ -38,9 +45,9 @@ $mie-text-default-colors: (
 
   #{$selector} {
     @each $item in $flat {
-      $value: _get($item, 2);
-      $keys: _get($item, 1);
-      $key: _join($keys, "-");
+      $value: list.nth($item, 2);
+      $keys: list.nth($item, 1);
+      $key: join($keys, "-");
 
       --mie-#{$key}: #{$value};
     }

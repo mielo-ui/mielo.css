@@ -1,26 +1,24 @@
 // Global
-@import "Scrollbar";
-@import "Window";
+@forward "Scrollbar";
+@forward "Window";
 
 // Containers
-@import "Sidebar";
-@import "SplitView";
-@import "Clamp";
-@import "View";
+@forward "Sidebar";
+@forward "SplitView";
+@forward "Clamp";
+@forward "View";
 
 // Messages
-@import "Message";
-@import "Notification";
+@forward "Message";
 
 // Modals
-@import "Modal";
-@import "Dialog";
+@forward "Modal";
+@forward "Dialog";
 
 // Lists
-@import "List";
-@import "Rows";
+@forward "List";
+@forward "Rows";
 
 // Other
-@import "HeaderBar";
-@import "Banner";
-@import "Tabs";
+@forward "HeaderBar";
+@forward "Tabs";

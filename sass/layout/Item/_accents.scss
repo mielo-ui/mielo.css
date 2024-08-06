@@ -1,3 +1,9 @@
+@use "sass:meta";
+@use "sass:list";
+@use "sass:map";
+
+@use "../../utils" as *;
+
 $mie-item-default-colors: (
   "dark": (
     "description-fg": rgba(#fff, 0.6),
@@ -10,8 +16,8 @@ $mie-item-default-colors: (
 );
 
 @function map-accents-to-item($theme, $accent, $colors) {
-  $color: _get($colors, "color");
-  $bg: _get($colors, "bg");
+  $color: map.get($colors, "color");
+  $bg: map.get($colors, "bg");
 
   @return ("description-fg": rgba($color, 0.6), "title-fg": rgba($color, 0.8));
 }
@@ -19,5 +25,5 @@ $mie-item-default-colors: (
 @include accents-map-to-component(
   "item",
   $mie-item-default-colors,
-  map-accents-to-item
+  meta.get-function("map-accents-to-item")
 );

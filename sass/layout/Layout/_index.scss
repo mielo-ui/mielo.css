@@ -1,5 +1,6 @@
-@import "flex";
-@import "indents";
-@import "rounded";
-@import "shadows";
-@import "space-between";
+@forward "flex";
+@forward "indents";
+@forward "rounded";
+@forward "shadows";
+@forward "space-between";
+@forward "media";

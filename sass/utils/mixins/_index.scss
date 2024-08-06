@@ -1,6 +1,6 @@
-@import "layout";
-@import "variants";
-@import "accents";
-@import "button";
-@import "media";
-@import "theme";
+@forward "layout";
+@forward "variants";
+@forward "accents";
+@forward "button";
+@forward "media";
+@forward "theme";

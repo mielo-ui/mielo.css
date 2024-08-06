@@ -1,7 +1,12 @@
+@use "sass:string";
+@use "sass:list";
+
+@use "../../utils" as *;
+
 // Padding class worked for all containers (with prefix)
 .mie {
   @each $indent-type in ("padding", "margin") {
-    $indent-short-key: _get($indent-type, 1); // get "p" or "m"
+    $indent-short-key: string.slice($indent-type, 1, 1); // get "p" or "m"
 
     // indent for all sides.
     @each $name, $size in $mie-indent-size {
@@ -15,7 +20,7 @@
 
     // horizontally & vertically sides
     @each $side in ("horizontal", "vertical") {
-      $side-short-key: _get($side, 1);
+      $side-short-key: string.slice($side, 1, 1);
 
       @each $name, $size in $mie-indent-size {
         $size-postfix: if($name != "medium", "-" + $name, "");
@@ -33,7 +38,7 @@
 
     // directly side
     @each $side in ("top", "right", "bottom", "left") {
-      $side-short-key: _get($side, 1);
+      $side-short-key: string.slice($side, 1, 1);
 
       @each $name, $size in $mie-indent-size {
         $size-postfix: if($name != "medium", "-" + $name, "");

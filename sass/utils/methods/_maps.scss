@@ -10,22 +10,16 @@
   $result: ();
 
   @each $key, $value in $map {
-    @if _is-map($value) {
-      $flatArray: map-flatten($value, _push($prefix, $key));
-      $result: _concat($result, $flatArray);
+    $path-key: list.append($prefix, $key);
+
+    @if type-of($value) == "map" {
+      $flatArray: map-flatten($value, $path-key);
+      $result: list.join($result, $flatArray);
     } @else {
-      $flat: (_push($prefix, $key), $value);
-      $result: _push($result, $flat);
+      $flat: ($path-key, $value);
+      $result: list.append($result, $flat);
     }
   }
 
   @return $result;
-}
-
-// Mixin expand variables from nested map
-// @in: map<key, map | value>
-// @out: array<array<keys>>
-@function map-flatten-keys($map) {
-  $flatten: map-flatten($map);
-  @return _map($flatten, _first);
 }

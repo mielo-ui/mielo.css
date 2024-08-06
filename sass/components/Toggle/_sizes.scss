@@ -1,3 +1,5 @@
+@use "../../utils" as *;
+
 $mie-toggle-sizes: (
   "medium": (
     "fs": mie-text-fs(medium),

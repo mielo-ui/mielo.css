@@ -2,6 +2,8 @@
 @use "sass:map";
 @use "sass:meta";
 
+@use "../methods" as *;
+
 // ""
 // variant-classname("default", "default", "", false),
 // ".variant"
@@ -23,7 +25,7 @@
   $variant-ext: null;
   $prefix-ext: null;
 
-  @if _is_empty($prefix) and $prefix-directly {
+  @if is-empty($prefix) and $prefix-directly {
     @error "Invalid variations: empty prefix cant declare in directly style";
   }
 
@@ -31,7 +33,7 @@
     $variant-ext: if-or-empty($variant != $default-variant, $variant);
 
     $prefix-ext: prefix-if(
-      if(_is_empty($variant-ext), $prefix, $prefix + "-"),
+      if(is-empty($variant-ext), $prefix, $prefix + "-"),
       "."
     );
   } @else {
@@ -54,12 +56,12 @@
 // }
 
 @mixin variants-assign-variables($class, $vars) {
-  $name: _kebab-case($class);
+  $name: kebab-case($class);
 
   @each $item in $vars {
-    $value: _get($item, 2);
-    $keys: _get($item, 1);
-    $key: _join($keys, "-");
+    $value: list.nth($item, 2);
+    $keys: list.nth($item, 1);
+    $key: join($keys, "-");
 
     --mie-#{$name}-#{$key}: #{$value};
   }
@@ -73,17 +75,16 @@
   $prefix: "",
   $prefix-directly: false
 ) {
-  @each $variant in _keys($variants) {
+  @each $variant-name, $variant-vars in $variants {
     $class-name: variant-classname(
-      $variant,
+      $variant-name,
       $default-variant,
       $prefix,
       $prefix-directly
     );
-    $vars: map-flatten(_get($variants, $variant));
 
     .mie.#{$class}#{$class-name} {
-      @include variants-assign-variables($class, $vars);
+      @include variants-assign-variables($class, map-flatten($variant-vars));
     }
   }
 }

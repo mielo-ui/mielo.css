@@ -1,3 +1,5 @@
+@use "../../utils" as *;
+
 $mie-label-sizes: (
   "medium": (
     "pv": mie-indent-size(tiny),

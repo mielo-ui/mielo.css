@@ -1,5 +1,5 @@
-@import "accents";
-@import "sizes";
-@import "rows";
-@import "property";
-@import "row";
+@forward "accents";
+@forward "sizes";
+@forward "rows";
+@forward "property";
+@forward "row";

@@ -1,3 +1,8 @@
+@use "sass:meta";
+@use "sass:map";
+
+@use "../../utils" as *;
+
 $mie-message-default-colors: (
   "light": (
     "description-fg": rgba(#000, 0.6),
@@ -16,8 +21,8 @@ $mie-message-default-colors: (
 );
 
 @function map-accents-to-message($theme, $accent, $colors) {
-  $color: _get($colors, "color");
-  $bg: _get($colors, "bg");
+  $color: map.get($colors, "color");
+  $bg: map.get($colors, "bg");
 
   @return (
     "description-fg": rgba($color, 0.6),
@@ -31,6 +36,6 @@ $mie-message-default-colors: (
 @include accents-map-to-component(
   "message",
   $mie-message-default-colors,
-  map-accents-to-message,
+  meta.get-function("map-accents-to-message"),
   $mie-accents-by-theme
 );

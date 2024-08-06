@@ -1,0 +1,84 @@
+@use "sass:string";
+@use "sass:list";
+
+// str-replace() - Replace in a string
+// from: https://github.com/hail2u/scss-functions/blob/master/string/_str-replace.scss
+// @param {string}  $string    String that you want to replace
+// @param {string}  $substr    String that is to be replaced by `$newsubstr`
+// @param {string}  $newsubstr String that replaces `$substr`
+// @param {number*} $all       Flag for replaceing all (1+) or not (0)
+// @return {string}
+@function replace($string, $substr, $newsubstr, $all: 0) {
+  $string: quote(#{$string});
+  $substr: quote(#{$substr});
+  $newsubstr: quote(#{$newsubstr});
+  $position-found: string.index($string, $substr);
+  $processed: ();
+
+  @while ($position-found and $position-found > 0) {
+    $length-substr: string.length($substr);
+
+    @if (1 != $position-found) {
+      $processed: append(
+        $processed,
+        string.slice($string, 0, $position-found - 1)
+      );
+    }
+
+    $processed: append($processed, $newsubstr);
+    $string: string.slice($string, $position-found + $length-substr);
+
+    $position-found: 0;
+
+    @if ($all > 0) {
+      $position-found: string.index($string, $substr);
+    }
+  }
+
+  $processed: append($processed, $string);
+  $string: "";
+
+  @each $s in $processed {
+    $string: #{$string}#{$s};
+  }
+
+  @return $string;
+}
+
+@function lowerCase($string) {
+  @return to-lower-case(quote(#{$string}));
+}
+
+@function toLower($string) {
+  @return lowerCase($string);
+}
+
+@function kebab-case($string, $prefix: "", $glue: "-", $suffix: "") {
+  $result: toLower($string);
+  $replace: " ", "-", "–", "—", "_", ",", ";", ":", ".", "+", "=", "?", "&", "*",
+    "/", "|", ">", "<", "(", ")";
+
+  @each $char in $replace {
+    $result: replace($result, $char, $glue, 1);
+  }
+
+  @return $prefix + $result + $suffix;
+}
+
+@function join($list, $separator: "") {
+  $length: list.length($list);
+
+  @if ($length == 0) {
+    @return "";
+  }
+
+  $result: list.nth($list, 1);
+
+  @if $length > 1 {
+    @for $index from 2 through $length {
+      $result: $result + $separator + list.nth($list, $index);
+    }
+  }
+
+  @return $result;
+}

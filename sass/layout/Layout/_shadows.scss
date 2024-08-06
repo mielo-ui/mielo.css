@@ -1,3 +1,8 @@
+@use "sass:meta";
+@use "sass:map";
+
+@use "../../utils" as *;
+
 $mie-shadow-states: (
   "dark": (
     "inner": 0 0.2rem 2.5rem 0 rgba(#000, 0.05) inset,
@@ -30,7 +35,7 @@ $mie-shadow-states: (
 }
 
 @function map-accents-to-shadow($theme, $accent, $colors) {
-  $bg: _get($colors, "bg");
+  $bg: map.get($colors, "bg");
 
   @return (
     "inner": 0 0.2rem 2.5rem 0 rgba($bg, 0.05) inset,
@@ -45,5 +50,6 @@ $mie-shadow-states: (
 @include accents-map-to-component(
   "shadow",
   $mie-shadow-states,
-  map-accents-to-shadow
+  meta.get-function("map-accents-to-shadow"),
+  $mie-accents-by-theme
 );

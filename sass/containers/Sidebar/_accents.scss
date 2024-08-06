@@ -1,3 +1,8 @@
+@use "sass:meta";
+@use "sass:map";
+
+@use "../../utils" as *;
+
 $mie-sidebar-default-colors: (
   "light": (
     "bg": #ebebeb,
@@ -8,8 +13,8 @@ $mie-sidebar-default-colors: (
 );
 
 @function map-accents-to-sidebar($theme, $accent, $colors) {
-  $bg: _get($colors, "bg");
-  $fg: _get($colors, "fg");
+  $bg: map.get($colors, "bg");
+  $fg: map.get($colors, "fg");
 
   @return ("bg": if($theme == "dark", lighten($bg, 10%), lighten($bg, 20%)));
 }
@@ -17,6 +22,6 @@ $mie-sidebar-default-colors: (
 @include accents-map-to-component(
   "sidebar",
   $mie-sidebar-default-colors,
-  map-accents-to-sidebar,
+  meta.get-function("map-accents-to-sidebar"),
   $mie-accents-by-theme
 );

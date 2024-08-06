@@ -1,3 +1,5 @@
+@use "../../utils" as *;
+
 $mie-header-sizes: (
   "tiny": (
     "subtitle-fs": mie-text-fs(mini),

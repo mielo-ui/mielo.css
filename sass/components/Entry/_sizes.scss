@@ -1,3 +1,5 @@
+@use "../../utils" as *;
+
 $mie-entry-sizes: (
   "medium": (
     "value-fs": mie-text-fs(medium),

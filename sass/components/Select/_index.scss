@@ -1,6 +1,6 @@
-@import "variables";
-@import "accents";
-@import "sizes";
-@import "select";
-@import "button";
-@import "options";
+@forward "variables";
+@forward "accents";
+@forward "sizes";
+@forward "select";
+@forward "button";
+@forward "options";

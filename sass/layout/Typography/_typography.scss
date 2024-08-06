@@ -1,3 +1,5 @@
+@use "../../utils" as *;
+
 :root {
   --mie-h4-fs: #{mie-text-fs(medium)};
   --mie-h3-fs: #{mie-text-fs(large)};

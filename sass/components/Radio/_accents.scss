@@ -1,3 +1,8 @@
+@use "sass:meta";
+@use "sass:map";
+
+@use "../../utils" as *;
+
 $mie-radio-default-colors: (
   "dark": (
     "border-active": rgba(#1a5fb4, 1),
@@ -12,8 +17,8 @@ $mie-radio-default-colors: (
 );
 
 @function map-accents-to-radio($theme, $accent, $colors) {
-  $color: _get($colors, "color");
-  $bg: _get($colors, "bg");
+  $color: map.get($colors, "color");
+  $bg: map.get($colors, "bg");
 
   // prettier-ignore
   @return (
@@ -25,6 +30,6 @@ $mie-radio-default-colors: (
 @include accents-map-to-component(
   "radio",
   $mie-radio-default-colors,
-  map-accents-to-radio,
-  _omit($mie-accents-by-theme, "accent")
+  meta.get-function("map-accents-to-radio"),
+  $mie-accents-by-theme
 );

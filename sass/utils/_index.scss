@@ -1,3 +1,4 @@
-@import "methods";
-@import "mixins";
-@import "sizes";
+@forward "methods";
+@forward "mixins";
+@forward "colors";
+@forward "sizes";

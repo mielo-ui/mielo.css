@@ -1,3 +1,5 @@
+@use "../../utils" as *;
+
 .mie.window-controls {
   @include flex(row, flex-end, center);
 

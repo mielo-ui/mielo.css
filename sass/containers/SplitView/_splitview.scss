@@ -1,3 +1,5 @@
+@use "../../utils" as *;
+
 .mie.splitview {
   position: relative;
   overflow: hidden;
@@ -25,7 +27,7 @@
 
   > .container {
     background-color: var(--mie-splitview-bg);
-    transition: all 0.3s ease;
+    transition: width 0.3s ease-out;
     position: relative;
 
     @include flex(column, stretch, stretch);

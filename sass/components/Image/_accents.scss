@@ -1,3 +1,8 @@
+@use "sass:meta";
+@use "sass:map";
+
+@use "../../utils" as *;
+
 $mie-image-default-colors: (
   "light": (
     "border-bg": #{rgba(#000, 0.1)},
@@ -10,8 +15,8 @@ $mie-image-default-colors: (
 );
 
 @function map-accents-to-image($theme, $accent, $colors) {
-  $color: _get($colors, "color");
-  $bg: _get($colors, "bg");
+  $color: map.get($colors, "color");
+  $bg: map.get($colors, "bg");
 
   @return ("border-bg": #{rgba($color, 0.6)}, "bg": #{rgba($color, 0.1)});
 }
@@ -19,6 +24,6 @@ $mie-image-default-colors: (
 @include accents-map-to-component(
   "image",
   $mie-image-default-colors,
-  map-accents-to-image,
+  meta.get-function("map-accents-to-image"),
   $mie-accents-by-theme
 );

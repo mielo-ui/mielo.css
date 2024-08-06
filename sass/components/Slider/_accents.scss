@@ -1,3 +1,8 @@
+@use "sass:meta";
+@use "sass:map";
+
+@use "../../utils" as *;
+
 $mie-slider-default-colors: (
   "dark": (
     "bg": (
@@ -20,8 +25,8 @@ $mie-slider-default-colors: (
 );
 
 @function map-accents-to-slider($theme, $accent, $colors) {
-  $color: _get($colors, "color");
-  $bg: _get($colors, "bg");
+  $color: map.get($colors, "color");
+  $bg: map.get($colors, "bg");
 
   @return (
     "bg": (
@@ -34,5 +39,6 @@ $mie-slider-default-colors: (
 @include accents-map-to-component(
   "slider",
   $mie-slider-default-colors,
-  map-accents-to-slider
+  meta.get-function("map-accents-to-slider"),
+  $mie-accents-by-theme
 );

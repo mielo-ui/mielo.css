@@ -1,27 +1,27 @@
 // Core
-@import "Header";
+@forward "Header";
 
 // Triggers
-@import "Activatable";
-@import "Collapsible";
-@import "Button";
-@import "Label";
+@forward "Activatable";
+@forward "Collapsible";
+@forward "Button";
+@forward "Label";
 
 // Checkbox
-@import "Checkbox";
-@import "Toggle";
-@import "Radio";
+@forward "Checkbox";
+@forward "Toggle";
+@forward "Radio";
 
 // Controls
-@import "Select";
-@import "Entry";
-@import "Slider";
+@forward "Select";
+@forward "Entry";
+@forward "Slider";
 
 // Appearance
-@import "Progress";
-@import "Image";
-@import "Icons";
+@forward "Progress";
+@forward "Image";
+@forward "Icons";
 
 // Helpers
-@import "Divider";
-@import "Tooltip";
+@forward "Divider";
+@forward "Tooltip";

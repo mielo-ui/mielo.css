@@ -1,3 +1,8 @@
+@use "sass:meta";
+@use "sass:map";
+
+@use "../../utils" as *;
+
 $mie-dialog-default-colors: (
   "dark": (
     "action-border": rgba(#fff, 0.07),
@@ -10,8 +15,8 @@ $mie-dialog-default-colors: (
 );
 
 @function map-accents-to-dialog($theme, $accent, $colors) {
-  $color: _get($colors, "color");
-  $bg: _get($colors, "bg");
+  $color: map.get($colors, "color");
+  $bg: map.get($colors, "bg");
 
   @return ("bg": if($theme == "light", lighten($bg, 30%), darken($bg, 30%)));
 }
@@ -19,6 +24,6 @@ $mie-dialog-default-colors: (
 @include accents-map-to-component(
   "dialog",
   $mie-dialog-default-colors,
-  map-accents-to-dialog,
-  _omit($mie-accents-by-theme, "accent")
+  meta.get-function("map-accents-to-dialog"),
+  $mie-accents-by-theme
 );

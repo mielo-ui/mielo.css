@@ -1,3 +1,8 @@
+@use "sass:meta";
+@use "sass:map";
+
+@use "../../utils" as *;
+
 $mie-header-default-colors: (
   "dark": (
     "subtitle-fg": rgba(#fff, 0.6),
@@ -10,7 +15,7 @@ $mie-header-default-colors: (
 );
 
 @function map-accents-to-header($theme, $accent, $colors) {
-  $color: _get($colors, "color");
+  $color: map.get($colors, "color");
 
   @return ("subtitle-fg": rgba($color, 0.6), "title-fg": $color);
 }
@@ -18,6 +23,6 @@ $mie-header-default-colors: (
 @include accents-map-to-component(
   "header",
   $mie-header-default-colors,
-  map-accents-to-header,
-  _omit($mie-accents-by-theme, "accent")
+  meta.get-function("map-accents-to-header"),
+  $mie-accents-by-theme
 );

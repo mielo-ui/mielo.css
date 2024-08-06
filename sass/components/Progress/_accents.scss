@@ -1,3 +1,8 @@
+@use "sass:meta";
+@use "sass:map";
+
+@use "../../utils" as *;
+
 $mie-progress-default-colors: (
   "dark": (
     "bg": #282828,
@@ -21,13 +26,13 @@ $mie-progress-bar-default-colors: (
 );
 
 @function map-accents-to-progress($theme, $accent, $colors) {
-  $bg: _get($colors, "bg");
+  $bg: map.get($colors, "bg");
 
   @return ("bg": rgba($bg, 0.2));
 }
 
 @function map-accents-to-progress-bar($theme, $accent, $colors) {
-  $bg: _get($colors, "bg");
+  $bg: map.get($colors, "bg");
 
   @return ("indeterminate-bg": #{lighten($bg, 20%)}, "bg": $bg);
 }
@@ -35,10 +40,13 @@ $mie-progress-bar-default-colors: (
 @include accents-map-to-component(
   "progress",
   $mie-progress-default-colors,
-  map-accents-to-progress
+  meta.get-function("map-accents-to-progress"),
+  $mie-accents-by-theme
 );
+
 @include accents-map-to-component(
   "progress-bar",
   $mie-progress-bar-default-colors,
-  map-accents-to-progress-bar
+  meta.get-function("map-accents-to-progress-bar"),
+  $mie-accents-by-theme
 );

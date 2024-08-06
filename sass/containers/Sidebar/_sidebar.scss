@@ -1,6 +1,11 @@
 .mie.sidebar {
   background-color: var(--mie-sidebar-bg);
-  transition: all 0.3s ease;
+
+  transition:
+    background 0.3s ease-out,
+    width 0.3s ease,
+    height 0.3s ease,
+    margin-left 0.3s ease-out;
 
   flex-direction: column;
   display: flex;
@@ -9,23 +14,29 @@
   width: var(--mie-sidebar-w);
   z-index: 1000;
 
+  & + .container {
+    transition: width 0.3s ease-out;
+  }
+
   // Layout Styles & Animations
   &.width {
     margin-left: calc(var(--mie-sidebar-w) * -1);
 
     &.opened {
+      transition: margin-left 0.3s ease-in;
       margin-left: 0;
     }
   }
 
   &.shift {
     margin-left: calc(var(--mie-sidebar-w) * -1);
-    z-index: 100;
 
     &.opened {
+      transition: margin-left 0.3s ease-in;
       margin-left: 0;
 
       & + .container {
+        transition: margin-right 0.3s ease-in;
         margin-right: calc(var(--mie-sidebar-w) * -1);
       }
     }
@@ -38,13 +49,14 @@
     top: 0;
 
     left: calc(var(--mie-sidebar-w) * -1);
-    z-index: 100;
 
     &.opened {
+      transition: left 0.3s ease-in;
       left: 0;
 
       & + .container {
         left: calc(var(--mie-sidebar-w) * -1);
+        transition: left 0.3s ease-in;
       }
     }
   }

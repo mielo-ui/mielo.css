@@ -1,10 +1,30 @@
 // Make string with prefix if that string isnt empty
 @function prefix-if($source: "", $prefix: "", $is-postfix: false) {
   $prefixed: if($is-postfix, $source + $prefix, $prefix + $source);
-  @return if(_is_empty($source), "", $prefixed);
+  @return if(is-empty($source), "", $prefixed);
 }
 
 // If condition is true - return value, otherwise - empty string
 @function if-or-empty($cond, $value) {
   @return if($cond, $value, "");
+}
+
+@function is-empty($val) {
+  @if type-of($val) == "string" and $val == "" {
+    @return true;
+  }
+
+  @if type-of($val) == "map" and length($val) == 0 {
+    @return true;
+  }
+
+  @if type-of($val) == "list" and length($val) == 0 {
+    @return true;
+  }
+
+  @if $val == null {
+    @return true;
+  }
+
+  @return false;
 }

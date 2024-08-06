@@ -1,3 +1,5 @@
+@use "../../utils" as *;
+
 $mie-message-sizes: (
   "tiny": (
     "description-fs": mie-text-fs(mini),

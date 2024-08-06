@@ -1,6 +1,8 @@
+@use "../../utils" as *;
+
 $mie-window-sizes: (
   "medium": (
-    "rounded": mie-rounded(),
+    "rounded": mie-rounded(large),
   ),
 );
 

@@ -1,5 +1,5 @@
-@import "variables";
-@import "accents";
-@import "slider";
-@import "sizes";
-@import "range";
+@forward "variables";
+@forward "accents";
+@forward "slider";
+@forward "sizes";
+@forward "range";

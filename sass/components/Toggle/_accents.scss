@@ -1,3 +1,8 @@
+@use "sass:meta";
+@use "sass:map";
+
+@use "../../utils" as *;
+
 $mie-toggle-default-colors: (
   "dark": (
     "border": rgba(#000, 0.36),
@@ -20,8 +25,8 @@ $mie-toggle-default-colors: (
 );
 
 @function map-accents-to-toggle($theme, $accent, $colors) {
-  $color: _get($colors, "color");
-  $bg: _get($colors, "bg");
+  $color: map.get($colors, "color");
+  $bg: map.get($colors, "bg");
 
   @return (
     "bg": (
@@ -34,6 +39,6 @@ $mie-toggle-default-colors: (
 @include accents-map-to-component(
   "toggle",
   $mie-toggle-default-colors,
-  map-accents-to-toggle,
-  _omit($mie-accents-by-theme, "accent")
+  meta.get-function("map-accents-to-toggle"),
+  $mie-accents-by-theme
 );

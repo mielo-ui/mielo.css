@@ -1,17 +1,19 @@
+@use "../../utils" as *;
+
 $mie-tabs-sizes: (
   "medium": (
     "rounded": mie-rounded(large),
-    "ph": mie-indent-size(small),
-    "pv": mie-indent-size(small),
+    "ph": mie-indent-size(tiny),
+    "pv": mie-indent-size(tiny),
   ),
 );
 
 $mie-tab-sizes: (
   "medium": (
-    "icon-offset": mie-indent-size(small),
+    "icon-offset": mie-indent-size(tiny),
     "rounded": mie-rounded(large),
-    "pv": mie-indent-size(small),
-    "ph": mie-indent-size(big),
+    "pv": mie-indent-size(tiny),
+    "ph": mie-indent-size(large),
     "fs": mie-text-fs(),
   ),
 );

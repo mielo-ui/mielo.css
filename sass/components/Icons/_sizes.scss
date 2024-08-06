@@ -1,5 +1,7 @@
 @use "sass:map";
 
+@use "../../utils" as *;
+
 @function icon-size-mapper($sizes) {
   $map: ();
 

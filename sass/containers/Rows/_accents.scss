@@ -1,3 +1,8 @@
+@use "sass:meta";
+@use "sass:map";
+
+@use "../../utils" as *;
+
 $mie-row-item-default-colors: (
   "light": (
     "overlay": transparent,
@@ -19,8 +24,8 @@ $mie-rows-default-colors: (
 );
 
 @function map-accents-to-row-item($theme, $accent, $colors) {
-  $color: _get($colors, "color");
-  $bg: _get($colors, "bg");
+  $color: map.get($colors, "color");
+  $bg: map.get($colors, "bg");
 
   @return ("overlay": rgba($bg, 0.08), "outline": $color);
 }
@@ -32,12 +37,12 @@ $mie-rows-default-colors: (
 @include accents-map-to-component(
   "row.item",
   $mie-row-item-default-colors,
-  map-accents-to-row-item
+  meta.get-function("map-accents-to-row-item"),
+  $mie-accents-by-theme
 );
 
 @include accents-map-to-component(
   "rows",
   $mie-rows-default-colors,
-  map-accents-to-rows,
-  $mie-empty-accents-by-theme
+  meta.get-function("map-accents-to-rows")
 );

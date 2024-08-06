@@ -1,3 +1,5 @@
+@use "../../utils" as *;
+
 .mie.tabs > .mie.tab {
   @include flex(row, center, center);
   transition: left 0.3s ease;

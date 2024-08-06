@@ -1,3 +1,9 @@
+@use "sass:string";
+@use "sass:list";
+@use "sass:map";
+
+@use "../../utils" as *;
+
 $rounded-attached-classes: ("default", "row", "view");
 
 $rounded-corner-props: (
@@ -18,9 +24,9 @@ $rounded-sides: (
 );
 
 @mixin rounded-expand-properties($side-corners, $size) {
-  @if _is-list($side-corners) {
+  @if type-of($side-corners) == "list" {
     @each $corner in $side-corners {
-      $prop: _get($rounded-corner-props, $corner);
+      $prop: map.get($rounded-corner-props, $corner);
       #{$prop}: $size;
     }
   } @else {
@@ -34,15 +40,16 @@ $rounded-sides: (
   @each $ext-class in $rounded-attached-classes {
     $prefix: if($ext-class != "default", "." + $ext-class, "");
     $selector: "&#{$prefix}.r#{$class-prefix}";
-    $selectors: _push($selectors, $selector);
+    $selectors: list.append($selectors, $selector);
   }
 
-  @return _join($selectors, ", ");
+  @return join($selectors, ", ");
 }
 
 .mie {
   @each $side, $side-corners in $rounded-sides {
-    $round-prefix: if($side != "default", _get($side, 1), "");
+    $side-short-key: string.slice($side, 1, 1);
+    $round-prefix: if($side != "default", $side-short-key, "");
 
     @each $size-name, $size in $mie-rounded-size {
       $size-postfix: if($size-name != "medium", "-" + $size-name, "");

@@ -9,7 +9,7 @@ $mie-text-size: (
   "big": 2rem,
   "huge": 2.3rem,
   "massive": 2.6rem,
-);
+) !default;
 
 $mie-icon-size: (
   "mini": 0.4rem,
@@ -20,7 +20,7 @@ $mie-icon-size: (
   "big": 2.4rem,
   "huge": 2.8rem,
   "massive": 3.2rem,
-);
+) !default;
 
 $mie-image-size: (
   "mini": 3.4rem,
@@ -31,7 +31,7 @@ $mie-image-size: (
   "big": 60rem,
   "huge": 80rem,
   "massive": 96rem,
-);
+) !default;
 
 $mie-rounded-size: (
   "none": 0rem,
@@ -39,33 +39,34 @@ $mie-rounded-size: (
   "small": 0.4rem,
   "medium": 0.6rem,
   "large": 1.2rem,
-);
+  "circle": 50%,
+) !default;
 
 // margin/padding for views
 $mie-indent-size: (
   "none": 0rem,
   "mini": 0.4rem,
-  "tiny": 0.6rem,
-  "small": 0.8rem,
-  "medium": 1rem,
-  "large": 1.2rem,
-  "big": 1.6rem,
-  "huge": 2rem,
-  "massive": 2.4rem,
-);
+  "tiny": 0.8rem,
+  "small": 1.2rem,
+  "medium": 1.6rem,
+  "large": 2rem,
+  "big": 2.4rem,
+  "huge": 2.8rem,
+  "massive": 3.2rem,
+) !default;
 
 @function mie-text-fs($name: medium) {
-  @return _get($mie-text-size, quote($name));
+  @return map.get($mie-text-size, quote($name));
 }
 
 @function mie-icon-size($name: medium) {
-  @return _get($mie-icon-size, quote($name));
+  @return map.get($mie-icon-size, quote($name));
 }
 
 @function mie-indent-size($name: medium) {
-  @return _get($mie-indent-size, quote($name));
+  @return map.get($mie-indent-size, quote($name));
 }
 
 @function mie-rounded($name: medium) {
-  @return _get($mie-rounded-size, quote($name));
+  @return map.get($mie-rounded-size, quote($name));
 }

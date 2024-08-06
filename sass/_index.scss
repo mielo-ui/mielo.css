@@ -1,9 +1,7 @@
-@import "../node_modules/reseter.css/css/reseter";
-@import "../node_modules/sassdash/index";
+@use "reseter.css/src/scss/reseter.scss";
 
-@import "utils";
-@import "colors";
+@forward "utils";
+@forward "layout";
 
-@import "layout";
-@import "containers";
-@import "components";
+@forward "containers";
+@forward "components";

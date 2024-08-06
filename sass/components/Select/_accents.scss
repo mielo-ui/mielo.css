@@ -1,3 +1,8 @@
+@use "sass:meta";
+@use "sass:map";
+
+@use "../../utils" as *;
+
 $mie-select-default-colors: (
   "dark": (
     "label-fg": rgba(#fff, 0.6),
@@ -22,8 +27,8 @@ $mie-select-default-colors: (
 );
 
 @function map-accents-to-select($theme, $accent, $colors) {
-  $color: _get($colors, "color");
-  $bg: _get($colors, "bg");
+  $color: map.get($colors, "color");
+  $bg: map.get($colors, "bg");
 
   @return (
     "label-fg": rgba($color, 0.6),
@@ -38,5 +43,6 @@ $mie-select-default-colors: (
 @include accents-map-to-component(
   "select",
   $mie-select-default-colors,
-  map-accents-to-select
+  meta.get-function("map-accents-to-select"),
+  $mie-accents-by-theme
 );

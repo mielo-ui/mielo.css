@@ -2,20 +2,22 @@
 @use "sass:map";
 @use "sass:meta";
 
+@use "../methods" as *;
+
 // in:
 //   $theme: ("dark" | "light")                  | name for access to core declaration styles
-//   $default: vars_map                          | initial default variables
+//   $default-vars: vars_map                     | initial default variables
 //   $cb: ($theme, $accent, $colors) -> vars_map | callback that returns appearance variables
 // out: map<accent_name, vars_map>               | its map with mapped variables by accent
-@function accents-map-to-vars($accents-by-theme, $theme, $default, $cb) {
-  $accents: _get($accents-by-theme, $theme);
+@function accents-map-to-vars($accents-map, $theme, $default-vars, $cb) {
+  $accents: map.get($accents-map, $theme);
 
   $map: (
-    "default": $default,
+    "default": $default-vars,
   );
 
   @each $accent, $colors in $accents {
-    $vars: _exec($cb, $theme, $accent, $colors);
+    $vars: meta.call($cb, $theme, $accent, $colors);
     $map: map.set($map, $accent, $vars);
   }
 
@@ -27,7 +29,7 @@
 //   $theme-vars-map: map<accent_name, vars_map> | component variables by accent
 // out: component css variables by accent
 @mixin accents-expand-mapped-vars($class, $theme-vars-map) {
-  $name: _kebab-case($class);
+  $name: kebab-case($class);
 
   @each $accent, $vars in $theme-vars-map {
     $flat: map-flatten($vars);
@@ -39,9 +41,9 @@
     @if $ext != "" {
       .mie#{$ext} {
         @each $item in $flat {
-          $value: _get($item, 2);
-          $keys: _get($item, 1);
-          $key: _join($keys, "-");
+          $value: list.nth($item, 2);
+          $keys: list.nth($item, 1);
+          $key: join($keys, "-");
 
           $name-prop: if($name != "", "-#{$name}", "");
 
@@ -50,9 +52,9 @@
       }
     } @else {
       @each $item in $flat {
-        $value: _get($item, 2);
-        $keys: _get($item, 1);
-        $key: _join($keys, "-");
+        $value: list.nth($item, 2);
+        $keys: list.nth($item, 1);
+        $key: join($keys, "-");
 
         $name-prop: if($name != "", "-#{$name}", "");
 
@@ -64,16 +66,18 @@
 
 // in:
 //   $class: string                              | target component class name
-//   $default: (dark: vars_map, light: vars_map) | default variables for component
+//   $default-vars: (dark: vars_map, light: vars_map) | default variables for component
 //   $cb: ($theme, $accent, $colors) -> vars_map | callback that returns appearance variables
 // out: declare accent vars for component, and apperance
 @mixin accents-map-to-component(
   $class,
-  $default,
+  $default-vars,
   $cb,
-  $accents-by-theme: $mie-accents-by-theme
+  $accents-map: ("light": (), "dark": ())
 ) {
   @each $theme in ("light", "dark") {
+    $theme-default-vars: map.get($default-vars, $theme);
+
     $selector: if(
       $theme == "dark",
       '[data-theme="dark"]',
@@ -81,9 +85,9 @@
     );
 
     $properties: accents-map-to-vars(
-      $accents-by-theme,
+      $accents-map,
       $theme,
-      _get($default, $theme),
+      $theme-default-vars,
       $cb
     );
 

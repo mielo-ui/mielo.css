@@ -1,11 +1,13 @@
+@use "sass:list";
+
 @function opacity-button-bg(
   $bg,
   $transparent: false,
   $opacity: (0.2, 0.3, 0.35)
 ) {
-  $opacity-main: _get($opacity, 1);
-  $opacity-hover: _get($opacity, 2);
-  $opacity-active: _get($opacity, 1);
+  $opacity-main: list.nth($opacity, 1);
+  $opacity-hover: list.nth($opacity, 2);
+  $opacity-active: list.nth($opacity, 1);
 
   @return (
     "main": rgba($bg, if($transparent, 0, $opacity-main)),

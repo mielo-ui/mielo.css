@@ -1,3 +1,5 @@
+@use "../../utils" as *;
+
 .mie.list:not(.item) {
   @include flex(column);
   list-style-type: none;

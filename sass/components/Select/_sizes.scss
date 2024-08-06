@@ -1,3 +1,5 @@
+@use "../../utils" as *;
+
 $mie-select-sizes: (
   "medium": (
     "min-width": 10rem,

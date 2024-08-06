@@ -1,3 +1,5 @@
+@use "../../utils" as *;
+
 .mie.window {
   border-radius: var(--mie-window-rounded);
   background-color: var(--mie-window-bg);

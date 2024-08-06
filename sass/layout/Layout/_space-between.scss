@@ -1,8 +1,12 @@
+@use "sass:string";
 @use "sass:math";
+@use "sass:list";
+
+@use "../../utils" as *;
 
 .mie {
   @each $side in ("horizontal", "vertical") {
-    $side-short-key: _get($side, 1);
+    $side-short-key: string.slice($side, 1, 1);
 
     @each $name, $size in $mie-indent-size {
       $size-postfix: if($name != "medium", "-" + $name, "");

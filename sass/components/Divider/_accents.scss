@@ -1,3 +1,8 @@
+@use "sass:meta";
+@use "sass:map";
+
+@use "../../utils" as *;
+
 $mie-divider-default-colors: (
   "dark": (
     "bg": rgba(#fff, 0.07),
@@ -8,7 +13,7 @@ $mie-divider-default-colors: (
 );
 
 @function map-accents-to-divider($theme, $accent, $colors) {
-  $color: _get($colors, "color");
+  $color: map.get($colors, "color");
 
   // prettier-ignore
   @return (
@@ -19,6 +24,6 @@ $mie-divider-default-colors: (
 @include accents-map-to-component(
   "divider",
   $mie-divider-default-colors,
-  map-accents-to-divider,
+  meta.get-function("map-accents-to-divider"),
   $mie-accents-by-theme
 );

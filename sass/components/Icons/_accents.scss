@@ -1,3 +1,8 @@
+@use "sass:meta";
+@use "sass:map";
+
+@use "../../utils" as *;
+
 $mie-icon-default-colors: (
   "light": (
     "fg": rgba(#000, 0.8),
@@ -16,8 +21,8 @@ $mie-icon-default-colors: (
 );
 
 @function map-accents-to-icon($theme, $accent, $colors) {
-  $color: _get($colors, "color");
-  $bg: _get($colors, "bg");
+  $color: map.get($colors, "color");
+  $bg: map.get($colors, "bg");
 
   @return (
     "fg": $color,
@@ -31,6 +36,6 @@ $mie-icon-default-colors: (
 @include accents-map-to-component(
   "icon",
   $mie-icon-default-colors,
-  map-accents-to-icon,
+  meta.get-function("map-accents-to-icon"),
   $mie-accents-by-theme
 );

@@ -1,3 +1,8 @@
+@use "sass:meta";
+@use "sass:map";
+
+@use "../../utils" as *;
+
 $mie-tabs-default-colors: (
   "light": (
     "bg": rgba(#000, 0.1),
@@ -19,8 +24,8 @@ $mie-tab-default-colors: (
 );
 
 @function map-accents-to-tabs($theme, $accent, $colors) {
-  $color: _get($colors, "color");
-  $bg: _get($colors, "bg");
+  $color: map.get($colors, "color");
+  $bg: map.get($colors, "bg");
 
   // prettier-ignore
   @return (
@@ -30,7 +35,7 @@ $mie-tab-default-colors: (
 }
 
 @function map-accents-to-tab($theme, $accent, $colors) {
-  $bg: _get($colors, "bg");
+  $bg: map.get($colors, "bg");
 
   @return ("bg": rgba($bg, 0.2));
 }
@@ -38,13 +43,13 @@ $mie-tab-default-colors: (
 @include accents-map-to-component(
   "tabs",
   $mie-tabs-default-colors,
-  map-accents-to-tabs,
+  meta.get-function("map-accents-to-tabs"),
   $mie-accents-by-theme
 );
 
 @include accents-map-to-component(
   "tab",
   $mie-tab-default-colors,
-  map-accents-to-tab,
+  meta.get-function("map-accents-to-tab"),
   $mie-accents-by-theme
 );

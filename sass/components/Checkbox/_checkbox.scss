@@ -32,9 +32,12 @@
       border: 0.2rem solid var(--mie-checkbox-border);
       border-radius: var(--mie-checkbox-rounded);
       background-color: rgba(0, 0, 0, 0);
-
-      transition: all 0.2s ease;
       display: block;
+
+      transition:
+        background 0.3s ease,
+        width 0.3s ease,
+        height 0.3s ease;
 
       height: var(--mie-checkbox-size);
       width: var(--mie-checkbox-size);

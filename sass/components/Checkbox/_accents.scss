@@ -1,3 +1,8 @@
+@use "sass:meta";
+@use "sass:map";
+
+@use "../../utils" as *;
+
 $mie-checkbox-default-colors: (
   "dark": (
     "border": rgba(#000, 0.36),
@@ -16,8 +21,8 @@ $mie-checkbox-default-colors: (
 );
 
 @function map-accents-to-checkbox($theme, $accent, $colors) {
-  $color: _get($colors, "color");
-  $bg: _get($colors, "bg");
+  $color: map.get($colors, "color");
+  $bg: map.get($colors, "bg");
 
   // prettier-ignore
   @return (
@@ -29,6 +34,6 @@ $mie-checkbox-default-colors: (
 @include accents-map-to-component(
   "checkbox",
   $mie-checkbox-default-colors,
-  map-accents-to-checkbox,
-  _omit($mie-accents-by-theme, "accent")
+  meta.get-function("map-accents-to-checkbox"),
+  $mie-accents-by-theme
 );

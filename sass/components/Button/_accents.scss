@@ -1,3 +1,8 @@
+@use "sass:meta";
+@use "sass:map";
+
+@use "../../utils" as *;
+
 $mie-button-default-colors: (
   "dark": (
     "fill": filled-button-bg(#fff, "lighten"),
@@ -14,8 +19,8 @@ $mie-button-default-colors: (
 );
 
 @function map-accents-to-button($theme, $accent, $colors) {
-  $color: _get($colors, "color");
-  $bg: _get($colors, "bg");
+  $color: map.get($colors, "color");
+  $bg: map.get($colors, "bg");
 
   @return (
     "fill": filled-button-bg($bg, $theme),
@@ -26,7 +31,8 @@ $mie-button-default-colors: (
 @include accents-map-to-component(
   "button",
   $mie-button-default-colors,
-  map-accents-to-button
+  meta.get-function("map-accents-to-button"),
+  $mie-accents-by-theme
 );
 
 .mie.button.filled {

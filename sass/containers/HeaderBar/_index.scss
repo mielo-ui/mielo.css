@@ -1,4 +1,4 @@
-@import "accents";
-@import "layout";
+@forward "accents";
+@forward "layout";
 
-@import "headerbar";
+@forward "headerbar";
