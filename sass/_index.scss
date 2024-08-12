@@ -1,7 +1,9 @@
 @use "reseter.css/src/scss/reseter.scss";
 
-@forward "utils";
+@forward "variables";
+@forward "global";
 @forward "layout";
+@forward "utils";
 
 @forward "containers";
 @forward "components";

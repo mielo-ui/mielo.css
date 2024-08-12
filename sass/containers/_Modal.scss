@@ -1,0 +1,93 @@
+:root,
+[data-theme="light"] {
+  --mie-modal-overlay-bg: rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] {
+  --mie-modal-overlay-bg: rgba(255, 255, 255, 0.3);
+}
+
+.mie.overlay {
+  background-color: rgba(0, 0, 0, 0.2);
+
+  height: 100vh;
+  width: 100vw;
+
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+}
+
+.mie.modal {
+  z-index: 100;
+
+  &.modal {
+    &-enter {
+      > .window {
+        // opacity: 0;
+      }
+    }
+
+    &-enter-active {
+      > .window {
+        animation: mieMoveUp 300ms ease-out forwards;
+        // transition: opacity 300ms;
+        // opacity: 1;
+      }
+    }
+
+    &-exit {
+      > .window {
+        // opacity: 1;
+      }
+    }
+
+    &-exit-active {
+      > .window {
+        animation: mieMoveDown 300ms ease-out forwards;
+        // transition: opacity 300ms;
+        // opacity: 0;
+      }
+    }
+  }
+
+  > .window {
+    position: fixed;
+    z-index: 100;
+
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+    display: flex;
+  }
+}
+
+@keyframes mieMoveUp {
+  0% {
+    transform: translate(-50%, 100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+}
+
+@keyframes mieMoveDown {
+  0% {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-50%, 100%);
+    opacity: 0;
+  }
+}

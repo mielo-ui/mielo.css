@@ -1,0 +1,48 @@
+@use "sass:list";
+@use "sass:map";
+
+@use "helpers" as *;
+@use "palette" as *;
+
+// pseudo type ThemeVariantColors = Map<(bg|fg), $value>;
+// pseudo type ThemeColors = Map<$color, ThemeVariantColors>;
+// pseudo type Theme = Map<(light|dark), ThemeColors>;
+// pseudo type ThemePreset = Map<$variant, $colors: Tuple([ $light, $dark ])>
+
+$colors-preset: () !default;
+
+$accents-preset: (
+  "accent": (
+    pcolor(blue, 3),
+    pcolor(blue, 3),
+  ),
+  "warning": (
+    pcolor(yellow, 5),
+    #cd9309,
+  ),
+  "error": (
+    pcolor(red, 3),
+    pcolor(red, 4),
+  ),
+  "success": (
+    pcolor(green, 4),
+    pcolor(green, 5),
+  ),
+) !default;
+
+$accents: preset-to-theme-variants($accents-preset);
+$accents-colors: get-colors-theme($colors-preset);
+
+@function taccent($accent, $color_type, $theme: "light") {
+  $themes: map.get($accents, $theme);
+  $colors: map.get($themes, $accent);
+
+  @return map.get($colors, $color_type);
+}
+
+@function tcolor($accent, $color_type, $theme: "light") {
+  $themes: map.get($accents, $theme);
+  $colors: map.get($themes, $accent);
+
+  @return map.get($colors, $color_type);
+}

@@ -1,6 +1,10 @@
+@use "../../variables" as *;
+@use "../../mixins" as *;
 @use "../../utils" as *;
 
 .mie.window {
+  --mie-window-rounded: #{rcorners(large)};
+
   border-radius: var(--mie-window-rounded);
   background-color: var(--mie-window-bg);
   overflow: hidden;

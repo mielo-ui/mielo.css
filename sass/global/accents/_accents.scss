@@ -1,0 +1,443 @@
+@use "sass:meta";
+@use "sass:map";
+
+@use "../../variables" as *;
+@use "../../mixins" as *;
+@use "../../utils" as *;
+
+$text-default-accent: (
+  "dark": (
+    "inverted-fg-muted": fg(muted, dark, true),
+    "inverted-fg": fg(base, dark, true),
+    "fg-muted": fg(muted, dark),
+    "fg": fg(base, dark),
+  ),
+  "light": (
+    "inverted-fg-muted": fg(muted, light, true),
+    "inverted-fg": fg(base, light, true),
+    "fg-muted": fg(muted, light),
+    "fg": fg(base, light),
+  ),
+) !default;
+
+$item-default-accent: (
+  "dark": (
+    "description-fg": fg(muted, dark),
+    "title-fg": fg(base, dark),
+  ),
+  "light": (
+    "description-fg": fg(muted, light),
+    "title-fg": fg(base, light),
+  ),
+) !default;
+
+$activatable-default-accent: (
+  "dark": (
+    "bg": opacity-button-bg(#fff, true, (0.1, 0.15, 0.2)),
+  ),
+  "light": (
+    "bg": opacity-button-bg(#000, true, (0.1, 0.15, 0.2)),
+  ),
+) !default;
+
+$button-default-accent: (
+  "dark": (
+    "bg": opacity-button-bg(#fff, false, (0.1, 0.2, 0.25)),
+    "fill": filled-button-bg(#fff, "lighten"),
+    "fg-invert": rgba(#000, 0.82),
+    "fg-main": rgba(#fff, 0.82),
+    "fg": rgba(#fff, 0.82),
+  ),
+  "light": (
+    "bg": opacity-button-bg(#000, false, (0.1, 0.2, 0.25)),
+    "fill": filled-button-bg(#000, "darken"),
+    "fg-invert": rgba(#fff, 0.82),
+    "fg-main": rgba(#000, 0.82),
+    "fg": rgba(#000, 0.82),
+  ),
+) !default;
+
+$checkbox-default-accent: (
+  "dark": (
+    "border-active": rgba(pcolor(blue, 3), 1),
+    "border": rgba(#fff, 0.36),
+    "icon-fg": rgba(#fff, 1),
+    "fg": fg(base, dark),
+    "bg": rgba(pcolor(blue, 3), 1),
+  ),
+  "light": (
+    "border-active": rgba(pcolor(blue, 3), 1),
+    "border": rgba(#000, 0.36),
+    "icon-fg": rgba(#fff, 1),
+    "fg": fg(base, light),
+    "bg": rgba(pcolor(blue, 3), 1),
+  ),
+) !default;
+
+$divider-default-accent: (
+  "dark": (
+    "bg": rgba(#fff, 0.07),
+  ),
+  "light": (
+    "bg": rgba(#000, 0.07),
+  ),
+) !default;
+
+$entry-default-accent: (
+  "dark": (
+    "label-fg": fg(muted, dark),
+    "value-fg": fg(core, dark),
+    "bg": (
+      "outline": #78aeed,
+      "overlay": transparent,
+      "main": #343434,
+    ),
+  ),
+  "light": (
+    "label-fg": fg(muted, light),
+    "value-fg": fg(core, light),
+    "bg": (
+      "outline": pcolor(blue, 4),
+      "overlay": transparent,
+      "main": #fff,
+    ),
+  ),
+) !default;
+
+$header-default-accent: (
+  "dark": (
+    "subtitle-fg": fg(muted, dark),
+    "title-fg": fg(core, dark),
+  ),
+  "light": (
+    "subtitle-fg": fg(muted, light),
+    "title-fg": fg(core, light),
+  ),
+) !default;
+
+$icon-default-accent: (
+  "light": (
+    "fg": fg(base, light),
+    "bg": (
+      "main": transparent,
+      "filled": #fafafa,
+    ),
+  ),
+  "dark": (
+    "fg": fg(core, dark),
+    "bg": (
+      "main": transparent,
+      "filled": #383838,
+    ),
+  ),
+) !default;
+
+$image-default-accent: (
+  "light": (
+    "border-bg": #{rgba(#000, 0.1)},
+    "bg": #{rgba(#000, 0.1)},
+  ),
+  "dark": (
+    "border-bg": #{rgba(#fff, 0.1)},
+    "bg": #{rgba(#fff, 0.1)},
+  ),
+) !default;
+
+$label-default-accent: (
+  "light": (
+    "border-bg": rgba(#000, 0.1),
+    "bg": rgba(#000, 0.6),
+    "fg": fg(base, light),
+  ),
+  "dark": (
+    "border-bg": rgba(#fff, 0.1),
+    "bg": rgba(#fff, 0.6),
+    "fg": fg(base, dark),
+  ),
+) !default;
+
+$progress-default-accent: (
+  "dark": (
+    "bg": #282828,
+  ),
+  "light": (
+    "bg": #ebe8e6,
+  ),
+) !default;
+
+$progress-bar-default-accent: (
+  "dark": (
+    "indeterminate-bg": rgb(#000, 0.3),
+    "bg": #15539e,
+    "fg": #fff,
+  ),
+  "light": (
+    "indeterminate-bg": rgb(#000, 0.3),
+    "bg": pcolor(blue, 3),
+    "fg": #fff,
+  ),
+) !default;
+
+$radio-default-accent: (
+  "dark": (
+    "border-active": rgba(pcolor(blue, 5), 1),
+    "bg": rgba(pcolor(blue, 3), 1),
+    "fg": rgba(#fff, 0.6),
+  ),
+  "light": (
+    "border-active": rgba(pcolor(blue, 5), 1),
+    "bg": rgba(pcolor(blue, 3), 1),
+    "fg": rgba(#000, 0.6),
+  ),
+) !default;
+
+$select-default-accent: (
+  "dark": (
+    "label-fg": fg(muted, dark),
+    "value-fg": fg(core, dark),
+    "bg": (
+      "outline": #78aeed,
+      "overlay": transparent,
+      "main": #343434,
+      "menu": #2a2a2a,
+    ),
+  ),
+  "light": (
+    "label-fg": fg(muted, light),
+    "value-fg": fg(base, dark),
+    "bg": (
+      "outline": pcolor(blue, 4),
+      "overlay": transparent,
+      "main": #fff,
+      "menu": #f2f2f2,
+    ),
+  ),
+) !default;
+
+$slider-default-accent: (
+  "dark": (
+    "bg": (
+      "slider": #282828,
+      "range": #15539e,
+      "thumb": #383838,
+    ),
+
+    "thumb-border": #1b1b1b,
+  ),
+  "light": (
+    "bg": (
+      "slider": #deddda,
+      "range": pcolor(blue, 3),
+      "thumb": #fff,
+    ),
+
+    "thumb-border": #c1bab5,
+  ),
+) !default;
+
+$toggle-default-accent: (
+  "dark": (
+    "border": rgba(#000, 0.36),
+    "icon-fg": rgba(#fff, 1),
+    "fg": fg(muted, dark),
+    "bg": (
+      "active": pcolor(blue, 3),
+      "inactive": #bebebe,
+    ),
+  ),
+  "light": (
+    "border": rgba(#000, 0.36),
+    "icon-fg": rgba(#fff, 1),
+    "fg": fg(muted, light),
+    "bg": (
+      "active": pcolor(blue, 3),
+      "inactive": #bebebe,
+    ),
+  ),
+) !default;
+
+// Containers
+$dialog-default-accent: (
+  "dark": (
+    "action-border": rgba(#fff, 0.07),
+    "bg": #383838,
+  ),
+  "light": (
+    "action-border": rgba(#000, 0.07),
+    "bg": #fafafa,
+  ),
+) !default;
+
+$headerbar-default-accent: (
+  "dark": (
+    "label-fg": fg(muted, dark),
+    "value-fg": fg(core, dark),
+    "border": rgba(#000, 0.37),
+    "bg": (
+      "outline": #78aeed,
+      "overlay": transparent,
+      "main": #434343,
+    ),
+  ),
+  "light": (
+    "label-fg": fg(muted, light),
+    "value-fg": fg(base, dark),
+    "border": rgba(#000, 0.07),
+    "bg": (
+      "outline": pcolor(blue, 4),
+      "overlay": transparent,
+      "main": #fff,
+    ),
+  ),
+) !default;
+
+$message-default-accent: (
+  "light": (
+    "description-fg": fg(muted, light),
+    "title-fg": fg(base, light),
+    "shade": rgba(#000, 0.05),
+    "overlay": transparent,
+    "bg": #ebebeb,
+  ),
+  "dark": (
+    "description-fg": fg(muted, dark),
+    "title-fg": fg(core, dark),
+    "shade": rgba(#000, 0.1),
+    "overlay": transparent,
+    "bg": #383838,
+  ),
+) !default;
+
+$row-item-default-accent: (
+  "light": (
+    "overlay": transparent,
+    "bg": #ebebeb,
+  ),
+  "dark": (
+    "overlay": transparent,
+    "bg": #343434,
+  ),
+);
+
+$rows-default-accent: (
+  "light": (
+    "border": rgba(#000, 0.07),
+  ),
+  "dark": (
+    "border": rgba(#000, 0.37),
+  ),
+) !default;
+
+$scrollbar-default-accent: (
+  "dark": (
+    "scroll-thumb-bg": rgba(#fff, 0.15),
+    "scroll-track-bg": rgba(#fff, 0),
+  ),
+  "light": (
+    "scroll-thumb-bg": rgba(#000, 0.15),
+    "scroll-track-bg": rgba(#000, 0),
+  ),
+) !default;
+
+$sidebar-default-accent: (
+  "light": (
+    "bg": #ebebeb,
+  ),
+  "dark": (
+    "bg": #303030,
+  ),
+) !default;
+
+$splitview-default-accent: (
+  "light": (
+    "divider-bg": rgba(#000, 0.07),
+    "overlay-bg": rgba(#fff, 0.3),
+    "bg": #fafafa,
+  ),
+  "dark": (
+    "divider-bg": rgba(#160b0b, 0.36),
+    "overlay-bg": rgba(#000, 0.3),
+    "bg": #242424,
+  ),
+) !default;
+
+$tabs-default-accent: (
+  "light": (
+    "bg": #ebebeb,
+  ),
+  "dark": (
+    "bg": #494949,
+  ),
+);
+
+$tab-default-accent: (
+  "light": (
+    "bg": filled-button-bg(#fff, true),
+    "fg": fg(base, light),
+  ),
+  "dark": (
+    "bg": opacity-button-bg(#fff, false, (0.15, 0.2, 0.25)),
+    "fg": fg(core, dark),
+  ),
+) !default;
+
+$view-default-accent: (
+  "dark": (
+    "panel": #2a2a2a,
+    "window": #242424,
+    "content": rgba(#fff, 0.08),
+    "osd": #0b0b0b,
+  ),
+  "light": (
+    "panel": #f2f2f2,
+    "window": #fafafa,
+    "content": #fff,
+    "osd": #4b4b4b,
+  ),
+) !default;
+
+$window-default-accent: (
+  "dark": (
+    "bg": #242424,
+  ),
+  "light": (
+    "bg": #fafafa,
+  ),
+) !default;
+
+$default-accent-values: (
+  "text": $text-default-accent,
+  "header": $header-default-accent,
+
+  "activatable": $activatable-default-accent,
+  "checkbox": $checkbox-default-accent,
+  "toggle": $toggle-default-accent,
+  "select": $select-default-accent,
+  "entry": $entry-default-accent,
+  "radio": $radio-default-accent,
+  "slider": $slider-default-accent,
+
+  "divider": $divider-default-accent,
+  "button": $button-default-accent,
+  "icon": $icon-default-accent,
+  "image": $image-default-accent,
+  "label": $label-default-accent,
+
+  "progress": $progress-default-accent,
+  "progress-bar": $progress-bar-default-accent,
+
+  // Containers
+  "dialog": $dialog-default-accent,
+  "headerbar": $headerbar-default-accent,
+  "message": $message-default-accent,
+  "item": $item-default-accent,
+  "row-item": $row-item-default-accent,
+  "rows": $rows-default-accent,
+  "scrollbar": $scrollbar-default-accent,
+  "sidebar": $sidebar-default-accent,
+  "splitview": $splitview-default-accent,
+  "tabs": $tabs-default-accent,
+  "tab": $tab-default-accent,
+  "view": $view-default-accent,
+  "window": $window-default-accent,
+);

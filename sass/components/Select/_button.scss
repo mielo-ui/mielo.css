@@ -1,3 +1,5 @@
+@use "../../variables" as *;
+@use "../../mixins" as *;
 @use "../../utils" as *;
 
 .mie.select {
@@ -52,18 +54,16 @@
         }
       }
 
-      > .button {
-        margin-right: var(--mie-select-indicator-right);
+      > .right {
+        @include flex(row, flex-end, center);
 
-        svg {
+        > .arrow {
+          margin-left: var(--mie-select-indicator-right);
+          margin-right: var(--mie-select-padding);
+
+          transition: transform 0.2s ease-in-out;
           color: var(--mie-select-value-fg);
         }
-      }
-
-      > .arrow {
-        transition: transform 0.2s ease-in-out;
-        margin-right: var(--mie-select-padding);
-        color: var(--mie-select-value-fg);
       }
 
       &.selected {
@@ -76,8 +76,10 @@
       }
 
       &.opened {
-        > .arrow {
-          transform: rotate(180deg);
+        > .right {
+          > .arrow {
+            transform: rotate(180deg);
+          }
         }
       }
     }

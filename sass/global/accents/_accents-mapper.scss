@@ -1,0 +1,284 @@
+@use "sass:meta";
+@use "sass:map";
+
+@use "../../variables" as *;
+@use "../../mixins" as *;
+@use "../../utils" as *;
+
+@function map-to-item($theme, $accent, $colors) {
+  $fg: map.get($colors, "bg");
+
+  @return ("description-fg": fg-src($fg, muted), "title-fg": fg-src($fg, base));
+}
+
+@function map-to-text($theme, $accent, $colors) {
+  $color: map.get($colors, "bg");
+
+  @return ("fg": $color);
+}
+
+@function map-to-activatable($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+  $bg-states: (0.1, 0.15, 0.25);
+
+  @return ("bg": opacity-button-bg($bg, true, $bg-states));
+}
+
+@function map-to-button($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+
+  @return (
+    "fill": filled-button-bg($bg, $theme),
+    "bg": (
+      "active": rgba(darken($bg, 10%), 0.8),
+      "hover": rgba(darken($bg, 5%), 0.7),
+      "transparent": rgba($bg, 0),
+      "main": rgba($bg, 0.6),
+    )
+  );
+}
+
+@function map-to-checkbox($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+
+  @return ("border-active": rgba(lighten($bg, 10%), 1), "bg": rgba($bg, 1));
+}
+
+@function map-to-divider($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+
+  @return ("bg": rgba($bg, 0.07));
+}
+
+@function map-to-entry($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+  $fg: $bg;
+
+  @return (
+    "label-fg": fg-src($fg, muted),
+    "value-fg": fg-src($fg, base),
+    "bg": (
+      "overlay": rgba($bg, 0.08),
+      "outline": #{$fg},
+    )
+  );
+}
+
+@function map-to-header($theme, $accent, $colors) {
+  $fg: map.get($colors, "bg");
+
+  @return ("subtitle-fg": fg-src($fg, muted), "title-fg": fg-src($fg, core));
+}
+
+@function map-to-icon($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+  $filled: if($theme == "light", darken($bg, 10%), lighten($bg, 10%));
+
+  @return (
+    "fg": $bg,
+    "bg": (
+      "main": rgba($bg, 0.3),
+      "filled": $filled,
+    )
+  );
+}
+
+@function map-to-image($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+
+  @return ("border-bg": #{rgba($bg, 0.6)}, "bg": #{rgba($bg, 0.1)});
+}
+
+@function map-to-label($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+
+  @return ("border-bg": darken($bg, 20%), "bg": $bg);
+}
+
+@function map-to-progress($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+
+  @return ("bg": rgba($bg, 0.2));
+}
+
+@function map-to-progress-bar($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+
+  @return ("indeterminate-bg": #{lighten($bg, 20%)}, "bg": $bg);
+}
+
+@function map-to-radio($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+
+  // prettier-ignore
+  @return (
+    "border-active": rgba(darken($bg, 15%), 1), 
+    "bg": rgba($bg, 1),
+  );
+}
+
+@function map-to-toggle($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+
+  @return (
+    "bg": (
+      "inactive": #bebebe,
+      "active": $bg,
+    )
+  );
+}
+
+@function map-to-select($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+
+  @return (
+    "label-fg": fg-src($bg, muted),
+    "value-fg": fg-src($bg, base),
+    "bg": (
+      "overlay": rgba($bg, 0.08),
+      "outline": #{$bg},
+    )
+  );
+}
+
+@function map-to-slider($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+
+  @return (
+    "bg": (
+      "thumb": darken($bg, 25%),
+      "range": $bg,
+    )
+  );
+}
+
+// Containers
+@function map-to-dialog($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+
+  $bg: if($theme == "light", lighten($bg, 30%), darken($bg, 30%));
+
+  @return ("bg": $bg);
+}
+
+@function map-to-headerbar($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+
+  @return (
+    "label-fg": fg-src($bg, muted),
+    "value-fg": fg-src($bg, base),
+    "border": rgba($bg, 0.07),
+    "bg": (
+      "overlay": rgba($bg, 0.08),
+      "outline": #{$bg},
+    )
+  );
+}
+
+@function map-to-message($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+
+  @return (
+    "description-fg": fg-src($bg, muted),
+    "title-fg": fg-src($bg, base),
+    "overlay": rgba($bg, 0.08),
+    "shade": rgba($bg, 0.05),
+    "outline": $bg
+  );
+}
+
+@function map-to-row-item($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+
+  @return ("overlay": rgba($bg, 0.08), "outline": $bg);
+}
+
+@function map-to-rows($theme, $accent, $colors) {
+  @return ();
+}
+
+@function map-to-scrollbar($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+
+  @return (
+    "scroll-track-bg": rgba($bg, 0.02),
+    "scroll-thumb-bg": rgba($bg, 0.15)
+  );
+}
+
+@function map-to-sidebar($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+  $bg: if($theme == "dark", lighten($bg, 10%), lighten($bg, 20%));
+
+  @return ("bg": $bg);
+}
+
+@function map-to-splitview($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+  $bg: if($theme == "dark", lighten($bg, 20%), lighten($bg, 40%));
+
+  @return ("bg": $bg);
+}
+
+@function map-to-tabs($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+
+  @return ("bg": opacity-button-bg($bg, true), "fg": fg-src($bg, base));
+}
+
+@function map-to-tab($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+
+  @return ("bg": rgba($bg, 0.2));
+}
+
+@function map-to-view($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+  $view-bg: if($theme == "dark", darken($bg, 20%), lighten($bg, 20%));
+
+  @return ("bg": $view-bg, "container": $bg);
+}
+
+@function map-to-window($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+  $window-bg: if($theme == "dark", lighten($bg, 20%), lighten($bg, 40%));
+
+  @return ("bg": $window-bg);
+}
+
+$default-accent-mappers: (
+  "text": map-to-text,
+  "item": map-to-item,
+  "header": map-to-header,
+  "label": map-to-label,
+
+  "checkbox": map-to-checkbox,
+  "toggle": map-to-toggle,
+  "radio": map-to-radio,
+  "select": map-to-select,
+  "entry": map-to-entry,
+  "slider": map-to-slider,
+
+  "activatable": map-to-activatable,
+  "button": map-to-button,
+  "divider": map-to-divider,
+  "icon": map-to-icon,
+  "image": map-to-image,
+
+  "progress": map-to-progress,
+  "progress-bar": map-to-progress-bar,
+
+  // Containers
+  // "": map-to-scrollbar,
+  "view": map-to-view,
+  "sidebar": map-to-sidebar,
+  "headerbar": map-to-headerbar,
+  "message": map-to-message,
+  "row.item": map-to-row-item,
+  "rows": map-to-rows,
+  "tabs": map-to-tabs,
+  "tab": map-to-tab,
+  "window": map-to-window,
+  "splitview": map-to-splitview,
+  "dialog": map-to-dialog,
+);

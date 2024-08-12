@@ -1,49 +1,20 @@
-@use "sass:meta";
+@use "sass:list";
 @use "sass:map";
 
-@use "../../utils" as *;
-
-$mie-button-default-colors: (
-  "dark": (
-    "fill": filled-button-bg(#fff, "lighten"),
-    "bg": opacity-button-bg(#fff),
-    "fg-invert": var(--mie-inverted-fg),
-    "fg": var(--mie-fg),
-  ),
-  "light": (
-    "fill": filled-button-bg(#000, "darken"),
-    "bg": opacity-button-bg(#000),
-    "fg-invert": var(--mie-inverted-fg),
-    "fg": var(--mie-fg),
-  ),
-);
-
-@function map-accents-to-button($theme, $accent, $colors) {
-  $color: map.get($colors, "color");
-  $bg: map.get($colors, "bg");
-
-  @return (
-    "fill": filled-button-bg($bg, $theme),
-    "bg": opacity-button-bg($bg, false)
-  );
-}
-
-@include accents-map-to-component(
-  "button",
-  $mie-button-default-colors,
-  meta.get-function("map-accents-to-button"),
-  $mie-accents-by-theme
-);
+@use "../../variables" as *;
+@use "../../mixins" as *;
 
 .mie.button.filled {
   --mie-button-bg-active: var(--mie-button-fill-active) !important;
   --mie-button-bg-hover: var(--mie-button-fill-hover) !important;
   --mie-button-bg-main: var(--mie-button-fill-main) !important;
-  --mie-button-fg: #fff !important;
+}
 
-  &:not(.accent):not(.success):not(.error):not(.warning) {
-    --mie-button-fg: var(--mie-button-fg-invert) !important;
-  }
+@include not-many(
+  ".mie.button.filled",
+  list.join(map.keys($accents-preset), map.keys($colors-preset))
+) {
+  --mie-button-fg: var(--mie-button-fg-invert) !important;
 }
 
 .mie.button.transparent {
@@ -52,4 +23,10 @@ $mie-button-default-colors: (
 
 .mie.button.tertiary {
   --mie-button-fg: var(--mie-button-fill-main) !important;
+
+  &.transparent {
+    &:hover {
+      --mie-button-fg: #{rgba(#fff, 0.82)} !important;
+    }
+  }
 }

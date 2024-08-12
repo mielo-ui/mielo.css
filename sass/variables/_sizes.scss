@@ -1,0 +1,73 @@
+@use "sass:map";
+
+$text-size: (
+  "mini": 0.8rem,
+  "tiny": 1rem,
+  "small": 1.2rem,
+  "medium": 1.4rem,
+  "large": 1.6rem,
+  "big": 2rem,
+  "huge": 2.3rem,
+  "massive": 2.6rem,
+) !default;
+
+$icon-size: (
+  "mini": 0.6rem,
+  "tiny": 0.7rem,
+  "small": 1rem,
+  "medium": 1.4rem,
+  "large": 2.1rem,
+  "big": 2.8rem,
+  "huge": 5.6rem,
+  "massive": 12rem,
+) !default;
+
+$image-size: (
+  "mini": 3.4rem,
+  "tiny": 8rem,
+  "small": 15rem,
+  "medium": 30rem,
+  "large": 45rem,
+  "big": 60rem,
+  "huge": 80rem,
+  "massive": 96rem,
+) !default;
+
+$rounded-size: (
+  "none": 0rem,
+  "tiny": 0.2rem,
+  "small": 0.4rem,
+  "medium": 0.6rem,
+  "large": 1.2rem,
+  "circle": 50%,
+) !default;
+
+// margin/padding for views
+$indent: (
+  "none": 0rem,
+  "mini": 0.4rem,
+  "tiny": 0.8rem,
+  "tiny-plus": 1rem,
+  "small": 1.2rem,
+  "medium": 1.6rem,
+  "large": 2rem,
+  "big": 2.4rem,
+  "huge": 2.8rem,
+  "massive": 3.2rem,
+) !default;
+
+@function text-fs($name: medium) {
+  @return map.get($text-size, quote($name));
+}
+
+@function icon-fs($name: medium) {
+  @return map.get($icon-size, quote($name));
+}
+
+@function indent($name: medium) {
+  @return map.get($indent, quote($name));
+}
+
+@function rcorners($name: medium) {
+  @return map.get($rounded-size, quote($name));
+}

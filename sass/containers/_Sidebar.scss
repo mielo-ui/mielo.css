@@ -1,0 +1,67 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+@use "../utils" as *;
+
+.mie.sidebar {
+  background-color: var(--mie-sidebar-bg);
+
+  transition:
+    background 0.3s ease,
+    width 0.3s ease,
+    height 0.3s ease,
+    margin-left 0.3s ease;
+
+  flex-direction: column;
+  display: flex;
+
+  min-width: var(--mie-sidebar-w);
+  width: var(--mie-sidebar-w);
+  z-index: 5;
+
+  & + .container {
+    transition: width 0.3s ease;
+  }
+
+  // Layout Styles & Animations
+  &.width {
+    margin-left: calc(var(--mie-sidebar-w) * -1);
+
+    &.opened {
+      transition: margin-left 0.3s ease;
+      margin-left: 0;
+    }
+  }
+
+  &.shift {
+    margin-left: calc(var(--mie-sidebar-w) * -1);
+
+    &.opened {
+      transition: margin-left 0.3s ease;
+      margin-left: 0;
+
+      & + .container {
+        transition: margin-right 0.3s ease;
+        margin-right: calc(var(--mie-sidebar-w) * -1);
+      }
+    }
+  }
+
+  &.overlap {
+    position: absolute;
+    height: 100%;
+    bottom: 0;
+    top: 0;
+
+    left: calc(var(--mie-sidebar-w) * -1);
+
+    &.opened {
+      transition: left 0.3s ease;
+      left: 0;
+
+      & + .container {
+        left: calc(var(--mie-sidebar-w) * -1);
+        transition: left 0.3s ease;
+      }
+    }
+  }
+}

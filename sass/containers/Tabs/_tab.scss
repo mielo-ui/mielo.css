@@ -1,3 +1,4 @@
+@use "../../mixins" as *;
 @use "../../utils" as *;
 
 .mie.tabs > .mie.tab {
@@ -9,11 +10,13 @@
   font-size: var(--mie-tab-fs);
   font-weight: 700;
 
+  box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.03);
   background-color: var(--mie-tab-bg-main);
   color: var(--mie-tab-fg);
 
   user-select: none;
   cursor: pointer;
+  z-index: 100;
 
   &:hover,
   &.active {
@@ -27,7 +30,7 @@
   &.background {
     background-color: var(--mie-tab-bg-hover);
     position: absolute;
-    z-index: 8;
+    z-index: 10;
     left: 0;
 
     height: 0;
@@ -36,6 +39,7 @@
 
   &.transparent {
     background-color: transparent;
+    box-shadow: none;
   }
 
   > .adw.icon {

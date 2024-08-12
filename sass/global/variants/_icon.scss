@@ -1,0 +1,21 @@
+@use "sass:map";
+
+@use "../../variables" as *;
+
+@function icon-size-mapper($sizes) {
+  $map: ();
+
+  @each $size, $value in $sizes {
+    $map: map.set(
+      $map,
+      $size,
+      (
+        "fs": $value,
+      )
+    );
+  }
+
+  @return $map;
+}
+
+$icon-sizes: icon-size-mapper($icon-size) !default;

@@ -1,0 +1,80 @@
+@use "sass:map";
+@use "../variables" as *;
+
+@function upper-breakpoint($key: xs) {
+  $key: quote($key);
+
+  @if $key == "xs" {
+    @return "sm";
+  } @else if $key == "sm" {
+    @return "md";
+  } @else if $key == "md" {
+    @return "lg";
+  } @else if $key == "lg" {
+    @return "xl";
+  } @else if $key == "xl" {
+    @return "xxl";
+  } @else {
+    @return null;
+  }
+}
+
+@function lower-breakpoint($key: xs) {
+  $key: quote($key);
+
+  @if $key == "xxl" {
+    @return "xl";
+  } @else if $key == "xl" {
+    @return "lg";
+  } @else if $key == "lg" {
+    @return "md";
+  } @else if $key == "md" {
+    @return "sm";
+  } @else if $key == "sm" {
+    @return "xs";
+  } @else {
+    @return null;
+  }
+}
+
+@mixin media-breakpoint-up($key: xs) {
+  $down: map.get($media-breakpoints, quote($key));
+
+  @media (min-width: $down) {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-down($key: xs) {
+  $down: map.get($media-breakpoints, quote($key));
+
+  @media (max-width: $down) {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-only($key: xs) {
+  $key: quote($key);
+  $min: map.get($media-breakpoints, $key);
+
+  @if $key == "xxl" {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    $max: map.get($media-breakpoints, upper-breakpoint($key));
+
+    @media (min-width: #{$min}) and (max-width: #{$max}) {
+      @content;
+    }
+  }
+}
+
+@mixin media-breakpoint-between($start: xs, $end: xxl) {
+  $start: map.get($media-breakpoints, $start);
+  $end: map.get($media-breakpoints, $end);
+
+  @media (min-width: #{$start}) and (max-width: #{$end}) {
+    @content;
+  }
+}

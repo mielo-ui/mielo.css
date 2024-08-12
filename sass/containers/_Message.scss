@@ -1,0 +1,62 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+@use "../utils" as *;
+
+.mie.message {
+  --mie-message-rounded: 1.2rem;
+  --mie-message-margin-v: 1.2rem;
+
+  // prettier-ignore
+  background-image:
+        linear-gradient(
+            var(--mie-message-overlay),
+            var(--mie-message-overlay)
+        ),
+        linear-gradient(
+            var(--mie-message-bg),
+            var(--mie-message-bg)
+        );
+
+  display: flex;
+
+  border: 0.1rem solid var(--mie-message-shade);
+  border-radius: var(--mie-message-rounded);
+
+  margin: var(--mie-message-margin-v) 0;
+  padding: var(--mie-message-padding);
+
+  > .content {
+    @include flex(column, center, flex-start);
+    flex: 1;
+
+    > .title {
+      font-size: var(--mie-message-title-fs);
+      color: var(--mie-message-title-fg);
+      font-weight: 700;
+    }
+
+    > .description {
+      margin-top: var(--mie-message-title-space);
+
+      font-size: var(--mie-message-description-fs);
+      color: var(--mie-message-description-fg);
+      font-weight: 400;
+    }
+  }
+
+  > .icon {
+    margin-right: var(--mie-message-icon-space);
+
+    .mie.icon {
+      --mie-icon-fg: var(--mie-message-title-fg);
+    }
+  }
+
+  > .mie.button.close {
+    margin-left: var(--mie-message-icon-space);
+
+    .mie.icon {
+      --mie-icon-fg: var(--mie-message-description-fg);
+    }
+  }
+}

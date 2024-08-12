@@ -1,0 +1,76 @@
+@use "sass:list";
+@use "sass:meta";
+@use "sass:map";
+
+@use "../variables" as *;
+@use "../mixins" as *;
+@use "variants" as *;
+@use "accents" as *;
+
+$global-components-list: (
+  // Components
+  "text",
+  "header",
+  "item",
+  "label",
+  "activatable",
+  "checkbox",
+  "button",
+  "toggle",
+  "radio",
+  "select",
+  "entry",
+  "slider",
+  "divider",
+  "image",
+  "icon",
+  "progress",
+  "progress-bar",
+  // Containers
+  "",
+  // scrollbar
+  "headerbar",
+  "sidebar",
+  "splitview",
+  "message",
+  "dialog",
+  "window",
+  "clamp",
+  "view",
+  "modal",
+  "list",
+  "tabs",
+  "tab",
+  "row.item"
+);
+
+@mixin global-setup-accents() {
+  @each $class in $global-components-list {
+    $variant: map.get($default-variants, $class);
+
+    @if $variant != null {
+      @include variants-map-to-component($class, $variant, "medium");
+    }
+
+    $accent-defaults: map.get($default-accent-values, $class);
+    $mapper: map.get($default-accent-mappers, $class);
+
+    @if $mapper != null {
+      @include accents-map-to-component(
+        $class,
+        if(
+          $accent-defaults != null,
+          $accent-defaults,
+          (
+            "dark": (),
+            "light": (),
+          )
+        ),
+        meta.get-function($mapper),
+        $accents
+      );
+    }
+  }
+}
+
+@include global-setup-accents();

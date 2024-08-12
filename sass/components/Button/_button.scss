@@ -1,4 +1,6 @@
 .mie.button {
+  --mie-button-rounded: 0.6rem;
+
   text-decoration: none;
   user-select: none;
   cursor: pointer;
@@ -66,8 +68,12 @@
   }
 
   // With Icons
+  > .mie.icon {
+    --mie-icon-fg: var(--mie-button-fg);
+  }
+
   &.content {
-    .mie.icon {
+    > .mie.icon {
       margin-right: var(--mie-button-icon-ph);
     }
   }

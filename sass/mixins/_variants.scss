@@ -1,0 +1,90 @@
+@use "sass:list";
+@use "sass:map";
+@use "sass:meta";
+
+@use "../utils" as *;
+
+// ""
+// variant-classname("default", "default", "", false),
+// ".variant"
+// variant-classname("variant", "default", "", false),
+// ".prefix"
+// variant-classname("default", "default", "prefix", true),
+// ".prefix-variant"
+// variant-classname("variant", "default", "prefix", true),
+// ".prefix"
+// variant-classname("default", "default", "prefix", false),
+// ".prefix.variant"
+// variant-classname("variant", "default", "prefix", false),
+@function variant-classname(
+  $variant,
+  $default-variant: "default",
+  $prefix: "",
+  $prefix-directly: false
+) {
+  $variant-ext: null;
+  $prefix-ext: null;
+
+  @if is-empty($prefix) and $prefix-directly {
+    @error "Invalid variations: empty prefix cant declare in directly style";
+  }
+
+  @if $prefix-directly {
+    $variant-ext: if-or-empty($variant != $default-variant, $variant);
+
+    $prefix-ext: prefix-if(
+      if(is-empty($variant-ext), $prefix, $prefix + "-"),
+      "."
+    );
+  } @else {
+    $variant-ext: if-or-empty($variant != $default-variant, ".#{$variant}");
+    $prefix-ext: prefix-if($prefix, ".");
+  }
+
+  @return "#{$prefix-ext}#{$variant-ext}";
+}
+
+// Mixin declare variants declarations by class flag.
+// Output declaration like
+//
+// .mie.<component>.<variant | empty> - for declaration variables
+//
+// .mie.button.large {
+//   --mie-<component>-<property> -- = <property_value>;
+//   /*__________________________________________________________________________*/
+//   --mie-button-height: 3.4rem;
+// }
+
+@mixin variants-assign-variables($class, $vars) {
+  $name: kebab-case($class);
+
+  @each $item in $vars {
+    $value: list.nth($item, 2);
+    $keys: list.nth($item, 1);
+    $key: join($keys, "-");
+
+    --mie-#{$name}-#{$key}: #{$value};
+  }
+}
+
+// This variant declare all variants variables separate from style
+@mixin variants-map-to-component(
+  $class,
+  $variants,
+  $default-variant: "default",
+  $prefix: "",
+  $prefix-directly: false
+) {
+  @each $variant-name, $variant-vars in $variants {
+    $class-name: variant-classname(
+      $variant-name,
+      $default-variant,
+      $prefix,
+      $prefix-directly
+    );
+
+    .mie.#{$class}#{$class-name} {
+      @include variants-assign-variables($class, map-flatten($variant-vars));
+    }
+  }
+}

@@ -2,6 +2,7 @@
 @use "sass:list";
 @use "sass:map";
 
+@use "../../variables" as *;
 @use "../../utils" as *;
 
 $rounded-attached-classes: ("default", "row", "view");
@@ -30,7 +31,7 @@ $rounded-sides: (
       #{$prop}: $size;
     }
   } @else {
-    border-radius: $size;
+    border-radius: $size !important;
   }
 }
 
@@ -51,7 +52,7 @@ $rounded-sides: (
     $side-short-key: string.slice($side, 1, 1);
     $round-prefix: if($side != "default", $side-short-key, "");
 
-    @each $size-name, $size in $mie-rounded-size {
+    @each $size-name, $size in $rounded-size {
       $size-postfix: if($size-name != "medium", "-" + $size-name, "");
       $class-prefix: $round-prefix + $size-postfix;
       $selector: rounded-selector($class-prefix);
@@ -71,9 +72,11 @@ $rounded-sides: (
       &.entry.r#{$class-prefix} {
         @include rounded-expand-properties($side-corners, $size);
 
-        > input,
-        > textarea {
-          @include rounded-expand-properties($side-corners, $size);
+        > .field {
+          > input,
+          > textarea {
+            @include rounded-expand-properties($side-corners, $size);
+          }
         }
       }
     }

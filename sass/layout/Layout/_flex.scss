@@ -1,13 +1,13 @@
 .mie.f {
-  flex-direction: row;
-  display: flex;
+  flex-direction: row !important;
+  display: flex !important;
 
   &.fr {
-    flex-direction: row;
+    flex-direction: row !important;
   }
 
   &.fc {
-    flex-direction: column;
+    flex-direction: column !important;
   }
 
   &.fjc {

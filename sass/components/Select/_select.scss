@@ -1,4 +1,6 @@
 .mie.select {
+  --mie-select-rounded: 0.6rem;
+
   position: relative;
   z-index: 10;
   margin: 0;
@@ -25,7 +27,6 @@
   > .menu {
     background-color: var(--mie-select-bg-main);
     transition: height 0.3s ease;
-
     position: absolute;
     bottom: 0;
     left: 0;

@@ -25,17 +25,13 @@
     height: 0;
     top: 0;
 
-    z-index: 5;
-
-    > .content {
-      max-height: $menu-height;
-      overflow: hidden;
-    }
+    z-index: 100;
 
     &.opened {
       top: calc(var(--mie-select-height) + $menu-offset);
       padding-top: $menu-offset;
       height: $menu-height;
+      overflow-y: auto;
     }
   }
 }

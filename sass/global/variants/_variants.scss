@@ -1,0 +1,566 @@
+@use "sass:list";
+@use "sass:map";
+@use "sass:math";
+
+@use "../../variables" as *;
+
+@use "header" as *;
+@use "icon" as *;
+
+$text-sizes: (
+  "tiny": (
+    "fs": text-fs(tiny),
+  ),
+  "small": (
+    "fs": text-fs(small),
+  ),
+  "medium": (
+    "fs": text-fs(medium),
+  ),
+  "large": (
+    "fs": text-fs(large),
+  ),
+  "big": (
+    "fs": text-fs(big),
+  ),
+  "huge": (
+    "fs": text-fs(huge),
+  ),
+  "massive": (
+    "fs": text-fs(massive),
+  ),
+) !default;
+
+$item-sizes: (
+  "medium": (
+    "margin-between": 1.2rem,
+
+    "description-fs": text-fs(small),
+    "title-fs": text-fs(medium),
+  ),
+  "small": (
+    "margin-between": 0.8rem,
+
+    "description-fs": text-fs(mini),
+    "title-fs": text-fs(small),
+  ),
+  "large": (
+    "margin-between": 1.6rem,
+
+    "description-fs": text-fs(medium),
+    "title-fs": text-fs(large),
+  ),
+) !default;
+
+$button-sizes: (
+  "tiny": (
+    "icon-ph": indent(mini),
+    "fs": text-fs(small),
+    "size": 2.4rem,
+    "ph": 0.4rem,
+  ),
+
+  "small": (
+    "icon-ph": indent(mini),
+    "fs": text-fs(small),
+    "size": 2.8rem,
+    "ph": 0.8rem,
+  ),
+
+  "medium": (
+    "icon-ph": indent(tiny),
+    "fs": text-fs(medium),
+    "size": 3.4rem,
+    "ph": 1.2rem,
+  ),
+
+  "large": (
+    "icon-ph": indent(small),
+    "fs": text-fs(large),
+    "size": 4.4rem,
+    "ph": 1.6rem,
+  ),
+) !default;
+
+$checkbox-sizes: (
+  "medium": (
+    "fs": text-fs(medium),
+    "content-space": 0.8rem,
+    "icon-offset": 0.15rem,
+    "icon-size": 1.4rem,
+    "size": 2rem,
+  ),
+  "small": (
+    "fs": text-fs(small),
+    "content-space": 0.6rem,
+    "icon-offset": 0.06rem,
+    "icon-size": 1rem,
+    "size": 1.6rem,
+  ),
+  "large": (
+    "fs": text-fs(large),
+    "content-space": 1rem,
+    "icon-offset": 0.3rem,
+    "icon-size": 1.6rem,
+    "size": 2.6rem,
+  ),
+) !default;
+
+$entry-sizes: (
+  "medium": (
+    "value-fs": text-fs(medium),
+    "p": 2.5rem 1.6rem 0.7rem 1.6rem,
+    "mw": 10rem,
+    "h": 5.4rem,
+
+    "label": (
+      "fs": text-fs(small),
+      "ph": 1.6rem,
+
+      "offset": (
+        "active": 0.9rem,
+        "empty": 1.8rem,
+      ),
+    ),
+  ),
+  "small": (
+    "value-fs": text-fs(small),
+    "p": 1.4rem 1rem 0.4rem 1rem,
+    "mw": 8rem,
+    "h": 3.4rem,
+
+    "label": (
+      "fs": text-fs(mini),
+      "ph": 1rem,
+
+      "offset": (
+        "active": 0.3rem,
+        "empty": 1rem,
+      ),
+    ),
+  ),
+  "large": (
+    "value-fs": text-fs(large),
+    "p": 2.6rem 1.8rem 0.6rem 1.8rem,
+    "mw": 14rem,
+    "h": 6.4rem,
+
+    "label": (
+      "fs": text-fs(medium),
+      "ph": 1.8rem,
+
+      "offset": (
+        "active": 1rem,
+        "empty": 2.2rem,
+      ),
+    ),
+  ),
+) !default;
+
+@function image-size-mapper($sizes) {
+  $map: ();
+
+  @each $size, $value in $sizes {
+    $map: map.set(
+      $map,
+      $size,
+      (
+        "size": $value,
+      )
+    );
+  }
+
+  @return $map;
+}
+
+$image-sizes: map.merge(
+  image-size-mapper($image-size),
+  (
+    "medium": (
+      "border-w": 0.2rem,
+    ),
+  )
+) !default;
+
+$label-sizes: (
+  "medium": (
+    "pv": indent(tiny),
+    "ph": indent(tiny),
+    "fs": text-fs(small),
+    "rounded": rcorners(),
+    "border-w": 0.1rem,
+  ),
+
+  "tiny": (
+    "pv": indent(mini),
+    "ph": indent(mini),
+    "fs": text-fs(mini),
+  ),
+  "small": (
+    "pv": indent(mini),
+    "ph": indent(mini),
+    "fs": text-fs(tiny),
+  ),
+  "large": (
+    "pv": indent(small),
+    "ph": indent(small),
+    "fs": text-fs(medium),
+  ),
+  "big": (
+    "pv": indent(medium),
+    "ph": indent(medium),
+    "fs": text-fs(large),
+  ),
+  "huge": (
+    "pv": indent(large),
+    "ph": indent(large),
+    "fs": text-fs(big),
+  ),
+  "massive": (
+    "pv": indent(big),
+    "ph": indent(big),
+    "fs": text-fs(huge),
+  ),
+) !default;
+
+$progress-sizes: (
+  "medium": (
+    "rounded": 2rem,
+    "size": 1rem,
+    "bar-fs": text-fs(mini),
+  ),
+  "small": (
+    "rounded": 1.6rem,
+    "size": 0.6rem,
+    "bar-fs": text-fs(mini),
+  ),
+  "large": (
+    "rounded": 4rem,
+    "size": 2rem,
+    "bar-fs": text-fs(small),
+  ),
+) !default;
+
+$radio-sizes: (
+  "medium": (
+    "fs": text-fs(medium),
+    "content-space": 0.8rem,
+    "inner-size": 0.8rem,
+    "inner-mv": 0.4rem,
+    "inner-mh": 0.4rem,
+    "size": 2rem,
+  ),
+  "small": (
+    "fs": text-fs(small),
+    "content-space": 0.6rem,
+    "inner-size": 0.4rem,
+    "inner-mv": 0.45rem,
+    "inner-mh": 0.4rem,
+    "size": 1.6rem,
+  ),
+  "large": (
+    "fs": text-fs(large),
+    "content-space": 1rem,
+    "inner-size": 1.2rem,
+    "inner-mv": 0.5rem,
+    "inner-mh": 0.5rem,
+    "size": 2.6rem,
+  ),
+) !default;
+
+$select-sizes: (
+  "medium": (
+    "min-width": 10rem,
+    "padding": 1.6rem,
+    "height": 5.4rem,
+
+    "value-margin": 0.2rem,
+    "indicator-right": 0.6rem,
+
+    "label-fs": text-fs(small),
+    "value-fs": text-fs(medium),
+  ),
+  "small": (
+    "min-width": 8rem,
+    "padding": 1.4rem,
+    "height": 3.4rem,
+
+    "value-margin": 0.2rem,
+    "indicator-right": 0.4rem,
+
+    "label-fs": text-fs(mini),
+    "value-fs": text-fs(small),
+  ),
+  "large": (
+    "min-width": 14rem,
+    "padding": 1.4rem,
+    "height": 6.4rem,
+
+    "value-margin": 0.2rem,
+    "indicator-right": 0.8rem,
+
+    "label-fs": text-fs(medium),
+    "value-fs": text-fs(large),
+  ),
+) !default;
+
+$slider-sizes: (
+  "medium": (
+    "min-length": 12rem,
+    "thumb-size": 2rem,
+    "height": 0.4rem,
+
+    // ($thumb-size - var($slider-height) / 2
+    "padding-v": calc((2rem - 0.4rem) / 2),
+  ),
+  "small": (
+    "min-length": 8rem,
+    "thumb-size": 1.4rem,
+    "height": 0.2rem,
+
+    // ($thumb-size - var($slider-height) / 2
+    "padding-v": calc((1.4rem - 0.2rem) / 2),
+  ),
+  "large": (
+    "min-length": 14rem,
+    "thumb-size": 2.6rem,
+    "height": 0.8rem,
+
+    // ($thumb-size - var($slider-height) / 2
+    "padding-v": calc((2.6rem - 0.8rem) / 2),
+  ),
+) !default;
+
+$toggle-sizes: (
+  "medium": (
+    "fs": text-fs(medium),
+    "content-space": 0.8rem,
+
+    "rounded": 3.4rem,
+    "height": 2.4rem,
+    "width": 4rem,
+
+    "indicator": (
+      "icon-size": 1.2rem,
+      "height": 2rem,
+      "width": 2rem,
+
+      "active-offset": 1.6rem,
+      "offset-v": 0.2rem,
+      "offset-h": 0.2rem,
+    ),
+  ),
+  "small": (
+    "fs": text-fs(small),
+    "content-space": 0.6rem,
+
+    "rounded": 2.4rem,
+    "height": 1.8rem,
+    "width": 3.4rem,
+
+    "indicator": (
+      "icon-size": 0.8rem,
+      "height": 1.5rem,
+      "width": 1.5rem,
+
+      "active-offset": 1.55rem,
+      "offset-v": 0.09rem,
+      "offset-h": 0.2rem,
+    ),
+  ),
+  "large": (
+    "fs": text-fs(large),
+    "content-space": 1rem,
+
+    "rounded": 4.4rem,
+    "height": 2.8rem,
+    "width": 4.4rem,
+
+    "indicator": (
+      "icon-size": 1.6rem,
+      "height": 2.4rem,
+      "width": 2.4rem,
+
+      "active-offset": 1.6rem,
+      "offset-v": 0.2rem,
+      "offset-h": 0.2rem,
+    ),
+  ),
+) !default;
+
+// Containers
+$clamp-sizes: (
+  "medium": (
+    "container-padding-h": 1.2rem,
+    "container-padding-v": 1.2rem,
+    "size": 55rem,
+  ),
+) !default;
+
+$dialog-sizes: (
+  "medium": (
+    "padding-h": 1.2rem,
+    "padding-v": 1.2rem,
+    "min-height": 16rem,
+    "width": 35rem,
+
+    "action": (
+      "padding-v": 1.356665rem,
+      "padding-h": 1.2rem,
+    ),
+  ),
+  "small": (
+    "padding-h": 1.2rem,
+    "padding-v": 1.2rem,
+    "min-height": 16rem,
+    "width": 35rem,
+
+    "action": (
+      "padding-v": 1.356665rem,
+      "padding-h": 1.2rem,
+    ),
+  ),
+  "large": (
+    "padding-h": 1.2rem,
+    "padding-v": 1.2rem,
+    "min-height": 16rem,
+    "width": 35rem,
+
+    "action": (
+      "padding-v": 1.356665rem,
+      "padding-h": 1.2rem,
+    ),
+  ),
+) !default;
+
+$headerbar-sizes: (
+  "medium": (
+    "ph": indent(tiny-plus),
+    "size": 4.6rem,
+  ),
+) !default;
+
+$message-sizes: (
+  "tiny": (
+    "description-fs": text-fs(mini),
+    "title-fs": text-fs(tiny),
+    "padding": 0.8rem 1.2rem,
+    "title-space": 0rem,
+    "icon-space": 0.4rem,
+  ),
+  "small": (
+    "description-fs": text-fs(tiny),
+    "title-fs": text-fs(small),
+    "padding": 1rem 1.4rem,
+    "title-space": 0.2rem,
+    "icon-space": 0.4rem,
+  ),
+  "medium": (
+    "description-fs": text-fs(small),
+    "title-fs": text-fs(medium),
+    "padding": 1.2rem 1.6rem,
+    "title-space": 0.4rem,
+    "icon-space": 0.6rem,
+  ),
+  "large": (
+    "title-fs": text-fs(large),
+    "description-fs": 1.5rem,
+    "padding": 1.4rem 1.8rem,
+    "title-space": 0.6rem,
+    "icon-space": 0.8rem,
+  ),
+  "big": (
+    "description-fs": text-fs(large),
+    "title-fs": text-fs(big),
+    "padding": 1.6rem 2rem,
+    "title-space": 0.6rem,
+    "icon-space": 1rem,
+  ),
+  "huge": (
+    "description-fs": text-fs(large),
+    "title-fs": text-fs(huge),
+    "padding": 1.8rem 2.2rem,
+    "title-space": 0.6rem,
+    "icon-space": 1.2rem,
+  ),
+  "massive": (
+    "description-fs": text-fs(large),
+    "title-fs": text-fs(massive),
+    "padding": 2rem 2.4rem,
+    "title-space": 0.6rem,
+    "icon-space": 1.4rem,
+  ),
+) !default;
+
+$row-item-sizes: (
+  "medium": (
+    "ph": indent(),
+    "mh": 5.4rem,
+  ),
+) !default;
+
+$sidebar-sizes: (
+  "small": (
+    "w": 20rem,
+  ),
+  "medium": (
+    "w": 26rem,
+  ),
+  "large": (
+    "w": 32rem,
+  ),
+) !default;
+
+$tabs-sizes: (
+  "medium": (
+    "pv": math.div(indent(small), 2),
+    "ph": indent(tiny),
+    "rounded": rcorners(),
+  ),
+);
+
+$tab-sizes: (
+  "medium": (
+    "icon-offset": indent(tiny),
+    "pv": math.div(indent(tiny-plus), 2),
+    "rounded": rcorners(),
+    "ph": indent(),
+    "fs": text-fs(),
+  ),
+) !default;
+
+$window-sizes: (
+  "medium": (
+    "rounded": rcorners(large),
+  ),
+) !default;
+
+$default-variants: (
+  "text": $text-sizes,
+  "item": $item-sizes,
+  "header": $header-sizes,
+  "label": $label-sizes,
+
+  "checkbox": $checkbox-sizes,
+  "toggle": $toggle-sizes,
+  "select": $select-sizes,
+  "entry": $entry-sizes,
+  "radio": $radio-sizes,
+  "slider": $slider-sizes,
+
+  "progress": $progress-sizes,
+  "button": $button-sizes,
+  "image": $image-sizes,
+  "icon": $icon-sizes,
+
+  // Containers
+  "window": $window-sizes,
+  "clamp": $clamp-sizes,
+  "sidebar": $sidebar-sizes,
+  "dialog": $dialog-sizes,
+  "headerbar": $headerbar-sizes,
+  "message": $message-sizes,
+  "row.item": $row-item-sizes,
+  "tabs": $tabs-sizes,
+  "tab": $tab-sizes,
+);

@@ -1,0 +1,68 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+@use "../utils" as *;
+
+.mie.headerbar {
+  // prettier-ignore
+  background-image:
+        linear-gradient(
+            var(--mie-headerbar-bg-overlay),
+            var(--mie-headerbar-bg-overlay)
+        ),
+        linear-gradient(
+            var(--mie-headerbar-bg-main),
+            var(--mie-headerbar-bg-main)
+        );
+
+  position: relative;
+
+  justify-content: space-between;
+  align-items: center;
+
+  flex-direction: row;
+  display: flex;
+
+  padding: 0 var(--mie-headerbar-ph);
+  min-height: var(--mie-headerbar-size);
+  height: var(--mie-headerbar-size);
+  width: 100%;
+
+  &.transparent {
+    --mie-headerbar-bg-main: transparent;
+  }
+
+  &.bordered {
+    border-bottom: 0.1rem solid var(--mie-headerbar-border);
+  }
+
+  > .left {
+    @include flex(row, flex-start, center);
+    flex: 1;
+  }
+
+  > .right {
+    @include flex(row, flex-end, center);
+    > .content {
+      flex: 1;
+    }
+  }
+
+  > .center {
+    @include flex(row, center, center);
+    position: absolute;
+    height: 100%;
+    left: 50%;
+    top: 0;
+
+    transform: translateX(-50%);
+    z-index: 20;
+
+    > .mie.header {
+      user-select: none;
+
+      .title {
+        margin-bottom: 0.2rem;
+      }
+    }
+  }
+}

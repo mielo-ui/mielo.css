@@ -1,0 +1,34 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+@use "../utils" as *;
+
+.mie.clamp {
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+
+  padding: var(--mie-clamp-container-padding-v)
+    var(--mie-clamp-container-padding-h);
+
+  > .header {
+    flex-direction: column;
+    display: flex;
+
+    max-width: var(--mie-clamp-size);
+    width: var(--mie-clamp-size);
+
+    margin-right: indent();
+    margin-left: indent();
+    margin-bottom: 2.5rem;
+  }
+
+  > .content {
+    max-width: var(--mie-clamp-size);
+    width: var(--mie-clamp-size);
+
+    @include media-breakpoint-down(md) {
+      max-width: auto;
+      width: 100%;
+    }
+  }
+}

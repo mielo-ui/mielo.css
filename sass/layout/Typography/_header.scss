@@ -1,0 +1,39 @@
+@use "sass:list";
+@use "sass:map";
+
+@use "../../variables" as *;
+@use "../../mixins" as *;
+@use "../../utils" as *;
+
+// prettier-ignore
+h1, h2, h3, h4, h5, h6 {
+  font-size: var(--mie-text-fs);
+  color: var(--mie-text-fg);
+  line-height: 1.28;
+  font-weight: 700;
+  margin: 0;
+}
+
+$_header-size-keys: map.keys($header-base-sizes);
+
+:root {
+  @for $i from 1 through 6 {
+    $key: list.nth($_header-size-keys, $i);
+    $sizes: map.get($header-base-sizes, $key);
+    $fs: list.nth($sizes, 1);
+
+    --mie-h#{$i}-fs: #{$fs};
+  }
+}
+
+@for $i from 6 through 1 {
+  $key: list.nth($_header-size-keys, $i);
+  $sizes: map.get($header-base-sizes, $key);
+  $fs: list.nth($sizes, 1);
+
+  $selector: "h#{$i}, .mie.title.h#{$i}";
+
+  #{$selector} {
+    font-size: $fs;
+  }
+}

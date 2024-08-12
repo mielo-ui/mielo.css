@@ -1,0 +1,59 @@
+@use "sass:map";
+
+$text-muted-opacity: 0.6 !default;
+$text-base-opacity: 0.82 !default;
+
+$core-text-colors: (
+  "dark": #fff,
+  "light": #000,
+) !default;
+
+$header-base-sizes: (
+  "tiny": (
+    1.4rem,
+    1.2rem,
+  ),
+  "small": (
+    1.5rem,
+    1.4rem,
+  ),
+  "medium": (
+    1.8rem,
+    1.4rem,
+  ),
+  "large": (
+    2.4rem,
+    1.6rem,
+  ),
+  "big": (
+    2.8rem,
+    1.6rem,
+  ),
+  "huge": (
+    3.1rem,
+    1.8rem,
+  ),
+) !default;
+
+@function fg-src($color, $name, $theme: light) {
+  @if quote($name) == "muted" {
+    @return rgba($color, $text-muted-opacity);
+  } @else if quote($name) == "base" {
+    @return rgba($color, $text-base-opacity);
+  } @else {
+    @return $color;
+  }
+}
+
+@function fg($name, $theme: light, $inverted: false) {
+  $theme: quote($theme);
+  $theme-inverted: if($theme == "light", "dark", "light");
+
+  $core: if(
+    $inverted,
+    map.get($core-text-colors, $theme-inverted),
+    map.get($core-text-colors, $theme)
+  );
+
+  @return fg-src($core, $name, $theme);
+}

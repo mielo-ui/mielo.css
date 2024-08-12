@@ -1,9 +1,11 @@
 @use "sass:meta";
 @use "sass:map";
 
+@use "../../variables" as *;
+@use "../../mixins" as *;
 @use "../../utils" as *;
 
-$mie-shadow-states: (
+$shadow-states: (
   "dark": (
     "inner": 0 0.2rem 2.5rem 0 rgba(#000, 0.05) inset,
     "outer": (
@@ -49,7 +51,7 @@ $mie-shadow-states: (
 
 @include accents-map-to-component(
   "shadow",
-  $mie-shadow-states,
+  $shadow-states,
   meta.get-function("map-accents-to-shadow"),
-  $mie-accents-by-theme
+  $accents
 );

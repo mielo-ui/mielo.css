@@ -1,0 +1,72 @@
+@use "sass:list";
+@use "sass:map";
+
+@use "palette" as *;
+
+// pseudo type ThemeVariantColors = Map<(bg|fg), $value>;
+// pseudo type ThemeColors = Map<$color, ThemeVariantColors>;
+// pseudo type Theme = Map<(light|dark), ThemeColors>;
+// pseudo type ThemePreset = Map<$variant, $colors: Tuple([ $light, $dark ])>
+
+// $preset: ThemePreset
+// @returns: Theme
+@function preset-to-theme-variants($preset) {
+  $themes: (
+    "light": (),
+    "dark": (),
+  );
+
+  @each $accent, $theme-colors in $preset {
+    $light: list.nth($theme-colors, 1);
+    $dark: list.nth($theme-colors, 2);
+
+    // prettier-ignore
+    $themes: map.deep-merge(
+      $themes,
+      (
+        "light": map.set((), $accent,
+          ("fg": oppose-fg($light), "bg": $light)
+        ),
+        "dark": map.set((), $accent,
+          ("fg": oppose-fg($dark), "bg": $dark)
+        ),
+      )
+    );
+  }
+
+  @return $themes;
+}
+
+// Collect default colors from palette, and extend with custom preset vars
+// $preset: ThemePreset
+// @returns: Theme
+@function get-colors-theme($preset) {
+  $themes: (
+    "light": (),
+    "dark": (),
+  );
+
+  // Collect default colors from palette
+  @each $color, $color-list in $palette {
+    $light: list.nth($color-list, 3);
+    $dark: list.nth($color-list, 4);
+
+    // prettier-ignore
+    $themes: map.deep-merge(
+      $themes,
+      (
+        "light": map.set((), $color,
+          ("fg": oppose-fg($light), "bg": $light)
+        ),
+        "dark": map.set((), $color,
+          ("fg": oppose-fg($dark), "bg": $dark)
+        ),
+      )
+    );
+  }
+
+  $extended: preset-to-theme-variants($preset);
+  $themes: map.deep-merge($themes, $extended);
+
+  @return $themes;
+}

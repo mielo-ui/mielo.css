@@ -1,0 +1,54 @@
+.mie.dialog {
+  --mie-dialog-rounded: 1.2rem;
+
+  border-radius: var(--mie-dialog-rounded);
+  background-color: var(--mie-dialog-bg);
+
+  min-height: var(--mie-dialog-min-height);
+  max-width: var(--mie-dialog-width);
+  width: var(--mie-dialog-width);
+
+  justify-content: space-between;
+  flex-direction: column;
+  display: flex;
+
+  padding: var(--mie-dialog-padding-v) 0;
+  padding-bottom: 0;
+
+  &.attached.attached-modal {
+    margin-top: -35%;
+  }
+
+  // Custom integration style for dialog header
+  > .mie.header.attached.attached-dialog {
+    padding: var(--mie-dialog-padding-v) var(--mie-dialog-padding-h);
+    padding-bottom: 0;
+  }
+
+  > .content {
+    flex-direction: column;
+    display: flex;
+
+    padding: 0 var(--mie-dialog-padding-h);
+    flex: 1;
+  }
+
+  > .mie.buttons.actions {
+    border-top: 0.1rem solid var(--mie-dialog-action-border);
+
+    > .mie.button {
+      border-right: 0.1rem solid var(--mie-dialog-action-border);
+
+      &:first-child {
+        border-bottom-left-radius: var(--mie-dialog-rounded);
+        border-top-left-radius: 0;
+      }
+
+      &:last-child {
+        border-bottom-right-radius: var(--mie-dialog-rounded);
+        border-top-right-radius: 0;
+        border-right: none;
+      }
+    }
+  }
+}

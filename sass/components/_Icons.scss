@@ -1,0 +1,25 @@
+.mie.icon {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+
+  svg {
+    max-height: var(--mie-icon-fs);
+    max-width: var(--mie-icon-fs);
+    height: var(--mie-icon-fs);
+    width: var(--mie-icon-fs);
+    color: var(--mie-icon-fg);
+  }
+
+  &.filled {
+    background-color: var(--mie-icon-bg-filled);
+  }
+
+  &.circular {
+    border-radius: 50%;
+  }
+
+  &.bg {
+    background-color: var(--mie-icon-bg-main);
+  }
+}

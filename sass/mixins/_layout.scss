@@ -1,0 +1,39 @@
+@use "sass:list";
+
+@mixin box($width: "", $height: "") {
+  @if $width != "" {
+    width: $width;
+  }
+
+  @if $height != "" {
+    height: $height;
+  }
+}
+
+@mixin flex($direction: "", $justify-content: "", $align-items: "") {
+  display: flex;
+
+  @if $justify-content != "" {
+    justify-content: $justify-content;
+  }
+
+  @if $direction != "" {
+    flex-direction: $direction;
+  }
+
+  @if $align-items != "" {
+    align-items: $align-items;
+  }
+}
+
+@mixin not-many($class, $not) {
+  $selector: "";
+
+  @each $n in $not {
+    $selector: $selector + ":not(.#{$n})";
+  }
+
+  #{$class}#{$selector} {
+    @content;
+  }
+}
