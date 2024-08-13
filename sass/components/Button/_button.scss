@@ -1,32 +1,34 @@
+@use "../../mixins" as *;
+
 .mie.button {
-  --mie-button-rounded: 0.6rem;
+  border-radius: var(--mie-button-rounded);
 
   text-decoration: none;
   user-select: none;
   cursor: pointer;
+
   overflow: hidden;
   outline: none;
   border: none;
 
   transition:
     background 0.3s ease,
-    width 0.3s ease,
-    height 0.3s ease;
+    padding 0.3s ease,
+    width 0.3s ease;
 
-  padding: 0 var(--mie-button-ph);
-  height: var(--mie-button-size);
+  // prettier-ignore
+  padding: 
+    var(--mie-button-pv) 
+    var(--mie-button-ph);
 
-  justify-content: center;
-  align-items: center;
-
-  display: inline-flex;
+  @include flex(none, center, center, inline-flex);
   position: relative;
 
   font-size: var(--mie-button-fs);
   color: var(--mie-button-fg);
+  line-height: 1.286;
   font-weight: 700;
 
-  border-radius: var(--mie-button-rounded);
   background-color: var(--mie-button-bg-main);
 
   // States
@@ -52,49 +54,17 @@
 
   // Circular
   &.circular {
-    min-height: var(--mie-button-size);
-    min-width: var(--mie-button-size);
-    height: var(--mie-button-size);
-    width: var(--mie-button-size);
-    border-radius: 50%;
-    padding: 0;
+    padding: var(--mie-button-pv) var(--mie-button-pv);
+    border-radius: 500rem;
   }
 
   // Pilled Style
   &.pilled {
-    --mie-button-rounded: 3.4rem;
-    --mie-button-pv: 0.856665rem;
-    --mie-button-ph: 1.2rem;
+    --mie-button-rounded: 500rem;
   }
 
   // With Icons
   > .mie.icon {
     --mie-icon-fg: var(--mie-button-fg);
-  }
-
-  &.content {
-    > .mie.icon {
-      margin-right: var(--mie-button-icon-ph);
-    }
-  }
-
-  &.labeled {
-    justify-content: flex-start;
-    padding: 0;
-
-    .mie.icon {
-      background-color: rgba(#000, 0.1);
-      padding: 0 var(--mie-button-icon-ph);
-      height: var(--mie-button-size);
-    }
-
-    > .content {
-      padding-left: var(--mie-button-icon-ph);
-      padding-right: var(--mie-button-ph);
-
-      font-size: var(--mie-button-fs);
-      color: var(--mie-button-fg);
-      font-weight: 700;
-    }
   }
 }

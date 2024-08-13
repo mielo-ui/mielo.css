@@ -20,8 +20,8 @@ $palette: (
   "lightgreen": (#aed581, #9ccc65, #8bc34a, #7cb342, #689f38),
   "deeporange": (#ff8a65, #ff7043, #ff5722, #f4511e, #e64a19),
   // Core
-  // "light": (#ffffff, #f6f5f4, #deddda, #c0bfbc, #9a9996),
-  // "dark": (#77767b, #5e5c64, #3d3846, #241f31, #000000)
+  "light": (#ffffff, #f6f5f4, #deddda, #c0bfbc, #9a9996),
+  "dark": (#77767b, #5e5c64, #3d3846, #241f31, #000000)
 ) !default;
 
 @function pcolor($name, $level) {

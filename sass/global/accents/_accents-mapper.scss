@@ -14,7 +14,7 @@
 @function map-to-text($theme, $accent, $colors) {
   $color: map.get($colors, "bg");
 
-  @return ("fg": $color);
+  @return ("fg": $color, "fg-muted": $color);
 }
 
 @function map-to-activatable($theme, $accent, $colors) {
@@ -146,7 +146,7 @@
 
   @return (
     "bg": (
-      "thumb": darken($bg, 25%),
+      "thumb": lighten($bg, 10%),
       "range": $bg,
     )
   );
@@ -194,6 +194,7 @@
 }
 
 @function map-to-rows($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
   @return ();
 }
 

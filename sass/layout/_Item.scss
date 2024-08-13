@@ -9,16 +9,6 @@
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
-
-    > .indicator {
-      margin-bottom: var(--mie-item-margin-between);
-      margin-right: 0;
-    }
-
-    > .side {
-      margin-left: var(--mie-item-margin-between);
-      margin-left: 0;
-    }
   }
 
   &.center {
@@ -36,10 +26,6 @@
         align-items: center;
       }
     }
-  }
-
-  > .indicator {
-    margin-right: var(--mie-item-margin-between);
   }
 
   > .content {
@@ -61,6 +47,7 @@
     > .title {
       font-size: var(--mie-item-title-fs);
       color: var(--mie-item-title-fg);
+      line-height: 1.286;
       font-weight: 400;
     }
 

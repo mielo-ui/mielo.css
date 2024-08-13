@@ -15,7 +15,7 @@
     );
 
   padding: 0 var(--mie-row-item-ph);
-  @include flex(row, "", center);
+  @include flex(row, none, center);
   height: var(--mie-row-item-mh);
 
   &:last-child {

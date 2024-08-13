@@ -4,12 +4,7 @@
 
 .mie.sidebar {
   background-color: var(--mie-sidebar-bg);
-
-  transition:
-    background 0.3s ease,
-    width 0.3s ease,
-    height 0.3s ease,
-    margin-left 0.3s ease;
+  transition: all 0.3s ease;
 
   flex-direction: column;
   display: flex;

@@ -3,6 +3,10 @@
 @use "../../utils" as *;
 
 .mie.select {
+  &.transparent {
+    --mie-select-bg-main: transparent;
+  }
+
   > .content {
     // Base button content trigger
     > .base {
@@ -45,6 +49,7 @@
 
           font-size: var(--mie-select-value-fs);
           color: var(--mie-select-label-fg);
+          font-weight: 500;
         }
 
         > .value {
@@ -71,6 +76,7 @@
           > .label {
             top: var(--mie-select-label-top-active);
             font-size: var(--mie-select-label-fs);
+            font-weight: 400;
           }
         }
       }

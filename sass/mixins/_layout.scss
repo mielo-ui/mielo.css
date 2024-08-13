@@ -10,19 +10,28 @@
   }
 }
 
-@mixin flex($direction: "", $justify-content: "", $align-items: "") {
+@mixin flex(
+  $direction: none,
+  $justify-content: none,
+  $align-items: none,
+  $display: none
+) {
   display: flex;
 
-  @if $justify-content != "" {
+  @if $justify-content != none {
     justify-content: $justify-content;
   }
 
-  @if $direction != "" {
+  @if $direction != none {
     flex-direction: $direction;
   }
 
-  @if $align-items != "" {
+  @if $align-items != none {
     align-items: $align-items;
+  }
+
+  @if $display != none {
+    display: $display;
   }
 }
 

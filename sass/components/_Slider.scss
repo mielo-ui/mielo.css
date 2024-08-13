@@ -72,12 +72,12 @@
       top: 50%;
 
       &:focus-visible {
-        box-shadow: 0 0 0 6px rgba(33, 150, 243, 0.5) inset;
+        box-shadow: 0 0 0.4rem rgba(33, 150, 243, 0.4) inset;
         outline: 0;
       }
 
       &[data-active] {
-        box-shadow: 0px 0px 6px rgb(0, 0, 0, 0.3) inset;
+        box-shadow: 0 0 0.4rem rgb(0, 0, 0, 0.2) inset;
       }
 
       &[data-disabled] {

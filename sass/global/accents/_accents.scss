@@ -146,13 +146,13 @@ $image-default-accent: (
 $label-default-accent: (
   "light": (
     "border-bg": rgba(#000, 0.1),
-    "bg": rgba(#000, 0.6),
     "fg": fg(base, light),
+    "bg": #c0bfbc,
   ),
   "dark": (
     "border-bg": rgba(#fff, 0.1),
-    "bg": rgba(#fff, 0.6),
     "fg": fg(base, dark),
+    "bg": #cfd8dc,
   ),
 ) !default;
 
@@ -204,7 +204,7 @@ $select-default-accent: (
   ),
   "light": (
     "label-fg": fg(muted, light),
-    "value-fg": fg(base, dark),
+    "value-fg": fg(base, light),
     "bg": (
       "outline": pcolor(blue, 4),
       "overlay": transparent,
@@ -222,16 +222,16 @@ $slider-default-accent: (
       "thumb": #383838,
     ),
 
-    "thumb-border": #1b1b1b,
+    "thumb-border": rgba(#fff, 0.03),
   ),
   "light": (
     "bg": (
-      "slider": #deddda,
       "range": pcolor(blue, 3),
+      "slider": #deddda,
       "thumb": #fff,
     ),
 
-    "thumb-border": #c1bab5,
+    "thumb-border": rgba(#000, 0.07),
   ),
 ) !default;
 
@@ -431,7 +431,7 @@ $default-accent-values: (
   "headerbar": $headerbar-default-accent,
   "message": $message-default-accent,
   "item": $item-default-accent,
-  "row-item": $row-item-default-accent,
+  "row.item": $row-item-default-accent,
   "rows": $rows-default-accent,
   "scrollbar": $scrollbar-default-accent,
   "sidebar": $sidebar-default-accent,

@@ -1,16 +1,22 @@
 .mie.text {
   font-size: var(--mie-text-fs);
   color: var(--mie-text-fg);
-  font-weight: 400;
   line-height: 1.2;
+
+  &.muted {
+    color: var(--mie-text-fg-muted) !important;
+  }
+
+  &.invert {
+    color: var(--mie-text-inverted-fg) !important;
+
+    &.muted {
+      color: var(--mie-text-inverted-fg-muted) !important;
+    }
+  }
 
   &.center {
     text-align: center;
-  }
-
-  &.mie.paragraph {
-    margin-bottom: 1.2rem;
-    margin-top: 0;
   }
 
   &.bold {
@@ -19,5 +25,13 @@
 
   &.semibold {
     font-weight: 500;
+  }
+
+  &.regular {
+    font-weight: 400;
+  }
+
+  &.light {
+    font-weight: 300;
   }
 }

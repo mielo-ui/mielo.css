@@ -25,11 +25,10 @@
     height: 0;
     top: 0;
 
-    z-index: 100;
+    z-index: 15;
 
     &.opened {
       top: calc(var(--mie-select-height) + $menu-offset);
-      padding-top: $menu-offset;
       height: $menu-height;
       overflow-y: auto;
     }

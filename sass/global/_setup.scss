@@ -41,7 +41,8 @@ $global-components-list: (
   "list",
   "tabs",
   "tab",
-  "row.item"
+  "row.item",
+  "rows"
 );
 
 @mixin global-setup-accents() {
