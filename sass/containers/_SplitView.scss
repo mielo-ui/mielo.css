@@ -14,7 +14,7 @@
   width: 100%;
 
   > .overlay {
-    background-color: var(--mie-splitview-overlay-bg);
+    background-color: mvar("splitview.overlay.bg");
     position: absolute;
     height: 100%;
     z-index: 50;
@@ -24,11 +24,11 @@
   }
 
   > .sidebar {
-    border-right: 1px solid var(--mie-divider-bg);
+    border-right: 1px solid mvar("divider.bg");
   }
 
   > .container {
-    background-color: var(--mie-splitview-bg);
+    background-color: mvar("splitview.bg");
     transition: width 0.3s ease-out;
     position: relative;
 

@@ -1,9 +1,12 @@
+@use "../variables" as *;
+
 .mie.label {
-  padding: var(--mie-label-pv) var(--mie-label-ph);
-  border-radius: var(--mie-label-rounded);
-  background-color: var(--mie-label-bg);
-  font-size: var(--mie-label-fs);
-  color: var(--mie-label-fg);
+  padding: mvar("label.pv") mvar("label.ph");
+  border-radius: mvar("label.rounded");
+  background-color: mvar("label.bg");
+  font-size: mvar("label.fs");
+  color: mvar("label.fg");
+
   transition: all 0.3s ease;
   box-sizing: border-box;
   display: inline-block;
@@ -17,12 +20,12 @@
   }
 
   &.transparent {
-    --mie-label-fg: var(--mie-label-bg) !important;
+    --mie-label-fg: mvar("label.bg") !important;
     background-color: transparent !important;
   }
 
   &.bordered {
-    border: var(--mie-label-border-w) solid var(--mie-label-border-bg);
+    border: mvar("label.border.w") solid var("label.border.bg");
   }
 
   &.floating {

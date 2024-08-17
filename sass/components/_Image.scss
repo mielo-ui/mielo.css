@@ -1,10 +1,12 @@
+@use "../variables" as *;
+
 .mie.image {
-  border: 0 solid var(--mie-image-border-bg);
-  background-color: var(--mie-image-bg);
+  border: 0 solid mvar("image.border.bg");
+  background-color: mvar("image.bg");
   background-repeat: no-repeat;
   background-size: cover;
 
-  width: var(--mie-image-size);
+  width: mvar("image.size");
   display: inline-block;
 
   &.transparent {
@@ -12,7 +14,7 @@
   }
 
   &.bordered {
-    border-width: var(--mie-image-border-w);
+    border-width: mvar("image.border.w");
   }
 
   &.circular {

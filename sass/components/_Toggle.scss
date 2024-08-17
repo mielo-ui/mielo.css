@@ -1,3 +1,6 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
 .mie.toggle {
   display: inline-block;
   position: relative;
@@ -9,16 +12,15 @@
 
   > .label {
     position: relative;
-
     align-items: center;
     display: flex;
 
     > .content {
-      font-size: var(--mie-toggle-fs);
-      color: var(--mie-toggle-fg);
+      font-size: mvar("toggle.fs");
+      color: mvar("toggle.fg");
       font-weight: 400;
 
-      margin-left: var(--mie-toggle-content-space);
+      margin-left: mvar("toggle.content.space");
     }
   }
 }
@@ -26,15 +28,15 @@
 .mie.toggle {
   > .label {
     > .indicator {
-      background-color: var(--mie-toggle-bg-inactive);
-      border-radius: var(--mie-toggle-rounded);
+      background-color: mvar("toggle.bg.inactive");
+      border-radius: mvar("toggle.rounded");
 
       transition: background-color 0.2s ease;
       position: relative;
       display: block;
 
-      height: var(--mie-toggle-height);
-      width: var(--mie-toggle-width);
+      height: mvar("toggle.height");
+      width: mvar("toggle.width");
 
       > .dot {
         box-shadow: 0rem 0.2rem 0.5rem 0rem rgba(0, 0, 0, 0.3);
@@ -45,25 +47,23 @@
         position: absolute;
         z-index: 10;
 
-        height: var(--mie-toggle-indicator-height);
-        width: var(--mie-toggle-indicator-width);
+        height: mvar("toggle.indicator.height");
+        width: mvar("toggle.indicator.width");
 
-        left: var(--mie-toggle-indicator-offset-h);
-        top: var(--mie-toggle-indicator-offset-v);
+        left: mvar("toggle.indicator.offset.h");
+        top: mvar("toggle.indicator.offset.v");
 
-        justify-content: center;
-        align-items: center;
-        display: flex;
+        @include flex(row, center, center);
 
         > .icon {
           > svg {
-            max-height: var(--mie-toggle-indicator-icon-size);
-            max-width: var(--mie-toggle-indicator-icon-size);
+            max-height: mvar("toggle.indicator.icon.size");
+            max-width: mvar("toggle.indicator.icon.size");
 
-            height: var(--mie-toggle-indicator-icon-size);
-            width: var(--mie-toggle-indicator-icon-size);
+            height: mvar("toggle.indicator.icon.size");
+            width: mvar("toggle.indicator.icon.size");
 
-            color: var(--mie-toggle-indicator-icon-color);
+            color: mvar("toggle.indicator.icon.color");
           }
         }
       }
@@ -77,19 +77,19 @@
         z-index: 8;
 
         svg {
-          max-height: var(--mie-toggle-indicator-icon-size);
-          max-width: var(--mie-toggle-indicator-icon-size);
+          max-height: mvar("toggle.indicator.icon.size");
+          max-width: mvar("toggle.indicator.icon.size");
 
-          height: var(--mie-toggle-indicator-icon-size);
-          width: var(--mie-toggle-indicator-icon-size);
+          height: mvar("toggle.indicator.icon.size");
+          width: mvar("toggle.indicator.icon.size");
 
-          color: var(--mie-toggle-indicator-icon-fg);
+          color: mvar("toggle.indicator.icon.fg");
         }
 
         .checked,
         .unchecked {
-          height: var(--mie-toggle-indicator-height);
-          width: var(--mie-toggle-indicator-width);
+          height: mvar("toggle.indicator.height");
+          width: mvar("toggle.indicator.width");
           position: absolute;
 
           justify-content: center;
@@ -98,12 +98,12 @@
         }
 
         .checked {
-          top: var(--mie-toggle-indicator-offset-v);
+          top: mvar("toggle.indicator.offset.v");
           left: 0;
         }
 
         .unchecked {
-          top: var(--mie-toggle-indicator-offset-v);
+          top: mvar("toggle.indicator.offset.v");
           right: 0;
         }
       }
@@ -113,10 +113,10 @@
   // When checked
   .input:checked + .label {
     > .indicator {
-      background-color: var(--mie-toggle-bg-active);
+      background-color: mvar("toggle.bg.active");
 
       > .dot {
-        transform: translateX(var(--mie-toggle-indicator-active-offset));
+        transform: translateX(mvar("toggle.indicator.active.offset"));
       }
     }
   }

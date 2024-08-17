@@ -1,3 +1,5 @@
+@use "../variables" as *;
+
 .mie.radio {
   display: inline-block;
   position: relative;
@@ -14,11 +16,11 @@
     display: flex;
 
     > .content {
-      font-size: var(--mie-radio-fs);
-      color: var(--mie-radio-fg);
+      font-size: mvar("radio.fs");
+      color: mvar("radio.fg");
       font-weight: 400;
 
-      margin-left: var(--mie-radio-content-space);
+      margin-left: mvar("radio.content.space");
     }
   }
 }
@@ -27,7 +29,7 @@
 .mie.radio {
   > .label {
     > .indicator {
-      border: 0.2rem solid var(--mie-radio-border-active);
+      border: 0.2rem solid mvar("radio.border.active");
       background-color: rgba(0, 0, 0, 0);
       border-radius: 50%;
 
@@ -36,16 +38,16 @@
       position: relative;
       display: block;
 
-      height: var(--mie-radio-size);
-      width: var(--mie-radio-size);
+      height: varm("radio.size");
+      width: varm("radio.size");
 
       &::before {
         transition: opacity 0.2s ease;
 
-        height: var(--mie-radio-inner-size);
-        width: var(--mie-radio-inner-size);
-        left: var(--mie-radio-inner-mh);
-        top: var(--mie-radio-inner-mv);
+        height: mvar("radio.inner.size");
+        width: mvar("radio.inner.size");
+        left: mvar("radio.inner.mh");
+        top: mvar("radio.inner.mv");
 
         background-color: #fff;
         border-radius: 50%;
@@ -60,8 +62,8 @@
   // When checked
   .input:checked + .label {
     > .indicator {
-      border-color: var(--mie-radio-border-active);
-      background-color: var(--mie-radio-bg);
+      border-color: mvar("radio.border.active");
+      background-color: mvar("radio.bg");
 
       &::before {
         opacity: 1;

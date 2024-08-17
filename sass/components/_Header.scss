@@ -1,3 +1,5 @@
+@use "../variables" as *;
+
 .mie.header {
   flex-direction: row;
   align-items: center;
@@ -10,16 +12,16 @@
     flex: 1;
 
     > .title {
-      font-size: var(--mie-header-title-fs);
-      color: var(--mie-header-title-fg);
+      font-size: mvar("header.title.fs");
+      color: mvar("header.title.fg");
       line-height: 1.28;
       font-weight: 700;
       margin: 0;
     }
 
     .subtitle {
-      font-size: var(--mie-header-subtitle-fs);
-      color: var(--mie-header-subtitle-fg);
+      font-size: mvar("header.subtitle.fs");
+      color: mvar("header.subtitle.fg");
       line-height: 1.2;
       font-weight: 400;
     }
@@ -27,22 +29,22 @@
 
   // Icon
   > .mie.icon {
-    margin-right: var(--mie-header-icon-space);
+    margin-right: mvar("header.icon.space");
   }
 
   > .heading > .mie.icon {
-    margin-bottom: var(--mie-header-icon-space);
+    margin-bottom: mvar("header.icon.space");
   }
 
   // Inverted
   &.inverted > .heading {
     > .title {
-      font-size: var(--mie-header-subtitle-fs);
+      font-size: mvar("header.subtitle.fs");
       font-weight: 400;
     }
 
     > .subtitle {
-      font-size: var(--mie-header-title-fs);
+      font-size: mvar("header.title.fs");
       font-weight: 700;
     }
   }

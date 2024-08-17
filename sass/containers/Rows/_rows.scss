@@ -1,5 +1,7 @@
+@use "../../variables" as *;
+
 .mie.rows {
-  background-color: var(--mie-rows-bg);
+  background-color: mvar("rows.bg");
   background-clip: padding-box;
   position: relative;
   margin: 0;

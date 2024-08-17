@@ -1,9 +1,11 @@
-.mie.dialog {
-  border-radius: var(--mie-dialog-rounded);
-  background-color: var(--mie-dialog-bg);
+@use "../variables" as *;
 
-  min-height: var(--mie-dialog-mh);
-  min-width: var(--mie-dialog-mw);
+.mie.dialog {
+  border-radius: mvar("dialog.rounded");
+  background-color: mvar("dialog.bg");
+
+  min-height: mvar("dialog.mh");
+  min-width: mvar("dialog.mw");
 
   justify-content: space-between;
   flex-direction: column;
@@ -20,18 +22,18 @@
   }
 
   > .mie.buttons.actions {
-    border-top: 0.1rem solid var(--mie-dialog-action-border);
+    border-top: 0.1rem solid mvar("dialog.action.border");
 
     > .mie.button {
-      border-right: 0.1rem solid var(--mie-dialog-action-border);
+      border-right: 0.1rem solid mvar("dialog.action.border");
 
       &:first-child {
-        border-bottom-left-radius: var(--mie-dialog-rounded);
+        border-bottom-left-radius: mvar("dialog.rounded");
         border-top-left-radius: 0;
       }
 
       &:last-child {
-        border-bottom-right-radius: var(--mie-dialog-rounded);
+        border-bottom-right-radius: mvar("dialog.rounded");
         border-top-right-radius: 0;
         border-right: none;
       }

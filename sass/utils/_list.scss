@@ -1,0 +1,64 @@
+@use "sass:list";
+
+// @adopted: https://github.com/davidkpiano/sassdash/blob/master/scss/api/_slice.scss
+@function base-slice($list, $start: 0, $end: list.length($list)) {
+  $length: list.length($list);
+  $index: 1;
+
+  @if ($start < 0) {
+    $start: if(-$start > $length, 0, ($length + $start));
+  }
+
+  $end: if($end > $length, $length, if($end, $end, 0));
+
+  @if ($end < 0) {
+    $end: $end + $length;
+  }
+
+  $length: if($start > $end, 0, ($end - $start));
+  $result: ();
+
+  @while ($index <= $length) {
+    $result: list.append($result, list.nth($list, ($index + $start)));
+    $index: $index + 1;
+  }
+
+  @return $result;
+}
+
+// @adopted: https://github.com/davidkpiano/sassdash/blob/master/scss/api/_splice.scss
+@function splice($list, $start, $delete-count: 1, $items...) {
+  $length: list.length($list);
+  $result: ();
+  $index: 1;
+
+  @while $index < $start {
+    $result: list.append($result, nth($list, $index));
+    $index: $index + 1;
+  }
+
+  @each $item in $items {
+    $result: list.append($result, $item);
+  }
+
+  $index: $start + $delete-count;
+
+  @while $index <= $length {
+    $result: list.append($result, list.nth($list, $index));
+    $index: $index + 1;
+  }
+
+  @return $result;
+}
+
+// @adopted: https://github.com/davidkpiano/sassdash/blob/master/scss/api/_drop.scss
+@function drop-right($list, $n: null) {
+  $length: if($list, list.length($list), 0);
+
+  @if ($length == 0) {
+    @return ();
+  }
+
+  $n: $length - $n;
+  @return base-slice($list, 0, if($n < 0, 0, $n));
+}

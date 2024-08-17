@@ -3,10 +3,19 @@
 @use "../../utils" as *;
 
 .mie.window {
-  --mie-window-rounded: #{rcorners(large)};
+  // prettier-ignore
+  background-image:
+    linear-gradient(
+        mvar("window.bg.overlay"),
+        mvar("window.bg.overlay")
+    ),
+    linear-gradient(
+        mvar("window.bg.main"),
+        mvar("window.bg.main")
+    );
 
-  border-radius: var(--mie-window-rounded);
-  background-color: var(--mie-window-bg);
+  border-radius: var("window.rounded");
+  background-color: var("window.bg");
   overflow: hidden;
   height: 100%;
   width: 100%;

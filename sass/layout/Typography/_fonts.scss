@@ -1,10 +1,12 @@
+@use "../../variables" as *;
+
 :root {
   --mie-font-family: "Roboto";
 }
 
 *,
 body {
-  font-family: var(--mie-font-family);
+  font-family: mvar("font.family");
   font-size: 10px;
   line-height: 1;
 }

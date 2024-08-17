@@ -1,23 +1,24 @@
+@use "../variables" as *;
+
 .mie.view {
   --mie-view-bg: transparent;
-
-  background-color: var(--mie-view-bg);
+  background-color: mvar("view.bg");
 
   // Background appearance
   &.panel {
-    --mie-view-bg: var(--mie-view-panel);
+    --mie-view-bg: mvar("view.panel");
   }
 
   &.windows {
-    --mie-view-bg: var(--mie-view-window);
+    --mie-view-bg: mvar("view.window");
   }
 
   &.content {
-    --mie-view-bg: var(--mie-view-content);
+    --mie-view-bg: mvar("view.content");
   }
 
   &.osd {
-    --mie-view-bg: var(--mie-view-osd);
+    --mie-view-bg: mvar("view.osd");
   }
 
   // Sizings

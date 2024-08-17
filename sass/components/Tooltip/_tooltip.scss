@@ -1,10 +1,12 @@
+@use "../../variables" as *;
+
 .mie.tooltip {
-  border: 0.1rem solid var(--mie-tooltip-shade);
-  background-color: var(--mie-tooltip-bg);
-  color: var(--mie-tooltip-fg);
+  border: 0.1rem solid mvar("tooltip.shade");
+  background-color: mvar("tooltip.bg");
+  color: mvar("tooltip.fg");
 
   > .content {
-    font-size: var(--mie-tooltip-fs);
+    font-size: mvar("tooltip.fs");
     flex-direction: column;
     display: flex;
   }

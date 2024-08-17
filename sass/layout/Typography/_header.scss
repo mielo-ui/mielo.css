@@ -7,8 +7,8 @@
 
 // prettier-ignore
 h1, h2, h3, h4, h5, h6 {
-  font-size: var(--mie-text-fs);
-  color: var(--mie-text-fg);
+  font-size: mvar("text.fs");
+  color: mvar("text.fg");
   line-height: 1.28;
   font-weight: 700;
   margin: 0;

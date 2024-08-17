@@ -1,11 +1,13 @@
+@import "../../variables";
+
 .mie.progress {
-  border-radius: var(--mie-progress-rounded);
-  background-color: var(--mie-progress-bg);
+  border-radius: mvar("progress.rounded");
+  background-color: mvar("progress.bg");
   position: relative;
 
   align-items: center;
   display: flex;
 
-  height: var(--mie-progress-size);
+  height: mvar("progress.size");
   width: 100%;
 }

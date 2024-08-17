@@ -1,3 +1,4 @@
+@use "../variables" as *;
 @use "../mixins" as *;
 
 .mie.item {
@@ -34,32 +35,32 @@
 
     &.inverted {
       > .title {
-        font-size: var(--mie-item-description-fs);
-        color: var(--mie-item-description-fg);
+        font-size: mvar("item.description.fs");
+        color: mvar("item.description.fg");
       }
 
       > .description {
-        font-size: var(--mie-item-title-fs);
-        color: var(--mie-item-title-fg);
+        font-size: mvar("item.title.fs");
+        color: mvar("item.title.fg");
       }
     }
 
     > .title {
-      font-size: var(--mie-item-title-fs);
-      color: var(--mie-item-title-fg);
+      font-size: mvar("item.title.fs");
+      color: mvar("item.title.fg");
       line-height: 1.286;
       font-weight: 400;
     }
 
     > .description {
-      font-size: var(--mie-item-description-fs);
-      color: var(--mie-item-description-fg);
+      font-size: mvar("item.description.fs");
+      color: mvar("item.description.fg");
       font-weight: 400;
     }
   }
 
   > .side {
     @include flex(row, flex-end, center);
-    margin-left: var(--mie-item-margin-between);
+    margin-left: mvar("item.margin.between");
   }
 }

@@ -1,3 +1,4 @@
+@use "../../variables" as *;
 @use "../../mixins" as *;
 @use "../../utils" as *;
 
@@ -5,14 +6,14 @@
   @include flex(row, center, center);
   transition: left 0.3s ease;
 
-  padding: var(--mie-tab-pv) var(--mie-tab-ph);
-  border-radius: var(--mie-tab-rounded);
-  font-size: var(--mie-tab-fs);
+  padding: mvar("tab.pv") mvar("tab.ph");
+  border-radius: mvar("tab.rounded");
+  font-size: mvar("tab.fs");
   font-weight: 700;
 
   box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.03);
-  background-color: var(--mie-tab-bg-main);
-  color: var(--mie-tab-fg);
+  background-color: var("tab.bg.main");
+  color: mvar("tab.fg");
 
   user-select: none;
   cursor: pointer;
@@ -20,15 +21,15 @@
 
   &:hover,
   &.active {
-    background-color: var(--mie-tab-bg-hover);
+    background-color: mvar("tab.bg.hover");
   }
 
   &:active {
-    background-color: var(--mie-tab-bg-active);
+    background-color: mvar("tab.bg.active");
   }
 
   &.background {
-    background-color: var(--mie-tab-bg-hover);
+    background-color: mvar("tab.bg.hover");
     position: absolute;
     z-index: 10;
     left: 0;
@@ -43,6 +44,6 @@
   }
 
   > .adw.icon {
-    margin-right: var(--mie-tab-icon-offset);
+    margin-right: mvar("tab.icon.offset");
   }
 }

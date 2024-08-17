@@ -1,22 +1,16 @@
+@use "../mixins" as *;
+@use "./Button/base" as *;
+
 .mie.activatable {
-  background-color: var(--mie-activatable-bg-main);
-  transition:
-    background 0.3s ease,
-    width 0.3s ease,
-    height 0.3s ease;
+  position: relative;
 
-  user-select: none;
-  cursor: pointer;
-
-  &:hover {
-    background-color: var(--mie-activatable-bg-hover) !important;
+  & {
+    @include button(
+      "activatable",
+      (
+        "indent": false,
+        "text": false,
+      )
+    );
   }
-
-  &:active {
-    background-color: var(--mie-activatable-bg-active) !important;
-  }
-}
-
-.mie.activatable.active {
-  background-color: var(--mie-activatable-bg-hover);
 }

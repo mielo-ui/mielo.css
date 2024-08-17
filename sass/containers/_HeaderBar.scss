@@ -6,25 +6,20 @@
   // prettier-ignore
   background-image:
         linear-gradient(
-            var(--mie-headerbar-bg-overlay),
-            var(--mie-headerbar-bg-overlay)
+            mvar("headerbar.bg.overlay"),
+            mvar("headerbar.bg.overlay")
         ),
         linear-gradient(
-            var(--mie-headerbar-bg-main),
-            var(--mie-headerbar-bg-main)
+            mvar("headerbar.bg.main"),
+            mvar("headerbar.bg.main")
         );
 
+  @include flex(row, space-between, center);
+  padding: 0 mvar("headerbar.ph");
   position: relative;
 
-  justify-content: space-between;
-  align-items: center;
-
-  flex-direction: row;
-  display: flex;
-
-  padding: 0 var(--mie-headerbar-ph);
-  min-height: var(--mie-headerbar-size);
-  height: var(--mie-headerbar-size);
+  min-height: mvar("headerbar.size");
+  height: mvar("headerbar.size");
   width: 100%;
 
   &.transparent {
@@ -32,7 +27,7 @@
   }
 
   &.bordered {
-    border-bottom: 0.1rem solid var(--mie-headerbar-border);
+    border-bottom: 0.1rem solid mvar("headerbar.border");
   }
 
   > .left {

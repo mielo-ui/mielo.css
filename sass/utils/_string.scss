@@ -1,6 +1,22 @@
 @use "sass:string";
 @use "sass:list";
 
+@function lower-case($string) {
+  @return to-lower-case(quote(#{$string}));
+}
+
+@function kebab-case($string, $prefix: "", $glue: "-", $suffix: "") {
+  $result: lower-case($string);
+  $replace: " ", "-", "–", "—", "_", ",", ";", ":", ".", "+", "=", "?", "&", "*",
+    "/", "|", ">", "<", "(", ")";
+
+  @each $char in $replace {
+    $result: replace($result, $char, $glue, 1);
+  }
+
+  @return $prefix + $result + $suffix;
+}
+
 // str-replace() - Replace in a string
 // from: https://github.com/hail2u/scss-functions/blob/master/string/_str-replace.scss
 // @param {string}  $string    String that you want to replace
@@ -45,26 +61,6 @@
   @return $string;
 }
 
-@function lowerCase($string) {
-  @return to-lower-case(quote(#{$string}));
-}
-
-@function toLower($string) {
-  @return lowerCase($string);
-}
-
-@function kebab-case($string, $prefix: "", $glue: "-", $suffix: "") {
-  $result: toLower($string);
-  $replace: " ", "-", "–", "—", "_", ",", ";", ":", ".", "+", "=", "?", "&", "*",
-    "/", "|", ">", "<", "(", ")";
-
-  @each $char in $replace {
-    $result: replace($result, $char, $glue, 1);
-  }
-
-  @return $prefix + $result + $suffix;
-}
-
 @function join($list, $separator: "") {
   $length: list.length($list);
 
@@ -81,4 +77,17 @@
   }
 
   @return $result;
+}
+
+@function split($string, $delimiter: "") {
+  $delimiter-index: string.index($string, $delimiter);
+
+  @if not $delimiter-index {
+    @return list.append((), $string);
+  }
+
+  $s: string.slice($string, $delimiter-index + string.length($delimiter));
+  $b: string.slice($string, 1, $delimiter-index - 1);
+
+  @return join($s, split($b, $delimiter));
 }

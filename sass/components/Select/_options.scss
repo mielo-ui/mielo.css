@@ -1,3 +1,5 @@
+@import "../../variables";
+
 .mie.select {
   $menu-offset: 0.6rem;
   $menu-height: 12rem;
@@ -5,20 +7,20 @@
   > .menu {
     // prettier-ignore
     background-image:
-            linear-gradient(
-                var(--mie-select-bg-overlay),
-                var(--mie-select-bg-overlay)
-            ),
-            linear-gradient(
-                var(--mie-select-bg-menu),
-                var(--mie-select-bg-menu)
-            );
+      linear-gradient(
+          mvar("select.bg.overlay"),
+          mvar("select.bg.overlay")
+      ),
+      linear-gradient(
+          mvar("select.bg.menu"),
+          mvar("select.bg.menu")
+      );
 
     transition:
       height 0.2s ease,
       top 0.2s ease;
 
-    border-radius: var(--mie-select-rounded);
+    border-radius: mvar("select.rounded");
     overflow: hidden;
 
     position: absolute;
@@ -28,7 +30,7 @@
     z-index: 15;
 
     &.opened {
-      top: calc(var(--mie-select-height) + $menu-offset);
+      top: calc(#{mvar("select.height")} + $menu-offset);
       height: $menu-height;
       overflow-y: auto;
     }

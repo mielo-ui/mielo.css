@@ -5,24 +5,24 @@
 @use "../../mixins" as *;
 
 .mie.button.filled {
-  --mie-button-bg-active: var(--mie-button-fill-active) !important;
-  --mie-button-bg-hover: var(--mie-button-fill-hover) !important;
-  --mie-button-bg-main: var(--mie-button-fill-main) !important;
+  --mie-button-bg-active: mvar("button.fill.active", true);
+  --mie-button-bg-hover: mvar("button.fill.hover", true);
+  --mie-button-bg-main: mvar("button.fill.main", true);
 }
 
 @include not-many(
   ".mie.button.filled",
   list.join(map.keys($accents-preset), map.keys($colors-preset))
 ) {
-  --mie-button-fg: var(--mie-button-fg-invert) !important;
+  --mie-button-fg: mvar("button.fg.invert", true);
 }
 
 .mie.button.transparent {
-  --mie-button-bg-main: var(--mie-button-bg-transparent) !important;
+  --mie-button-bg-main: mvar("button.bg.transparent", true);
 }
 
 .mie.button.tertiary {
-  --mie-button-fg: var(--mie-button-fill-main) !important;
+  --mie-button-fg: mvar("button.fill.main", true);
 
   &.transparent {
     &:hover {

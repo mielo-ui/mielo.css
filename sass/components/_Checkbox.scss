@@ -1,3 +1,5 @@
+@use "../variables" as *;
+
 .mie.checkbox {
   display: inline-block;
   position: relative;
@@ -14,11 +16,11 @@
     display: flex;
 
     > .content {
-      font-size: var(--mie-checkbox-fs);
-      color: var(--mie-checkbox-fg);
+      font-size: mvar("checkbox.fs");
+      color: mvar("checkbox.fg");
       font-weight: 400;
 
-      margin-left: var(--mie-checkbox-content-space);
+      margin-left: mvar("checkbox.content.space");
     }
   }
 }
@@ -29,8 +31,8 @@
 
   > .label {
     > .indicator {
-      border: 0.2rem solid var(--mie-checkbox-border);
-      border-radius: var(--mie-checkbox-rounded);
+      border: 0.2rem solid mvar("checkbox.border");
+      border-radius: mvar("checkbox.rounded");
       background-color: rgba(0, 0, 0, 0);
       display: block;
 
@@ -39,17 +41,17 @@
         width 0.3s ease,
         height 0.3s ease;
 
-      height: var(--mie-checkbox-size);
-      width: var(--mie-checkbox-size);
+      height: mvar("checkbox.size");
+      width: mvar("checkbox.size");
 
       > .icon {
         > svg {
-          color: var(--mie-checkbox-icon-fg);
+          color: mvar("checkbox.icon.fg");
           transition: color 0.2s ease;
 
-          margin: var(--mie-checkbox-icon-offset);
-          height: var(--mie-checkbox-icon-size);
-          width: var(--mie-checkbox-icon-size);
+          margin: mvar("checkbox.icon.offset");
+          height: mvar("checkbox.icon.size");
+          width: mvar("checkbox.icon.size");
 
           opacity: 0;
         }
@@ -60,8 +62,8 @@
   // When checked
   .input:checked + .label {
     > .indicator {
-      border-color: var(--mie-checkbox-border-active);
-      background-color: var(--mie-checkbox-bg);
+      border-color: mvar("checkbox.border.active");
+      background-color: mvar("checkbox.bg");
 
       > .icon {
         > svg {

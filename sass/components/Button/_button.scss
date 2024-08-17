@@ -1,60 +1,18 @@
 @use "../../mixins" as *;
+@use "./base" as *;
 
 .mie.button {
-  border-radius: var(--mie-button-rounded);
-
-  text-decoration: none;
-  user-select: none;
-  cursor: pointer;
-
-  overflow: hidden;
-  outline: none;
-  border: none;
-
-  transition:
-    background 0.3s ease,
-    padding 0.3s ease,
-    width 0.3s ease;
-
-  // prettier-ignore
-  padding: 
-    var(--mie-button-pv) 
-    var(--mie-button-ph);
-
   @include flex(none, center, center, inline-flex);
+  border-radius: mvar("button.rounded");
   position: relative;
 
-  font-size: var(--mie-button-fs);
-  color: var(--mie-button-fg);
-  line-height: 1.286;
-  font-weight: 700;
-
-  background-color: var(--mie-button-bg-main);
-
-  // States
-  &.hover,
-  &:hover {
-    background-color: var(--mie-button-bg-hover) !important;
-  }
-
-  &.active,
-  &:active {
-    background-color: var(--mie-button-bg-active) !important;
-  }
-
-  &:disabled,
-  &.disabled {
-    opacity: 0.8;
-
-    &:hover,
-    &:active {
-      background-color: var(--mie-button-bg-main) !important;
-    }
+  & {
+    @include button("button");
   }
 
   // Circular
   &.circular {
-    padding: var(--mie-button-pv) var(--mie-button-pv);
+    padding: mvar("button.pv") mvar("button.pv");
     border-radius: 500rem;
   }
 
@@ -65,6 +23,6 @@
 
   // With Icons
   > .mie.icon {
-    --mie-icon-fg: var(--mie-button-fg);
+    --mie-icon-fg: mvar("button.fg");
   }
 }

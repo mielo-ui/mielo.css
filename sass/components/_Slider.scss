@@ -1,13 +1,15 @@
+@use "../variables" as *;
+
 .mie.slider {
-  padding: var(--mie-slider-padding-v) 0;
+  padding: mvar("slider.padding.v") 0;
   display: block;
 
   &:not(.range) {
     .range-slider {
       &:before {
-        border-radius: var(--mie-slider-height);
-        background: var(--mie-slider-range-bg);
-        height: var(--mie-slider-height);
+        border-radius: mvar("slider.height");
+        background: mvar("slider.range.bg");
+        height: mvar("slider.height");
         position: absolute;
         content: "";
         width: 6%;
@@ -28,17 +30,17 @@
     position: relative;
     display: block;
 
-    min-width: var(--mie-slider-min-length);
-    height: var(--mie-slider-height);
+    min-width: mvar("slider.min.length");
+    height: mvar("slider.height");
     min-height: auto;
     width: 100%;
 
-    border-radius: var(--mie-slider-height);
-    background: var(--mie-slider-bg-slider);
+    border-radius: mvar("slider.height");
+    background: mvar("slider.bg.slider");
 
     &[data-vertical] {
-      min-height: var(--mie-slider-min-length);
-      width: var(--mie-slider-height);
+      min-height: mvar("slider.min.length");
+      width: mvar("slider.height");
       min-width: auto;
       height: 100%;
 
@@ -58,8 +60,8 @@
     }
 
     .range-slider__thumb {
-      border: 0.1rem solid var(--mie-slider-thumb-border);
-      background: var(--mie-slider-bg-thumb);
+      border: 0.1rem solid var("slider.thumb.border");
+      background: mvar("slider.bg.thumb");
       border-radius: 50%;
 
       transform: translate(-50%, -50%);
@@ -67,8 +69,8 @@
       position: absolute;
       z-index: 3;
 
-      height: var(--mie-slider-thumb-size);
-      width: var(--mie-slider-thumb-size);
+      height: mvar("slider.thumb.size");
+      width: mvar("slider.thumb.size");
       top: 50%;
 
       &:focus-visible {
@@ -87,7 +89,7 @@
     }
 
     .range-slider__range {
-      background: var(--mie-slider-bg-range);
+      background: mvar("slider.bg.range");
       transform: translate(0, -50%);
       position: absolute;
       z-index: 1;

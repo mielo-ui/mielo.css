@@ -7,15 +7,17 @@
   align-items: center;
   display: flex;
 
-  padding: var(--mie-clamp-container-padding-v)
-    var(--mie-clamp-container-padding-h);
+  // prettier-ignore
+  padding:
+    mvar("clamp.container.padding.v")
+    mvar("clamp.container.padding.h");
 
   > .header {
     flex-direction: column;
     display: flex;
 
-    max-width: var(--mie-clamp-size);
-    width: var(--mie-clamp-size);
+    max-width: mvar("clamp.size");
+    width: mvar("clamp.size");
 
     margin-right: indent();
     margin-left: indent();
@@ -23,8 +25,8 @@
   }
 
   > .content {
-    max-width: var(--mie-clamp-size);
-    width: var(--mie-clamp-size);
+    max-width: mvar("clamp.size");
+    width: mvar("clamp.size");
 
     @include media-breakpoint-down(md) {
       max-width: auto;

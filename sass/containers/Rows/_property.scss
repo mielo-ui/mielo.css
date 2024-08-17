@@ -1,3 +1,4 @@
+@use "../../variables" as *;
 @use "../../mixins" as *;
 @use "../../utils" as *;
 
@@ -6,17 +7,17 @@
   // prettier-ignore
   background-image:
     linear-gradient(
-        var(--mie-row-item-overlay),
-        var(--mie-row-item-overlay)
+        var("row.item.overlay"),
+        var("row.item.overlay")
     ),
     linear-gradient(
-        var(--mie-row-item-bg),
-        var(--mie-row-item-bg)
+        var("row.item.bg"),
+        var("row.item.bg")
     );
 
-  padding: 0 var(--mie-row-item-ph);
   @include flex(row, none, center);
-  height: var(--mie-row-item-mh);
+  padding: 0 mvar("row.item.ph");
+  height: mvar("row.item.mh");
 
   &:last-child {
     border-bottom: none;

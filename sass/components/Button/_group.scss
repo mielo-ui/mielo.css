@@ -1,20 +1,22 @@
+@import "../../variables";
+
 /* Group */
 .mie.buttons {
   display: inline-flex;
   flex-direction: row;
 
   .mie.button {
-    border-right: 0.1rem solid var(--mie-button-border-color);
+    border-right: 0.1rem solid mvar("button.border.color");
     border-radius: 0;
 
     &:first-child {
-      border-top-left-radius: var(--mie-button-rounded);
-      border-bottom-left-radius: var(--mie-button-rounded);
+      border-top-left-radius: mvar("button.rounded");
+      border-bottom-left-radius: mvar("button.rounded");
     }
 
     &:last-child {
-      border-top-right-radius: var(--mie-button-rounded);
-      border-bottom-right-radius: var(--mie-button-rounded);
+      border-top-right-radius: mvar("button.rounded");
+      border-bottom-right-radius: mvar("button.rounded");
       border-right: none;
     }
   }

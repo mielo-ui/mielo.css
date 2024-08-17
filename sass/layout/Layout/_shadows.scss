@@ -25,14 +25,14 @@ $shadow-states: (
 );
 
 .mie.shadow {
-  box-shadow: var(--mie-shadow-outer);
+  box-shadow: mvar("shadow.outer");
 
   &.outer {
-    box-shadow: var(--mie-shadow-outer);
+    box-shadow: mvar("shadow.outer");
   }
 
   &.inner {
-    box-shadow: var(--mie-shadow-inner);
+    box-shadow: mvar("shadow.inner");
   }
 }
 

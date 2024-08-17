@@ -1,18 +1,20 @@
+@use "../variables" as *;
+
 .mie.icon {
   justify-content: center;
   align-items: center;
   display: flex;
 
   svg {
-    max-height: var(--mie-icon-fs);
-    max-width: var(--mie-icon-fs);
-    height: var(--mie-icon-fs);
-    width: var(--mie-icon-fs);
-    color: var(--mie-icon-fg);
+    max-height: mvar("icon.fs");
+    max-width: mvar("icon.fs");
+    height: mvar("icon.fs");
+    width: mvar("icon.fs");
+    color: mvar("icon.fg");
   }
 
   &.filled {
-    background-color: var(--mie-icon-bg-filled);
+    background-color: mvar("icon.bg.filled");
   }
 
   &.circular {
@@ -20,6 +22,6 @@
   }
 
   &.bg {
-    background-color: var(--mie-icon-bg-main);
+    background-color: mvar("icon.bg.main");
   }
 }

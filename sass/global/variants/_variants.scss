@@ -91,6 +91,8 @@ $button-sizes: (
   ),
 ) !default;
 
+$activatable-sizes: () !default;
+
 $checkbox-sizes: (
   "medium": (
     "fs": text-fs(medium),
@@ -279,6 +281,7 @@ $radio-sizes: (
 
 $select-sizes: (
   "medium": (
+    "rounded": rcorners(),
     "min-width": 10rem,
     "padding": 1.6rem,
     "height": 5.4rem,
@@ -436,6 +439,8 @@ $message-sizes: (
     "padding": 1.2rem 1.6rem,
     "title-space": 0.4rem,
     "icon-space": 0.6rem,
+    "margin-v": 1.2rem,
+    "rounded": 1.2rem,
   ),
   "tiny": (
     "description-fs": text-fs(mini),
@@ -527,17 +532,18 @@ $window-sizes: (
 ) !default;
 
 $default-variants: (
-  "text": $text-sizes,
-  "item": $item-sizes,
+  "activatable": $activatable-sizes,
   "header": $header-sizes,
   "label": $label-sizes,
+  "item": $item-sizes,
+  "text": $text-sizes,
 
   "checkbox": $checkbox-sizes,
   "toggle": $toggle-sizes,
   "select": $select-sizes,
+  "slider": $slider-sizes,
   "entry": $entry-sizes,
   "radio": $radio-sizes,
-  "slider": $slider-sizes,
 
   "progress": $progress-sizes,
   "button": $button-sizes,
@@ -545,13 +551,13 @@ $default-variants: (
   "icon": $icon-sizes,
 
   // Containers
-  "window": $window-sizes,
-  "clamp": $clamp-sizes,
-  "sidebar": $sidebar-sizes,
-  "dialog": $dialog-sizes,
   "headerbar": $headerbar-sizes,
-  "message": $message-sizes,
   "row.item": $row-item-sizes,
+  "message": $message-sizes,
+  "sidebar": $sidebar-sizes,
+  "window": $window-sizes,
+  "dialog": $dialog-sizes,
+  "clamp": $clamp-sizes,
   "rows": $rows-sizes,
   "tabs": $tabs-sizes,
   "tab": $tab-sizes,

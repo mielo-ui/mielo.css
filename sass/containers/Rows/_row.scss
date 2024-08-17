@@ -1,5 +1,7 @@
+@use "../../variables" as *;
+
 .mie.rows > .mie.row {
-  border-bottom: 0.1rem solid var(--mie-rows-border);
+  border-bottom: 0.1rem solid mvar("rows.border");
 
   &:last-child {
     border-bottom: none;

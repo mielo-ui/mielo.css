@@ -15,20 +15,20 @@
       // prettier-ignore
       background-image:
                 linear-gradient(
-                    var(--mie-select-bg-overlay),
-                    var(--mie-select-bg-overlay)
+                    mvar("select.bg.overlay"),
+                    mvar("select.bg.overlay")
                 ),
                 linear-gradient(
-                    var(--mie-select-bg-main),
-                    var(--mie-select-bg-main)
+                    mvar("select.bg.main"),
+                    mvar("select.bg.main")
                 );
 
       @include flex(row, space-between, center);
-      border-radius: var(--mie-select-rounded);
-      height: var(--mie-select-height);
+      border-radius: mvar("select.rounded");
+      height: mvar("select.height");
       transition: outline 0.2s ease;
 
-      outline-color: var(--mie-select-bg-outline);
+      outline-color: mvar("select.bg.outline");
       outline-style: solid;
       outline-width: 0;
 
@@ -37,7 +37,7 @@
       }
 
       > .header {
-        padding: 0 var(--mie-select-padding);
+        padding: 0 mvar("select.padding");
         @include flex(column, center);
         position: relative;
         height: 100%;
@@ -47,15 +47,15 @@
           transition: 300ms ease font-size;
           pointer-events: none;
 
-          font-size: var(--mie-select-value-fs);
-          color: var(--mie-select-label-fg);
+          font-size: mvar("select.value.fs");
+          color: mvar("select.label.fg");
           font-weight: 500;
         }
 
         > .value {
-          margin-top: var(--mie-select-value-margin);
-          font-size: var(--mie-select-value-fs);
-          color: var(--mie-select-value-fg);
+          margin-top: mvar("select.value.margin");
+          font-size: mvar("select.value.fs");
+          color: mvar("select.value.fg");
         }
       }
 
@@ -63,19 +63,19 @@
         @include flex(row, flex-end, center);
 
         > .arrow {
-          margin-left: var(--mie-select-indicator-right);
-          margin-right: var(--mie-select-padding);
+          margin-left: mvar("select.indicator.right");
+          margin-right: mvar("select.padding");
 
           transition: transform 0.2s ease-in-out;
-          color: var(--mie-select-value-fg);
+          color: var("select.value.fg");
         }
       }
 
       &.selected {
         > .header {
           > .label {
-            top: var(--mie-select-label-top-active);
-            font-size: var(--mie-select-label-fs);
+            top: var("select.label.top.active");
+            font-size: mvar("select.label.fs");
             font-weight: 400;
           }
         }

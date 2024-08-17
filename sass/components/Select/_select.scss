@@ -1,11 +1,11 @@
-.mie.select {
-  --mie-select-rounded: 0.6rem;
+@import "../../variables";
 
+.mie.select {
   position: relative;
   z-index: 10;
   margin: 0;
 
-  min-width: var(--mie-select-min-width);
+  min-width: mvar("select.min.width");
 
   // Show outline when focused
   &.opened,
@@ -18,14 +18,14 @@
   }
 
   > .content {
-    height: var(--mie-select-height);
+    height: mvar("select.height");
     position: relative;
     z-index: 10;
     width: 100%;
   }
 
   > .menu {
-    background-color: var(--mie-select-bg-main);
+    background-color: mvar("select.bg.main");
     transition: height 0.3s ease;
     position: absolute;
     bottom: 0;

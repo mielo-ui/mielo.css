@@ -31,15 +31,6 @@ $item-default-accent: (
   ),
 ) !default;
 
-$activatable-default-accent: (
-  "dark": (
-    "bg": opacity-button-bg(#fff, true, (0.1, 0.15, 0.2)),
-  ),
-  "light": (
-    "bg": opacity-button-bg(#000, true, (0.1, 0.15, 0.2)),
-  ),
-) !default;
-
 $button-default-accent: (
   "dark": (
     "bg": opacity-button-bg(#fff, false, (0.1, 0.2, 0.25)),
@@ -398,10 +389,14 @@ $view-default-accent: (
 
 $window-default-accent: (
   "dark": (
-    "bg": #242424,
+    "bg": (
+      "main": #242424,
+    ),
   ),
   "light": (
-    "bg": #fafafa,
+    "bg": (
+      "main": #fafafa,
+    ),
   ),
 ) !default;
 
@@ -409,7 +404,6 @@ $default-accent-values: (
   "text": $text-default-accent,
   "header": $header-default-accent,
 
-  "activatable": $activatable-default-accent,
   "checkbox": $checkbox-default-accent,
   "toggle": $toggle-default-accent,
   "select": $select-default-accent,

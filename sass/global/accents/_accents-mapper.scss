@@ -17,13 +17,6 @@
   @return ("fg": $color, "fg-muted": $color);
 }
 
-@function map-to-activatable($theme, $accent, $colors) {
-  $bg: map.get($colors, "bg");
-  $bg-states: (0.1, 0.15, 0.25);
-
-  @return ("bg": opacity-button-bg($bg, true, $bg-states));
-}
-
 @function map-to-button($theme, $accent, $colors) {
   $bg: map.get($colors, "bg");
 
@@ -34,6 +27,18 @@
       "hover": rgba(darken($bg, 5%), 0.7),
       "transparent": rgba($bg, 0),
       "main": rgba($bg, 0.6),
+    )
+  );
+}
+
+@function map-to-activatable($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+
+  @return (
+    "bg": (
+      "active": rgba($bg, 0.5),
+      "hover": rgba($bg, 0.4),
+      "main": rgba($bg, 0.3),
     )
   );
 }
@@ -242,16 +247,21 @@
 
 @function map-to-window($theme, $accent, $colors) {
   $bg: map.get($colors, "bg");
-  $window-bg: if($theme == "dark", lighten($bg, 20%), lighten($bg, 40%));
+  $overlay: rgba($bg, 0.07);
 
-  @return ("bg": $window-bg);
+  @return (
+    "bg": (
+      "overlay": $overlay,
+    )
+  );
 }
 
 $default-accent-mappers: (
-  "text": map-to-text,
-  "item": map-to-item,
+  "activatable": map-to-activatable,
   "header": map-to-header,
   "label": map-to-label,
+  "item": map-to-item,
+  "text": map-to-text,
 
   "checkbox": map-to-checkbox,
   "toggle": map-to-toggle,
@@ -260,7 +270,6 @@ $default-accent-mappers: (
   "entry": map-to-entry,
   "slider": map-to-slider,
 
-  "activatable": map-to-activatable,
   "button": map-to-button,
   "divider": map-to-divider,
   "icon": map-to-icon,

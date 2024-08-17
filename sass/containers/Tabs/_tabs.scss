@@ -1,3 +1,4 @@
+@use "../../variables" as *;
 @use "../../mixins" as *;
 @use "../../utils" as *;
 
@@ -5,10 +6,10 @@
   @include flex(row);
   position: relative;
 
-  border-radius: var(--mie-tabs-rounded);
-  background-color: var(--mie-tabs-bg);
+  border-radius: mvar("tabs.rounded");
+  background-color: mvar("tabs.bg");
 
-  padding: var(--mie-tabs-pv) var(--mie-tabs-ph);
+  padding: mvar("tabs.pv") mvar("tabs.ph");
 
   &.transparent {
     background-color: transparent;
