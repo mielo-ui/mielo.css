@@ -44,7 +44,7 @@
     margin-right: mvar("message.icon.space");
 
     .mie.icon {
-      --mie-icon-fg: mvar("message.title.fg");
+      --mie-icon-fg: #{mvar("message.title.fg")};
     }
   }
 
@@ -52,7 +52,7 @@
     margin-left: mvar("message.icon.space");
 
     .mie.icon {
-      --mie-icon-fg: mvar("message.description.fg");
+      --mie-icon-fg: #{mvar("message.description.fg")};
     }
   }
 }

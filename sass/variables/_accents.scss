@@ -9,7 +9,64 @@
 // pseudo type Theme = Map<(light|dark), ThemeColors>;
 // pseudo type ThemePreset = Map<$variant, $colors: Tuple([ $light, $dark ])>
 
-$colors-preset: () !default;
+$colors-preset: (
+  "blue": (
+    pcolor(blue, 3),
+    pcolor(blue, 4),
+  ),
+  "green": (
+    pcolor(green, 3),
+    pcolor(green, 4),
+  ),
+  "yellow": (
+    pcolor(yellow, 3),
+    pcolor(yellow, 4),
+  ),
+  "orange": (
+    pcolor(orange, 3),
+    pcolor(orange, 4),
+  ),
+  "red": (
+    pcolor(red, 3),
+    pcolor(red, 4),
+  ),
+  "purple": (
+    pcolor(purple, 3),
+    pcolor(purple, 4),
+  ),
+  "brown": (
+    pcolor(brown, 3),
+    pcolor(brown, 4),
+  ),
+  "pink": (
+    pcolor(pink, 3),
+    pcolor(pink, 4),
+  ),
+  "deeppurple": (
+    pcolor(deeppurple, 3),
+    pcolor(deeppurple, 4),
+  ),
+  "indigo": (
+    pcolor(indigo, 3),
+    pcolor(indigo, 4),
+  ),
+  "lightgreen": (
+    pcolor(lightgreen, 3),
+    pcolor(lightgreen, 4),
+  ),
+  "deeporange": (
+    pcolor(deeporange, 3),
+    pcolor(deeporange, 4),
+  ),
+  "light": (
+    pcolor(light, 3),
+    pcolor(light, 4),
+  ),
+  "dark": (
+    pcolor(dark, 3),
+    pcolor(dark, 4),
+  ),
+) !default;
 
 $accents-preset: (
   "accent": (
@@ -31,7 +88,7 @@ $accents-preset: (
 ) !default;
 
 $accents: preset-to-theme-variants($accents-preset);
-$accents-colors: get-colors-theme($colors-preset);
+$accents-colors: preset-to-theme-variants($colors-preset);
 
 @function taccent($accent, $color_type, $theme: "light") {
   $themes: map.get($accents, $theme);

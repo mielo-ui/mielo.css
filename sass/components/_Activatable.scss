@@ -8,6 +8,7 @@
     @include button(
       "activatable",
       (
+        "background": true,
         "indent": false,
         "text": false,
       )

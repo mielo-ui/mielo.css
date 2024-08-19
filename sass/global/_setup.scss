@@ -26,9 +26,6 @@ $global-components-list: (
   "icon",
   "progress",
   "progress-bar",
-  // Containers
-  "",
-  // scrollbar
   "headerbar",
   "sidebar",
   "splitview",
@@ -45,7 +42,19 @@ $global-components-list: (
   "rows"
 );
 
-@mixin global-setup-accents() {
+@mixin global-setup-scrollbar() {
+  $mapper: map.get($default-accent-mappers, "scrollbar");
+  $accent: map.get($default-accent-values, "scrollbar");
+
+  @include accents-map-to-component(
+    "",
+    $accent,
+    meta.get-function($mapper),
+    $accents
+  );
+}
+
+@mixin global-setup-accents($accent-themes-map) {
   @each $class in $global-components-list {
     $variant: map.get($default-variants, $class);
 
@@ -68,10 +77,12 @@ $global-components-list: (
           )
         ),
         meta.get-function($mapper),
-        $accents
+        $accent-themes-map
       );
     }
   }
 }
 
-@include global-setup-accents();
+@include global-setup-accents($accents);
+@include global-setup-accents($accents-colors);
+@include global-setup-scrollbar();

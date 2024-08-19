@@ -48,6 +48,29 @@ $button-default-accent: (
   ),
 ) !default;
 
+// @TODO: Bug, if i used mixin for button -
+// return opacity 0 for all colors after compile
+$activatable-default-accent: (
+  "dark": (
+    // "bg": opacity-button-bg(#fff, false, (0, 0.2, 0.25)),
+    "bg":
+      (
+        "main": rgba(#fff, 0),
+        "hover": rgba(#fff, 0.2),
+        "active": rgba(#fff, 0.3),
+      ),
+  ),
+  "light": (
+    // "bg": opacity-button-bg(#000, false, (0, 0.2, 0.25)),
+    "bg":
+      (
+        "main": rgba(#000, 0),
+        "hover": rgba(#000, 0.2),
+        "active": rgba(#000, 0.3),
+      ),
+  ),
+) !default;
+
 $checkbox-default-accent: (
   "dark": (
     "border-active": rgba(pcolor(blue, 3), 1),
@@ -143,7 +166,7 @@ $label-default-accent: (
   "dark": (
     "border-bg": rgba(#fff, 0.1),
     "fg": fg(base, dark),
-    "bg": #cfd8dc,
+    "bg": #616161,
   ),
 ) !default;
 
@@ -332,10 +355,16 @@ $scrollbar-default-accent: (
 
 $sidebar-default-accent: (
   "light": (
-    "bg": #ebebeb,
+    "bg": (
+      "main": #ebebeb,
+      "overlay": transparent,
+    ),
   ),
   "dark": (
-    "bg": #303030,
+    "bg": (
+      "main": #303030,
+      "overlay": transparent,
+    ),
   ),
 ) !default;
 
@@ -343,12 +372,18 @@ $splitview-default-accent: (
   "light": (
     "divider-bg": rgba(#000, 0.07),
     "overlay-bg": rgba(#fff, 0.3),
-    "bg": #fafafa,
+    "bg": (
+      "overlay": transparent,
+      "main": #fafafa,
+    ),
   ),
   "dark": (
     "divider-bg": rgba(#160b0b, 0.36),
     "overlay-bg": rgba(#000, 0.3),
-    "bg": #242424,
+    "bg": (
+      "overlay": transparent,
+      "main": #242424,
+    ),
   ),
 ) !default;
 
@@ -374,12 +409,16 @@ $tab-default-accent: (
 
 $view-default-accent: (
   "dark": (
+    "overlay": transparent,
+    "bg": transparent,
     "panel": #2a2a2a,
     "window": #242424,
     "content": rgba(#fff, 0.08),
     "osd": #0b0b0b,
   ),
   "light": (
+    "overlay": transparent,
+    "bg": transparent,
     "panel": #f2f2f2,
     "window": #fafafa,
     "content": #fff,
@@ -391,11 +430,13 @@ $window-default-accent: (
   "dark": (
     "bg": (
       "main": #242424,
+      "overlay": transparent,
     ),
   ),
   "light": (
     "bg": (
       "main": #fafafa,
+      "overlay": transparent,
     ),
   ),
 ) !default;
@@ -404,6 +445,7 @@ $default-accent-values: (
   "text": $text-default-accent,
   "header": $header-default-accent,
 
+  "activatable": $activatable-default-accent,
   "checkbox": $checkbox-default-accent,
   "toggle": $toggle-default-accent,
   "select": $select-default-accent,

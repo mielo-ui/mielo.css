@@ -1,0 +1,29 @@
+@use "sass:string";
+@use "sass:list";
+@use "sass:map";
+
+@use "../../variables" as *;
+@use "../../utils" as *;
+
+.mie {
+  @each $name, $size in $indent {
+    $size-postfix: if($name != "medium", "-" + $name, "");
+
+    &.g#{$size-postfix} {
+      gap: $size;
+    }
+  }
+
+  @each $direction in ("column", "row") {
+    $direction-short-key: string.slice($direction, 1, 1); // get "c" or "r"
+
+    @each $name, $size in $indent {
+      $size-postfix: if($name != "medium", "-" + $name, "");
+      $class-name: $direction-short-key + $size-postfix;
+
+      &.g#{$class-name} {
+        #{$direction}-gap: $size;
+      }
+    }
+  }
+}

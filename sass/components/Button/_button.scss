@@ -1,3 +1,4 @@
+@use "../../variables" as *;
 @use "../../mixins" as *;
 @use "./base" as *;
 
@@ -23,6 +24,6 @@
 
   // With Icons
   > .mie.icon {
-    --mie-icon-fg: mvar("button.fg");
+    --mie-icon-fg: #{mvar("button.fg")};
   }
 }

@@ -3,7 +3,6 @@
 .mie.radio {
   display: inline-block;
   position: relative;
-  cursor: pointer;
 
   > .input {
     display: none;
@@ -11,6 +10,7 @@
 
   > .label {
     position: relative;
+    cursor: pointer;
 
     align-items: center;
     display: flex;
@@ -38,8 +38,8 @@
       position: relative;
       display: block;
 
-      height: varm("radio.size");
-      width: varm("radio.size");
+      height: mvar("radio.size");
+      width: mvar("radio.size");
 
       &::before {
         transition: opacity 0.2s ease;

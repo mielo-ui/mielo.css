@@ -1,24 +1,34 @@
 @use "../variables" as *;
 
 .mie.view {
-  --mie-view-bg: transparent;
+  // prettier-ignore
+  background-image:
+    linear-gradient(
+        mvar("view.overlay"),
+        mvar("view.overlay")
+    ),
+    linear-gradient(
+        mvar("view.bg"),
+        mvar("view.bg")
+    );
+
   background-color: mvar("view.bg");
 
   // Background appearance
   &.panel {
-    --mie-view-bg: mvar("view.panel");
+    --mie-view-bg: #{mvar("view.panel")};
   }
 
   &.windows {
-    --mie-view-bg: mvar("view.window");
+    --mie-view-bg: #{mvar("view.window")};
   }
 
   &.content {
-    --mie-view-bg: mvar("view.content");
+    --mie-view-bg: #{mvar("view.content")};
   }
 
   &.osd {
-    --mie-view-bg: mvar("view.osd");
+    --mie-view-bg: #{mvar("view.osd")};
   }
 
   // Sizings

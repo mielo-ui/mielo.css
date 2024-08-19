@@ -41,7 +41,7 @@
       );
     }
 
-    $processed: append($processed, $newsubstr);
+    $processed: list.append($processed, $newsubstr);
     $string: string.slice($string, $position-found + $length-substr);
 
     $position-found: 0;
@@ -51,7 +51,7 @@
     }
   }
 
-  $processed: append($processed, $string);
+  $processed: list.append($processed, $string);
   $string: "";
 
   @each $s in $processed {
@@ -79,15 +79,17 @@
   @return $result;
 }
 
-@function split($string, $delimiter: "") {
-  $delimiter-index: string.index($string, $delimiter);
+@function split($string, $separator) {
+  $index: str-index($string, $separator);
+  $result: ();
 
-  @if not $delimiter-index {
-    @return list.append((), $string);
+  @while $index != null {
+    $item: string.slice($string, 1, $index - 1);
+    $result: list.append($result, $item);
+    $string: string.slice($string, $index + 1);
+    $index: string.index($string, $separator);
   }
 
-  $s: string.slice($string, $delimiter-index + string.length($delimiter));
-  $b: string.slice($string, 1, $delimiter-index - 1);
-
-  @return join($s, split($b, $delimiter));
+  $result: list.append($result, $string);
+  @return $result;
 }

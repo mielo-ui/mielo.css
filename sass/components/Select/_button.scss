@@ -67,14 +67,14 @@
           margin-right: mvar("select.padding");
 
           transition: transform 0.2s ease-in-out;
-          color: var("select.value.fg");
+          color: mvar("select.value.fg");
         }
       }
 
       &.selected {
         > .header {
           > .label {
-            top: var("select.label.top.active");
+            top: mvar("select.label.top.active");
             font-size: mvar("select.label.fs");
             font-weight: 400;
           }

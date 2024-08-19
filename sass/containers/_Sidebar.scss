@@ -3,15 +3,24 @@
 @use "../utils" as *;
 
 .mie.sidebar {
-  background-color: mvar("sidebar.bg");
-  transition: all 0.3s ease;
+  // prettier-ignore
+  background-image:
+    linear-gradient(
+        mvar("sidebar.bg.overlay"),
+        mvar("sidebar.bg.overlay")
+    ),
+    linear-gradient(
+        mvar("sidebar.bg.main"),
+        mvar("sidebar.bg.main")
+    );
 
+  transition: all 0.3s ease;
   flex-direction: column;
   display: flex;
 
   min-width: mvar("sidebar.w");
   width: mvar("sidebar.w");
-  z-index: 5;
+  z-index: 100;
 
   & + .container {
     transition: width 0.3s ease;

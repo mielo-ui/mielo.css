@@ -291,6 +291,10 @@ $select-sizes: (
 
     "label-fs": text-fs(small),
     "value-fs": text-fs(medium),
+    "menu": (
+      "offset": 0.6rem,
+      "h": 12.5rem,
+    ),
   ),
   "small": (
     "min-width": 8rem,
@@ -318,28 +322,23 @@ $select-sizes: (
 
 $slider-sizes: (
   "medium": (
-    "min-length": 12rem,
-    "thumb-size": 2rem,
-    "height": 0.4rem,
-
     // ($thumb-size - var($slider-height) / 2
-    "padding-v": calc((2rem - 0.4rem) / 2),
+    "pv": calc((2rem - 0.4rem) / 2),
+    "length": 12rem,
+    "thumb": 2rem,
+    "h": 0.4rem,
   ),
   "small": (
-    "min-length": 8rem,
-    "thumb-size": 1.4rem,
-    "height": 0.2rem,
-
-    // ($thumb-size - var($slider-height) / 2
-    "padding-v": calc((1.4rem - 0.2rem) / 2),
+    "pv": calc((1.4rem - 0.2rem) / 2),
+    "thumb": 1.4rem,
+    "length": 8rem,
+    "h": 0.2rem,
   ),
   "large": (
-    "min-length": 14rem,
-    "thumb-size": 2.6rem,
-    "height": 0.8rem,
-
-    // ($thumb-size - var($slider-height) / 2
-    "padding-v": calc((2.6rem - 0.8rem) / 2),
+    "pv": calc((2.6rem - 0.8rem) / 2),
+    "thumb": 2.6rem,
+    "length": 14rem,
+    "h": 0.8rem,
   ),
 ) !default;
 

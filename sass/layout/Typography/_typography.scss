@@ -13,7 +13,7 @@
     color: mvar("text.inverted.fg", true);
 
     &.muted {
-      color: var("text.inverted.fg.muted", true);
+      color: mvar("text.inverted.fg.muted", true);
     }
   }
 

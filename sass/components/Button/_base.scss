@@ -13,8 +13,6 @@ $button-mixin-options: (
   text-decoration: none;
   user-select: none;
   cursor: pointer;
-
-  overflow: hidden;
   outline: none;
   border: none;
 }
@@ -22,47 +20,40 @@ $button-mixin-options: (
 @mixin button($name, $options: $button-mixin-options) {
   $options: map.merge($button-mixin-options, $options);
 
-  .mie.#{$name} {
-    @extend %button-reseter;
+  @extend %button-reseter;
 
-    transition:
-      background 0.3s ease,
-      padding 0.3s ease,
-      width 0.3s ease;
+  transition:
+    background 0.3s ease,
+    padding 0.3s ease,
+    width 0.3s ease;
 
-    @if map.get($options, "text") {
-      font-size: mvar($name, "fs");
-      color: mvar($name, "fg");
-      line-height: 1.286;
-      font-weight: 700;
+  @if map.get($options, "text") {
+    font-size: mvar($name, "fs");
+    color: mvar($name, "fg");
+    line-height: 1.286;
+    font-weight: 700;
+  }
+
+  @if map.get($options, "indent") {
+    padding: mvar($name, "pv") mvar($name, "ph");
+  }
+
+  @if map.get($options, "background") {
+    background-color: mvar($name, "bg.main");
+
+    &.hover,
+    &:hover {
+      background-color: mvar($name, "bg.hover", true);
     }
 
-    @if map.get($options, "indent") {
-      padding: mvar($name, "pv") mvar($name, "ph");
+    &.active,
+    &:active {
+      background-color: mvar($name, "bg.active", true);
     }
 
-    @if map.get($options, "background") {
-      background-color: mvar($name, "bg.main");
-
-      &.hover,
-      &:hover {
-        background-color: mvar($name, "bg.hover", true);
-      }
-
-      &.active,
-      &:active {
-        background-color: mvar($name, "bg.active", true);
-      }
-
-      &:disabled,
-      &.disabled {
-        opacity: 0.8;
-
-        &:hover,
-        &:active {
-          background-color: mvar($name, "bg.main", true);
-        }
-      }
+    &:disabled,
+    &.disabled {
+      opacity: 0.8;
     }
   }
 }

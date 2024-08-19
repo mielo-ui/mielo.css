@@ -20,12 +20,12 @@
   }
 
   &.transparent {
-    --mie-label-fg: mvar("label.bg") !important;
+    --mie-label-fg: #{mvar("label.bg", true)};
     background-color: transparent !important;
   }
 
   &.bordered {
-    border: mvar("label.border.w") solid var("label.border.bg");
+    border: mvar("label.border.w") solid mvar("label.border.bg");
   }
 
   &.floating {

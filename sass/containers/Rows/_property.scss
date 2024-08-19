@@ -7,12 +7,12 @@
   // prettier-ignore
   background-image:
     linear-gradient(
-        var("row.item.overlay"),
-        var("row.item.overlay")
+        mvar("row.item.overlay"),
+        mvar("row.item.overlay")
     ),
     linear-gradient(
-        var("row.item.bg"),
-        var("row.item.bg")
+        mvar("row.item.bg"),
+        mvar("row.item.bg")
     );
 
   @include flex(row, none, center);

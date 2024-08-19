@@ -12,7 +12,7 @@
   font-weight: 700;
 
   box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.03);
-  background-color: var("tab.bg.main");
+  background-color: mvar("tab.bg.main");
   color: mvar("tab.fg");
 
   user-select: none;
@@ -29,7 +29,7 @@
   }
 
   &.background {
-    background-color: mvar("tab.bg.hover");
+    background-color: mvar("tab.bg.main");
     position: absolute;
     z-index: 10;
     left: 0;

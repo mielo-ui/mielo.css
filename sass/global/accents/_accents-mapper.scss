@@ -23,30 +23,25 @@
   @return (
     "fill": filled-button-bg($bg, $theme),
     "bg": (
-      "active": rgba(darken($bg, 10%), 0.8),
-      "hover": rgba(darken($bg, 5%), 0.7),
+      "active": rgba(darken($bg, 20%), 0.8),
+      "hover": rgba(darken($bg, 5%), 0.6),
       "transparent": rgba($bg, 0),
-      "main": rgba($bg, 0.6),
+      "main": rgba($bg, 0.4),
     )
   );
 }
 
 @function map-to-activatable($theme, $accent, $colors) {
   $bg: map.get($colors, "bg");
+  $bg-states: (0.15, 0.25, 0.35);
 
-  @return (
-    "bg": (
-      "active": rgba($bg, 0.5),
-      "hover": rgba($bg, 0.4),
-      "main": rgba($bg, 0.3),
-    )
-  );
+  @return ("bg": opacity-button-bg($bg, true, $bg-states));
 }
 
 @function map-to-checkbox($theme, $accent, $colors) {
   $bg: map.get($colors, "bg");
 
-  @return ("border-active": rgba(lighten($bg, 10%), 1), "bg": rgba($bg, 1));
+  @return ("border-active": rgba($bg, 0.5), "bg": rgba($bg, 1));
 }
 
 @function map-to-divider($theme, $accent, $colors) {
@@ -60,10 +55,10 @@
   $fg: $bg;
 
   @return (
-    "label-fg": fg-src($fg, muted),
+    "label-fg": if($theme == "dark", fg-src($bg, base), $bg),
     "value-fg": fg-src($fg, base),
     "bg": (
-      "overlay": rgba($bg, 0.08),
+      "overlay": if($theme == "dark", rgba($bg, 0.15), rgba($bg, 0.2)),
       "outline": #{$fg},
     )
   );
@@ -97,7 +92,7 @@
 @function map-to-label($theme, $accent, $colors) {
   $bg: map.get($colors, "bg");
 
-  @return ("border-bg": darken($bg, 20%), "bg": $bg);
+  @return ("border-bg": darken($bg, 5%), "bg": $bg);
 }
 
 @function map-to-progress($theme, $accent, $colors) {
@@ -137,10 +132,10 @@
   $bg: map.get($colors, "bg");
 
   @return (
-    "label-fg": fg-src($bg, muted),
+    "label-fg": if($theme == "dark", fg-src($bg, base), $bg),
     "value-fg": fg-src($bg, base),
     "bg": (
-      "overlay": rgba($bg, 0.08),
+      "overlay": if($theme == "dark", rgba($bg, 0.15), rgba($bg, 0.2)),
       "outline": #{$bg},
     )
   );
@@ -186,8 +181,8 @@
   @return (
     "description-fg": fg-src($bg, muted),
     "title-fg": fg-src($bg, base),
-    "overlay": rgba($bg, 0.08),
-    "shade": rgba($bg, 0.05),
+    "overlay": rgba($bg, 0.15),
+    "shade": rgba($bg, 0.01),
     "outline": $bg
   );
 }
@@ -214,16 +209,24 @@
 
 @function map-to-sidebar($theme, $accent, $colors) {
   $bg: map.get($colors, "bg");
-  $bg: if($theme == "dark", lighten($bg, 10%), lighten($bg, 20%));
+  $overlay: rgba($bg, 0.2);
 
-  @return ("bg": $bg);
+  @return (
+    "bg": (
+      "overlay": $overlay,
+    )
+  );
 }
 
 @function map-to-splitview($theme, $accent, $colors) {
   $bg: map.get($colors, "bg");
-  $bg: if($theme == "dark", lighten($bg, 20%), lighten($bg, 40%));
+  $overlay: rgba($bg, 0.07);
 
-  @return ("bg": $bg);
+  @return (
+    "bg": (
+      "overlay": $overlay,
+    )
+  );
 }
 
 @function map-to-tabs($theme, $accent, $colors) {
@@ -240,9 +243,9 @@
 
 @function map-to-view($theme, $accent, $colors) {
   $bg: map.get($colors, "bg");
-  $view-bg: if($theme == "dark", darken($bg, 20%), lighten($bg, 20%));
+  $view-bg: if($theme == "dark", rgba($bg, 0.3), rgba($bg, 0.4));
 
-  @return ("bg": $view-bg, "container": $bg);
+  @return ("overlay": $view-bg, "container": $bg);
 }
 
 @function map-to-window($theme, $accent, $colors) {
@@ -279,7 +282,7 @@ $default-accent-mappers: (
   "progress-bar": map-to-progress-bar,
 
   // Containers
-  // "": map-to-scrollbar,
+  "scrollbar": map-to-scrollbar,
   "view": map-to-view,
   "sidebar": map-to-sidebar,
   "headerbar": map-to-headerbar,

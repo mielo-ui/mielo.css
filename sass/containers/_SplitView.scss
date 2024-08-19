@@ -17,7 +17,7 @@
     background-color: mvar("splitview.overlay.bg");
     position: absolute;
     height: 100%;
-    z-index: 50;
+    z-index: 5;
     width: 100%;
     left: 0;
     top: 0;
@@ -28,7 +28,17 @@
   }
 
   > .container {
-    background-color: mvar("splitview.bg");
+    // prettier-ignore
+    background-image:
+      linear-gradient(
+          mvar("splitview.bg.overlay"),
+          mvar("splitview.bg.overlay")
+      ),
+      linear-gradient(
+          mvar("splitview.bg.main"),
+          mvar("splitview.bg.main")
+      );
+
     transition: width 0.3s ease-out;
     position: relative;
 

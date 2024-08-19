@@ -4,32 +4,32 @@
 @use "../utils" as *;
 
 @function mnvar($args...) {
-  $is-important: if(list.nth($args, list.length($args)), true, false);
+  $result: ();
+
+  @each $arg in $args {
+    $is-dotted: string.index($arg, ".");
+
+    @if $is-dotted != null {
+      $splitted: split($arg, ".");
+
+      @each $arg in $splitted {
+        $result: list.append($result, $arg);
+      }
+    } @else {
+      $result: list.append($result, $arg);
+    }
+  }
+
+  $name: join($result, "-");
+  @return "--mie-#{$name}";
+}
+
+@function mvar($args...) {
+  $is-important: if(list.nth($args, list.length($args)) == true, true, false);
 
   @if $is-important {
     $args: drop-right($args, 1);
   }
 
-  @if list.length($args) == 1 {
-    $source: list.nth($args, 1);
-    $args: split($source, ".");
-  }
-
-  // Flatten arguments
-  $flatten: ();
-
-  @each $arg in $args {
-    @if string.index($arg, ".") != null {
-      @each $arg in split($arg, ".") {
-        $flatten: list.append($flatten, $arg);
-      }
-    }
-  }
-
-  $name: join($flatten, "-");
-  @return "--mie-#{$name}";
-}
-
-@function mvar($args...) {
-  @return "var(#{mnvar($args)})";
+  @return var(#{mnvar($args...)}) #{if($is-important, !important, "")};
 }

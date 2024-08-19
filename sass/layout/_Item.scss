@@ -5,6 +5,7 @@
   @include flex(row, "", center);
   text-decoration: none;
   position: relative;
+  text-align: left;
 
   &.vertical {
     justify-content: center;

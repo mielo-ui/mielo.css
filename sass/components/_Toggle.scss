@@ -11,9 +11,11 @@
   }
 
   > .label {
-    position: relative;
     align-items: center;
     display: flex;
+
+    position: relative;
+    cursor: pointer;
 
     > .content {
       font-size: mvar("toggle.fs");
