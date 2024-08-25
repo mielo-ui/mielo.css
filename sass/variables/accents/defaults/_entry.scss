@@ -1,0 +1,27 @@
+@use "../../../mixins" as *;
+@use "../../../utils" as *;
+@use "../../palette" as *;
+@use "../../text" as *;
+
+$entry-default-accent: (
+  "dark": (
+    "label-fg": fg(muted, dark),
+    "value-fg": fg(core, dark),
+    "border-bg": rgba(#fff, 0.07),
+    "bg": (
+      "outline": #78aeed,
+      "overlay": transparent,
+      "main": #343434,
+    ),
+  ),
+  "light": (
+    "label-fg": fg(muted, light),
+    "value-fg": fg(core, light),
+    "border-bg": rgba(#000, 0.07),
+    "bg": (
+      "outline": pcolor(blue, 4),
+      "overlay": transparent,
+      "main": #fff,
+    ),
+  ),
+) !default;

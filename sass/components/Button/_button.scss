@@ -1,5 +1,7 @@
 @use "../../variables" as *;
 @use "../../mixins" as *;
+@use "../../utils" as *;
+
 @use "./base" as *;
 
 .mie.button {
@@ -20,10 +22,5 @@
   // Pilled Style
   &.pilled {
     --mie-button-rounded: 500rem;
-  }
-
-  // With Icons
-  > .mie.icon {
-    --mie-icon-fg: #{mvar("button.fg")};
   }
 }

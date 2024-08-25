@@ -2,11 +2,13 @@
 @use "sass:list";
 @use "sass:map";
 
+@use "../utils" as *;
+
 // Pallete
 // Default: Gnome
 $palette: (
   // Gnome colors
-  "blue": (#99c1f1, #62a0ea, #3584e4, #1c71d8, #1a5fb4),
+  "blue": (#99c1f1, #42a5f5, #3584e4, #1c71d8, #1a5fb4),
   "green": (#8ff0a4, #57e389, #33d17a, #2ec27e, #26a269),
   "yellow": (#f9f06b, #f8e45c, #f6d32d, #f5c211, #e5a50a),
   "orange": (#ffbe6f, #ffa348, #ff7800, #e66100, #c64600),
@@ -24,7 +26,7 @@ $palette: (
   "dark": (#77767b, #5e5c64, #3d3846, #241f31, #000000)
 ) !default;
 
-@function pcolor($name, $level) {
+@function pcolor($name, $level, $pallete: $palette) {
   $color: map.get($palette, "#{$name}");
   @return list.nth($color, $level);
 }
@@ -38,3 +40,26 @@ $palette: (
     @return #fff;
   }
 }
+
+// pseudo type ThemePreset = Map<$variant, $colors: Tuple([ $light, $dark ])>
+$default-color-preset: build-colors-preset($palette);
+$colors-preset: $default-color-preset !default;
+
+$accents-preset: (
+  "accent": (
+    pcolor(blue, 3),
+    pcolor(blue, 3),
+  ),
+  "warning": (
+    pcolor(yellow, 5),
+    #cd9309,
+  ),
+  "error": (
+    pcolor(red, 3),
+    pcolor(red, 3),
+  ),
+  "success": (
+    pcolor(green, 4),
+    pcolor(green, 5),
+  ),
+) !default;

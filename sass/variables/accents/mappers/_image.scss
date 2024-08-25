@@ -1,0 +1,11 @@
+@use "sass:map";
+
+@use "../../palette" as *;
+@use "../../../mixins" as *;
+@use "../../../utils" as *;
+
+@function map-to-image($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+
+  @return ("border-bg": rgba($bg, 0.6), "bg": rgba($bg, 0.1));
+}

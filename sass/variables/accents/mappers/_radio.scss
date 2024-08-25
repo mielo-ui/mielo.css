@@ -1,0 +1,15 @@
+@use "sass:map";
+
+@use "../../palette" as *;
+@use "../../../mixins" as *;
+@use "../../../utils" as *;
+
+@function map-to-radio($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+
+  // prettier-ignore
+  @return (
+    "border-active": rgba(darken($bg, 15%), 1), 
+    "bg": rgba($bg, 1),
+  );
+}

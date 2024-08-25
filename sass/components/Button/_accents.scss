@@ -3,6 +3,7 @@
 
 @use "../../variables" as *;
 @use "../../mixins" as *;
+@use "../../utils" as *;
 
 .mie.button.filled {
   --mie-button-bg-active: #{mvar("button.fill.active", true)};
@@ -23,10 +24,11 @@
 
 .mie.button.tertiary {
   --mie-button-fg: #{mvar("button.fill.main", true)};
+  color: var(--mie-button-fg) !important;
 
   &.transparent {
     &:hover {
-      --mie-button-fg: #{rgba(#fff, 0.82)} !important;
+      --mie-button-fg: #{rgba(#fff, 0.82)};
     }
   }
 }

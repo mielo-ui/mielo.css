@@ -1,4 +1,5 @@
-@import "../../variables";
+@use "../../variables";
+@use "../../utils" as *;
 
 .mie.progress-bar.indeterminate {
   &::before {

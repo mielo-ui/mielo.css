@@ -1,15 +1,21 @@
 @use "../variables" as *;
+@use "../mixins" as *;
+@use "../utils" as *;
 
 .mie.dialog {
   border-radius: mvar("dialog.rounded");
   background-color: mvar("dialog.bg");
 
   min-height: mvar("dialog.mh");
-  min-width: mvar("dialog.mw");
+  max-width: mvar("dialog.mw");
 
   justify-content: space-between;
   flex-direction: column;
   display: flex;
+
+  @include media-breakpoint-down(md, $media-breakpoints) {
+    width: calc(100vw - #{indent(large)});
+  }
 
   &.attached.attached-modal {
     margin-top: -35%;

@@ -1,0 +1,12 @@
+@use "../utils" as *;
+
+:root {
+  --mie-font-family: "Roboto";
+}
+
+*,
+body {
+  font-family: mvar("font.family");
+  font-size: 10px;
+  line-height: 1;
+}

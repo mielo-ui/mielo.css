@@ -1,0 +1,68 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+@use "../utils" as *;
+
+.mie.item {
+  @include flex(row, none, center);
+  text-decoration: none;
+  position: relative;
+  text-align: left;
+
+  &.vertical {
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  &.center {
+    justify-content: center;
+
+    > .content {
+      justify-content: center;
+      text-align: center;
+    }
+
+    &.vertical {
+      align-items: center;
+
+      > .content {
+        align-items: center;
+      }
+    }
+  }
+
+  > .content {
+    @include flex(column);
+    flex: 1;
+
+    &.inverted {
+      > .title {
+        font-size: mvar("item.description.fs");
+        color: mvar("item.description.fg");
+      }
+
+      > .description {
+        font-size: mvar("item.title.fs");
+        color: mvar("item.title.fg");
+      }
+    }
+
+    > .title {
+      font-size: mvar("item.title.fs");
+      color: mvar("item.title.fg");
+      line-height: 1.286;
+      font-weight: 400;
+    }
+
+    > .description {
+      font-size: mvar("item.description.fs");
+      color: mvar("item.description.fg");
+      font-weight: 400;
+    }
+  }
+
+  > .side {
+    @include flex(row, flex-end, center);
+    margin-left: mvar("item.margin.between");
+  }
+}

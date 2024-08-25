@@ -1,5 +1,4 @@
 @use "sass:map";
-@use "../variables" as *;
 
 @function upper-breakpoint($key: xs) {
   $key: quote($key);
@@ -37,7 +36,7 @@
   }
 }
 
-@mixin media-breakpoint-up($key: xs) {
+@mixin media-breakpoint-up($key: xs, $media-breakpoints) {
   $down: map.get($media-breakpoints, quote($key));
 
   @media (min-width: $down) {
@@ -45,7 +44,7 @@
   }
 }
 
-@mixin media-breakpoint-down($key: xs) {
+@mixin media-breakpoint-down($key: xs, $media-breakpoints) {
   $down: map.get($media-breakpoints, quote($key));
 
   @media (max-width: $down) {
@@ -53,7 +52,7 @@
   }
 }
 
-@mixin media-breakpoint-only($key: xs) {
+@mixin media-breakpoint-only($key: xs, $media-breakpoints) {
   $key: quote($key);
   $min: map.get($media-breakpoints, $key);
 
@@ -70,7 +69,7 @@
   }
 }
 
-@mixin media-breakpoint-between($start: xs, $end: xxl) {
+@mixin media-breakpoint-between($start: xs, $end: xxl, $media-breakpoints) {
   $start: map.get($media-breakpoints, $start);
   $end: map.get($media-breakpoints, $end);
 

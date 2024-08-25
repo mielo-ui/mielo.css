@@ -1,0 +1,15 @@
+@use "../../../mixins" as *;
+@use "../../../utils" as *;
+@use "../../palette" as *;
+@use "../../text" as *;
+
+$item-default-accent: (
+  "dark": (
+    "description-fg": fg(muted, dark),
+    "title-fg": fg(base, dark),
+  ),
+  "light": (
+    "description-fg": fg(muted, light),
+    "title-fg": fg(base, light),
+  ),
+) !default;

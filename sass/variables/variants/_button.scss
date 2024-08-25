@@ -1,0 +1,46 @@
+@use "../sizes" as *;
+
+$button-sizes: (
+  "medium": (
+    "fs": text-fs(medium),
+    "ph": indent(small),
+    "pv": indent(tiny),
+    "rounded": 0.6rem,
+  ),
+
+  "tiny": (
+    "fs": text-fs(tiny),
+    "ph": indent(tiny),
+    "pv": indent(tiny),
+  ),
+
+  "small": (
+    "fs": text-fs(small),
+    "ph": indent(small),
+    "pv": indent(tiny),
+  ),
+
+  "large": (
+    "fs": text-fs(large),
+    "ph": indent(medium),
+    "pv": indent(small),
+  ),
+
+  "big": (
+    "fs": text-fs(big),
+    "ph": indent(large),
+    "pv": indent(medium),
+  ),
+
+  "huge": (
+    "fs": text-fs(huge),
+    "ph": indent(big),
+    "pv": indent(large),
+  ),
+
+  "massive": (
+    "fs": text-fs(massive),
+    "ph": indent(large),
+    "pv": indent(medium),
+  ),
+) !default;

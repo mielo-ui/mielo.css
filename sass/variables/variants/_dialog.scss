@@ -1,0 +1,17 @@
+@use "../sizes" as *;
+
+$dialog-sizes: (
+  "medium": (
+    "rounded": 1.2rem,
+    "mh": 16rem,
+    "mw": 40rem,
+  ),
+  "small": (
+    "mh": 16rem,
+    "mw": 30rem,
+  ),
+  "large": (
+    "mh": 16rem,
+    "mw": 50rem,
+  ),
+) !default;

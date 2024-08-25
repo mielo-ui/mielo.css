@@ -1,4 +1,6 @@
 @use "../variables" as *;
+@use "../mixins" as *;
+@use "../utils" as *;
 
 .mie.image {
   border: 0 solid mvar("image.border.bg");

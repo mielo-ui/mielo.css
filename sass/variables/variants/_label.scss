@@ -1,0 +1,42 @@
+@use "../sizes" as *;
+
+$label-sizes: (
+  "medium": (
+    "pv": indent(tiny),
+    "ph": indent(tiny),
+    "fs": text-fs(small),
+    "rounded": rcorners(),
+    "border-w": 0.1rem,
+  ),
+
+  "tiny": (
+    "pv": indent(mini),
+    "ph": indent(mini),
+    "fs": text-fs(mini),
+  ),
+  "small": (
+    "pv": indent(mini),
+    "ph": indent(mini),
+    "fs": text-fs(tiny),
+  ),
+  "large": (
+    "pv": indent(small),
+    "ph": indent(small),
+    "fs": text-fs(medium),
+  ),
+  "big": (
+    "pv": indent(medium),
+    "ph": indent(medium),
+    "fs": text-fs(large),
+  ),
+  "huge": (
+    "pv": indent(large),
+    "ph": indent(large),
+    "fs": text-fs(big),
+  ),
+  "massive": (
+    "pv": indent(big),
+    "ph": indent(big),
+    "fs": text-fs(huge),
+  ),
+) !default;

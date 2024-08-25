@@ -75,16 +75,23 @@
   $prefix: "",
   $prefix-directly: false
 ) {
-  @each $variant-name, $variant-vars in $variants {
-    $class-name: variant-classname(
-      $variant-name,
-      $default-variant,
-      $prefix,
-      $prefix-directly
-    );
+  @if length($variants) > 0 {
+    @each $variant-name, $variant-vars in $variants {
+      @if length($variant-vars) > 0 {
+        $class-name: variant-classname(
+          $variant-name,
+          $default-variant,
+          $prefix,
+          $prefix-directly
+        );
 
-    .mie.#{$class}#{$class-name} {
-      @include variants-assign-variables($class, map-flatten($variant-vars));
+        .mie.#{$class}#{$class-name} {
+          @include variants-assign-variables(
+            $class,
+            map-flatten($variant-vars)
+          );
+        }
+      }
     }
   }
 }

@@ -1,0 +1,10 @@
+@use "../sizes" as *;
+
+$rows-sizes: () !default;
+
+$row-item-sizes: (
+  "medium": (
+    "ph": indent(),
+    "mh": 5.4rem,
+  ),
+) !default;

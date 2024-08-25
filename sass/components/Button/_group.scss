@@ -1,4 +1,5 @@
-@import "../../variables";
+@use "../../variables" as *;
+@use "../../utils" as *;
 
 /* Group */
 .mie.buttons {

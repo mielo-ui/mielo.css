@@ -1,0 +1,11 @@
+@use "sass:map";
+
+@use "../../palette" as *;
+@use "../../../mixins" as *;
+@use "../../../utils" as *;
+
+@function map-to-text($theme, $accent, $colors) {
+  $color: map.get($colors, "bg");
+
+  @return ("fg": $color, "fg-muted": $color);
+}

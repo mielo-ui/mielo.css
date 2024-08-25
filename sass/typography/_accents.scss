@@ -1,0 +1,27 @@
+@use "sass:meta";
+@use "sass:list";
+@use "sass:map";
+
+@use "../variables" as *;
+@use "../utils" as *;
+
+// Globals
+@each $theme, $props in $text-default-accent {
+  $flat: map-flatten($props);
+
+  $selector: if(
+    $theme == "dark",
+    '[data-theme="dark"]',
+    ':root, [data-theme="light"]'
+  );
+
+  #{$selector} {
+    @each $item in $flat {
+      $value: list.nth($item, 2);
+      $keys: list.nth($item, 1);
+      $key: join($keys, "-");
+
+      --mie-#{$key}: #{$value};
+    }
+  }
+}

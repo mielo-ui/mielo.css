@@ -14,25 +14,29 @@
         mvar("sidebar.bg.main")
     );
 
+  @include flex(column, stretch, stretch);
   transition: all 0.3s ease;
-  flex-direction: column;
-  display: flex;
-
-  min-width: mvar("sidebar.w");
-  width: mvar("sidebar.w");
+  overflow: hidden;
   z-index: 100;
+  width: 0;
 
   & + .container {
     transition: width 0.3s ease;
   }
 
+  > .content {
+    min-width: mvar("sidebar.w");
+    @include flex(column);
+    max-height: 100%;
+  }
+
   // Layout Styles & Animations
   &.width {
-    margin-left: calc(#{mvar("sidebar.w")} * -1);
+    width: 0;
 
     &.opened {
-      transition: margin-left 0.3s ease;
-      margin-left: 0;
+      transition: width 0.3s ease;
+      width: mvar("sidebar.w");
     }
   }
 
@@ -51,6 +55,7 @@
   }
 
   &.overlap {
+    min-width: mvar("sidebar.w");
     position: absolute;
     height: 100%;
     bottom: 0;

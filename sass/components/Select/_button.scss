@@ -7,6 +7,12 @@
     --mie-select-bg-main: transparent;
   }
 
+  &.bordered {
+    > .content > .base {
+      border: 0.1rem solid mvar("select.border-bg");
+    }
+  }
+
   > .content {
     // Base button content trigger
     > .base {
@@ -46,6 +52,7 @@
         > .label {
           transition: 300ms ease font-size;
           pointer-events: none;
+          user-select: none;
 
           font-size: mvar("select.value.fs");
           color: mvar("select.label.fg");

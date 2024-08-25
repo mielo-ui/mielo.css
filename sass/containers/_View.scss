@@ -1,4 +1,5 @@
 @use "../variables" as *;
+@use "../utils" as *;
 
 .mie.view {
   // prettier-ignore
@@ -16,22 +17,25 @@
 
   // Background appearance
   &.panel {
-    --mie-view-bg: #{mvar("view.panel")};
+    --mie-view-bg: #{mvar("view.panel")} !important;
   }
 
   &.windows {
-    --mie-view-bg: #{mvar("view.window")};
+    --mie-view-bg: #{mvar("view.window")} !important;
   }
 
   &.content {
-    --mie-view-bg: #{mvar("view.content")};
+    --mie-view-bg: #{mvar("view.content")} !important;
   }
 
   &.osd {
-    --mie-view-bg: #{mvar("view.osd")};
+    --mie-view-bg: #{mvar("view.osd")} !important;
   }
 
-  // Sizings
+  &.bordered {
+    border: 0.1rem solid mvar("view.border-bg") !important;
+  }
+
   &.fluid {
     width: 100%;
   }

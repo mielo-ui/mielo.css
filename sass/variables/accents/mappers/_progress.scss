@@ -1,0 +1,17 @@
+@use "sass:map";
+
+@use "../../palette" as *;
+@use "../../../mixins" as *;
+@use "../../../utils" as *;
+
+@function map-to-progress($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+
+  @return ("bg": rgba($bg, 0.2));
+}
+
+@function map-to-progress-bar($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+
+  @return ("indeterminate-bg": $bg, "bg": $bg);
+}

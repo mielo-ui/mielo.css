@@ -1,0 +1,25 @@
+@use "../sizes" as *;
+
+$text-sizes: (
+  "medium": (
+    "fs": text-fs(medium),
+  ),
+  "tiny": (
+    "fs": text-fs(tiny),
+  ),
+  "small": (
+    "fs": text-fs(small),
+  ),
+  "large": (
+    "fs": text-fs(large),
+  ),
+  "big": (
+    "fs": text-fs(big),
+  ),
+  "huge": (
+    "fs": text-fs(huge),
+  ),
+  "massive": (
+    "fs": text-fs(massive),
+  ),
+) !default;

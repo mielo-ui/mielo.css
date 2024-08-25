@@ -39,7 +39,7 @@
           mvar("splitview.bg.main")
       );
 
-    transition: width 0.3s ease-out;
+    transition: width 0.3s ease;
     position: relative;
 
     @include flex(column, stretch, stretch);
@@ -48,7 +48,9 @@
     flex: 1;
 
     > .content {
+      flex-direction: column;
       overflow: auto;
+      display: flex;
     }
   }
 }

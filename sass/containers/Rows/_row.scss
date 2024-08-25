@@ -1,4 +1,5 @@
 @use "../../variables" as *;
+@use "../../utils" as *;
 
 .mie.rows > .mie.row {
   border-bottom: 0.1rem solid mvar("rows.border");

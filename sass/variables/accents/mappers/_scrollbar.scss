@@ -1,0 +1,14 @@
+@use "sass:map";
+
+@use "../../palette" as *;
+@use "../../../mixins" as *;
+@use "../../../utils" as *;
+
+@function map-to-scrollbar($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+
+  @return (
+    "scroll-track-bg": rgba($bg, 0.02),
+    "scroll-thumb-bg": rgba($bg, 0.15)
+  );
+}

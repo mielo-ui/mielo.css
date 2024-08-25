@@ -1,0 +1,16 @@
+@use "../../../mixins" as *;
+@use "../../../utils" as *;
+@use "../../palette" as *;
+
+$radio-default-accent: (
+  "dark": (
+    "border-active": rgba(pcolor(blue, 5), 1),
+    "bg": rgba(pcolor(blue, 3), 1),
+    "fg": rgba(#fff, 0.6),
+  ),
+  "light": (
+    "border-active": rgba(pcolor(blue, 5), 1),
+    "bg": rgba(pcolor(blue, 3), 1),
+    "fg": rgba(#000, 0.6),
+  ),
+) !default;

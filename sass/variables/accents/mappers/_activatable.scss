@@ -1,0 +1,12 @@
+@use "sass:map";
+
+@use "../../palette" as *;
+@use "../../../mixins" as *;
+@use "../../../utils" as *;
+
+@function map-to-activatable($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+  $bg-states: (0.15, 0.25, 0.35);
+
+  @return ("bg": opacity-button-bg($bg, true, $bg-states));
+}

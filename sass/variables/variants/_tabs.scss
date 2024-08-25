@@ -1,0 +1,21 @@
+@use "sass:math";
+
+@use "../sizes" as *;
+
+$tabs-sizes: (
+  "medium": (
+    "pv": math.div(indent(small), 2),
+    "ph": indent(tiny),
+    "rounded": rcorners(),
+  ),
+);
+
+$tab-sizes: (
+  "medium": (
+    "icon-offset": indent(tiny),
+    "pv": math.div(indent(tiny-plus), 2),
+    "rounded": rcorners(),
+    "ph": indent(),
+    "fs": text-fs(),
+  ),
+) !default;

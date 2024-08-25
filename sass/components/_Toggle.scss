@@ -1,5 +1,6 @@
 @use "../variables" as *;
 @use "../mixins" as *;
+@use "../utils" as *;
 
 .mie.toggle {
   display: inline-block;

@@ -1,0 +1,19 @@
+@use "../../../mixins" as *;
+@use "../../../utils" as *;
+@use "../../palette" as *;
+@use "../../text" as *;
+
+$text-default-accent: (
+  "dark": (
+    "inverted-fg-muted": fg(muted, dark, true),
+    "inverted-fg": fg(base, dark, true),
+    "fg-muted": fg(muted, dark),
+    "fg": fg(base, dark),
+  ),
+  "light": (
+    "inverted-fg-muted": fg(muted, light, true),
+    "inverted-fg": fg(base, light, true),
+    "fg-muted": fg(muted, light),
+    "fg": fg(base, light),
+  ),
+) !default;

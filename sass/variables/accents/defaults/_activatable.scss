@@ -1,0 +1,22 @@
+// @TODO: Bug, if i used mixin for button -
+// return opacity 0 for all colors after compile
+$activatable-default-accent: (
+  "dark": (
+    // "bg": opacity-button-bg(#fff, false, (0, 0.2, 0.25)),
+    "bg":
+      (
+        "main": rgba(#fff, 0),
+        "hover": rgba(#fff, 0.2),
+        "active": rgba(#fff, 0.3),
+      ),
+  ),
+  "light": (
+    // "bg": opacity-button-bg(#000, false, (0, 0.2, 0.25)),
+    "bg":
+      (
+        "main": rgba(#000, 0),
+        "hover": rgba(#000, 0.2),
+        "active": rgba(#000, 0.3),
+      ),
+  ),
+) !default;

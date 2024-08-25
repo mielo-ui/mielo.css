@@ -1,0 +1,18 @@
+@use "../../../mixins" as *;
+@use "../../../utils" as *;
+@use "../../palette" as *;
+
+$sidebar-default-accent: (
+  "light": (
+    "bg": (
+      "main": #ebebeb,
+      "overlay": transparent,
+    ),
+  ),
+  "dark": (
+    "bg": (
+      "main": #303030,
+      "overlay": transparent,
+    ),
+  ),
+) !default;

@@ -1,4 +1,5 @@
-@import "../../variables";
+@use "../../variables";
+@use "../../utils" as *;
 
 .progress-bar {
   background-color: mvar("progress.bar.bg");

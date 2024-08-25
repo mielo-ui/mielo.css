@@ -1,0 +1,103 @@
+@use "sass:list";
+@use "sass:map";
+
+// pseudo type ThemeVariantColors = Map<(bg|fg), $value>;
+// pseudo type ThemeColors = Map<$color, ThemeVariantColors>;
+// pseudo type Theme = Map<(light|dark), ThemeColors>;
+// pseudo type ThemePreset = Map<$variant, $colors: Tuple([ $light, $dark ])>
+
+// @in: $palette: map<color-name, color[]>
+// @out: map<color-name, (light_theme,dark_theme)>
+
+@function replace-core-colors-in-out-preset($preset) {
+  @return map-merge(
+    $preset,
+    (
+      "light": (
+        rgba(#fff, 0.82),
+        rgba(#fff, 0.82),
+      ),
+      "dark": (
+        rgba(#000, 0.82),
+        rgba(#000, 0.82),
+      ),
+    )
+  );
+}
+
+@function build-colors-preset($palette) {
+  $preset: ();
+
+  @each $color, $colors in $palette {
+    $preset: map.set(
+      $preset,
+      $color,
+      (list.nth($colors, 3), list.nth($colors, 4))
+    );
+  }
+
+  @return replace-core-colors-in-out-preset($preset);
+}
+
+// $preset: ThemePreset
+// @returns: Theme
+@function preset-to-theme-variants($preset) {
+  $themes: (
+    "light": (),
+    "dark": (),
+  );
+
+  @each $accent, $theme-colors in $preset {
+    $light: list.nth($theme-colors, 1);
+    $dark: list.nth($theme-colors, 2);
+
+    // prettier-ignore
+    $themes: map.deep-merge(
+      $themes,
+      (
+        "light": map.set((), $accent,
+          ("fg": oppose-fg($light), "bg": $light)
+        ),
+        "dark": map.set((), $accent,
+          ("fg": oppose-fg($dark), "bg": $dark)
+        ),
+      )
+    );
+  }
+
+  @return $themes;
+}
+
+// Collect default colors from palette, and extend with custom preset vars
+// $preset: ThemePreset
+// @returns: Theme
+@function get-colors-theme($preset, $palette) {
+  $themes: (
+    "light": (),
+    "dark": (),
+  );
+
+  // Collect default colors from palette
+  @each $color, $color-list in $palette {
+    $light: list.nth($color-list, 3);
+    $dark: list.nth($color-list, 4);
+
+    // prettier-ignore
+    $themes: map.deep-merge(
+      $themes,
+      (
+        "light": map.set((), $color,
+          ("fg": oppose-fg($light), "bg": $light)
+        ),
+        "dark": map.set((), $color,
+          ("fg": oppose-fg($dark), "bg": $dark)
+        ),
+      )
+    );
+  }
+
+  $extended: preset-to-theme-variants($preset);
+  $themes: map.deep-merge($themes, $extended);
+
+  @return $themes;
+}

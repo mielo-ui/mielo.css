@@ -1,0 +1,40 @@
+@use "../variables" as *;
+@use "../utils" as *;
+
+.mie.text {
+  font-size: mvar("text.fs");
+  color: mvar("text.fg");
+  line-height: 1.2;
+
+  &.muted {
+    color: mvar("text.fg.muted", true);
+  }
+
+  &.invert {
+    color: mvar("text.inverted.fg", true);
+
+    &.muted {
+      color: mvar("text.inverted.fg.muted", true);
+    }
+  }
+
+  &.center {
+    text-align: center;
+  }
+
+  &.fbold {
+    font-weight: 700;
+  }
+
+  &.fsemibold {
+    font-weight: 500;
+  }
+
+  &.fregular {
+    font-weight: 400;
+  }
+
+  &.flight {
+    font-weight: 300;
+  }
+}

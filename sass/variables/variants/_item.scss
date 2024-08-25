@@ -1,0 +1,16 @@
+@use "../sizes" as *;
+
+$item-sizes: (
+  "medium": (
+    "description-fs": text-fs(small),
+    "title-fs": text-fs(medium),
+  ),
+  "small": (
+    "description-fs": text-fs(mini),
+    "title-fs": text-fs(small),
+  ),
+  "large": (
+    "description-fs": text-fs(medium),
+    "title-fs": text-fs(large),
+  ),
+) !default;

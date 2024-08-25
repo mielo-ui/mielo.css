@@ -1,0 +1,21 @@
+@use "sass:map";
+
+@use "../../palette" as *;
+@use "../../../mixins" as *;
+@use "../../../utils" as *;
+@use "../../text" as *;
+
+@function map-to-entry($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+  $fg: $bg;
+
+  @return (
+    "label-fg": if($theme == "dark", fg-src($bg, base), $bg),
+    "value-fg": fg-src($fg, base),
+    "border-bg": rgba($bg, 0.07),
+    "bg": (
+      "overlay": if($theme == "dark", rgba($bg, 0.15), rgba($bg, 0.2)),
+      "outline": #{$fg},
+    )
+  );
+}

@@ -1,0 +1,18 @@
+@use "../../../mixins" as *;
+@use "../../../utils" as *;
+@use "../../palette" as *;
+
+$window-default-accent: (
+  "dark": (
+    "bg": (
+      "main": #242424,
+      "overlay": transparent,
+    ),
+  ),
+  "light": (
+    "bg": (
+      "main": #fafafa,
+      "overlay": transparent,
+    ),
+  ),
+) !default;

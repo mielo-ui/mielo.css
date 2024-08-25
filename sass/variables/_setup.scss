@@ -1,0 +1,202 @@
+@use "sass:list";
+@use "sass:meta";
+@use "sass:map";
+
+@use "./variants" as *;
+@use "./accents" as *;
+@use "./palette" as *;
+
+@use "../mixins" as *;
+@use "../utils" as *;
+
+$global-components-list: (
+  "text",
+  "header",
+  "item",
+  "label",
+  "activatable",
+  "checkbox",
+  "button",
+  "toggle",
+  "radio",
+  "select",
+  "entry",
+  "slider",
+  "divider",
+  "image",
+  "icon",
+  "progress",
+  "progress-bar",
+  "headerbar",
+  "sidebar",
+  "splitview",
+  "message",
+  "dialog",
+  "window",
+  "clamp",
+  "modal",
+  "list",
+  "tabs",
+  "tab",
+  "row.item",
+  "rows",
+  "view",
+  "shadow"
+);
+
+$global-default-variants: (
+  "activatable": $activatable-sizes,
+  "header": $header-sizes,
+  "label": $label-sizes,
+  "item": $item-sizes,
+  "text": $text-sizes,
+
+  "checkbox": $checkbox-sizes,
+  "toggle": $toggle-sizes,
+  "select": $select-sizes,
+  "slider": $slider-sizes,
+  "entry": $entry-sizes,
+  "radio": $radio-sizes,
+
+  "progress": $progress-sizes,
+  "button": $button-sizes,
+  "image": $image-sizes,
+  "icon": $icon-sizes,
+
+  // Containers
+  "headerbar": $headerbar-sizes,
+  "row.item": $row-item-sizes,
+  "message": $message-sizes,
+  "sidebar": $sidebar-sizes,
+  "window": $window-sizes,
+  "dialog": $dialog-sizes,
+  "clamp": $clamp-sizes,
+  "rows": $rows-sizes,
+  "tabs": $tabs-sizes,
+  "tab": $tab-sizes,
+  "view": $view-sizes,
+  "shadow": $shadow-sizes,
+);
+
+$global-default-accent-values: (
+  "text": $text-default-accent,
+  "header": $header-default-accent,
+
+  "activatable": $activatable-default-accent,
+  "checkbox": $checkbox-default-accent,
+  "toggle": $toggle-default-accent,
+  "select": $select-default-accent,
+  "entry": $entry-default-accent,
+  "radio": $radio-default-accent,
+  "slider": $slider-default-accent,
+
+  "divider": $divider-default-accent,
+  "button": $button-default-accent,
+  "icon": $icon-default-accent,
+  "image": $image-default-accent,
+  "label": $label-default-accent,
+
+  "progress": $progress-default-accent,
+  "progress-bar": $progress-bar-default-accent,
+
+  // Containers
+  "dialog": $dialog-default-accent,
+  "headerbar": $headerbar-default-accent,
+  "message": $message-default-accent,
+  "item": $item-default-accent,
+  "row.item": $row-item-default-accent,
+  "rows": $rows-default-accent,
+  "scrollbar": $scrollbar-default-accent,
+  "sidebar": $sidebar-default-accent,
+  "splitview": $splitview-default-accent,
+  "tabs": $tabs-default-accent,
+  "tab": $tab-default-accent,
+  "window": $window-default-accent,
+  "view": $view-default-accent,
+  "shadow": $shadow-default-accent,
+);
+
+$default-accent-mappers: (
+  "activatable": map-to-activatable,
+  "header": map-to-header,
+  "label": map-to-label,
+  "item": map-to-item,
+  "text": map-to-text,
+
+  "checkbox": map-to-checkbox,
+  "toggle": map-to-toggle,
+  "radio": map-to-radio,
+  "select": map-to-select,
+  "entry": map-to-entry,
+  "slider": map-to-slider,
+
+  "button": map-to-button,
+  "divider": map-to-divider,
+  "icon": map-to-icon,
+  "image": map-to-image,
+
+  "progress": map-to-progress,
+  "progress-bar": map-to-progress-bar,
+
+  // Containers
+  "scrollbar": map-to-scrollbar,
+  "sidebar": map-to-sidebar,
+  "headerbar": map-to-headerbar,
+  "message": map-to-message,
+  "row.item": map-to-row-item,
+  "rows": map-to-rows,
+  "tabs": map-to-tabs,
+  "tab": map-to-tab,
+  "window": map-to-window,
+  "splitview": map-to-splitview,
+  "dialog": map-to-dialog,
+  "view": map-to-view,
+  "shadow": map-to-shadow,
+);
+
+@mixin global-setup-scrollbar($theme-preset) {
+  $themed-values: preset-to-theme-variants($theme-preset);
+
+  $mapper: map.get($default-accent-mappers, "scrollbar");
+  $accent: map.get($global-default-accent-values, "scrollbar");
+
+  @include accents-map-to-component(
+    "",
+    $accent,
+    meta.get-function($mapper),
+    $themed-values
+  );
+}
+
+@mixin global-setup-accents($theme-preset) {
+  $themed-values: preset-to-theme-variants($theme-preset);
+
+  @each $class in $global-components-list {
+    $accent-defaults: map.get($global-default-accent-values, $class);
+    $mapper: map.get($default-accent-mappers, $class);
+
+    @if $mapper != null {
+      @include accents-map-to-component(
+        $class,
+        if(
+          $accent-defaults != null,
+          $accent-defaults,
+          (
+            "dark": (),
+            "light": (),
+          )
+        ),
+        meta.get-function($mapper),
+        $themed-values
+      );
+    }
+  }
+}
+
+@mixin global-setup-variants() {
+  @each $class, $variant in $global-default-variants {
+    @if $variant != null {
+      @include variants-map-to-component($class, $variant, "medium");
+    }
+  }
+}

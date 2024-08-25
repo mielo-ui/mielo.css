@@ -1,0 +1,13 @@
+@use "../sizes" as *;
+
+$sidebar-sizes: (
+  "small": (
+    "w": 20rem,
+  ),
+  "medium": (
+    "w": 26rem,
+  ),
+  "large": (
+    "w": 32rem,
+  ),
+) !default;

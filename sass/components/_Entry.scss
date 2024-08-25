@@ -90,7 +90,11 @@
     width: 100%;
   }
 
+  &.bordered {
+    border: 0.1rem solid mvar("entry.border-bg");
+  }
+
   &.transparent {
-    --mie-select-bg-main: transparent;
+    --mie-entry-bg-main: transparent;
   }
 }

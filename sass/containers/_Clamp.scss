@@ -28,7 +28,7 @@
     max-width: mvar("clamp.size");
     width: mvar("clamp.size");
 
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-down(md, $media-breakpoints) {
       max-width: auto;
       width: 100%;
     }

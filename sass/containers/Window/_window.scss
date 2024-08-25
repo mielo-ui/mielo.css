@@ -23,6 +23,6 @@
   @include flex(column);
 
   &.transparent {
-    --mie-window-bg: transparent;
+    --mie-window-bg-main: transparent !important;
   }
 }

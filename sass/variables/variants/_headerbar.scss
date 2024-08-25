@@ -1,0 +1,8 @@
+@use "../sizes" as *;
+
+$headerbar-sizes: (
+  "medium": (
+    "ph": indent(tiny-plus),
+    "size": 4.6rem,
+  ),
+) !default;

@@ -1,0 +1,28 @@
+@use "../sizes" as *;
+
+$radio-sizes: (
+  "medium": (
+    "fs": text-fs(medium),
+    "content-space": 0.8rem,
+    "inner-size": 0.8rem,
+    "inner-mv": 0.4rem,
+    "inner-mh": 0.4rem,
+    "size": 2rem,
+  ),
+  "small": (
+    "fs": text-fs(small),
+    "content-space": 0.6rem,
+    "inner-size": 0.4rem,
+    "inner-mv": 0.45rem,
+    "inner-mh": 0.4rem,
+    "size": 1.6rem,
+  ),
+  "large": (
+    "fs": text-fs(large),
+    "content-space": 1rem,
+    "inner-size": 1.2rem,
+    "inner-mv": 0.5rem,
+    "inner-mh": 0.5rem,
+    "size": 2.6rem,
+  ),
+) !default;

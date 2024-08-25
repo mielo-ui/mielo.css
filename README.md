@@ -65,5 +65,5 @@ cd mielo
 
 npm install # or "yarn"
 npm run fmt # format & linting styles
-npm build # build css & minify
+npm run build # build css & minify
 ```

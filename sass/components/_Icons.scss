@@ -1,11 +1,14 @@
 @use "../variables" as *;
+@use "../mixins" as *;
+@use "../utils" as *;
 
 .mie.icon {
-  justify-content: center;
-  align-items: center;
-  display: flex;
+  @include flex(none, center, center);
+  transition: all 0.3s ease;
 
   svg {
+    transition: all 0.3s ease;
+
     max-height: mvar("icon.fs");
     max-width: mvar("icon.fs");
     height: mvar("icon.fs");

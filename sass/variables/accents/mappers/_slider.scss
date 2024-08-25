@@ -1,0 +1,16 @@
+@use "sass:map";
+
+@use "../../palette" as *;
+@use "../../../mixins" as *;
+@use "../../../utils" as *;
+
+@function map-to-slider($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+
+  @return (
+    "bg": (
+      "thumb": lighten($bg, 10%),
+      "range": $bg,
+    )
+  );
+}

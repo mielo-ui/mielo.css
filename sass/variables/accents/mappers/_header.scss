@@ -1,0 +1,12 @@
+@use "sass:map";
+
+@use "../../palette" as *;
+@use "../../../mixins" as *;
+@use "../../../utils" as *;
+@use "../../text" as *;
+
+@function map-to-header($theme, $accent, $colors) {
+  $fg: map.get($colors, "bg");
+
+  @return ("subtitle-fg": fg-src($fg, muted), "title-fg": fg-src($fg, core));
+}

@@ -1,0 +1,20 @@
+@use "../../../mixins" as *;
+@use "../../../utils" as *;
+@use "../../palette" as *;
+
+$button-default-accent: (
+  "dark": (
+    "bg": opacity-button-bg(#fff, false, (0.1, 0.2, 0.25)),
+    "fill": filled-button-bg(#fff, "lighten"),
+    "fg-invert": rgba(#000, 0.82),
+    "fg-main": rgba(#fff, 0.82),
+    "fg": rgba(#fff, 0.82),
+  ),
+  "light": (
+    "bg": opacity-button-bg(#000, false, (0.1, 0.2, 0.25)),
+    "fill": filled-button-bg(#000, "darken"),
+    "fg-invert": rgba(#fff, 0.82),
+    "fg-main": rgba(#000, 0.82),
+    "fg": rgba(#000, 0.82),
+  ),
+) !default;

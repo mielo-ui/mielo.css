@@ -1,10 +1,10 @@
 {
   "name": "@mielo-ui/mielo",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Mielo UI - scss based components library inspired by LibAdwaita",
-  "main": "mielo.scss",
-  "unpkg": "css/mielo.css",
-  "style": "css/mielo.min.css",
+  "main": "sass/mielo.full.scss",
+  "unpkg": "css/mielo.full.css",
+  "style": "css/mielo.full.min.css",
   "author": "Anton Shramko <antonshramko@yandex.ru>",
   "repository": {
     "url": "https://github.com/mielo-ui/mielo.css"
@@ -29,7 +29,6 @@
   "files": [
     "css",
     "sass",
-    "mielo.scss",
     "LICENSE",
     "README.md"
   ],
@@ -37,11 +36,7 @@
     "pretty": "prettier 'sass/**/*.{scss,css}' --write",
     "lint": "stylelint 'sass/**/*.scss' --fix",
     "fmt": "npm run pretty && npm run lint",
-    "build-mielo": "sass --load-path=node_modules --quiet-deps --style=expanded --source-map mielo.scss css/mielo.css",
-    "minify-mielo": "postcss css/mielo.css --no-map --use cssnano --output css/mielo.min.css",
-    "build-all": "npm run build-mielo && npm run minify-mielo",
-    "clean": "rimraf css",
-    "build": "npm run clean && npm run build-all"
+    "build": "./build.sh"
   },
   "devDependencies": {
     "copyfiles": "^2.4.1",

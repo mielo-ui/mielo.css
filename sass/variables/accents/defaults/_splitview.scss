@@ -1,0 +1,22 @@
+@use "../../../mixins" as *;
+@use "../../../utils" as *;
+@use "../../palette" as *;
+
+$splitview-default-accent: (
+  "light": (
+    "divider-bg": rgba(#000, 0.07),
+    "overlay-bg": rgba(#fff, 0.3),
+    "bg": (
+      "overlay": transparent,
+      "main": #fafafa,
+    ),
+  ),
+  "dark": (
+    "divider-bg": rgba(#160b0b, 0.36),
+    "overlay-bg": rgba(#000, 0.3),
+    "bg": (
+      "overlay": transparent,
+      "main": #242424,
+    ),
+  ),
+) !default;

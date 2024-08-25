@@ -1,0 +1,11 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+@use "../utils" as *;
+
+.mie.shadow {
+  box-shadow: mvar("shadow.outer");
+
+  &.inner {
+    box-shadow: mvar("shadow.inner");
+  }
+}

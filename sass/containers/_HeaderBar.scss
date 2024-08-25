@@ -23,7 +23,7 @@
   width: 100%;
 
   &.transparent {
-    --mie-headerbar-bg-main: transparent;
+    --mie-headerbar-bg-main: transparent !important;
   }
 
   &.bordered {
