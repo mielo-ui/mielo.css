@@ -1,14 +1,7 @@
-<p align="center">
-  <img src="https://raw.githubusercontent.com/mielo-ui/mielo.css/main/logo.png" />
-</p>
+## Mielo UI
+Modern UI framework for web, inspired desktop design.
 
-<h1 align="center">
-  Mielo UI
-</h1>
-
-<p align="center">
-  Modern UI framework for web, inspired desktop design.
-</p>
+![logo](https://raw.githubusercontent.com/mielo-ui/mielo.css/main/logo.png)
 
 ## Documentation
 Browse the [online documentation and demo here.](https://mielo-ui.github.io/)
