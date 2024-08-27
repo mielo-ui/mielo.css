@@ -32,11 +32,11 @@
 
   // Layout Styles & Animations
   &.width {
-    width: 0;
+    min-width: 0;
 
     &.opened {
-      transition: width 0.3s ease;
-      width: mvar("sidebar.w");
+      transition: min-width 0.3s ease;
+      min-width: mvar("sidebar.w");
     }
   }
 

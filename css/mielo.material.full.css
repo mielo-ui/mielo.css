@@ -8545,12 +8545,12 @@ h1, .mie.title.h1 {
 }
 
 .mie.sidebar.width {
-  width: 0;
+  min-width: 0;
 }
 
 .mie.sidebar.width.opened {
-  transition: width 0.3s ease;
-  width: var(--mie-sidebar-w);
+  transition: min-width 0.3s ease;
+  min-width: var(--mie-sidebar-w);
 }
 
 .mie.sidebar.shift {
@@ -8908,7 +8908,6 @@ h1, .mie.title.h1 {
   justify-content: flex-start;
   flex-direction: row;
   align-items: center;
-  flex: 1;
 }
 
 .mie.headerbar > .right {
@@ -8971,7 +8970,7 @@ h1, .mie.title.h1 {
   color: var(--mie-tab-fg);
   user-select: none;
   cursor: pointer;
-  z-index: 100;
+  z-index: 3;
 }
 
 .mie.tabs > .mie.tab:hover, .mie.tabs > .mie.tab.active {
@@ -8985,7 +8984,7 @@ h1, .mie.title.h1 {
 .mie.tabs > .mie.tab.background {
   background-color: var(--mie-tab-bg-main);
   position: absolute;
-  z-index: 10;
+  z-index: 2;
   left: 0;
   height: 0;
   width: 0;
@@ -9137,6 +9136,8 @@ h1, .mie.title.h1 {
 }
 
 .mie.activatable {
+  -webkit-user-select: none;
+  user-select: none;
   position: relative;
 }
 
@@ -9414,7 +9415,7 @@ h1, .mie.title.h1 {
   background-color: #fff;
   border-radius: 50%;
   position: absolute;
-  z-index: 10;
+  z-index: 2;
   height: var(--mie-toggle-indicator-height);
   width: var(--mie-toggle-indicator-width);
   left: var(--mie-toggle-indicator-offset-h);
@@ -9641,6 +9642,7 @@ h1, .mie.title.h1 {
   overflow: hidden;
   opacity: 0;
   position: absolute;
+  user-select: none;
   height: 0;
   top: 0;
   z-index: 15;
@@ -9748,6 +9750,16 @@ h1, .mie.title.h1 {
   left: 0 !important;
 }
 
+.mie.slider:not(.range) .range-slider .range-slider__range::after {
+  background: var(--mie-slider-bg-range);
+  width: calc(100% + 0.4rem);
+  height: var(--mie-slider-h);
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+}
+
 .mie.slider:not(.range).vertical [data-vertical] .range-slider__range {
   transform: translate(0, -0.9rem);
 }
@@ -9760,9 +9772,9 @@ h1, .mie.title.h1 {
   cursor: pointer;
   position: relative;
   display: block;
-  min-width: var(--mie-slider-min-length);
   max-height: var(--mie-slider-h);
-  min-height: auto;
+  min-height: var(--mie-slider-h);
+  min-width: var(--mie-slider-min-length);
   width: 100%;
   background: var(--mie-slider-bg-slider);
   border-radius: var(--mie-slider-h);

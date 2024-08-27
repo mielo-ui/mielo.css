@@ -32,11 +32,11 @@
 
   > .left {
     @include flex(row, flex-start, center);
-    flex: 1;
   }
 
   > .right {
     @include flex(row, flex-end, center);
+
     > .content {
       flex: 1;
     }

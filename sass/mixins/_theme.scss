@@ -1,12 +1,28 @@
-@mixin mie-default-theme() {
-  :root,
-  [data-theme="light"] {
+@mixin mie-default-theme($with-class) {
+  $theme-attr: "[data-theme=light]";
+  $selector: ":root, #{$theme-attr}";
+
+  $selector: if(
+    $with-class,
+    "#{$selector}, #{with-class}#{$theme-attr}",
+    $selector
+  );
+
+  #{$selector} {
     @content;
   }
 }
 
 @mixin mie-dark-theme() {
-  [data-theme="dark"] {
+  $theme-attr: "[data-theme=dark]";
+  
+  $selector: if(
+    $with-class,
+    "#{$selector}, #{with-class}#{$theme-attr}",
+    $theme-attr
+  );
+
+  #{$selector} {
     @content;
   }
 }

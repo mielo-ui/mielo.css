@@ -3,6 +3,9 @@
 @use "./Button/base" as *;
 
 .mie.activatable {
+  -webkit-user-select: none;
+  user-select: none;
+
   position: relative;
 
   & {

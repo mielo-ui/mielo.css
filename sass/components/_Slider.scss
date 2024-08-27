@@ -10,6 +10,17 @@
       .range-slider__range {
         transform: translate(0, -50%);
         left: 0 !important;
+
+        &::after {
+          background: mvar("slider.bg.range");
+          width: calc(100% + 0.4rem);
+          height: mvar("slider.h");
+
+          position: absolute;
+          content: "";
+          left: 0;
+          top: 0;
+        }
       }
     }
 
@@ -33,9 +44,10 @@
     position: relative;
     display: block;
 
-    min-width: mvar("slider.min.length");
     max-height: mvar("slider.h");
-    min-height: auto;
+    min-height: mvar("slider.h");
+
+    min-width: mvar("slider.min.length");
     width: 100%;
 
     background: mvar("slider.bg.slider");

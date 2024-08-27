@@ -995,7 +995,7 @@
 
 :root .mie.splitview, [data-theme=light] .mie.splitview {
   --mie-splitview-divider-bg: rgba(0, 0, 0, 0.07);
-  --mie-splitview-overlay-bg: rgba(255, 255, 255, 0.3);
+  --mie-splitview-overlay-bg: rgba(0, 0, 0, 0.4);
   --mie-splitview-bg-overlay: transparent;
   --mie-splitview-bg-main: #fafafa;
 }
@@ -1014,7 +1014,7 @@
 
 [data-theme=dark] .mie.splitview {
   --mie-splitview-divider-bg: rgba(22, 11, 11, 0.36);
-  --mie-splitview-overlay-bg: rgba(0, 0, 0, 0.3);
+  --mie-splitview-overlay-bg: rgba(0, 0, 0, 0.4);
   --mie-splitview-bg-overlay: transparent;
   --mie-splitview-bg-main: #242424;
 }
@@ -4260,7 +4260,7 @@
 
 :root .mie.splitview, [data-theme=light] .mie.splitview {
   --mie-splitview-divider-bg: rgba(0, 0, 0, 0.07);
-  --mie-splitview-overlay-bg: rgba(255, 255, 255, 0.3);
+  --mie-splitview-overlay-bg: rgba(0, 0, 0, 0.4);
   --mie-splitview-bg-overlay: transparent;
   --mie-splitview-bg-main: #fafafa;
 }
@@ -4309,7 +4309,7 @@
 
 [data-theme=dark] .mie.splitview {
   --mie-splitview-divider-bg: rgba(22, 11, 11, 0.36);
-  --mie-splitview-overlay-bg: rgba(0, 0, 0, 0.3);
+  --mie-splitview-overlay-bg: rgba(0, 0, 0, 0.4);
   --mie-splitview-bg-overlay: transparent;
   --mie-splitview-bg-main: #242424;
 }
