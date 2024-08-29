@@ -1,4 +1,4 @@
-@use "sass:color";
+@use "sass:color" as *;
 @use "sass:map";
 
 @use "../../palette" as *;
@@ -7,20 +7,47 @@
 
 @function map-to-button($theme, $accent, $colors) {
   $bg: map.get($colors, "bg");
+  $is-dark: $theme == "dark";
+
+  $fg-filled: if(
+    $is-dark,
+    adjust($bg, $lightness: -15%),
+    adjust($bg, $lightness: -15%)
+  );
+
+  $fg: if(
+    $is-dark,
+    adjust($bg, $lightness: 10%),
+    adjust($bg, $lightness: -20%)
+  );
+
+  $fg-op: if(
+    $is-dark,
+    adjust($bg, $lightness: 25%),
+    adjust($bg, $lightness: 40%)
+  );
+
+  $bg-filled: (
+    "active": adjust($bg, $lightness: -12%),
+    "hover": adjust($bg, $lightness: -7%),
+    "main": $bg,
+  );
+
+  $bg-default-active: adjust($bg, $lightness: -20%);
+  $bg-default-hover: adjust($bg, $lightness: -5%);
+
+  $bg-default: (
+    "active": rgba($bg-default-active, 0.8),
+    "hover": rgba($bg-default-hover, 0.6),
+    "transparent": rgba($bg, 0),
+    "main": rgba($bg, 0.4),
+  );
 
   @return (
-    "fg":
-      if(
-        $theme == "dark",
-        color.adjust($bg, $lightness: 25%),
-        color.adjust($bg, $lightness: -25%)
-      ),
-    "fill": filled-button-bg($bg, $theme),
-    "bg": (
-      "active": rgba(darken($bg, 20%), 0.8),
-      "hover": rgba(darken($bg, 5%), 0.6),
-      "transparent": rgba($bg, 0),
-      "main": rgba($bg, 0.4),
-    )
+    "fg-op": $fg-op,
+    "fg-filled": $fg-filled,
+    "fg": $fg,
+    "bg-filled": $bg-filled,
+    "bg": $bg-default
   );
 }

@@ -35,3 +35,18 @@
 
   @return var(#{mnvar($args...)}) #{if($is-important, !important, "")};
 }
+
+@mixin mdvar($key, $value, $is-important: false) {
+  @if not $key or length($key) == 0 {
+    @error "$key can`t be empty";
+  }
+
+  @if type-of($key) == "string" {
+    $key: ($key);
+  }
+
+  $is-important: if($is-important, "!important", "");
+  $prop-key: mnvar($key...);
+
+  #{$prop-key}: #{$value} #{$is-important};
+}

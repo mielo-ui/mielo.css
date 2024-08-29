@@ -5,7 +5,11 @@
   "main": "sass/mielo.full.scss",
   "unpkg": "css/mielo.full.css",
   "style": "css/mielo.full.min.css",
-  "author": "Anton Shramko <antonshramko@yandex.ru>",
+  "author": {
+    "name": "Anton Shramko",
+    "email": "antonshramko@yandex.ru"
+  },
+  "homepage": "https://mielo-ui.github.io",
   "repository": {
     "url": "https://github.com/mielo-ui/mielo.css"
   },

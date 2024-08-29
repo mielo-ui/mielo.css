@@ -1,14 +1,17 @@
-:root,
-[data-theme="light"] {
-  --mie-modal-overlay-bg: rgba(0, 0, 0, 0.3);
+@use "../variables" as *;
+@use "../mixins" as *;
+@use "../utils" as *;
+
+@include with-light-theme(".modal-overlay", $default-theme) {
+  @include mdvar("modal.overlay.bg", #{rgba(#000, 0.3)});
 }
 
-[data-theme="dark"] {
-  --mie-modal-overlay-bg: rgba(255, 255, 255, 0.3);
+@include with-dark-theme(".modal-overlay", $default-theme) {
+  @include mdvar("modal.overlay.bg", #{rgba(#fff, 0.3)});
 }
 
-.mie.overlay {
-  background-color: rgba(0, 0, 0, 0.2);
+.mie.modal-overlay {
+  background-color: mvar("modal.overlay.bg");
 
   height: 100vh;
   width: 100vw;

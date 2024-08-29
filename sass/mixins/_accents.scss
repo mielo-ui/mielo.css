@@ -3,6 +3,7 @@
 @use "sass:meta";
 
 @use "../utils" as *;
+@use "./theme" as *;
 
 // in:
 //   $theme: ("dark" | "light")                  | name for access to core declaration styles
@@ -28,38 +29,24 @@
 //   $name: string                               | component name in kebab-case
 //   $theme-vars-map: map<accent_name, vars_map> | component variables by accent
 // out: component css variables by accent
-@mixin accents-expand-mapped-vars($class, $theme-vars-map) {
+@mixin accents-expand-mapped-vars($class, $theme, $properties) {
   $name: kebab-case($class);
 
-  @each $accent, $vars in $theme-vars-map {
+  @each $accent, $vars in $properties {
     $flat: map-flatten($vars);
 
     $accent-class: if($accent != "default", "." + $accent, "");
     $class-name: if($class != "", "." + $class, "");
     $ext: $accent-class + $class-name;
 
-    @if $ext != "" {
-      .mie#{$ext} {
-        @each $item in $flat {
-          $value: list.nth($item, 2);
-          $keys: list.nth($item, 1);
-          $key: join($keys, "-");
+    @each $item in $flat {
+      $value: list.nth($item, 2);
+      $keys: list.nth($item, 1);
+      $key: join($keys, "-");
 
-          $name-prop: if($name != "", "-#{$name}", "");
+      $name-prop: if($name != "", "-#{$name}", "");
 
-          --mie#{$name-prop}-#{$key}: #{$value};
-        }
-      }
-    } @else {
-      @each $item in $flat {
-        $value: list.nth($item, 2);
-        $keys: list.nth($item, 1);
-        $key: join($keys, "-");
-
-        $name-prop: if($name != "", "-#{$name}", "");
-
-        --mie#{$name-prop}-#{$key}: #{$value};
-      }
+      --mie#{$name-prop}-#{$key}: #{$value};
     }
   }
 }
@@ -69,20 +56,20 @@
 //   $default-vars: (dark: vars_map, light: vars_map) | default variables for component
 //   $cb: ($theme, $accent, $colors) -> vars_map | callback that returns appearance variables
 // out: declare accent vars for component, and apperance
+$default-accents-map: (
+  "light": (),
+  "dark": (),
+);
+
 @mixin accents-map-to-component(
   $class,
   $default-vars,
   $cb,
-  $accents-map: ("light": (), "dark": ())
+  $default-theme,
+  $accents-map: $default-accents-map
 ) {
   @each $theme in ("light", "dark") {
     $theme-default-vars: map.get($default-vars, $theme);
-
-    $selector: if(
-      $theme == "dark",
-      '[data-theme="dark"]',
-      ':root, [data-theme="light"]'
-    );
 
     $properties: accents-map-to-vars(
       $accents-map,
@@ -91,8 +78,25 @@
       $cb
     );
 
-    #{$selector} {
-      @include accents-expand-mapped-vars($class, $properties);
+    @each $accent, $vars in $properties {
+      $flat: map-flatten($vars);
+
+      $accent-class: if($accent != "default", "." + $accent, "");
+      $class-name: if($class != "", "." + $class, "");
+      $ext: $class-name + $accent-class;
+
+      @include with-theme($theme, $ext, $default-theme) {
+        @each $item in $flat {
+          $value: list.nth($item, 2);
+          $keys: list.nth($item, 1);
+          $key: join($keys, "-");
+
+          $name: kebab-case($class);
+          $name-prop: if($name != "", "-#{$name}", "");
+
+          --mie#{$name-prop}-#{$key}: #{$value};
+        }
+      }
     }
   }
 }

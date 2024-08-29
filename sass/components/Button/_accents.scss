@@ -5,30 +5,50 @@
 @use "../../mixins" as *;
 @use "../../utils" as *;
 
+$all-theme-colors: list.join(
+  map.keys($accents-preset),
+  map.keys($colors-preset)
+);
+
 .mie.button.filled {
-  --mie-button-bg-active: #{mvar("button.fill.active", true)};
-  --mie-button-bg-hover: #{mvar("button.fill.hover", true)};
-  --mie-button-bg-main: #{mvar("button.fill.main", true)};
+  --mie-button-bg-active: #{mvar("button.bg.filled.active", true)};
+  --mie-button-bg-hover: #{mvar("button.bg.filled.hover", true)};
+  --mie-button-bg-main: #{mvar("button.bg.filled.main", true)};
 }
 
-@include not-many(
-  ".mie.button.filled",
-  list.join(map.keys($accents-preset), map.keys($colors-preset))
-) {
-  --mie-button-fg: #{mvar("button.fg.invert", true)};
+@include not-many(".mie.button.filled", $all-theme-colors) {
+  @include mdvar("button.fg", mvar("button.fg.invert"), true);
 }
 
 .mie.button.transparent {
-  --mie-button-bg-main: #{mvar("button.bg.transparent", true)};
+  @include mdvar("button.bg.main", mvar("button.bg.transparent"), true);
+  @include mdvar("button.fg", mvar("button.bg.filled.main"), true);
+
+  &:hover {
+    @include mdvar("button.fg", mvar("button.fg.op"));
+  }
+}
+  
+@include not-many(".mie.button.transparent", $all-theme-colors) {
+  @include mdvar("button.fg", mvar("button.fg.main"), true);
 }
 
 .mie.button.tertiary {
-  --mie-button-fg: #{mvar("button.fill.main", true)};
-  color: var(--mie-button-fg) !important;
+  @include mdvar("button.fg", mvar("button.bg.filled.main"), true);
+  @include mdvar("button.bg.main", transparent, true);
+  border-bottom: 0.3rem solid mvar("button.fg");
+  border-radius: 0;
 
-  &.transparent {
-    &:hover {
-      --mie-button-fg: #{rgba(#fff, 0.82)};
-    }
+  &:hover {
+    @include mdvar("button.bg.main", transparent, true);
+    @include mdvar("button.fg", mvar("button.fg.op"), true);
   }
+
+  &:active {
+    @include mdvar("button.bg.main", transparent, true);
+  }
+}
+
+@include not-many(".mie.button.tertiary", $all-theme-colors) {
+  @include mdvar("button.fg", mvar("button.fg.main"), true);
 }

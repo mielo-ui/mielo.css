@@ -2,7 +2,6 @@
 // return opacity 0 for all colors after compile
 $activatable-default-accent: (
   "dark": (
-    // "bg": opacity-button-bg(#fff, false, (0, 0.2, 0.25)),
     "bg":
       (
         "main": rgba(#fff, 0),
@@ -11,7 +10,6 @@ $activatable-default-accent: (
       ),
   ),
   "light": (
-    // "bg": opacity-button-bg(#000, false, (0, 0.2, 0.25)),
     "bg":
       (
         "main": rgba(#000, 0),

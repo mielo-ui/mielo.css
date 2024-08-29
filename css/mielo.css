@@ -1939,10 +1939,6 @@ h1, .mie.title.h1 {
   --mie-fg: rgba(0, 0, 0, 0.82);
 }
 
-:root {
-  --mie-scroll-w: 0.4rem;
-}
-
 * {
   scroll-behavior: smooth;
   box-sizing: border-box;
@@ -1962,17 +1958,18 @@ h1, .mie.title.h1 {
 }
 
 ::-webkit-scrollbar {
-  width: var(--mie-scroll-w);
+  height: 0.4rem;
+  width: 0.4rem;
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: transparent;
-  border-radius: var(--mie-scroll-w);
+  border-radius: 0.4rem;
 }
 
 ::-webkit-scrollbar-track {
   background-color: transparent;
-  border-radius: var(--mie-scroll-w);
+  border-radius: 0.4rem;
 }
 
 .mie.window {
@@ -2156,6 +2153,8 @@ h1, .mie.title.h1 {
   border: 0.1rem solid var(--mie-message-shade);
   border-radius: var(--mie-message-rounded);
   display: flex;
+  flex-direction: row;
+  align-items: start;
   margin: var(--mie-message-margin-v) 0;
   padding: var(--mie-message-padding);
 }
@@ -2164,6 +2163,7 @@ h1, .mie.title.h1 {
   justify-content: center;
   flex-direction: column;
   align-items: flex-start;
+  height: 100%;
   flex: 1;
 }
 .mie.message > .content > .title {
@@ -2190,17 +2190,16 @@ h1, .mie.title.h1 {
   --mie-icon-fg: var(--mie-message-description-fg);
 }
 
-:root,
-[data-theme=light] {
+:root, [data-theme=light] .mie.modal-overlay, .mie.modal-overlay[data-theme=light] {
   --mie-modal-overlay-bg: rgba(0, 0, 0, 0.3);
 }
 
-[data-theme=dark] {
+[data-theme=dark] .mie.modal-overlay, .mie.modal-overlay[data-theme=dark] {
   --mie-modal-overlay-bg: rgba(255, 255, 255, 0.3);
 }
 
-.mie.overlay {
-  background-color: rgba(0, 0, 0, 0.2);
+.mie.modal-overlay {
+  background-color: var(--mie-modal-overlay-bg);
   height: 100vh;
   width: 100vw;
   position: fixed;
@@ -2348,12 +2347,16 @@ h1, .mie.title.h1 {
   justify-content: flex-start;
   flex-direction: row;
   align-items: center;
+  -webkit-app-region: no-drag;
+  z-index: 20;
 }
 .mie.headerbar > .right {
   display: flex;
   justify-content: flex-end;
   flex-direction: row;
   align-items: center;
+  -webkit-app-region: no-drag;
+  z-index: 20;
 }
 .mie.headerbar > .right > .content {
   flex: 1;
@@ -2363,6 +2366,7 @@ h1, .mie.title.h1 {
   justify-content: center;
   flex-direction: row;
   align-items: center;
+  -webkit-app-region: no-drag;
   position: absolute;
   height: 100%;
   left: 50%;
@@ -2563,9 +2567,9 @@ h1, .mie.title.h1 {
 }
 
 .mie.button.filled {
-  --mie-button-bg-active: var(--mie-button-fill-active) !important;
-  --mie-button-bg-hover: var(--mie-button-fill-hover) !important;
-  --mie-button-bg-main: var(--mie-button-fill-main) !important;
+  --mie-button-bg-active: var(--mie-button-bg-filled-active) !important;
+  --mie-button-bg-hover: var(--mie-button-bg-filled-hover) !important;
+  --mie-button-bg-main: var(--mie-button-bg-filled-main) !important;
 }
 
 .mie.button.filled:not(.accent):not(.warning):not(.error):not(.success):not(.blue):not(.green):not(.yellow):not(.orange):not(.red):not(.purple):not(.brown):not(.pink):not(.deeppurple):not(.indigo):not(.lightgreen):not(.deeporange):not(.light):not(.dark) {
@@ -2574,14 +2578,32 @@ h1, .mie.title.h1 {
 
 .mie.button.transparent {
   --mie-button-bg-main: var(--mie-button-bg-transparent) !important;
+  --mie-button-fg: var(--mie-button-bg-filled-main) !important;
+}
+.mie.button.transparent:hover {
+  --mie-button-fg: var(--mie-button-fg-op);
+}
+
+.mie.button.transparent:not(.accent):not(.warning):not(.error):not(.success):not(.blue):not(.green):not(.yellow):not(.orange):not(.red):not(.purple):not(.brown):not(.pink):not(.deeppurple):not(.indigo):not(.lightgreen):not(.deeporange):not(.light):not(.dark) {
+  --mie-button-fg: var(--mie-button-fg-main) !important;
 }
 
 .mie.button.tertiary {
-  --mie-button-fg: var(--mie-button-fill-main) !important;
-  color: var(--mie-button-fg) !important;
+  --mie-button-fg: var(--mie-button-bg-filled-main) !important;
+  --mie-button-bg-main: transparent !important;
+  border-bottom: 0.3rem solid var(--mie-button-fg);
+  border-radius: 0;
 }
-.mie.button.tertiary.transparent:hover {
-  --mie-button-fg: rgba(255, 255, 255, 0.82);
+.mie.button.tertiary:hover {
+  --mie-button-bg-main: transparent !important;
+  --mie-button-fg: var(--mie-button-fg-op) !important;
+}
+.mie.button.tertiary:active {
+  --mie-button-bg-main: transparent !important;
+}
+
+.mie.button.tertiary:not(.accent):not(.warning):not(.error):not(.success):not(.blue):not(.green):not(.yellow):not(.orange):not(.red):not(.purple):not(.brown):not(.pink):not(.deeppurple):not(.indigo):not(.lightgreen):not(.deeporange):not(.light):not(.dark) {
+  --mie-button-fg: var(--mie-button-fg-main) !important;
 }
 
 .mie.button {
@@ -3094,6 +3116,9 @@ h1, .mie.title.h1 {
 .mie.slider:not(.range).vertical [data-vertical] .range-slider__range {
   transform: translate(0, -0.9rem);
 }
+.mie.slider:not(.range).vertical [data-vertical] .range-slider__range::after {
+  display: none !important;
+}
 .mie.slider .range-slider {
   -webkit-tap-highlight-color: transparent;
   -webkit-user-select: none;
@@ -3367,44 +3392,52 @@ h1, .mie.title.h1 {
   height: 2px;
 }
 
-:root, [data-theme=light] {
+:root, [data-theme=light] .mie, .mie[data-theme=light] {
   --mie-scroll-thumb-bg: rgba(0, 0, 0, 0.15);
   --mie-scroll-track-bg: rgba(0, 0, 0, 0);
 }
-:root .mie.accent, [data-theme=light] .mie.accent {
+
+:root, [data-theme=light] .mie.accent, .mie.accent[data-theme=light] {
   --mie-scroll-track-bg: rgba(53, 132, 228, 0.02);
   --mie-scroll-thumb-bg: rgba(53, 132, 228, 0.15);
 }
-:root .mie.warning, [data-theme=light] .mie.warning {
+
+:root, [data-theme=light] .mie.warning, .mie.warning[data-theme=light] {
   --mie-scroll-track-bg: rgba(229, 165, 10, 0.02);
   --mie-scroll-thumb-bg: rgba(229, 165, 10, 0.15);
 }
-:root .mie.error, [data-theme=light] .mie.error {
+
+:root, [data-theme=light] .mie.error, .mie.error[data-theme=light] {
   --mie-scroll-track-bg: rgba(224, 27, 36, 0.02);
   --mie-scroll-thumb-bg: rgba(224, 27, 36, 0.15);
 }
-:root .mie.success, [data-theme=light] .mie.success {
+
+:root, [data-theme=light] .mie.success, .mie.success[data-theme=light] {
   --mie-scroll-track-bg: rgba(46, 194, 126, 0.02);
   --mie-scroll-thumb-bg: rgba(46, 194, 126, 0.15);
 }
 
-[data-theme=dark] {
+[data-theme=dark] .mie, .mie[data-theme=dark] {
   --mie-scroll-thumb-bg: rgba(255, 255, 255, 0.15);
   --mie-scroll-track-bg: rgba(255, 255, 255, 0);
 }
-[data-theme=dark] .mie.accent {
+
+[data-theme=dark] .mie.accent, .mie.accent[data-theme=dark] {
   --mie-scroll-track-bg: rgba(53, 132, 228, 0.02);
   --mie-scroll-thumb-bg: rgba(53, 132, 228, 0.15);
 }
-[data-theme=dark] .mie.warning {
+
+[data-theme=dark] .mie.warning, .mie.warning[data-theme=dark] {
   --mie-scroll-track-bg: rgba(205, 147, 9, 0.02);
   --mie-scroll-thumb-bg: rgba(205, 147, 9, 0.15);
 }
-[data-theme=dark] .mie.error {
+
+[data-theme=dark] .mie.error, .mie.error[data-theme=dark] {
   --mie-scroll-track-bg: rgba(224, 27, 36, 0.02);
   --mie-scroll-thumb-bg: rgba(224, 27, 36, 0.15);
 }
-[data-theme=dark] .mie.success {
+
+[data-theme=dark] .mie.success, .mie.success[data-theme=dark] {
   --mie-scroll-track-bg: rgba(38, 162, 105, 0.02);
   --mie-scroll-thumb-bg: rgba(38, 162, 105, 0.15);
 }

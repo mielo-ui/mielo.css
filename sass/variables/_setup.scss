@@ -5,6 +5,7 @@
 @use "./variants" as *;
 @use "./accents" as *;
 @use "./palette" as *;
+@use "./theme" as *;
 
 @use "../mixins" as *;
 @use "../utils" as *;
@@ -164,6 +165,7 @@ $default-accent-mappers: (
     "",
     $accent,
     meta.get-function($mapper),
+    $default-theme,
     $themed-values
   );
 }
@@ -187,6 +189,7 @@ $default-accent-mappers: (
           )
         ),
         meta.get-function($mapper),
+        $default-theme,
         $themed-values
       );
     }

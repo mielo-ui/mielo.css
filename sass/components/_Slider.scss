@@ -28,6 +28,10 @@
       [data-vertical] {
         .range-slider__range {
           transform: translate(0, -0.9rem);
+
+          &::after {
+            display: none !important;
+          }
         }
       }
     }

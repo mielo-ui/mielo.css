@@ -1,11 +1,13 @@
-@mixin mie-default-theme($with-class) {
-  $theme-attr: "[data-theme=light]";
-  $selector: ":root, #{$theme-attr}";
+@mixin with-theme($theme, $element-class, $default-theme) {
+  $is-default: $theme == $default-theme;
+
+  $theme-attr: "[data-theme=#{$theme}]";
+  $prefix-theme-attr: if($is-default, ":root, #{$theme-attr}", $theme-attr);
 
   $selector: if(
-    $with-class,
-    "#{$selector}, #{with-class}#{$theme-attr}",
-    $selector
+    $element-class,
+    "#{$prefix-theme-attr} .mie#{$element-class}, .mie#{$element-class}#{$theme-attr}",
+    $theme-attr
   );
 
   #{$selector} {
@@ -13,16 +15,20 @@
   }
 }
 
-@mixin mie-dark-theme() {
-  $theme-attr: "[data-theme=dark]";
-  
-  $selector: if(
-    $with-class,
-    "#{$selector}, #{with-class}#{$theme-attr}",
-    $theme-attr
-  );
+@mixin with-default-theme($element-class, $default-theme) {
+  @include with-theme($default-theme, $element-class, $default-theme) {
+    @content;
+  }
+}
 
-  #{$selector} {
+@mixin with-light-theme($element-class, $default-theme) {
+  @include with-theme("light", $element-class, $default-theme) {
+    @content;
+  }
+}
+
+@mixin with-dark-theme($element-class, $default-theme) {
+  @include with-theme("dark", $element-class, $default-theme) {
     @content;
   }
 }

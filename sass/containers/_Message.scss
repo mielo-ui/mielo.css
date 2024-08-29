@@ -16,13 +16,14 @@
 
   border: 0.1rem solid mvar("message.shade");
   border-radius: mvar("message.rounded");
-  display: flex;
+  @include flex(row, none, start);
 
   margin: mvar("message.margin.v") 0;
   padding: mvar("message.padding");
 
   > .content {
     @include flex(column, center, flex-start);
+    height: 100%;
     flex: 1;
 
     > .title {

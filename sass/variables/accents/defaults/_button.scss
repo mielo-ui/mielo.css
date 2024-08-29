@@ -8,6 +8,7 @@ $button-default-accent: (
     "fill": filled-button-bg(#fff, "lighten"),
     "fg-invert": rgba(#000, 0.82),
     "fg-main": rgba(#fff, 0.82),
+    "fg-op": rgba(#fff, 0.82),
     "fg": rgba(#fff, 0.82),
   ),
   "light": (
@@ -15,6 +16,7 @@ $button-default-accent: (
     "fill": filled-button-bg(#000, "darken"),
     "fg-invert": rgba(#fff, 0.82),
     "fg-main": rgba(#000, 0.82),
+    "fg-op": rgba(#000, 0.82),
     "fg": rgba(#000, 0.82),
   ),
 ) !default;

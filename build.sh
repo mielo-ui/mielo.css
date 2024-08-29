@@ -8,11 +8,14 @@ function build {
 }
 
 $rimraf css
-build mielo.full
 
-build mielo
-build mielo.theme
-build mielo.variants
+build mielo.full &
 
-build mielo.material
-build mielo.material.full
+build mielo &
+build mielo.theme &
+build mielo.variants &
+
+build mielo.material &
+build mielo.material.full;
+
+wait

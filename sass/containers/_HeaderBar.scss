@@ -32,10 +32,14 @@
 
   > .left {
     @include flex(row, flex-start, center);
+    -webkit-app-region: no-drag;
+    z-index: 20;
   }
 
   > .right {
     @include flex(row, flex-end, center);
+    -webkit-app-region: no-drag;
+    z-index: 20;
 
     > .content {
       flex: 1;
@@ -44,6 +48,7 @@
 
   > .center {
     @include flex(row, center, center);
+    -webkit-app-region: no-drag;
     position: absolute;
     height: 100%;
     left: 50%;

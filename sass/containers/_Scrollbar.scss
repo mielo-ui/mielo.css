@@ -1,10 +1,6 @@
 @use "../variables" as *;
 @use "../utils" as *;
 
-:root {
-  --mie-scroll-w: 0.4rem;
-}
-
 * {
   scroll-behavior: smooth;
   box-sizing: border-box;
@@ -32,15 +28,16 @@
 }
 
 ::-webkit-scrollbar {
-  width: mvar("scroll.w");
+  height: $scrollbar-width;
+  width: $scrollbar-width;
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: transparent;
-  border-radius: mvar("scroll.w");
+  border-radius: $scrollbar-width;
 }
 
 ::-webkit-scrollbar-track {
   background-color: transparent;
-  border-radius: mvar("scroll.w");
+  border-radius: $scrollbar-width;
 }
