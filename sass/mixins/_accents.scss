@@ -5,30 +5,39 @@
 @use "../utils" as *;
 @use "./theme" as *;
 
-// in:
-//   $theme: ("dark" | "light")                  | name for access to core declaration styles
-//   $default-vars: vars_map                     | initial default variables
-//   $cb: ($theme, $accent, $colors) -> vars_map | callback that returns appearance variables
-// out: map<accent_name, vars_map>               | its map with mapped variables by accent
-@function accents-map-to-vars($accents-map, $theme, $default-vars, $cb) {
+// @in:
+//   # Accents map final colors for compute
+//   $accents-map:
+//   # Current theme
+//   $theme: Theme
+//   # default accent variables for element
+//   $default: map<string, any> | null
+//   # callback that returns appearance variables
+//   $mapper: AccentsMapper | null
+// out: AccentsElementMap
+@function accents-element-variables($accents-map, $theme, $default, $mapper) {
   $accents: map.get($accents-map, $theme);
 
   $map: (
-    "default": $default-vars,
+    "default": if($default != null, $default, ()),
   );
 
-  @each $accent, $colors in $accents {
-    $vars: meta.call($cb, $theme, $accent, $colors);
-    $map: map.set($map, $accent, $vars);
+  @if $mapper != null {
+    @each $accent, $colors in $accents {
+      $vars: meta.call($mapper, $theme, $accent, $colors);
+      $map: map.set($map, $accent, $vars);
+    }
   }
 
   @return $map;
 }
 
-// in:
-//   $name: string                               | component name in kebab-case
-//   $theme-vars-map: map<accent_name, vars_map> | component variables by accent
-// out: component css variables by accent
+// @in:
+//   # component name in kebab-case
+//   $name: string
+//   # component variables by accent
+//   $theme-vars-map: map<accent_name, vars_map>
+// @out: explain component variables to style
 @mixin accents-expand-mapped-vars($class, $theme, $properties) {
   $name: kebab-case($class);
 
@@ -51,31 +60,34 @@
   }
 }
 
-// in:
-//   $class: string                              | target component class name
-//   $default-vars: (dark: vars_map, light: vars_map) | default variables for component
-//   $cb: ($theme, $accent, $colors) -> vars_map | callback that returns appearance variables
-// out: declare accent vars for component, and apperance
-$default-accents-map: (
-  "light": (),
-  "dark": (),
-);
-
-@mixin accents-map-to-component(
+// @in:
+//   # element class like "button" or "row.item", etc..
+//   $class: string
+//   # default accent variables
+//   $default: map<string, any> | null
+//   # callback for mapping final colors
+//   $mapper: AccentsMapper | null
+//   # final computed accents map for
+//   # component (its passed to cb for mapping)
+//   $accents-map: AccentsMap
+// @out: apply component accent styles
+@mixin apply-accents-to-component(
   $class,
   $default-vars,
-  $cb,
+  $mapper,
   $default-theme,
-  $accents-map: $default-accents-map
+  $accents-map: ("light": (), "dark": ())
 ) {
+  $default-vars: if($default-vars != null, $default-vars, ());
+
   @each $theme in ("light", "dark") {
     $theme-default-vars: map.get($default-vars, $theme);
 
-    $properties: accents-map-to-vars(
+    $properties: accents-element-variables(
       $accents-map,
       $theme,
       $theme-default-vars,
-      $cb
+      $mapper
     );
 
     @each $accent, $vars in $properties {

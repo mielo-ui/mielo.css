@@ -40,26 +40,3 @@ $palette: (
     @return #fff;
   }
 }
-
-// pseudo type ThemePreset = Map<$variant, $colors: Tuple([ $light, $dark ])>
-$default-color-preset: build-colors-preset($palette);
-$colors-preset: $default-color-preset !default;
-
-$accents-preset: (
-  "accent": (
-    pcolor(blue, 3),
-    pcolor(blue, 3),
-  ),
-  "warning": (
-    pcolor(yellow, 5),
-    #cd9309,
-  ),
-  "error": (
-    pcolor(red, 3),
-    pcolor(red, 3),
-  ),
-  "success": (
-    pcolor(green, 4),
-    pcolor(green, 5),
-  ),
-) !default;

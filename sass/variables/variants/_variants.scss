@@ -1,0 +1,84 @@
+@use "sass:list";
+@use "sass:meta";
+@use "sass:map";
+
+@use "../../mixins" as *;
+@use "../../utils" as *;
+@use "../meta" as *;
+
+@forward "components";
+@forward "containers";
+
+@use "components";
+@use "containers";
+
+$variants-meta: map.merge(
+  meta.module-variables("components"),
+  meta.module-variables("containers")
+);
+
+// @in: global context
+// @out: VariantsContext
+@function variants-context-collect() {
+  $elements: list.join($containers, $components);
+  $context: ();
+
+  @each $key, $variants in $variants-meta {
+    $splitted: split($key, "-");
+    $component: list.nth($splitted, 1);
+
+    $splitted: splice($splitted, 1, 1);
+    $group: join($splitted, "-");
+
+    // map("group_name": $variants)
+    $group-map: map.set((), $group, $variants);
+    // map("component_name": map("group_name": $variants))
+    $component-map: map.set((), $component, $group-map);
+
+    $context: map.deep-merge($context, $component-map);
+  }
+
+  @return $context;
+}
+
+// @in:
+//   # Overrides default variants for
+//   $variants-context: VariantsContext
+//   $disabled: string[]
+@mixin apply-variants-preset($variants-context, $disabled: ()) {
+  $elements: list.join($containers, $components);
+  $elements: list-exclude($elements, $disabled);
+
+  @each $component in $elements {
+    $groups: map.get($variants-context, $component);
+    $class: replace($component, "-", ".", 1);
+
+    @if $groups != null and length($groups) > 0 {
+      @each $group, $variants in $groups {
+        $has-meta: $variants != null and map.has-key($variants, "_meta");
+
+        $meta: if(
+          $has-meta,
+          map.get($variants, "_meta"),
+          (
+            "prefix-directly": false,
+            "default": "medium",
+            "prefix": "",
+          )
+        );
+
+        $prefix-directly: map.get($meta, "prefix-directly");
+        $prefix: map.get($meta, "prefix");
+        $default: map.get($meta, "default");
+
+        @include apply-variants-to-component(
+          $class,
+          $variants,
+          $default,
+          $prefix,
+          $prefix-directly
+        );
+      }
+    }
+  }
+}

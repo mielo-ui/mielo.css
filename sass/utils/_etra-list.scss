@@ -1,5 +1,17 @@
 @use "sass:list";
 
+@function list-exclude($list, $excluded: ()) {
+  $out: ();
+
+  @each $n in $list {
+    @if list.index($excluded, $n) == null {
+      $out: list.append($out, $n);
+    }
+  }
+
+  @return $out;
+}
+
 // @adopted: https://github.com/davidkpiano/sassdash/blob/master/scss/api/_slice.scss
 @function base-slice($list, $start: 0, $end: list.length($list)) {
   $length: list.length($list);

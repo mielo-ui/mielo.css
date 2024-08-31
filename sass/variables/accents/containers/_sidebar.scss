@@ -1,0 +1,32 @@
+@use "sass:map";
+
+@use "../../../mixins" as *;
+@use "../../../utils" as *;
+@use "../../palette" as *;
+@use "../../text" as *;
+
+$sidebar-default-accent: (
+  "light": (
+    "bg": (
+      "main": #ebebeb,
+      "overlay": transparent,
+    ),
+  ),
+  "dark": (
+    "bg": (
+      "main": #303030,
+      "overlay": transparent,
+    ),
+  ),
+) !default;
+
+@function map-to-sidebar($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+  $overlay: rgba($bg, 0.2);
+
+  @return (
+    "bg": (
+      "overlay": $overlay,
+    )
+  );
+}

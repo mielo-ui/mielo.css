@@ -5,9 +5,12 @@
 @use "../../mixins" as *;
 @use "../../utils" as *;
 
-$all-theme-colors: list.join(
-  map.keys($accents-preset),
-  map.keys($colors-preset)
+$extra-button-theme-colors: () !default;
+$palette-keys: map.keys($palette);
+
+$button-all-theme-colors: list.join(
+  list.join(("accent", "warning", "error", "success"), $palette-keys),
+  $extra-button-theme-colors
 );
 
 .mie.button.filled {
@@ -16,7 +19,7 @@ $all-theme-colors: list.join(
   --mie-button-bg-main: #{mvar("button.bg.filled.main", true)};
 }
 
-@include not-many(".mie.button.filled", $all-theme-colors) {
+@include not-many(".mie.button.filled", $button-all-theme-colors) {
   @include mdvar("button.fg", mvar("button.fg.invert"), true);
 }
 
@@ -28,8 +31,8 @@ $all-theme-colors: list.join(
     @include mdvar("button.fg", mvar("button.fg.op"));
   }
 }
-  
-@include not-many(".mie.button.transparent", $all-theme-colors) {
+
+@include not-many(".mie.button.transparent", $button-all-theme-colors) {
   @include mdvar("button.fg", mvar("button.fg.main"), true);
 }
 
@@ -49,6 +52,6 @@ $all-theme-colors: list.join(
   }
 }
 
-@include not-many(".mie.button.tertiary", $all-theme-colors) {
+@include not-many(".mie.button.tertiary", $button-all-theme-colors) {
   @include mdvar("button.fg", mvar("button.fg.main"), true);
 }

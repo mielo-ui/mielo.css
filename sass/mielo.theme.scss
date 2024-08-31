@@ -1,7 +1,0 @@
-@charset "utf-8";
-
-/*! mielo v1.0.2 | MIT License | github.com/friktor/mielo */
-@use "variables" as *;
-
-@include global-setup-accents($accents-preset);
-@include global-setup-accents($colors-preset);

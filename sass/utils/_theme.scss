@@ -1,14 +1,8 @@
 @use "sass:list";
 @use "sass:map";
 
-// pseudo type ThemeVariantColors = Map<(bg|fg), $value>;
-// pseudo type ThemeColors = Map<$color, ThemeVariantColors>;
-// pseudo type Theme = Map<(light|dark), ThemeColors>;
-// pseudo type ThemePreset = Map<$variant, $colors: Tuple([ $light, $dark ])>
-
-// @in: $palette: map<color-name, color[]>
-// @out: map<color-name, (light_theme,dark_theme)>
-
+// @in: ThemePreset
+// @out: ThemePreset
 @function replace-core-colors-in-out-preset($preset) {
   @return map-merge(
     $preset,
@@ -25,6 +19,9 @@
   );
 }
 
+// @in:
+//   $palette: Palette
+// @out: ThemePreset
 @function build-colors-preset($palette) {
   $preset: ();
 
@@ -39,8 +36,10 @@
   @return replace-core-colors-in-out-preset($preset);
 }
 
-// $preset: ThemePreset
-// @returns: Theme
+// @in:
+//   # common theme preset for accent variant
+//   $preset: ThemePreset
+// @out: AccentsMap
 @function preset-to-theme-variants($preset) {
   $themes: (
     "light": (),
@@ -69,8 +68,10 @@
 }
 
 // Collect default colors from palette, and extend with custom preset vars
-// $preset: ThemePreset
-// @returns: Theme
+// @in:
+//   # common theme preset for accent variant
+//   $preset: ThemePreset
+// @returns: AccentsMap
 @function get-colors-theme($preset, $palette) {
   $themes: (
     "light": (),

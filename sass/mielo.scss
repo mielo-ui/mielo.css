@@ -1,6 +1,19 @@
+/*! mielo v1.0.2 | MIT License | github.com/mielo-ui/mielo */
 @charset "utf-8";
 
-/*! mielo v1.0.2 | MIT License | github.com/friktor/mielo */
-@use "index" as *;
+// Dependencies
+@use "reseter.css/src/scss/reseter.scss";
 
-@include global-setup-scrollbar($accents-preset);
+@use "variables" as *;
+
+// Theming
+@include setup-theme();
+
+// Variants
+@include setup-variants();
+
+@import "layout";
+
+@import "typography";
+@import "containers";
+@import "components";

@@ -1,0 +1,40 @@
+@use "sass:map";
+
+@use "../../../mixins" as *;
+@use "../../../utils" as *;
+@use "../../palette" as *;
+@use "../../text" as *;
+
+$progress-default-accent: (
+  "dark": (
+    "bg": #282828,
+  ),
+  "light": (
+    "bg": #ebe8e6,
+  ),
+) !default;
+
+$progress-bar-default-accent: (
+  "dark": (
+    "indeterminate-bg": rgb(#000, 0.3),
+    "bg": #15539e,
+    "fg": #fff,
+  ),
+  "light": (
+    "indeterminate-bg": rgb(#000, 0.3),
+    "bg": pcolor(blue, 3),
+    "fg": #fff,
+  ),
+) !default;
+
+@function map-to-progress($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+
+  @return ("bg": rgba($bg, 0.2));
+}
+
+@function map-to-progress-bar($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+
+  @return ("indeterminate-bg": $bg, "bg": $bg);
+}

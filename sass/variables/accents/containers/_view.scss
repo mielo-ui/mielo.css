@@ -1,0 +1,34 @@
+@use "sass:map";
+
+@use "../../../mixins" as *;
+@use "../../../utils" as *;
+@use "../../palette" as *;
+@use "../../text" as *;
+
+$view-default-accent: (
+  "dark": (
+    "overlay": transparent,
+    "bg": transparent,
+    "panel": #2a2a2a,
+    "window": #242424,
+    "content": rgba(#fff, 0.01),
+    "osd": #0b0b0b,
+    "border-bg": rgba(#fff, 0.07),
+  ),
+  "light": (
+    "overlay": transparent,
+    "bg": transparent,
+    "panel": #f2f2f2,
+    "window": #fafafa,
+    "content": #fff,
+    "osd": #4b4b4b,
+    "border-bg": rgba(#000, 0.07),
+  ),
+) !default;
+
+@function map-to-view($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+  $view-bg: if($theme == "dark", rgba($bg, 0.3), rgba($bg, 0.4));
+
+  @return ("overlay": $view-bg, "container": $bg, "border-bg": rgba($bg, 0.07));
+}

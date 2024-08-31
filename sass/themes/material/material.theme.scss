@@ -1,0 +1,10 @@
+// Dependencies
+@use "reseter.css/src/scss/reseter.scss";
+
+// Local
+@use "../../variables" as *;
+
+@use "context" as *;
+@use "palette" as *;
+
+@include setup-theme(null, null, $material-palette, $material-context);

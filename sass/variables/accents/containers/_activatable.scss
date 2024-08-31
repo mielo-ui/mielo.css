@@ -1,0 +1,31 @@
+@use "sass:map";
+
+@use "../../palette" as *;
+@use "../../../mixins" as *;
+@use "../../../utils" as *;
+
+// @TODO: Bug, if i used mixin for button -
+// return opacity 0 for all colors after compile
+$activatable-default-accent: (
+  "dark": (
+    "bg": (
+      "main": rgba(#fff, 0),
+      "hover": rgba(#fff, 0.2),
+      "active": rgba(#fff, 0.3),
+    ),
+  ),
+  "light": (
+    "bg": (
+      "main": rgba(#000, 0),
+      "hover": rgba(#000, 0.2),
+      "active": rgba(#000, 0.3),
+    ),
+  ),
+) !default;
+
+@function map-to-activatable($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+  $bg-states: (0.15, 0.25, 0.35);
+
+  @return ("bg": opacity-button-bg($bg, true, $bg-states));
+}

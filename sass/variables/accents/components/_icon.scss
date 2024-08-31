@@ -1,0 +1,36 @@
+@use "sass:map";
+
+@use "../../../mixins" as *;
+@use "../../../utils" as *;
+@use "../../palette" as *;
+@use "../../text" as *;
+
+$icon-default-accent: (
+  "light": (
+    "fg": fg(base, light),
+    "bg": (
+      "main": transparent,
+      "filled": #fafafa,
+    ),
+  ),
+  "dark": (
+    "fg": fg(core, dark),
+    "bg": (
+      "main": transparent,
+      "filled": #383838,
+    ),
+  ),
+) !default;
+
+@function map-to-icon($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+  $filled: if($theme == "light", darken($bg, 10%), lighten($bg, 10%));
+
+  @return (
+    "fg": $bg,
+    "bg": (
+      "main": rgba($bg, 0.3),
+      "filled": $filled,
+    )
+  );
+}

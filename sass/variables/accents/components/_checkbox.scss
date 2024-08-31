@@ -1,0 +1,29 @@
+@use "sass:map";
+
+@use "../../../mixins" as *;
+@use "../../../utils" as *;
+@use "../../palette" as *;
+@use "../../text" as *;
+
+$checkbox-default-accent: (
+  "dark": (
+    "border-active": rgba(pcolor(blue, 3), 1),
+    "border": rgba(#fff, 0.36),
+    "icon-fg": rgba(#fff, 1),
+    "fg": fg(base, dark),
+    "bg": rgba(pcolor(blue, 3), 1),
+  ),
+  "light": (
+    "border-active": rgba(pcolor(blue, 3), 1),
+    "border": rgba(#000, 0.36),
+    "icon-fg": rgba(#fff, 1),
+    "fg": fg(base, light),
+    "bg": rgba(pcolor(blue, 3), 1),
+  ),
+) !default;
+
+@function map-to-checkbox($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+
+  @return ("border-active": rgba($bg, 0.5), "bg": rgba($bg, 1));
+}

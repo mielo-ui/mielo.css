@@ -1,4 +1,84 @@
-$vars-accents-context: (
-  "mappers": (),
-  "defaults": (),
+@use "sass:list";
+@use "sass:meta";
+@use "sass:map";
+
+@forward "containers";
+@forward "components";
+
+@use "containers";
+@use "components";
+
+@use "../../mixins" as *;
+@use "../../utils" as *;
+@use "../theme" as *;
+@use "../meta" as *;
+
+$accent-elements-meta: map.merge(
+  map.deep-merge(
+    meta.module-functions("components"),
+    meta.module-functions("containers")
+  ),
+  map.deep-merge(
+    meta.module-variables("components"),
+    meta.module-variables("containers")
+  )
 );
+
+// @in: $name: string, $meta: AccentsContextMeta
+// @out: AccentContextPair
+@function accents-context-pair($name, $meta) {
+  $default: map.get($meta, "#{$name}-default-accent");
+  $mapper: map.get($meta, "map-to-#{$name}");
+
+  @return ("default": $default, "mapper": $mapper);
+}
+
+// @in: global context
+// @out: AccentsContextMeta
+@function accents-context-collect() {
+  $elements: list.join($containers, $components);
+  $context: ();
+
+  @each $name in $elements {
+    $pair: accents-context-pair($name, $accent-elements-meta);
+    $context: map.set($context, $name, $pair);
+  }
+
+  @return $context;
+}
+
+// @in:
+//   $theme-preset: ThemePreset,
+//   $accents-context: AccentsContextMeta,
+//   $disabled: <$element:string>[]
+// @out: styles for named accent states
+@mixin apply-accents-preset(
+  $theme-preset,
+  $accents-context: (),
+  $disabled: ()
+) {
+  $accents-map: preset-to-theme-variants($theme-preset);
+  $elements: list.join($components, $containers);
+
+  // Filter disabled components
+  $elements: list-exclude($elements, $disabled);
+
+  @each $name in $elements {
+    $pair: map.get($accents-context, $name);
+    $class: replace($name, "-", ".");
+
+    $default: map.get($pair, "default");
+    $mapper: map.get($pair, "mapper");
+
+    // Declare scrollbar vars globally
+    $apply-class: if($class == "scrollbar", "", $class);
+
+    @include apply-accents-to-component(
+      $apply-class,
+      $default,
+      $mapper,
+      $default-theme,
+      $accents-map
+    );
+  }
+}

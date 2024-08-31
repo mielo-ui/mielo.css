@@ -1,0 +1,32 @@
+@use "sass:map";
+
+@use "../../../mixins" as *;
+@use "../../../utils" as *;
+@use "../../palette" as *;
+@use "../../text" as *;
+
+$window-default-accent: (
+  "dark": (
+    "bg": (
+      "main": #242424,
+      "overlay": transparent,
+    ),
+  ),
+  "light": (
+    "bg": (
+      "main": #fafafa,
+      "overlay": transparent,
+    ),
+  ),
+) !default;
+
+@function map-to-window($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+  $overlay: rgba($bg, 0.07);
+
+  @return (
+    "bg": (
+      "overlay": $overlay,
+    )
+  );
+}

@@ -1,0 +1,19 @@
+@use "../../sizes" as *;
+
+$slider-sizes: (
+  "medium": (
+    "min-length": 12rem,
+    "thumb": 2rem,
+    "h": 0.4rem,
+  ),
+  "small": (
+    "min-length": 8rem,
+    "thumb": 1.4rem,
+    "h": 0.2rem,
+  ),
+  "large": (
+    "min-length": 14rem,
+    "thumb": 2.6rem,
+    "h": 0.8rem,
+  ),
+) !default;

@@ -1,0 +1,23 @@
+@use "sass:map";
+
+@use "../../../mixins" as *;
+@use "../../../utils" as *;
+@use "../../palette" as *;
+@use "../../text" as *;
+
+$header-default-accent: (
+  "dark": (
+    "subtitle-fg": fg(muted, dark),
+    "title-fg": fg(core, dark),
+  ),
+  "light": (
+    "subtitle-fg": fg(muted, light),
+    "title-fg": fg(core, light),
+  ),
+) !default;
+
+@function map-to-header($theme, $accent, $colors) {
+  $fg: map.get($colors, "bg");
+
+  @return ("subtitle-fg": fg-src($fg, muted), "title-fg": fg-src($fg, core));
+}

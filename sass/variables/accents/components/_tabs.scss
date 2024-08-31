@@ -1,0 +1,38 @@
+@use "sass:map";
+
+@use "../../../mixins" as *;
+@use "../../../utils" as *;
+@use "../../palette" as *;
+@use "../../text" as *;
+
+$tabs-default-accent: (
+  "light": (
+    "bg": #ebebeb,
+  ),
+  "dark": (
+    "bg": #494949,
+  ),
+);
+
+$tab-default-accent: (
+  "light": (
+    "bg": filled-button-bg(#fff, true),
+    "fg": fg(base, light),
+  ),
+  "dark": (
+    "bg": opacity-button-bg(#fff, false, (0.15, 0.2, 0.25)),
+    "fg": fg(core, dark),
+  ),
+) !default;
+
+@function map-to-tabs($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+
+  @return ("bg": opacity-button-bg($bg, true), "fg": fg-src($bg, base));
+}
+
+@function map-to-tab($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+
+  @return ("bg": rgba($bg, 0.2));
+}

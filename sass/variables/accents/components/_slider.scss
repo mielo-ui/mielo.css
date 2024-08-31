@@ -1,0 +1,38 @@
+@use "sass:map";
+
+@use "../../../mixins" as *;
+@use "../../../utils" as *;
+@use "../../palette" as *;
+@use "../../text" as *;
+
+$slider-default-accent: (
+  "dark": (
+    "bg": (
+      "slider": #282828,
+      "range": #15539e,
+      "thumb": #383838,
+    ),
+
+    "thumb-border": rgba(#fff, 0.03),
+  ),
+  "light": (
+    "bg": (
+      "range": pcolor(blue, 3),
+      "slider": #deddda,
+      "thumb": #fff,
+    ),
+
+    "thumb-border": rgba(#000, 0.07),
+  ),
+) !default;
+
+@function map-to-slider($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+
+  @return (
+    "bg": (
+      "thumb": lighten($bg, 10%),
+      "range": $bg,
+    )
+  );
+}

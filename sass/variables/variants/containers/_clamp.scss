@@ -1,0 +1,10 @@
+@use "../../sizes" as *;
+
+// Containers
+$clamp-sizes: (
+  "medium": (
+    "container-padding-h": 1.2rem,
+    "container-padding-v": 1.2rem,
+    "size": 55rem,
+  ),
+) !default;

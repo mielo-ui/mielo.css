@@ -1,0 +1,30 @@
+@use "sass:map";
+@use "sass:color";
+
+@use "../../../mixins" as *;
+@use "../../../utils" as *;
+@use "../../palette" as *;
+@use "../../text" as *;
+
+$label-default-accent: (
+  "light": (
+    "border-bg": rgba(#000, 0.1),
+    "fg": fg(base, light),
+    "bg": #c0bfbc,
+  ),
+  "dark": (
+    "border-bg": rgba(#fff, 0.1),
+    "fg": fg(base, dark),
+    "bg": #616161,
+  ),
+) !default;
+
+@function map-to-label($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+
+  @return (
+    "fg": color.adjust($bg, $lightness: 35%),
+    "border-bg": darken($bg, 5%),
+    "bg": $bg
+  );
+}

@@ -1,0 +1,27 @@
+@use "sass:list";
+@use "sass:map";
+@use "sass:math";
+
+@use "../../text" as *;
+
+$header-sizes: ();
+
+@each $size, $sizes in $header-base-sizes {
+  $props: (
+    "subtitle-fs": list.nth($sizes, 2),
+    "title-fs": list.nth($sizes, 1),
+  );
+
+  $props: if(
+    $size != "medium",
+    $props,
+    map.deep-merge(
+      $props,
+      (
+        "icon-space": 0.8rem,
+      )
+    )
+  );
+
+  $header-sizes: map.set($header-sizes, $size, $props);
+}

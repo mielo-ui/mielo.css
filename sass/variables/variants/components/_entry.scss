@@ -1,0 +1,52 @@
+@use "../../sizes" as *;
+
+$entry-sizes: (
+  "medium": (
+    "value-fs": text-fs(medium),
+    "p": 2.5rem 1.6rem 0.7rem 1.6rem,
+    "mw": 10rem,
+    "h": 5.4rem,
+
+    "label": (
+      "fs": text-fs(small),
+      "ph": 1.6rem,
+
+      "offset": (
+        "active": 0.9rem,
+        "empty": 1.8rem,
+      ),
+    ),
+  ),
+  "small": (
+    "value-fs": text-fs(small),
+    "p": 1.4rem 1rem 0.4rem 1rem,
+    "mw": 8rem,
+    "h": 3.4rem,
+
+    "label": (
+      "fs": text-fs(mini),
+      "ph": 1rem,
+
+      "offset": (
+        "active": 0.3rem,
+        "empty": 1rem,
+      ),
+    ),
+  ),
+  "large": (
+    "value-fs": text-fs(large),
+    "p": 2.6rem 1.8rem 0.6rem 1.8rem,
+    "mw": 14rem,
+    "h": 6.4rem,
+
+    "label": (
+      "fs": text-fs(medium),
+      "ph": 1.8rem,
+
+      "offset": (
+        "active": 1rem,
+        "empty": 2.2rem,
+      ),
+    ),
+  ),
+) !default;

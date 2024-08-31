@@ -18,7 +18,7 @@
 // variant-classname("variant", "default", "prefix", false),
 @function variant-classname(
   $variant,
-  $default-variant: "default",
+  $default: "default",
   $prefix: "",
   $prefix-directly: false
 ) {
@@ -30,14 +30,14 @@
   }
 
   @if $prefix-directly {
-    $variant-ext: if-or-empty($variant != $default-variant, $variant);
+    $variant-ext: if-or-empty($variant != $default, $variant);
 
     $prefix-ext: prefix-if(
       if(is-empty($variant-ext), $prefix, $prefix + "-"),
       "."
     );
   } @else {
-    $variant-ext: if-or-empty($variant != $default-variant, ".#{$variant}");
+    $variant-ext: if-or-empty($variant != $default, ".#{$variant}");
     $prefix-ext: prefix-if($prefix, ".");
   }
 
@@ -56,6 +56,7 @@
 // }
 
 @mixin variants-assign-variables($class, $vars) {
+  $vars: map-flatten($vars);
   $name: kebab-case($class);
 
   @each $item in $vars {
@@ -68,28 +69,40 @@
 }
 
 // This variant declare all variants variables separate from style
-@mixin variants-map-to-component(
+// @in:
+//   # like "button", "row.item"
+//   $class: string
+//   # common variants map of variables
+//   $variants: map("variant_name": "vars")
+//   # default variant variables without status class
+//   $default: string
+//   # prefix
+//   $prefix: if status class need prefix like "size-medium"
+//   # prefix directly
+//   $prefix-directly: boolean
+// @out: all declarations variants
+@mixin apply-variants-to-component(
   $class,
   $variants,
-  $default-variant: "default",
+  $default: "default",
   $prefix: "",
   $prefix-directly: false
 ) {
   @if length($variants) > 0 {
+    // Its meta in common variants object
+    $meta: map.get($variants, "_meta");
+
     @each $variant-name, $variant-vars in $variants {
-      @if length($variant-vars) > 0 {
+      @if $variant-name != "_meta" and length($variant-vars) > 0 {
         $class-name: variant-classname(
           $variant-name,
-          $default-variant,
+          $default,
           $prefix,
           $prefix-directly
         );
 
         .mie.#{$class}#{$class-name} {
-          @include variants-assign-variables(
-            $class,
-            map-flatten($variant-vars)
-          );
+          @include variants-assign-variables($class, $variant-vars);
         }
       }
     }

@@ -1,0 +1,73 @@
+$type-Theme: ("light", "dark");
+
+$type-ThemePreset: (
+  "<name: string>": (
+    "color:dark",
+    "color:light",
+  ),
+);
+
+$type-Palette: (
+  "<color_name:string>": (
+    "<color:string>",
+  ),
+);
+
+$type-AccentsMapper: (
+  "$args": (
+    "$theme": string,
+    "$name": string,
+    "$colors": AccentsMapperColor,
+  ),
+  "$out": "",
+);
+
+$type-AccentsMapperColor: (
+  // Background color
+  "bg": "<color:string>",
+
+  // Font color
+  "fg": "<color:string>"
+);
+
+$type-AccentContextPair: (
+  // Iterator map method, that returned final
+  // css variables for accent component
+  "mapper": $type-AccentsMapper or null,
+  // Default css variables for component
+  // (without accent status)
+  "default": "<map> | null",
+  // Component name
+  "name": "<string>"
+);
+
+// Context with all components accent
+// mappers & default appearance variables
+$type-AccentsContextMeta: (
+  "<Element:string>": $type-AccentContextPair,
+);
+
+$type-AccentsMap: (
+  // Component final mapped variables by themes
+  "<theme:Theme>": "map<string, any>"
+);
+
+$type-AccentsElementMap: (
+  // Element variables after mapping
+  "default": "map<string, any>",
+  "...accents": "map<string, any>"
+);
+
+$type-AccentsElementsMeta: (
+  // Element accent state mapper
+  "map_to_<$element:string>": "fn($theme, $name, $colors)",
+
+  // Element default accent variables
+  "<$element:string>-default-accent": "map<string, any>"
+);
+
+$type-VariantsContext: (
+  "<component:string>": (
+    "<group:string>": "map<variant, variables_map>",
+  ),
+);

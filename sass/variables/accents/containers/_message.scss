@@ -1,0 +1,35 @@
+@use "sass:map";
+
+@use "../../../mixins" as *;
+@use "../../../utils" as *;
+@use "../../palette" as *;
+@use "../../text" as *;
+
+$message-default-accent: (
+  "light": (
+    "description-fg": fg(muted, light),
+    "title-fg": fg(base, light),
+    "shade": rgba(#000, 0.05),
+    "overlay": transparent,
+    "bg": #ebebeb,
+  ),
+  "dark": (
+    "description-fg": fg(muted, dark),
+    "title-fg": fg(core, dark),
+    "shade": rgba(#000, 0.1),
+    "overlay": transparent,
+    "bg": #383838,
+  ),
+) !default;
+
+@function map-to-message($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+
+  @return (
+    "description-fg": fg-src($bg, muted),
+    "title-fg": fg-src($bg, base),
+    "overlay": rgba($bg, 0.15),
+    "shade": rgba($bg, 0.01),
+    "outline": $bg
+  );
+}

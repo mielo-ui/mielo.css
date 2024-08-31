@@ -2,9 +2,9 @@
   "name": "@mielo-ui/mielo",
   "version": "1.0.5",
   "description": "Mielo UI - scss based components library inspired by LibAdwaita",
-  "main": "sass/mielo.full.scss",
-  "unpkg": "css/mielo.full.css",
-  "style": "css/mielo.full.min.css",
+  "main": "sass/mielo.scss",
+  "unpkg": "css/mielo.css",
+  "style": "css/mielo.min.css",
   "author": {
     "name": "Anton Shramko",
     "email": "antonshramko@yandex.ru"

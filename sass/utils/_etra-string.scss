@@ -35,7 +35,7 @@
     $length-substr: string.length($substr);
 
     @if (1 != $position-found) {
-      $processed: append(
+      $processed: list.append(
         $processed,
         string.slice($string, 0, $position-found - 1)
       );

@@ -1,0 +1,25 @@
+@use "sass:map";
+
+@use "../../../mixins" as *;
+@use "../../../utils" as *;
+@use "../../palette" as *;
+
+// Containers
+$dialog-default-accent: (
+  "dark": (
+    "action-border": rgba(#fff, 0.07),
+    "bg": #383838,
+  ),
+  "light": (
+    "action-border": rgba(#000, 0.07),
+    "bg": #fafafa,
+  ),
+) !default;
+
+@function map-to-dialog($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+
+  $bg: if($theme == "light", lighten($bg, 30%), darken($bg, 30%));
+
+  @return ("bg": $bg);
+}

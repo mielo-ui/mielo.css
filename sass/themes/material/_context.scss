@@ -1,0 +1,78 @@
+$material-context: (
+  "view": (
+    "name": "view",
+    "default": (
+      "dark": (
+        "overlay": transparent,
+        "bg": transparent,
+        "panel": #424242,
+        "window": #212121,
+        "content": rgba(#fff, 0.08),
+        "osd": #0b0b0b,
+      ),
+      "light": (
+        "overlay": transparent,
+        "bg": transparent,
+        "panel": #eeeeee,
+        "window": #e0e0e0,
+        "content": #fff,
+        "osd": #424242,
+      ),
+    ),
+  ),
+  "window": (
+    "name": "window",
+    "default": (
+      "dark": (
+        "bg": (
+          "main": #212121,
+          "overlay": transparent,
+        ),
+      ),
+      "light": (
+        "bg": (
+          "main": #e0e0e0,
+          "overlay": transparent,
+        ),
+      ),
+    ),
+  ),
+  "splitview": (
+    "name": "splitview",
+    "default": (
+      "light": (
+        "divider-bg": rgba(#000, 0.07),
+        "overlay-bg": rgba(#fff, 0.3),
+        "bg": (
+          "overlay": transparent,
+          "main": #e0e0e0,
+        ),
+      ),
+      "dark": (
+        "divider-bg": rgba(#160b0b, 0.36),
+        "overlay-bg": rgba(#000, 0.3),
+        "bg": (
+          "overlay": transparent,
+          "main": #212121,
+        ),
+      ),
+    ),
+  ),
+  "sidebar": (
+    "name": "sidebar",
+    "default": (
+      "light": (
+        "bg": (
+          "main": #eeeeee,
+          "overlay": transparent,
+        ),
+      ),
+      "dark": (
+        "bg": (
+          "main": #424242,
+          "overlay": transparent,
+        ),
+      ),
+    ),
+  ),
+);

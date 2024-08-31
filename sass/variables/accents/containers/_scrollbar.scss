@@ -1,0 +1,26 @@
+@use "sass:map";
+
+@use "../../../mixins" as *;
+@use "../../../utils" as *;
+@use "../../palette" as *;
+@use "../../text" as *;
+
+$scrollbar-default-accent: (
+  "dark": (
+    "scroll-thumb-bg": rgba(#fff, 0.15),
+    "scroll-track-bg": rgba(#fff, 0),
+  ),
+  "light": (
+    "scroll-thumb-bg": rgba(#000, 0.15),
+    "scroll-track-bg": rgba(#000, 0),
+  ),
+) !default;
+
+@function map-to-scrollbar($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+
+  @return (
+    "scroll-track-bg": rgba($bg, 0.02),
+    "scroll-thumb-bg": rgba($bg, 0.15)
+  );
+}

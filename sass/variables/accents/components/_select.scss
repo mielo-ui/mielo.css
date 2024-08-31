@@ -1,0 +1,45 @@
+@use "sass:map";
+
+@use "../../../mixins" as *;
+@use "../../../utils" as *;
+@use "../../palette" as *;
+@use "../../text" as *;
+
+$select-default-accent: (
+  "dark": (
+    "label-fg": fg(muted, dark),
+    "value-fg": fg(core, dark),
+    "border-bg": rgba(#fff, 0.07),
+    "bg": (
+      "outline": #78aeed,
+      "overlay": transparent,
+      "main": #343434,
+      "menu": #2a2a2a,
+    ),
+  ),
+  "light": (
+    "label-fg": fg(muted, light),
+    "value-fg": fg(base, light),
+    "border-bg": rgba(#000, 0.07),
+    "bg": (
+      "outline": pcolor(blue, 4),
+      "overlay": transparent,
+      "main": #f5f5f5,
+      "menu": #f2f2f2,
+    ),
+  ),
+) !default;
+
+@function map-to-select($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+
+  @return (
+    "label-fg": if($theme == "dark", fg-src($bg, base), $bg),
+    "value-fg": fg-src($bg, base),
+    "border-bg": rgba($bg, 0.07),
+    "bg": (
+      "overlay": if($theme == "dark", rgba($bg, 0.15), rgba($bg, 0.2)),
+      "outline": #{$bg},
+    )
+  );
+}

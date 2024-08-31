@@ -1,0 +1,37 @@
+@use "sass:map";
+
+@use "../../../mixins" as *;
+@use "../../../utils" as *;
+@use "../../palette" as *;
+@use "../../text" as *;
+
+$row-item-default-accent: (
+  "light": (
+    "overlay": transparent,
+    "bg": #fff,
+  ),
+  "dark": (
+    "overlay": transparent,
+    "bg": #343434,
+  ),
+);
+
+$rows-default-accent: (
+  "light": (
+    "border": rgba(#000, 0.07),
+  ),
+  "dark": (
+    "border": rgba(#fff, 0.07),
+  ),
+) !default;
+
+@function map-to-row-item($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+
+  @return ("overlay": rgba($bg, 0.08), "outline": $bg);
+}
+
+@function map-to-rows($theme, $accent, $colors) {
+  $bg: map.get($colors, "bg");
+  @return ();
+}
