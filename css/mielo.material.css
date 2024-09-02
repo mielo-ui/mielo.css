@@ -322,7 +322,7 @@ template {
 
 [data-theme=dark] .mie.button.accent, .mie.button.accent[data-theme=dark] {
   --mie-button-fg-op: #a5c8f3;
-  --mie-button-fg-filled: #185fb4;
+  --mie-button-fg-filled: #124787;
   --mie-button-fg: #629fea;
   --mie-button-bg-filled-active: #1a66c2;
   --mie-button-bg-filled-hover: #1d72d8;
@@ -335,7 +335,7 @@ template {
 
 [data-theme=dark] .mie.button.warning, .mie.button.warning[data-theme=dark] {
   --mie-button-fg-op: #f8ca5e;
-  --mie-button-fg-filled: #845e06;
+  --mie-button-fg-filled: #533b04;
   --mie-button-fg: #f5b214;
   --mie-button-bg-filled-active: #926906;
   --mie-button-bg-filled-hover: #ab7a07;
@@ -348,7 +348,7 @@ template {
 
 [data-theme=dark] .mie.button.error, .mie.button.error[data-theme=dark] {
   --mie-button-fg-op: #f18a8e;
-  --mie-button-fg-filled: #9c1319;
+  --mie-button-fg-filled: #6e0d12;
   --mie-button-fg: #e9454d;
   --mie-button-bg-filled-active: #a9141b;
   --mie-button-bg-filled-hover: #c0171f;
@@ -361,7 +361,7 @@ template {
 
 [data-theme=dark] .mie.button.success, .mie.button.success[data-theme=dark] {
   --mie-button-fg-op: #6bdca8;
-  --mie-button-fg-filled: #176441;
+  --mie-button-fg-filled: #0e3b26;
   --mie-button-fg: #30cb84;
   --mie-button-bg-filled-active: #1a7049;
   --mie-button-bg-filled-hover: #1f8556;
@@ -1048,78 +1048,6 @@ template {
 [data-theme=dark] .mie.slider.success, .mie.slider.success[data-theme=dark] {
   --mie-slider-bg-thumb: #30cb84;
   --mie-slider-bg-range: #26a269;
-}
-
-:root, [data-theme=light] .mie.tabs, .mie.tabs[data-theme=light] {
-  --mie-tabs-bg: #ebebeb;
-}
-
-:root, [data-theme=light] .mie.tabs.accent, .mie.tabs.accent[data-theme=light] {
-  --mie-tabs-bg-main: rgba(53, 132, 228, 0);
-  --mie-tabs-bg-active: rgba(53, 132, 228, 0.2);
-  --mie-tabs-bg-hover: rgba(53, 132, 228, 0.3);
-  --mie-tabs-bg-transparent: rgba(53, 132, 228, 0);
-  --mie-tabs-fg: rgba(53, 132, 228, 0.82);
-}
-
-:root, [data-theme=light] .mie.tabs.warning, .mie.tabs.warning[data-theme=light] {
-  --mie-tabs-bg-main: rgba(229, 165, 10, 0);
-  --mie-tabs-bg-active: rgba(229, 165, 10, 0.2);
-  --mie-tabs-bg-hover: rgba(229, 165, 10, 0.3);
-  --mie-tabs-bg-transparent: rgba(229, 165, 10, 0);
-  --mie-tabs-fg: rgba(229, 165, 10, 0.82);
-}
-
-:root, [data-theme=light] .mie.tabs.error, .mie.tabs.error[data-theme=light] {
-  --mie-tabs-bg-main: rgba(224, 27, 36, 0);
-  --mie-tabs-bg-active: rgba(224, 27, 36, 0.2);
-  --mie-tabs-bg-hover: rgba(224, 27, 36, 0.3);
-  --mie-tabs-bg-transparent: rgba(224, 27, 36, 0);
-  --mie-tabs-fg: rgba(224, 27, 36, 0.82);
-}
-
-:root, [data-theme=light] .mie.tabs.success, .mie.tabs.success[data-theme=light] {
-  --mie-tabs-bg-main: rgba(46, 194, 126, 0);
-  --mie-tabs-bg-active: rgba(46, 194, 126, 0.2);
-  --mie-tabs-bg-hover: rgba(46, 194, 126, 0.3);
-  --mie-tabs-bg-transparent: rgba(46, 194, 126, 0);
-  --mie-tabs-fg: rgba(46, 194, 126, 0.82);
-}
-
-[data-theme=dark] .mie.tabs, .mie.tabs[data-theme=dark] {
-  --mie-tabs-bg: #494949;
-}
-
-[data-theme=dark] .mie.tabs.accent, .mie.tabs.accent[data-theme=dark] {
-  --mie-tabs-bg-main: rgba(53, 132, 228, 0);
-  --mie-tabs-bg-active: rgba(53, 132, 228, 0.2);
-  --mie-tabs-bg-hover: rgba(53, 132, 228, 0.3);
-  --mie-tabs-bg-transparent: rgba(53, 132, 228, 0);
-  --mie-tabs-fg: rgba(53, 132, 228, 0.82);
-}
-
-[data-theme=dark] .mie.tabs.warning, .mie.tabs.warning[data-theme=dark] {
-  --mie-tabs-bg-main: rgba(205, 147, 9, 0);
-  --mie-tabs-bg-active: rgba(205, 147, 9, 0.2);
-  --mie-tabs-bg-hover: rgba(205, 147, 9, 0.3);
-  --mie-tabs-bg-transparent: rgba(205, 147, 9, 0);
-  --mie-tabs-fg: rgba(205, 147, 9, 0.82);
-}
-
-[data-theme=dark] .mie.tabs.error, .mie.tabs.error[data-theme=dark] {
-  --mie-tabs-bg-main: rgba(224, 27, 36, 0);
-  --mie-tabs-bg-active: rgba(224, 27, 36, 0.2);
-  --mie-tabs-bg-hover: rgba(224, 27, 36, 0.3);
-  --mie-tabs-bg-transparent: rgba(224, 27, 36, 0);
-  --mie-tabs-fg: rgba(224, 27, 36, 0.82);
-}
-
-[data-theme=dark] .mie.tabs.success, .mie.tabs.success[data-theme=dark] {
-  --mie-tabs-bg-main: rgba(38, 162, 105, 0);
-  --mie-tabs-bg-active: rgba(38, 162, 105, 0.2);
-  --mie-tabs-bg-hover: rgba(38, 162, 105, 0.3);
-  --mie-tabs-bg-transparent: rgba(38, 162, 105, 0);
-  --mie-tabs-fg: rgba(38, 162, 105, 0.82);
 }
 
 :root, [data-theme=light] .mie.text, .mie.text[data-theme=light] {
@@ -1860,6 +1788,125 @@ template {
   --mie-window-bg-overlay: rgba(38, 162, 105, 0.07);
 }
 
+:root, [data-theme=light] .mie.tabs, .mie.tabs[data-theme=light] {
+  --mie-tabs-bg: #ebebeb;
+}
+
+:root, [data-theme=light] .mie.tabs.accent, .mie.tabs.accent[data-theme=light] {
+  --mie-tabs-bg-main: rgba(53, 132, 228, 0);
+  --mie-tabs-bg-active: rgba(53, 132, 228, 0.2);
+  --mie-tabs-bg-hover: rgba(53, 132, 228, 0.3);
+  --mie-tabs-bg-transparent: rgba(53, 132, 228, 0);
+  --mie-tabs-fg: rgba(53, 132, 228, 0.82);
+}
+
+:root, [data-theme=light] .mie.tabs.warning, .mie.tabs.warning[data-theme=light] {
+  --mie-tabs-bg-main: rgba(229, 165, 10, 0);
+  --mie-tabs-bg-active: rgba(229, 165, 10, 0.2);
+  --mie-tabs-bg-hover: rgba(229, 165, 10, 0.3);
+  --mie-tabs-bg-transparent: rgba(229, 165, 10, 0);
+  --mie-tabs-fg: rgba(229, 165, 10, 0.82);
+}
+
+:root, [data-theme=light] .mie.tabs.error, .mie.tabs.error[data-theme=light] {
+  --mie-tabs-bg-main: rgba(224, 27, 36, 0);
+  --mie-tabs-bg-active: rgba(224, 27, 36, 0.2);
+  --mie-tabs-bg-hover: rgba(224, 27, 36, 0.3);
+  --mie-tabs-bg-transparent: rgba(224, 27, 36, 0);
+  --mie-tabs-fg: rgba(224, 27, 36, 0.82);
+}
+
+:root, [data-theme=light] .mie.tabs.success, .mie.tabs.success[data-theme=light] {
+  --mie-tabs-bg-main: rgba(46, 194, 126, 0);
+  --mie-tabs-bg-active: rgba(46, 194, 126, 0.2);
+  --mie-tabs-bg-hover: rgba(46, 194, 126, 0.3);
+  --mie-tabs-bg-transparent: rgba(46, 194, 126, 0);
+  --mie-tabs-fg: rgba(46, 194, 126, 0.82);
+}
+
+[data-theme=dark] .mie.tabs, .mie.tabs[data-theme=dark] {
+  --mie-tabs-bg: #494949;
+}
+
+[data-theme=dark] .mie.tabs.accent, .mie.tabs.accent[data-theme=dark] {
+  --mie-tabs-bg-main: rgba(53, 132, 228, 0);
+  --mie-tabs-bg-active: rgba(53, 132, 228, 0.2);
+  --mie-tabs-bg-hover: rgba(53, 132, 228, 0.3);
+  --mie-tabs-bg-transparent: rgba(53, 132, 228, 0);
+  --mie-tabs-fg: rgba(53, 132, 228, 0.82);
+}
+
+[data-theme=dark] .mie.tabs.warning, .mie.tabs.warning[data-theme=dark] {
+  --mie-tabs-bg-main: rgba(205, 147, 9, 0);
+  --mie-tabs-bg-active: rgba(205, 147, 9, 0.2);
+  --mie-tabs-bg-hover: rgba(205, 147, 9, 0.3);
+  --mie-tabs-bg-transparent: rgba(205, 147, 9, 0);
+  --mie-tabs-fg: rgba(205, 147, 9, 0.82);
+}
+
+[data-theme=dark] .mie.tabs.error, .mie.tabs.error[data-theme=dark] {
+  --mie-tabs-bg-main: rgba(224, 27, 36, 0);
+  --mie-tabs-bg-active: rgba(224, 27, 36, 0.2);
+  --mie-tabs-bg-hover: rgba(224, 27, 36, 0.3);
+  --mie-tabs-bg-transparent: rgba(224, 27, 36, 0);
+  --mie-tabs-fg: rgba(224, 27, 36, 0.82);
+}
+
+[data-theme=dark] .mie.tabs.success, .mie.tabs.success[data-theme=dark] {
+  --mie-tabs-bg-main: rgba(38, 162, 105, 0);
+  --mie-tabs-bg-active: rgba(38, 162, 105, 0.2);
+  --mie-tabs-bg-hover: rgba(38, 162, 105, 0.3);
+  --mie-tabs-bg-transparent: rgba(38, 162, 105, 0);
+  --mie-tabs-fg: rgba(38, 162, 105, 0.82);
+}
+
+:root, [data-theme=light] .mie.tab, .mie.tab[data-theme=light] {
+  --mie-tab-bg-active: #e0e0e0;
+  --mie-tab-bg-hover: #ededed;
+  --mie-tab-bg-main: #fff;
+  --mie-tab-fg: rgba(0, 0, 0, 0.82);
+}
+
+:root, [data-theme=light] .mie.tab.accent, .mie.tab.accent[data-theme=light] {
+  --mie-tab-bg: rgba(53, 132, 228, 0.2);
+}
+
+:root, [data-theme=light] .mie.tab.warning, .mie.tab.warning[data-theme=light] {
+  --mie-tab-bg: rgba(229, 165, 10, 0.2);
+}
+
+:root, [data-theme=light] .mie.tab.error, .mie.tab.error[data-theme=light] {
+  --mie-tab-bg: rgba(224, 27, 36, 0.2);
+}
+
+:root, [data-theme=light] .mie.tab.success, .mie.tab.success[data-theme=light] {
+  --mie-tab-bg: rgba(46, 194, 126, 0.2);
+}
+
+[data-theme=dark] .mie.tab, .mie.tab[data-theme=dark] {
+  --mie-tab-bg-main: rgba(255, 255, 255, 0.15);
+  --mie-tab-bg-active: rgba(255, 255, 255, 0.15);
+  --mie-tab-bg-hover: rgba(255, 255, 255, 0.2);
+  --mie-tab-bg-transparent: rgba(255, 255, 255, 0);
+  --mie-tab-fg: #fff;
+}
+
+[data-theme=dark] .mie.tab.accent, .mie.tab.accent[data-theme=dark] {
+  --mie-tab-bg: rgba(53, 132, 228, 0.2);
+}
+
+[data-theme=dark] .mie.tab.warning, .mie.tab.warning[data-theme=dark] {
+  --mie-tab-bg: rgba(205, 147, 9, 0.2);
+}
+
+[data-theme=dark] .mie.tab.error, .mie.tab.error[data-theme=dark] {
+  --mie-tab-bg: rgba(224, 27, 36, 0.2);
+}
+
+[data-theme=dark] .mie.tab.success, .mie.tab.success[data-theme=dark] {
+  --mie-tab-bg: rgba(38, 162, 105, 0.2);
+}
+
 :root, [data-theme=light] .mie.button, .mie.button[data-theme=light] {
   --mie-button-bg-main: rgba(0, 0, 0, 0.1);
   --mie-button-bg-active: rgba(0, 0, 0, 0.1);
@@ -2072,7 +2119,7 @@ template {
 
 [data-theme=dark] .mie.button.blue, .mie.button.blue[data-theme=dark] {
   --mie-button-fg-op: #90c4f2;
-  --mie-button-fg-filled: #1360a4;
+  --mie-button-fg-filled: #0e4576;
   --mie-button-fg: #4ca0ea;
   --mie-button-bg-filled-active: #1468b1;
   --mie-button-bg-filled-hover: #1775c8;
@@ -2085,7 +2132,7 @@ template {
 
 [data-theme=dark] .mie.button.green, .mie.button.green[data-theme=dark] {
   --mie-button-fg-op: #91d194;
-  --mie-button-fg-filled: #2c6a2f;
+  --mie-button-fg-filled: #1d461f;
   --mie-button-fg: #5bbb60;
   --mie-button-bg-filled-active: #317534;
   --mie-button-bg-filled-hover: #38873c;
@@ -2098,7 +2145,7 @@ template {
 
 [data-theme=dark] .mie.button.yellow, .mie.button.yellow[data-theme=dark] {
   --mie-button-fg-op: #fef0b3;
-  --mie-button-fg-filled: #e3ba02;
+  --mie-button-fg-filled: #b19002;
   --mie-button-fg: #fee268;
   --mie-button-bg-filled-active: #f2c602;
   --mie-button-bg-filled-hover: #fdd112;
@@ -2111,7 +2158,7 @@ template {
 
 [data-theme=dark] .mie.button.orange, .mie.button.orange[data-theme=dark] {
   --mie-button-fg-op: #ffc57c;
-  --mie-button-fg-filled: #af6100;
+  --mie-button-fg-filled: #7c4500;
   --mie-button-fg: #ffa32f;
   --mie-button-bg-filled-active: #be6a00;
   --mie-button-bg-filled-hover: #d77800;
@@ -2124,7 +2171,7 @@ template {
 
 [data-theme=dark] .mie.button.red, .mie.button.red[data-theme=dark] {
   --mie-button-fg-op: #f4a8a6;
-  --mie-button-fg-filled: #b61b17;
+  --mie-button-fg-filled: #891412;
   --mie-button-fg: #eb6562;
   --mie-button-bg-filled-active: #c41d19;
   --mie-button-bg-filled-hover: #da201c;
@@ -2137,7 +2184,7 @@ template {
 
 [data-theme=dark] .mie.button.purple, .mie.button.purple[data-theme=dark] {
   --mie-button-fg-op: #c86de0;
-  --mie-button-fg-filled: #59176b;
+  --mie-button-fg-filled: #360e41;
   --mie-button-fg: #b02ed3;
   --mie-button-bg-filled-active: #641977;
   --mie-button-bg-filled-hover: #751e8d;
@@ -2150,7 +2197,7 @@ template {
 
 [data-theme=dark] .mie.button.brown, .mie.button.brown[data-theme=dark] {
   --mie-button-fg-op: #b18a7c;
-  --mie-button-fg-filled: #3d2b24;
+  --mie-button-fg-filled: #1d1411;
   --mie-button-fg: #8d6254;
   --mie-button-bg-filled-active: #47312a;
   --mie-button-bg-filled-hover: #573c34;
@@ -2163,7 +2210,7 @@ template {
 
 [data-theme=dark] .mie.button.pink, .mie.button.pink[data-theme=dark] {
   --mie-button-fg-op: #f083ab;
-  --mie-button-fg-filled: #941342;
+  --mie-button-fg-filled: #670d2e;
   --mie-button-fg: #e73f7c;
   --mie-button-bg-filled-active: #a21448;
   --mie-button-bg-filled-hover: #b81752;
@@ -2176,7 +2223,7 @@ template {
 
 [data-theme=dark] .mie.button.deeppurple, .mie.button.deeppurple[data-theme=dark] {
   --mie-button-fg-op: #9679db;
-  --mie-button-fg-filled: #341d6c;
+  --mie-button-fg-filled: #211243;
   --mie-button-fg: #673dcb;
   --mie-button-bg-filled-active: #3a2078;
   --mie-button-bg-filled-hover: #43258c;
@@ -2189,7 +2236,7 @@ template {
 
 [data-theme=dark] .mie.button.indigo, .mie.button.indigo[data-theme=dark] {
   --mie-button-fg-op: #8b96d8;
-  --mie-button-fg-filled: #263172;
+  --mie-button-fg-filled: #19204b;
   --mie-button-fg: #5262c5;
   --mie-button-bg-filled-active: #2a357d;
   --mie-button-bg-filled-hover: #303e90;
@@ -2202,7 +2249,7 @@ template {
 
 [data-theme=dark] .mie.button.lightgreen, .mie.button.lightgreen[data-theme=dark] {
   --mie-button-fg-op: #bbda9b;
-  --mie-button-fg-filled: #557b2d;
+  --mie-button-fg-filled: #3b5620;
   --mie-button-fg: #95c563;
   --mie-button-bg-filled-active: #5d8632;
   --mie-button-bg-filled-hover: #6a9938;
@@ -2215,7 +2262,7 @@ template {
 
 [data-theme=dark] .mie.button.deeporange, .mie.button.deeporange[data-theme=dark] {
   --mie-button-fg-op: #f3a58c;
-  --mie-button-fg-filled: #a13412;
+  --mie-button-fg-filled: #73250d;
   --mie-button-fg: #eb6e47;
   --mie-button-bg-filled-active: #af3813;
   --mie-button-bg-filled-hover: #c64016;
@@ -2228,7 +2275,7 @@ template {
 
 [data-theme=dark] .mie.button.light, .mie.button.light[data-theme=dark] {
   --mie-button-fg-op: rgba(255, 255, 255, 0.82);
-  --mie-button-fg-filled: rgba(217, 217, 217, 0.82);
+  --mie-button-fg-filled: rgba(191, 191, 191, 0.82);
   --mie-button-fg: rgba(255, 255, 255, 0.82);
   --mie-button-bg-filled-active: rgba(224, 224, 224, 0.82);
   --mie-button-bg-filled-hover: rgba(237, 237, 237, 0.82);
@@ -4248,238 +4295,6 @@ template {
 [data-theme=dark] .mie.slider.dark, .mie.slider.dark[data-theme=dark] {
   --mie-slider-bg-thumb: rgba(26, 26, 26, 0.82);
   --mie-slider-bg-range: rgba(0, 0, 0, 0.82);
-}
-
-:root, [data-theme=light] .mie.tabs, .mie.tabs[data-theme=light] {
-  --mie-tabs-bg: #ebebeb;
-}
-
-:root, [data-theme=light] .mie.tabs.blue, .mie.tabs.blue[data-theme=light] {
-  --mie-tabs-bg-main: rgba(33, 150, 243, 0);
-  --mie-tabs-bg-active: rgba(33, 150, 243, 0.2);
-  --mie-tabs-bg-hover: rgba(33, 150, 243, 0.3);
-  --mie-tabs-bg-transparent: rgba(33, 150, 243, 0);
-  --mie-tabs-fg: rgba(33, 150, 243, 0.82);
-}
-
-:root, [data-theme=light] .mie.tabs.green, .mie.tabs.green[data-theme=light] {
-  --mie-tabs-bg-main: rgba(76, 175, 80, 0);
-  --mie-tabs-bg-active: rgba(76, 175, 80, 0.2);
-  --mie-tabs-bg-hover: rgba(76, 175, 80, 0.3);
-  --mie-tabs-bg-transparent: rgba(76, 175, 80, 0);
-  --mie-tabs-fg: rgba(76, 175, 80, 0.82);
-}
-
-:root, [data-theme=light] .mie.tabs.yellow, .mie.tabs.yellow[data-theme=light] {
-  --mie-tabs-bg-main: rgba(255, 235, 59, 0);
-  --mie-tabs-bg-active: rgba(255, 235, 59, 0.2);
-  --mie-tabs-bg-hover: rgba(255, 235, 59, 0.3);
-  --mie-tabs-bg-transparent: rgba(255, 235, 59, 0);
-  --mie-tabs-fg: rgba(255, 235, 59, 0.82);
-}
-
-:root, [data-theme=light] .mie.tabs.orange, .mie.tabs.orange[data-theme=light] {
-  --mie-tabs-bg-main: rgba(255, 152, 0, 0);
-  --mie-tabs-bg-active: rgba(255, 152, 0, 0.2);
-  --mie-tabs-bg-hover: rgba(255, 152, 0, 0.3);
-  --mie-tabs-bg-transparent: rgba(255, 152, 0, 0);
-  --mie-tabs-fg: rgba(255, 152, 0, 0.82);
-}
-
-:root, [data-theme=light] .mie.tabs.red, .mie.tabs.red[data-theme=light] {
-  --mie-tabs-bg-main: rgba(244, 67, 54, 0);
-  --mie-tabs-bg-active: rgba(244, 67, 54, 0.2);
-  --mie-tabs-bg-hover: rgba(244, 67, 54, 0.3);
-  --mie-tabs-bg-transparent: rgba(244, 67, 54, 0);
-  --mie-tabs-fg: rgba(244, 67, 54, 0.82);
-}
-
-:root, [data-theme=light] .mie.tabs.purple, .mie.tabs.purple[data-theme=light] {
-  --mie-tabs-bg-main: rgba(156, 39, 176, 0);
-  --mie-tabs-bg-active: rgba(156, 39, 176, 0.2);
-  --mie-tabs-bg-hover: rgba(156, 39, 176, 0.3);
-  --mie-tabs-bg-transparent: rgba(156, 39, 176, 0);
-  --mie-tabs-fg: rgba(156, 39, 176, 0.82);
-}
-
-:root, [data-theme=light] .mie.tabs.brown, .mie.tabs.brown[data-theme=light] {
-  --mie-tabs-bg-main: rgba(121, 85, 72, 0);
-  --mie-tabs-bg-active: rgba(121, 85, 72, 0.2);
-  --mie-tabs-bg-hover: rgba(121, 85, 72, 0.3);
-  --mie-tabs-bg-transparent: rgba(121, 85, 72, 0);
-  --mie-tabs-fg: rgba(121, 85, 72, 0.82);
-}
-
-:root, [data-theme=light] .mie.tabs.pink, .mie.tabs.pink[data-theme=light] {
-  --mie-tabs-bg-main: rgba(233, 30, 99, 0);
-  --mie-tabs-bg-active: rgba(233, 30, 99, 0.2);
-  --mie-tabs-bg-hover: rgba(233, 30, 99, 0.3);
-  --mie-tabs-bg-transparent: rgba(233, 30, 99, 0);
-  --mie-tabs-fg: rgba(233, 30, 99, 0.82);
-}
-
-:root, [data-theme=light] .mie.tabs.deeppurple, .mie.tabs.deeppurple[data-theme=light] {
-  --mie-tabs-bg-main: rgba(94, 53, 177, 0);
-  --mie-tabs-bg-active: rgba(94, 53, 177, 0.2);
-  --mie-tabs-bg-hover: rgba(94, 53, 177, 0.3);
-  --mie-tabs-bg-transparent: rgba(94, 53, 177, 0);
-  --mie-tabs-fg: rgba(94, 53, 177, 0.82);
-}
-
-:root, [data-theme=light] .mie.tabs.indigo, .mie.tabs.indigo[data-theme=light] {
-  --mie-tabs-bg-main: rgba(63, 81, 181, 0);
-  --mie-tabs-bg-active: rgba(63, 81, 181, 0.2);
-  --mie-tabs-bg-hover: rgba(63, 81, 181, 0.3);
-  --mie-tabs-bg-transparent: rgba(63, 81, 181, 0);
-  --mie-tabs-fg: rgba(63, 81, 181, 0.82);
-}
-
-:root, [data-theme=light] .mie.tabs.lightgreen, .mie.tabs.lightgreen[data-theme=light] {
-  --mie-tabs-bg-main: rgba(139, 195, 74, 0);
-  --mie-tabs-bg-active: rgba(139, 195, 74, 0.2);
-  --mie-tabs-bg-hover: rgba(139, 195, 74, 0.3);
-  --mie-tabs-bg-transparent: rgba(139, 195, 74, 0);
-  --mie-tabs-fg: rgba(139, 195, 74, 0.82);
-}
-
-:root, [data-theme=light] .mie.tabs.deeporange, .mie.tabs.deeporange[data-theme=light] {
-  --mie-tabs-bg-main: rgba(244, 81, 30, 0);
-  --mie-tabs-bg-active: rgba(244, 81, 30, 0.2);
-  --mie-tabs-bg-hover: rgba(244, 81, 30, 0.3);
-  --mie-tabs-bg-transparent: rgba(244, 81, 30, 0);
-  --mie-tabs-fg: rgba(244, 81, 30, 0.82);
-}
-
-:root, [data-theme=light] .mie.tabs.light, .mie.tabs.light[data-theme=light] {
-  --mie-tabs-bg-main: rgba(255, 255, 255, 0);
-  --mie-tabs-bg-active: rgba(255, 255, 255, 0.2);
-  --mie-tabs-bg-hover: rgba(255, 255, 255, 0.3);
-  --mie-tabs-bg-transparent: rgba(255, 255, 255, 0);
-  --mie-tabs-fg: rgba(255, 255, 255, 0.82);
-}
-
-:root, [data-theme=light] .mie.tabs.dark, .mie.tabs.dark[data-theme=light] {
-  --mie-tabs-bg-main: rgba(0, 0, 0, 0);
-  --mie-tabs-bg-active: rgba(0, 0, 0, 0.2);
-  --mie-tabs-bg-hover: rgba(0, 0, 0, 0.3);
-  --mie-tabs-bg-transparent: rgba(0, 0, 0, 0);
-  --mie-tabs-fg: rgba(0, 0, 0, 0.82);
-}
-
-[data-theme=dark] .mie.tabs, .mie.tabs[data-theme=dark] {
-  --mie-tabs-bg: #494949;
-}
-
-[data-theme=dark] .mie.tabs.blue, .mie.tabs.blue[data-theme=dark] {
-  --mie-tabs-bg-main: rgba(30, 136, 229, 0);
-  --mie-tabs-bg-active: rgba(30, 136, 229, 0.2);
-  --mie-tabs-bg-hover: rgba(30, 136, 229, 0.3);
-  --mie-tabs-bg-transparent: rgba(30, 136, 229, 0);
-  --mie-tabs-fg: rgba(30, 136, 229, 0.82);
-}
-
-[data-theme=dark] .mie.tabs.green, .mie.tabs.green[data-theme=dark] {
-  --mie-tabs-bg-main: rgba(67, 160, 71, 0);
-  --mie-tabs-bg-active: rgba(67, 160, 71, 0.2);
-  --mie-tabs-bg-hover: rgba(67, 160, 71, 0.3);
-  --mie-tabs-bg-transparent: rgba(67, 160, 71, 0);
-  --mie-tabs-fg: rgba(67, 160, 71, 0.82);
-}
-
-[data-theme=dark] .mie.tabs.yellow, .mie.tabs.yellow[data-theme=dark] {
-  --mie-tabs-bg-main: rgba(253, 216, 53, 0);
-  --mie-tabs-bg-active: rgba(253, 216, 53, 0.2);
-  --mie-tabs-bg-hover: rgba(253, 216, 53, 0.3);
-  --mie-tabs-bg-transparent: rgba(253, 216, 53, 0);
-  --mie-tabs-fg: rgba(253, 216, 53, 0.82);
-}
-
-[data-theme=dark] .mie.tabs.orange, .mie.tabs.orange[data-theme=dark] {
-  --mie-tabs-bg-main: rgba(251, 140, 0, 0);
-  --mie-tabs-bg-active: rgba(251, 140, 0, 0.2);
-  --mie-tabs-bg-hover: rgba(251, 140, 0, 0.3);
-  --mie-tabs-bg-transparent: rgba(251, 140, 0, 0);
-  --mie-tabs-fg: rgba(251, 140, 0, 0.82);
-}
-
-[data-theme=dark] .mie.tabs.red, .mie.tabs.red[data-theme=dark] {
-  --mie-tabs-bg-main: rgba(229, 57, 53, 0);
-  --mie-tabs-bg-active: rgba(229, 57, 53, 0.2);
-  --mie-tabs-bg-hover: rgba(229, 57, 53, 0.3);
-  --mie-tabs-bg-transparent: rgba(229, 57, 53, 0);
-  --mie-tabs-fg: rgba(229, 57, 53, 0.82);
-}
-
-[data-theme=dark] .mie.tabs.purple, .mie.tabs.purple[data-theme=dark] {
-  --mie-tabs-bg-main: rgba(142, 36, 170, 0);
-  --mie-tabs-bg-active: rgba(142, 36, 170, 0.2);
-  --mie-tabs-bg-hover: rgba(142, 36, 170, 0.3);
-  --mie-tabs-bg-transparent: rgba(142, 36, 170, 0);
-  --mie-tabs-fg: rgba(142, 36, 170, 0.82);
-}
-
-[data-theme=dark] .mie.tabs.brown, .mie.tabs.brown[data-theme=dark] {
-  --mie-tabs-bg-main: rgba(109, 76, 65, 0);
-  --mie-tabs-bg-active: rgba(109, 76, 65, 0.2);
-  --mie-tabs-bg-hover: rgba(109, 76, 65, 0.3);
-  --mie-tabs-bg-transparent: rgba(109, 76, 65, 0);
-  --mie-tabs-fg: rgba(109, 76, 65, 0.82);
-}
-
-[data-theme=dark] .mie.tabs.pink, .mie.tabs.pink[data-theme=dark] {
-  --mie-tabs-bg-main: rgba(216, 27, 96, 0);
-  --mie-tabs-bg-active: rgba(216, 27, 96, 0.2);
-  --mie-tabs-bg-hover: rgba(216, 27, 96, 0.3);
-  --mie-tabs-bg-transparent: rgba(216, 27, 96, 0);
-  --mie-tabs-fg: rgba(216, 27, 96, 0.82);
-}
-
-[data-theme=dark] .mie.tabs.deeppurple, .mie.tabs.deeppurple[data-theme=dark] {
-  --mie-tabs-bg-main: rgba(81, 45, 168, 0);
-  --mie-tabs-bg-active: rgba(81, 45, 168, 0.2);
-  --mie-tabs-bg-hover: rgba(81, 45, 168, 0.3);
-  --mie-tabs-bg-transparent: rgba(81, 45, 168, 0);
-  --mie-tabs-fg: rgba(81, 45, 168, 0.82);
-}
-
-[data-theme=dark] .mie.tabs.indigo, .mie.tabs.indigo[data-theme=dark] {
-  --mie-tabs-bg-main: rgba(57, 73, 171, 0);
-  --mie-tabs-bg-active: rgba(57, 73, 171, 0.2);
-  --mie-tabs-bg-hover: rgba(57, 73, 171, 0.3);
-  --mie-tabs-bg-transparent: rgba(57, 73, 171, 0);
-  --mie-tabs-fg: rgba(57, 73, 171, 0.82);
-}
-
-[data-theme=dark] .mie.tabs.lightgreen, .mie.tabs.lightgreen[data-theme=dark] {
-  --mie-tabs-bg-main: rgba(124, 179, 66, 0);
-  --mie-tabs-bg-active: rgba(124, 179, 66, 0.2);
-  --mie-tabs-bg-hover: rgba(124, 179, 66, 0.3);
-  --mie-tabs-bg-transparent: rgba(124, 179, 66, 0);
-  --mie-tabs-fg: rgba(124, 179, 66, 0.82);
-}
-
-[data-theme=dark] .mie.tabs.deeporange, .mie.tabs.deeporange[data-theme=dark] {
-  --mie-tabs-bg-main: rgba(230, 74, 25, 0);
-  --mie-tabs-bg-active: rgba(230, 74, 25, 0.2);
-  --mie-tabs-bg-hover: rgba(230, 74, 25, 0.3);
-  --mie-tabs-bg-transparent: rgba(230, 74, 25, 0);
-  --mie-tabs-fg: rgba(230, 74, 25, 0.82);
-}
-
-[data-theme=dark] .mie.tabs.light, .mie.tabs.light[data-theme=dark] {
-  --mie-tabs-bg-main: rgba(255, 255, 255, 0);
-  --mie-tabs-bg-active: rgba(255, 255, 255, 0.2);
-  --mie-tabs-bg-hover: rgba(255, 255, 255, 0.3);
-  --mie-tabs-bg-transparent: rgba(255, 255, 255, 0);
-  --mie-tabs-fg: rgba(255, 255, 255, 0.82);
-}
-
-[data-theme=dark] .mie.tabs.dark, .mie.tabs.dark[data-theme=dark] {
-  --mie-tabs-bg-main: rgba(0, 0, 0, 0);
-  --mie-tabs-bg-active: rgba(0, 0, 0, 0.2);
-  --mie-tabs-bg-hover: rgba(0, 0, 0, 0.3);
-  --mie-tabs-bg-transparent: rgba(0, 0, 0, 0);
-  --mie-tabs-fg: rgba(0, 0, 0, 0.82);
 }
 
 :root, [data-theme=light] .mie.text, .mie.text[data-theme=light] {
@@ -6620,6 +6435,365 @@ template {
   --mie-window-bg-overlay: rgba(0, 0, 0, 0.07);
 }
 
+:root, [data-theme=light] .mie.tabs, .mie.tabs[data-theme=light] {
+  --mie-tabs-bg: #ebebeb;
+}
+
+:root, [data-theme=light] .mie.tabs.blue, .mie.tabs.blue[data-theme=light] {
+  --mie-tabs-bg-main: rgba(33, 150, 243, 0);
+  --mie-tabs-bg-active: rgba(33, 150, 243, 0.2);
+  --mie-tabs-bg-hover: rgba(33, 150, 243, 0.3);
+  --mie-tabs-bg-transparent: rgba(33, 150, 243, 0);
+  --mie-tabs-fg: rgba(33, 150, 243, 0.82);
+}
+
+:root, [data-theme=light] .mie.tabs.green, .mie.tabs.green[data-theme=light] {
+  --mie-tabs-bg-main: rgba(76, 175, 80, 0);
+  --mie-tabs-bg-active: rgba(76, 175, 80, 0.2);
+  --mie-tabs-bg-hover: rgba(76, 175, 80, 0.3);
+  --mie-tabs-bg-transparent: rgba(76, 175, 80, 0);
+  --mie-tabs-fg: rgba(76, 175, 80, 0.82);
+}
+
+:root, [data-theme=light] .mie.tabs.yellow, .mie.tabs.yellow[data-theme=light] {
+  --mie-tabs-bg-main: rgba(255, 235, 59, 0);
+  --mie-tabs-bg-active: rgba(255, 235, 59, 0.2);
+  --mie-tabs-bg-hover: rgba(255, 235, 59, 0.3);
+  --mie-tabs-bg-transparent: rgba(255, 235, 59, 0);
+  --mie-tabs-fg: rgba(255, 235, 59, 0.82);
+}
+
+:root, [data-theme=light] .mie.tabs.orange, .mie.tabs.orange[data-theme=light] {
+  --mie-tabs-bg-main: rgba(255, 152, 0, 0);
+  --mie-tabs-bg-active: rgba(255, 152, 0, 0.2);
+  --mie-tabs-bg-hover: rgba(255, 152, 0, 0.3);
+  --mie-tabs-bg-transparent: rgba(255, 152, 0, 0);
+  --mie-tabs-fg: rgba(255, 152, 0, 0.82);
+}
+
+:root, [data-theme=light] .mie.tabs.red, .mie.tabs.red[data-theme=light] {
+  --mie-tabs-bg-main: rgba(244, 67, 54, 0);
+  --mie-tabs-bg-active: rgba(244, 67, 54, 0.2);
+  --mie-tabs-bg-hover: rgba(244, 67, 54, 0.3);
+  --mie-tabs-bg-transparent: rgba(244, 67, 54, 0);
+  --mie-tabs-fg: rgba(244, 67, 54, 0.82);
+}
+
+:root, [data-theme=light] .mie.tabs.purple, .mie.tabs.purple[data-theme=light] {
+  --mie-tabs-bg-main: rgba(156, 39, 176, 0);
+  --mie-tabs-bg-active: rgba(156, 39, 176, 0.2);
+  --mie-tabs-bg-hover: rgba(156, 39, 176, 0.3);
+  --mie-tabs-bg-transparent: rgba(156, 39, 176, 0);
+  --mie-tabs-fg: rgba(156, 39, 176, 0.82);
+}
+
+:root, [data-theme=light] .mie.tabs.brown, .mie.tabs.brown[data-theme=light] {
+  --mie-tabs-bg-main: rgba(121, 85, 72, 0);
+  --mie-tabs-bg-active: rgba(121, 85, 72, 0.2);
+  --mie-tabs-bg-hover: rgba(121, 85, 72, 0.3);
+  --mie-tabs-bg-transparent: rgba(121, 85, 72, 0);
+  --mie-tabs-fg: rgba(121, 85, 72, 0.82);
+}
+
+:root, [data-theme=light] .mie.tabs.pink, .mie.tabs.pink[data-theme=light] {
+  --mie-tabs-bg-main: rgba(233, 30, 99, 0);
+  --mie-tabs-bg-active: rgba(233, 30, 99, 0.2);
+  --mie-tabs-bg-hover: rgba(233, 30, 99, 0.3);
+  --mie-tabs-bg-transparent: rgba(233, 30, 99, 0);
+  --mie-tabs-fg: rgba(233, 30, 99, 0.82);
+}
+
+:root, [data-theme=light] .mie.tabs.deeppurple, .mie.tabs.deeppurple[data-theme=light] {
+  --mie-tabs-bg-main: rgba(94, 53, 177, 0);
+  --mie-tabs-bg-active: rgba(94, 53, 177, 0.2);
+  --mie-tabs-bg-hover: rgba(94, 53, 177, 0.3);
+  --mie-tabs-bg-transparent: rgba(94, 53, 177, 0);
+  --mie-tabs-fg: rgba(94, 53, 177, 0.82);
+}
+
+:root, [data-theme=light] .mie.tabs.indigo, .mie.tabs.indigo[data-theme=light] {
+  --mie-tabs-bg-main: rgba(63, 81, 181, 0);
+  --mie-tabs-bg-active: rgba(63, 81, 181, 0.2);
+  --mie-tabs-bg-hover: rgba(63, 81, 181, 0.3);
+  --mie-tabs-bg-transparent: rgba(63, 81, 181, 0);
+  --mie-tabs-fg: rgba(63, 81, 181, 0.82);
+}
+
+:root, [data-theme=light] .mie.tabs.lightgreen, .mie.tabs.lightgreen[data-theme=light] {
+  --mie-tabs-bg-main: rgba(139, 195, 74, 0);
+  --mie-tabs-bg-active: rgba(139, 195, 74, 0.2);
+  --mie-tabs-bg-hover: rgba(139, 195, 74, 0.3);
+  --mie-tabs-bg-transparent: rgba(139, 195, 74, 0);
+  --mie-tabs-fg: rgba(139, 195, 74, 0.82);
+}
+
+:root, [data-theme=light] .mie.tabs.deeporange, .mie.tabs.deeporange[data-theme=light] {
+  --mie-tabs-bg-main: rgba(244, 81, 30, 0);
+  --mie-tabs-bg-active: rgba(244, 81, 30, 0.2);
+  --mie-tabs-bg-hover: rgba(244, 81, 30, 0.3);
+  --mie-tabs-bg-transparent: rgba(244, 81, 30, 0);
+  --mie-tabs-fg: rgba(244, 81, 30, 0.82);
+}
+
+:root, [data-theme=light] .mie.tabs.light, .mie.tabs.light[data-theme=light] {
+  --mie-tabs-bg-main: rgba(255, 255, 255, 0);
+  --mie-tabs-bg-active: rgba(255, 255, 255, 0.2);
+  --mie-tabs-bg-hover: rgba(255, 255, 255, 0.3);
+  --mie-tabs-bg-transparent: rgba(255, 255, 255, 0);
+  --mie-tabs-fg: rgba(255, 255, 255, 0.82);
+}
+
+:root, [data-theme=light] .mie.tabs.dark, .mie.tabs.dark[data-theme=light] {
+  --mie-tabs-bg-main: rgba(0, 0, 0, 0);
+  --mie-tabs-bg-active: rgba(0, 0, 0, 0.2);
+  --mie-tabs-bg-hover: rgba(0, 0, 0, 0.3);
+  --mie-tabs-bg-transparent: rgba(0, 0, 0, 0);
+  --mie-tabs-fg: rgba(0, 0, 0, 0.82);
+}
+
+[data-theme=dark] .mie.tabs, .mie.tabs[data-theme=dark] {
+  --mie-tabs-bg: #494949;
+}
+
+[data-theme=dark] .mie.tabs.blue, .mie.tabs.blue[data-theme=dark] {
+  --mie-tabs-bg-main: rgba(30, 136, 229, 0);
+  --mie-tabs-bg-active: rgba(30, 136, 229, 0.2);
+  --mie-tabs-bg-hover: rgba(30, 136, 229, 0.3);
+  --mie-tabs-bg-transparent: rgba(30, 136, 229, 0);
+  --mie-tabs-fg: rgba(30, 136, 229, 0.82);
+}
+
+[data-theme=dark] .mie.tabs.green, .mie.tabs.green[data-theme=dark] {
+  --mie-tabs-bg-main: rgba(67, 160, 71, 0);
+  --mie-tabs-bg-active: rgba(67, 160, 71, 0.2);
+  --mie-tabs-bg-hover: rgba(67, 160, 71, 0.3);
+  --mie-tabs-bg-transparent: rgba(67, 160, 71, 0);
+  --mie-tabs-fg: rgba(67, 160, 71, 0.82);
+}
+
+[data-theme=dark] .mie.tabs.yellow, .mie.tabs.yellow[data-theme=dark] {
+  --mie-tabs-bg-main: rgba(253, 216, 53, 0);
+  --mie-tabs-bg-active: rgba(253, 216, 53, 0.2);
+  --mie-tabs-bg-hover: rgba(253, 216, 53, 0.3);
+  --mie-tabs-bg-transparent: rgba(253, 216, 53, 0);
+  --mie-tabs-fg: rgba(253, 216, 53, 0.82);
+}
+
+[data-theme=dark] .mie.tabs.orange, .mie.tabs.orange[data-theme=dark] {
+  --mie-tabs-bg-main: rgba(251, 140, 0, 0);
+  --mie-tabs-bg-active: rgba(251, 140, 0, 0.2);
+  --mie-tabs-bg-hover: rgba(251, 140, 0, 0.3);
+  --mie-tabs-bg-transparent: rgba(251, 140, 0, 0);
+  --mie-tabs-fg: rgba(251, 140, 0, 0.82);
+}
+
+[data-theme=dark] .mie.tabs.red, .mie.tabs.red[data-theme=dark] {
+  --mie-tabs-bg-main: rgba(229, 57, 53, 0);
+  --mie-tabs-bg-active: rgba(229, 57, 53, 0.2);
+  --mie-tabs-bg-hover: rgba(229, 57, 53, 0.3);
+  --mie-tabs-bg-transparent: rgba(229, 57, 53, 0);
+  --mie-tabs-fg: rgba(229, 57, 53, 0.82);
+}
+
+[data-theme=dark] .mie.tabs.purple, .mie.tabs.purple[data-theme=dark] {
+  --mie-tabs-bg-main: rgba(142, 36, 170, 0);
+  --mie-tabs-bg-active: rgba(142, 36, 170, 0.2);
+  --mie-tabs-bg-hover: rgba(142, 36, 170, 0.3);
+  --mie-tabs-bg-transparent: rgba(142, 36, 170, 0);
+  --mie-tabs-fg: rgba(142, 36, 170, 0.82);
+}
+
+[data-theme=dark] .mie.tabs.brown, .mie.tabs.brown[data-theme=dark] {
+  --mie-tabs-bg-main: rgba(109, 76, 65, 0);
+  --mie-tabs-bg-active: rgba(109, 76, 65, 0.2);
+  --mie-tabs-bg-hover: rgba(109, 76, 65, 0.3);
+  --mie-tabs-bg-transparent: rgba(109, 76, 65, 0);
+  --mie-tabs-fg: rgba(109, 76, 65, 0.82);
+}
+
+[data-theme=dark] .mie.tabs.pink, .mie.tabs.pink[data-theme=dark] {
+  --mie-tabs-bg-main: rgba(216, 27, 96, 0);
+  --mie-tabs-bg-active: rgba(216, 27, 96, 0.2);
+  --mie-tabs-bg-hover: rgba(216, 27, 96, 0.3);
+  --mie-tabs-bg-transparent: rgba(216, 27, 96, 0);
+  --mie-tabs-fg: rgba(216, 27, 96, 0.82);
+}
+
+[data-theme=dark] .mie.tabs.deeppurple, .mie.tabs.deeppurple[data-theme=dark] {
+  --mie-tabs-bg-main: rgba(81, 45, 168, 0);
+  --mie-tabs-bg-active: rgba(81, 45, 168, 0.2);
+  --mie-tabs-bg-hover: rgba(81, 45, 168, 0.3);
+  --mie-tabs-bg-transparent: rgba(81, 45, 168, 0);
+  --mie-tabs-fg: rgba(81, 45, 168, 0.82);
+}
+
+[data-theme=dark] .mie.tabs.indigo, .mie.tabs.indigo[data-theme=dark] {
+  --mie-tabs-bg-main: rgba(57, 73, 171, 0);
+  --mie-tabs-bg-active: rgba(57, 73, 171, 0.2);
+  --mie-tabs-bg-hover: rgba(57, 73, 171, 0.3);
+  --mie-tabs-bg-transparent: rgba(57, 73, 171, 0);
+  --mie-tabs-fg: rgba(57, 73, 171, 0.82);
+}
+
+[data-theme=dark] .mie.tabs.lightgreen, .mie.tabs.lightgreen[data-theme=dark] {
+  --mie-tabs-bg-main: rgba(124, 179, 66, 0);
+  --mie-tabs-bg-active: rgba(124, 179, 66, 0.2);
+  --mie-tabs-bg-hover: rgba(124, 179, 66, 0.3);
+  --mie-tabs-bg-transparent: rgba(124, 179, 66, 0);
+  --mie-tabs-fg: rgba(124, 179, 66, 0.82);
+}
+
+[data-theme=dark] .mie.tabs.deeporange, .mie.tabs.deeporange[data-theme=dark] {
+  --mie-tabs-bg-main: rgba(230, 74, 25, 0);
+  --mie-tabs-bg-active: rgba(230, 74, 25, 0.2);
+  --mie-tabs-bg-hover: rgba(230, 74, 25, 0.3);
+  --mie-tabs-bg-transparent: rgba(230, 74, 25, 0);
+  --mie-tabs-fg: rgba(230, 74, 25, 0.82);
+}
+
+[data-theme=dark] .mie.tabs.light, .mie.tabs.light[data-theme=dark] {
+  --mie-tabs-bg-main: rgba(255, 255, 255, 0);
+  --mie-tabs-bg-active: rgba(255, 255, 255, 0.2);
+  --mie-tabs-bg-hover: rgba(255, 255, 255, 0.3);
+  --mie-tabs-bg-transparent: rgba(255, 255, 255, 0);
+  --mie-tabs-fg: rgba(255, 255, 255, 0.82);
+}
+
+[data-theme=dark] .mie.tabs.dark, .mie.tabs.dark[data-theme=dark] {
+  --mie-tabs-bg-main: rgba(0, 0, 0, 0);
+  --mie-tabs-bg-active: rgba(0, 0, 0, 0.2);
+  --mie-tabs-bg-hover: rgba(0, 0, 0, 0.3);
+  --mie-tabs-bg-transparent: rgba(0, 0, 0, 0);
+  --mie-tabs-fg: rgba(0, 0, 0, 0.82);
+}
+
+:root, [data-theme=light] .mie.tab, .mie.tab[data-theme=light] {
+  --mie-tab-bg-active: #e0e0e0;
+  --mie-tab-bg-hover: #ededed;
+  --mie-tab-bg-main: #fff;
+  --mie-tab-fg: rgba(0, 0, 0, 0.82);
+}
+
+:root, [data-theme=light] .mie.tab.blue, .mie.tab.blue[data-theme=light] {
+  --mie-tab-bg: rgba(33, 150, 243, 0.2);
+}
+
+:root, [data-theme=light] .mie.tab.green, .mie.tab.green[data-theme=light] {
+  --mie-tab-bg: rgba(76, 175, 80, 0.2);
+}
+
+:root, [data-theme=light] .mie.tab.yellow, .mie.tab.yellow[data-theme=light] {
+  --mie-tab-bg: rgba(255, 235, 59, 0.2);
+}
+
+:root, [data-theme=light] .mie.tab.orange, .mie.tab.orange[data-theme=light] {
+  --mie-tab-bg: rgba(255, 152, 0, 0.2);
+}
+
+:root, [data-theme=light] .mie.tab.red, .mie.tab.red[data-theme=light] {
+  --mie-tab-bg: rgba(244, 67, 54, 0.2);
+}
+
+:root, [data-theme=light] .mie.tab.purple, .mie.tab.purple[data-theme=light] {
+  --mie-tab-bg: rgba(156, 39, 176, 0.2);
+}
+
+:root, [data-theme=light] .mie.tab.brown, .mie.tab.brown[data-theme=light] {
+  --mie-tab-bg: rgba(121, 85, 72, 0.2);
+}
+
+:root, [data-theme=light] .mie.tab.pink, .mie.tab.pink[data-theme=light] {
+  --mie-tab-bg: rgba(233, 30, 99, 0.2);
+}
+
+:root, [data-theme=light] .mie.tab.deeppurple, .mie.tab.deeppurple[data-theme=light] {
+  --mie-tab-bg: rgba(94, 53, 177, 0.2);
+}
+
+:root, [data-theme=light] .mie.tab.indigo, .mie.tab.indigo[data-theme=light] {
+  --mie-tab-bg: rgba(63, 81, 181, 0.2);
+}
+
+:root, [data-theme=light] .mie.tab.lightgreen, .mie.tab.lightgreen[data-theme=light] {
+  --mie-tab-bg: rgba(139, 195, 74, 0.2);
+}
+
+:root, [data-theme=light] .mie.tab.deeporange, .mie.tab.deeporange[data-theme=light] {
+  --mie-tab-bg: rgba(244, 81, 30, 0.2);
+}
+
+:root, [data-theme=light] .mie.tab.light, .mie.tab.light[data-theme=light] {
+  --mie-tab-bg: rgba(255, 255, 255, 0.2);
+}
+
+:root, [data-theme=light] .mie.tab.dark, .mie.tab.dark[data-theme=light] {
+  --mie-tab-bg: rgba(0, 0, 0, 0.2);
+}
+
+[data-theme=dark] .mie.tab, .mie.tab[data-theme=dark] {
+  --mie-tab-bg-main: rgba(255, 255, 255, 0.15);
+  --mie-tab-bg-active: rgba(255, 255, 255, 0.15);
+  --mie-tab-bg-hover: rgba(255, 255, 255, 0.2);
+  --mie-tab-bg-transparent: rgba(255, 255, 255, 0);
+  --mie-tab-fg: #fff;
+}
+
+[data-theme=dark] .mie.tab.blue, .mie.tab.blue[data-theme=dark] {
+  --mie-tab-bg: rgba(30, 136, 229, 0.2);
+}
+
+[data-theme=dark] .mie.tab.green, .mie.tab.green[data-theme=dark] {
+  --mie-tab-bg: rgba(67, 160, 71, 0.2);
+}
+
+[data-theme=dark] .mie.tab.yellow, .mie.tab.yellow[data-theme=dark] {
+  --mie-tab-bg: rgba(253, 216, 53, 0.2);
+}
+
+[data-theme=dark] .mie.tab.orange, .mie.tab.orange[data-theme=dark] {
+  --mie-tab-bg: rgba(251, 140, 0, 0.2);
+}
+
+[data-theme=dark] .mie.tab.red, .mie.tab.red[data-theme=dark] {
+  --mie-tab-bg: rgba(229, 57, 53, 0.2);
+}
+
+[data-theme=dark] .mie.tab.purple, .mie.tab.purple[data-theme=dark] {
+  --mie-tab-bg: rgba(142, 36, 170, 0.2);
+}
+
+[data-theme=dark] .mie.tab.brown, .mie.tab.brown[data-theme=dark] {
+  --mie-tab-bg: rgba(109, 76, 65, 0.2);
+}
+
+[data-theme=dark] .mie.tab.pink, .mie.tab.pink[data-theme=dark] {
+  --mie-tab-bg: rgba(216, 27, 96, 0.2);
+}
+
+[data-theme=dark] .mie.tab.deeppurple, .mie.tab.deeppurple[data-theme=dark] {
+  --mie-tab-bg: rgba(81, 45, 168, 0.2);
+}
+
+[data-theme=dark] .mie.tab.indigo, .mie.tab.indigo[data-theme=dark] {
+  --mie-tab-bg: rgba(57, 73, 171, 0.2);
+}
+
+[data-theme=dark] .mie.tab.lightgreen, .mie.tab.lightgreen[data-theme=dark] {
+  --mie-tab-bg: rgba(124, 179, 66, 0.2);
+}
+
+[data-theme=dark] .mie.tab.deeporange, .mie.tab.deeporange[data-theme=dark] {
+  --mie-tab-bg: rgba(230, 74, 25, 0.2);
+}
+
+[data-theme=dark] .mie.tab.light, .mie.tab.light[data-theme=dark] {
+  --mie-tab-bg: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme=dark] .mie.tab.dark, .mie.tab.dark[data-theme=dark] {
+  --mie-tab-bg: rgba(0, 0, 0, 0.2);
+}
+
 .mie.clamp {
   --mie-clamp-container-padding-h: 1.2rem;
   --mie-clamp-container-padding-v: 1.2rem;
@@ -6719,6 +6893,20 @@ template {
 
 .mie.window {
   --mie-window-rounded: 1.2rem;
+}
+
+.mie.tabs {
+  --mie-tabs-pv: 0.6rem;
+  --mie-tabs-ph: 0.8rem;
+  --mie-tabs-rounded: 0.6rem;
+}
+
+.mie.tab {
+  --mie-tab-icon-offset: 0.8rem;
+  --mie-tab-pv: 0.5rem;
+  --mie-tab-rounded: 0.6rem;
+  --mie-tab-ph: 1.6rem;
+  --mie-tab-fs: 1.4rem;
 }
 
 .mie.button {
@@ -7069,12 +7257,6 @@ template {
   --mie-slider-min-length: 14rem;
   --mie-slider-thumb: 2.6rem;
   --mie-slider-h: 0.8rem;
-}
-
-.mie.tabs {
-  --mie-tabs-pv: 0.6rem;
-  --mie-tabs-ph: 0.8rem;
-  --mie-tabs-rounded: 0.6rem;
 }
 
 .mie.text {

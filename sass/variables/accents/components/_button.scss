@@ -1,3 +1,6 @@
+@use "sass:color" as *;
+@use "sass:map";
+
 @use "../../../mixins" as *;
 @use "../../../utils" as *;
 @use "../../palette" as *;
@@ -21,20 +24,13 @@ $button-default-accent: (
   ),
 ) !default;
 
-@use "sass:color" as *;
-@use "sass:map";
-
-@use "../../palette" as *;
-@use "../../../mixins" as *;
-@use "../../../utils" as *;
-
 @function map-to-button($theme, $accent, $colors) {
   $bg: map.get($colors, "bg");
   $is-dark: $theme == "dark";
 
   $fg-filled: if(
     $is-dark,
-    adjust($bg, $lightness: -15%),
+    adjust($bg, $lightness: -25%),
     adjust($bg, $lightness: -15%)
   );
 
