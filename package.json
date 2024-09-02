@@ -1,6 +1,6 @@
 {
   "name": "@mielo-ui/mielo",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Mielo UI - scss based components library inspired by LibAdwaita",
   "main": "sass/mielo.scss",
   "unpkg": "css/mielo.css",
