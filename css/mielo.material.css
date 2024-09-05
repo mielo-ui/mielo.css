@@ -860,6 +860,58 @@ template {
   --mie-progress-bg: rgba(38, 162, 105, 0.2);
 }
 
+:root, [data-theme=light] .mie.progressbar, .mie.progressbar[data-theme=light] {
+  --mie-progressbar-indeterminate-bg: rgba(0, 0, 0, 0.3);
+  --mie-progressbar-bg: #3584e4;
+  --mie-progressbar-fg: #fff;
+}
+
+:root, [data-theme=light] .mie.progressbar.accent, .mie.progressbar.accent[data-theme=light] {
+  --mie-progressbar-indeterminate-bg: #3584e4;
+  --mie-progressbar-bg: #3584e4;
+}
+
+:root, [data-theme=light] .mie.progressbar.warning, .mie.progressbar.warning[data-theme=light] {
+  --mie-progressbar-indeterminate-bg: #e5a50a;
+  --mie-progressbar-bg: #e5a50a;
+}
+
+:root, [data-theme=light] .mie.progressbar.error, .mie.progressbar.error[data-theme=light] {
+  --mie-progressbar-indeterminate-bg: #e01b24;
+  --mie-progressbar-bg: #e01b24;
+}
+
+:root, [data-theme=light] .mie.progressbar.success, .mie.progressbar.success[data-theme=light] {
+  --mie-progressbar-indeterminate-bg: #2ec27e;
+  --mie-progressbar-bg: #2ec27e;
+}
+
+[data-theme=dark] .mie.progressbar, .mie.progressbar[data-theme=dark] {
+  --mie-progressbar-indeterminate-bg: rgba(0, 0, 0, 0.3);
+  --mie-progressbar-bg: #15539e;
+  --mie-progressbar-fg: #fff;
+}
+
+[data-theme=dark] .mie.progressbar.accent, .mie.progressbar.accent[data-theme=dark] {
+  --mie-progressbar-indeterminate-bg: #3584e4;
+  --mie-progressbar-bg: #3584e4;
+}
+
+[data-theme=dark] .mie.progressbar.warning, .mie.progressbar.warning[data-theme=dark] {
+  --mie-progressbar-indeterminate-bg: #cd9309;
+  --mie-progressbar-bg: #cd9309;
+}
+
+[data-theme=dark] .mie.progressbar.error, .mie.progressbar.error[data-theme=dark] {
+  --mie-progressbar-indeterminate-bg: #e01b24;
+  --mie-progressbar-bg: #e01b24;
+}
+
+[data-theme=dark] .mie.progressbar.success, .mie.progressbar.success[data-theme=dark] {
+  --mie-progressbar-indeterminate-bg: #26a269;
+  --mie-progressbar-bg: #26a269;
+}
+
 :root, [data-theme=light] .mie.radio, .mie.radio[data-theme=light] {
   --mie-radio-border-active: #1a5fb4;
   --mie-radio-bg: #3584e4;
@@ -1438,56 +1490,6 @@ template {
 
 [data-theme=dark] .mie.rows, .mie.rows[data-theme=dark] {
   --mie-rows-border: rgba(255, 255, 255, 0.07);
-}
-
-:root, [data-theme=light] .mie.row.item, .mie.row.item[data-theme=light] {
-  --mie-row-item-overlay: transparent;
-  --mie-row-item-bg: #fff;
-}
-
-:root, [data-theme=light] .mie.row.item.accent, .mie.row.item.accent[data-theme=light] {
-  --mie-row-item-overlay: rgba(53, 132, 228, 0.08);
-  --mie-row-item-outline: #3584e4;
-}
-
-:root, [data-theme=light] .mie.row.item.warning, .mie.row.item.warning[data-theme=light] {
-  --mie-row-item-overlay: rgba(229, 165, 10, 0.08);
-  --mie-row-item-outline: #e5a50a;
-}
-
-:root, [data-theme=light] .mie.row.item.error, .mie.row.item.error[data-theme=light] {
-  --mie-row-item-overlay: rgba(224, 27, 36, 0.08);
-  --mie-row-item-outline: #e01b24;
-}
-
-:root, [data-theme=light] .mie.row.item.success, .mie.row.item.success[data-theme=light] {
-  --mie-row-item-overlay: rgba(46, 194, 126, 0.08);
-  --mie-row-item-outline: #2ec27e;
-}
-
-[data-theme=dark] .mie.row.item, .mie.row.item[data-theme=dark] {
-  --mie-row-item-overlay: transparent;
-  --mie-row-item-bg: #343434;
-}
-
-[data-theme=dark] .mie.row.item.accent, .mie.row.item.accent[data-theme=dark] {
-  --mie-row-item-overlay: rgba(53, 132, 228, 0.08);
-  --mie-row-item-outline: #3584e4;
-}
-
-[data-theme=dark] .mie.row.item.warning, .mie.row.item.warning[data-theme=dark] {
-  --mie-row-item-overlay: rgba(205, 147, 9, 0.08);
-  --mie-row-item-outline: #cd9309;
-}
-
-[data-theme=dark] .mie.row.item.error, .mie.row.item.error[data-theme=dark] {
-  --mie-row-item-overlay: rgba(224, 27, 36, 0.08);
-  --mie-row-item-outline: #e01b24;
-}
-
-[data-theme=dark] .mie.row.item.success, .mie.row.item.success[data-theme=dark] {
-  --mie-row-item-overlay: rgba(38, 162, 105, 0.08);
-  --mie-row-item-outline: #26a269;
 }
 
 :root, [data-theme=light] .mie, .mie[data-theme=light] {
@@ -3747,6 +3749,158 @@ template {
   --mie-progress-bg: rgba(0, 0, 0, 0.2);
 }
 
+:root, [data-theme=light] .mie.progressbar, .mie.progressbar[data-theme=light] {
+  --mie-progressbar-indeterminate-bg: rgba(0, 0, 0, 0.3);
+  --mie-progressbar-bg: #3584e4;
+  --mie-progressbar-fg: #fff;
+}
+
+:root, [data-theme=light] .mie.progressbar.blue, .mie.progressbar.blue[data-theme=light] {
+  --mie-progressbar-indeterminate-bg: #2196f3;
+  --mie-progressbar-bg: #2196f3;
+}
+
+:root, [data-theme=light] .mie.progressbar.green, .mie.progressbar.green[data-theme=light] {
+  --mie-progressbar-indeterminate-bg: #4caf50;
+  --mie-progressbar-bg: #4caf50;
+}
+
+:root, [data-theme=light] .mie.progressbar.yellow, .mie.progressbar.yellow[data-theme=light] {
+  --mie-progressbar-indeterminate-bg: #ffeb3b;
+  --mie-progressbar-bg: #ffeb3b;
+}
+
+:root, [data-theme=light] .mie.progressbar.orange, .mie.progressbar.orange[data-theme=light] {
+  --mie-progressbar-indeterminate-bg: #ff9800;
+  --mie-progressbar-bg: #ff9800;
+}
+
+:root, [data-theme=light] .mie.progressbar.red, .mie.progressbar.red[data-theme=light] {
+  --mie-progressbar-indeterminate-bg: #f44336;
+  --mie-progressbar-bg: #f44336;
+}
+
+:root, [data-theme=light] .mie.progressbar.purple, .mie.progressbar.purple[data-theme=light] {
+  --mie-progressbar-indeterminate-bg: #9c27b0;
+  --mie-progressbar-bg: #9c27b0;
+}
+
+:root, [data-theme=light] .mie.progressbar.brown, .mie.progressbar.brown[data-theme=light] {
+  --mie-progressbar-indeterminate-bg: #795548;
+  --mie-progressbar-bg: #795548;
+}
+
+:root, [data-theme=light] .mie.progressbar.pink, .mie.progressbar.pink[data-theme=light] {
+  --mie-progressbar-indeterminate-bg: #e91e63;
+  --mie-progressbar-bg: #e91e63;
+}
+
+:root, [data-theme=light] .mie.progressbar.deeppurple, .mie.progressbar.deeppurple[data-theme=light] {
+  --mie-progressbar-indeterminate-bg: #5e35b1;
+  --mie-progressbar-bg: #5e35b1;
+}
+
+:root, [data-theme=light] .mie.progressbar.indigo, .mie.progressbar.indigo[data-theme=light] {
+  --mie-progressbar-indeterminate-bg: #3f51b5;
+  --mie-progressbar-bg: #3f51b5;
+}
+
+:root, [data-theme=light] .mie.progressbar.lightgreen, .mie.progressbar.lightgreen[data-theme=light] {
+  --mie-progressbar-indeterminate-bg: #8bc34a;
+  --mie-progressbar-bg: #8bc34a;
+}
+
+:root, [data-theme=light] .mie.progressbar.deeporange, .mie.progressbar.deeporange[data-theme=light] {
+  --mie-progressbar-indeterminate-bg: #f4511e;
+  --mie-progressbar-bg: #f4511e;
+}
+
+:root, [data-theme=light] .mie.progressbar.light, .mie.progressbar.light[data-theme=light] {
+  --mie-progressbar-indeterminate-bg: rgba(255, 255, 255, 0.82);
+  --mie-progressbar-bg: rgba(255, 255, 255, 0.82);
+}
+
+:root, [data-theme=light] .mie.progressbar.dark, .mie.progressbar.dark[data-theme=light] {
+  --mie-progressbar-indeterminate-bg: rgba(0, 0, 0, 0.82);
+  --mie-progressbar-bg: rgba(0, 0, 0, 0.82);
+}
+
+[data-theme=dark] .mie.progressbar, .mie.progressbar[data-theme=dark] {
+  --mie-progressbar-indeterminate-bg: rgba(0, 0, 0, 0.3);
+  --mie-progressbar-bg: #15539e;
+  --mie-progressbar-fg: #fff;
+}
+
+[data-theme=dark] .mie.progressbar.blue, .mie.progressbar.blue[data-theme=dark] {
+  --mie-progressbar-indeterminate-bg: #1e88e5;
+  --mie-progressbar-bg: #1e88e5;
+}
+
+[data-theme=dark] .mie.progressbar.green, .mie.progressbar.green[data-theme=dark] {
+  --mie-progressbar-indeterminate-bg: #43a047;
+  --mie-progressbar-bg: #43a047;
+}
+
+[data-theme=dark] .mie.progressbar.yellow, .mie.progressbar.yellow[data-theme=dark] {
+  --mie-progressbar-indeterminate-bg: #fdd835;
+  --mie-progressbar-bg: #fdd835;
+}
+
+[data-theme=dark] .mie.progressbar.orange, .mie.progressbar.orange[data-theme=dark] {
+  --mie-progressbar-indeterminate-bg: #fb8c00;
+  --mie-progressbar-bg: #fb8c00;
+}
+
+[data-theme=dark] .mie.progressbar.red, .mie.progressbar.red[data-theme=dark] {
+  --mie-progressbar-indeterminate-bg: #e53935;
+  --mie-progressbar-bg: #e53935;
+}
+
+[data-theme=dark] .mie.progressbar.purple, .mie.progressbar.purple[data-theme=dark] {
+  --mie-progressbar-indeterminate-bg: #8e24aa;
+  --mie-progressbar-bg: #8e24aa;
+}
+
+[data-theme=dark] .mie.progressbar.brown, .mie.progressbar.brown[data-theme=dark] {
+  --mie-progressbar-indeterminate-bg: #6d4c41;
+  --mie-progressbar-bg: #6d4c41;
+}
+
+[data-theme=dark] .mie.progressbar.pink, .mie.progressbar.pink[data-theme=dark] {
+  --mie-progressbar-indeterminate-bg: #d81b60;
+  --mie-progressbar-bg: #d81b60;
+}
+
+[data-theme=dark] .mie.progressbar.deeppurple, .mie.progressbar.deeppurple[data-theme=dark] {
+  --mie-progressbar-indeterminate-bg: #512da8;
+  --mie-progressbar-bg: #512da8;
+}
+
+[data-theme=dark] .mie.progressbar.indigo, .mie.progressbar.indigo[data-theme=dark] {
+  --mie-progressbar-indeterminate-bg: #3949ab;
+  --mie-progressbar-bg: #3949ab;
+}
+
+[data-theme=dark] .mie.progressbar.lightgreen, .mie.progressbar.lightgreen[data-theme=dark] {
+  --mie-progressbar-indeterminate-bg: #7cb342;
+  --mie-progressbar-bg: #7cb342;
+}
+
+[data-theme=dark] .mie.progressbar.deeporange, .mie.progressbar.deeporange[data-theme=dark] {
+  --mie-progressbar-indeterminate-bg: #e64a19;
+  --mie-progressbar-bg: #e64a19;
+}
+
+[data-theme=dark] .mie.progressbar.light, .mie.progressbar.light[data-theme=dark] {
+  --mie-progressbar-indeterminate-bg: rgba(255, 255, 255, 0.82);
+  --mie-progressbar-bg: rgba(255, 255, 255, 0.82);
+}
+
+[data-theme=dark] .mie.progressbar.dark, .mie.progressbar.dark[data-theme=dark] {
+  --mie-progressbar-indeterminate-bg: rgba(0, 0, 0, 0.82);
+  --mie-progressbar-bg: rgba(0, 0, 0, 0.82);
+}
+
 :root, [data-theme=light] .mie.radio, .mie.radio[data-theme=light] {
   --mie-radio-border-active: #1a5fb4;
   --mie-radio-bg: #3584e4;
@@ -5425,156 +5579,6 @@ template {
 
 [data-theme=dark] .mie.rows, .mie.rows[data-theme=dark] {
   --mie-rows-border: rgba(255, 255, 255, 0.07);
-}
-
-:root, [data-theme=light] .mie.row.item, .mie.row.item[data-theme=light] {
-  --mie-row-item-overlay: transparent;
-  --mie-row-item-bg: #fff;
-}
-
-:root, [data-theme=light] .mie.row.item.blue, .mie.row.item.blue[data-theme=light] {
-  --mie-row-item-overlay: rgba(33, 150, 243, 0.08);
-  --mie-row-item-outline: #2196f3;
-}
-
-:root, [data-theme=light] .mie.row.item.green, .mie.row.item.green[data-theme=light] {
-  --mie-row-item-overlay: rgba(76, 175, 80, 0.08);
-  --mie-row-item-outline: #4caf50;
-}
-
-:root, [data-theme=light] .mie.row.item.yellow, .mie.row.item.yellow[data-theme=light] {
-  --mie-row-item-overlay: rgba(255, 235, 59, 0.08);
-  --mie-row-item-outline: #ffeb3b;
-}
-
-:root, [data-theme=light] .mie.row.item.orange, .mie.row.item.orange[data-theme=light] {
-  --mie-row-item-overlay: rgba(255, 152, 0, 0.08);
-  --mie-row-item-outline: #ff9800;
-}
-
-:root, [data-theme=light] .mie.row.item.red, .mie.row.item.red[data-theme=light] {
-  --mie-row-item-overlay: rgba(244, 67, 54, 0.08);
-  --mie-row-item-outline: #f44336;
-}
-
-:root, [data-theme=light] .mie.row.item.purple, .mie.row.item.purple[data-theme=light] {
-  --mie-row-item-overlay: rgba(156, 39, 176, 0.08);
-  --mie-row-item-outline: #9c27b0;
-}
-
-:root, [data-theme=light] .mie.row.item.brown, .mie.row.item.brown[data-theme=light] {
-  --mie-row-item-overlay: rgba(121, 85, 72, 0.08);
-  --mie-row-item-outline: #795548;
-}
-
-:root, [data-theme=light] .mie.row.item.pink, .mie.row.item.pink[data-theme=light] {
-  --mie-row-item-overlay: rgba(233, 30, 99, 0.08);
-  --mie-row-item-outline: #e91e63;
-}
-
-:root, [data-theme=light] .mie.row.item.deeppurple, .mie.row.item.deeppurple[data-theme=light] {
-  --mie-row-item-overlay: rgba(94, 53, 177, 0.08);
-  --mie-row-item-outline: #5e35b1;
-}
-
-:root, [data-theme=light] .mie.row.item.indigo, .mie.row.item.indigo[data-theme=light] {
-  --mie-row-item-overlay: rgba(63, 81, 181, 0.08);
-  --mie-row-item-outline: #3f51b5;
-}
-
-:root, [data-theme=light] .mie.row.item.lightgreen, .mie.row.item.lightgreen[data-theme=light] {
-  --mie-row-item-overlay: rgba(139, 195, 74, 0.08);
-  --mie-row-item-outline: #8bc34a;
-}
-
-:root, [data-theme=light] .mie.row.item.deeporange, .mie.row.item.deeporange[data-theme=light] {
-  --mie-row-item-overlay: rgba(244, 81, 30, 0.08);
-  --mie-row-item-outline: #f4511e;
-}
-
-:root, [data-theme=light] .mie.row.item.light, .mie.row.item.light[data-theme=light] {
-  --mie-row-item-overlay: rgba(255, 255, 255, 0.08);
-  --mie-row-item-outline: rgba(255, 255, 255, 0.82);
-}
-
-:root, [data-theme=light] .mie.row.item.dark, .mie.row.item.dark[data-theme=light] {
-  --mie-row-item-overlay: rgba(0, 0, 0, 0.08);
-  --mie-row-item-outline: rgba(0, 0, 0, 0.82);
-}
-
-[data-theme=dark] .mie.row.item, .mie.row.item[data-theme=dark] {
-  --mie-row-item-overlay: transparent;
-  --mie-row-item-bg: #343434;
-}
-
-[data-theme=dark] .mie.row.item.blue, .mie.row.item.blue[data-theme=dark] {
-  --mie-row-item-overlay: rgba(30, 136, 229, 0.08);
-  --mie-row-item-outline: #1e88e5;
-}
-
-[data-theme=dark] .mie.row.item.green, .mie.row.item.green[data-theme=dark] {
-  --mie-row-item-overlay: rgba(67, 160, 71, 0.08);
-  --mie-row-item-outline: #43a047;
-}
-
-[data-theme=dark] .mie.row.item.yellow, .mie.row.item.yellow[data-theme=dark] {
-  --mie-row-item-overlay: rgba(253, 216, 53, 0.08);
-  --mie-row-item-outline: #fdd835;
-}
-
-[data-theme=dark] .mie.row.item.orange, .mie.row.item.orange[data-theme=dark] {
-  --mie-row-item-overlay: rgba(251, 140, 0, 0.08);
-  --mie-row-item-outline: #fb8c00;
-}
-
-[data-theme=dark] .mie.row.item.red, .mie.row.item.red[data-theme=dark] {
-  --mie-row-item-overlay: rgba(229, 57, 53, 0.08);
-  --mie-row-item-outline: #e53935;
-}
-
-[data-theme=dark] .mie.row.item.purple, .mie.row.item.purple[data-theme=dark] {
-  --mie-row-item-overlay: rgba(142, 36, 170, 0.08);
-  --mie-row-item-outline: #8e24aa;
-}
-
-[data-theme=dark] .mie.row.item.brown, .mie.row.item.brown[data-theme=dark] {
-  --mie-row-item-overlay: rgba(109, 76, 65, 0.08);
-  --mie-row-item-outline: #6d4c41;
-}
-
-[data-theme=dark] .mie.row.item.pink, .mie.row.item.pink[data-theme=dark] {
-  --mie-row-item-overlay: rgba(216, 27, 96, 0.08);
-  --mie-row-item-outline: #d81b60;
-}
-
-[data-theme=dark] .mie.row.item.deeppurple, .mie.row.item.deeppurple[data-theme=dark] {
-  --mie-row-item-overlay: rgba(81, 45, 168, 0.08);
-  --mie-row-item-outline: #512da8;
-}
-
-[data-theme=dark] .mie.row.item.indigo, .mie.row.item.indigo[data-theme=dark] {
-  --mie-row-item-overlay: rgba(57, 73, 171, 0.08);
-  --mie-row-item-outline: #3949ab;
-}
-
-[data-theme=dark] .mie.row.item.lightgreen, .mie.row.item.lightgreen[data-theme=dark] {
-  --mie-row-item-overlay: rgba(124, 179, 66, 0.08);
-  --mie-row-item-outline: #7cb342;
-}
-
-[data-theme=dark] .mie.row.item.deeporange, .mie.row.item.deeporange[data-theme=dark] {
-  --mie-row-item-overlay: rgba(230, 74, 25, 0.08);
-  --mie-row-item-outline: #e64a19;
-}
-
-[data-theme=dark] .mie.row.item.light, .mie.row.item.light[data-theme=dark] {
-  --mie-row-item-overlay: rgba(255, 255, 255, 0.08);
-  --mie-row-item-outline: rgba(255, 255, 255, 0.82);
-}
-
-[data-theme=dark] .mie.row.item.dark, .mie.row.item.dark[data-theme=dark] {
-  --mie-row-item-overlay: rgba(0, 0, 0, 0.08);
-  --mie-row-item-outline: rgba(0, 0, 0, 0.82);
 }
 
 :root, [data-theme=light] .mie, .mie[data-theme=light] {
@@ -10943,7 +10947,7 @@ h1, .mie.title.h1 {
   outline: 0;
 }
 
-.mie.progress-bar.indeterminate::before {
+.mie.progressbar.indeterminate::before {
   border-radius: var(--mie-progress-rounded);
   position: absolute;
   content: "";
@@ -10955,28 +10959,28 @@ h1, .mie.title.h1 {
   width: 100%;
 }
 
-.mie.progress-bar.indeterminate.pulsating::before {
+.mie.progressbar.indeterminate.pulsating::before {
   animation-name: progress-pulsating;
   animation-duration: 2s;
-  background-color: var(--mie-progress-bar-indeterminate-bg);
+  background-color: var(--mie-progressbar-indeterminate-bg);
 }
 
-.mie.progress-bar.indeterminate.filling::before {
+.mie.progressbar.indeterminate.filling::before {
   animation-name: progress-filling;
   animation-duration: 2s;
-  background-color: var(--mie-progress-bar-indeterminate-bg);
+  background-color: var(--mie-progressbar-indeterminate-bg);
 }
 
-.mie.progress-bar.indeterminate.sliding::before {
+.mie.progressbar.indeterminate.sliding::before {
   animation-name: progress-sliding;
   animation-duration: 3s;
-  background-color: var(--mie-progress-bar-indeterminate-bg);
+  background-color: var(--mie-progressbar-indeterminate-bg);
 }
 
-.mie.progress-bar.indeterminate.swinging::before {
+.mie.progressbar.indeterminate.swinging::before {
   animation-name: progress-swinging;
   animation-duration: 3s;
-  background-color: var(--mie-progress-bar-indeterminate-bg);
+  background-color: var(--mie-progressbar-indeterminate-bg);
 }
 
 @keyframes progress-swinging {
@@ -11037,8 +11041,8 @@ h1, .mie.title.h1 {
   width: 100%;
 }
 
-.progress-bar {
-  background-color: var(--mie-progress-bar-bg);
+.progressbar {
+  background-color: var(--mie-progressbar-bg);
   transition: width 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -11047,21 +11051,21 @@ h1, .mie.title.h1 {
   height: 100%;
 }
 
-.progress-bar:first-child {
+.progressbar:first-child {
   border-bottom-left-radius: var(--mie-progress-rounded);
   border-top-left-radius: var(--mie-progress-rounded);
 }
 
-.progress-bar:last-child {
+.progressbar:last-child {
   border-bottom-right-radius: var(--mie-progress-rounded);
   border-top-right-radius: var(--mie-progress-rounded);
 }
 
-.progress-bar.transparent {
-  --mie-progress-bar-bg: transparent !important;
+.progressbar.transparent {
+  --mie-progressbar-bg: transparent !important;
 }
 
-.progress-bar > .label {
+.progressbar > .label {
   justify-content: flex-end;
   align-items: center;
   display: flex;
@@ -11069,14 +11073,14 @@ h1, .mie.title.h1 {
   box-sizing: border-box;
   padding: 0 0.8rem;
   z-index: 10;
-  font-size: var(--mie-progress-bar-fs);
-  color: var(--mie-progress-bar-fg);
+  font-size: var(--mie-progressbar-fs);
+  color: var(--mie-progressbar-fg);
   font-weight: 400;
   transition: opacity 0.3s ease;
   opacity: 0;
 }
 
-.progress-bar > .label.visible {
+.progressbar > .label.visible {
   opacity: 1;
 }
 

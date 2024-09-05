@@ -51,7 +51,6 @@ $variants-meta: map.merge(
 
   @each $component in $elements {
     $groups: map.get($variants-context, $component);
-    $class: replace($component, "-", ".", 1);
 
     @if $groups != null and length($groups) > 0 {
       @each $group, $variants in $groups {
@@ -72,7 +71,7 @@ $variants-meta: map.merge(
         $default: map.get($meta, "default");
 
         @include apply-variants-to-component(
-          $class,
+          $component,
           $variants,
           $default,
           $prefix,

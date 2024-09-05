@@ -1,8 +1,8 @@
 @use "../../variables";
 @use "../../utils" as *;
 
-.progress-bar {
-  background-color: mvar("progress.bar.bg");
+.progressbar {
+  background-color: mvar("progressbar.bg");
   transition: width 0.3s ease;
 
   position: relative;
@@ -23,7 +23,7 @@
   }
 
   &.transparent {
-    --mie-progress-bar-bg: transparent !important;
+    --mie-progressbar-bg: transparent !important;
   }
 
   > .label {
@@ -36,8 +36,8 @@
     padding: 0 0.8rem;
     z-index: 10;
 
-    font-size: mvar("progress.bar.fs");
-    color: mvar("progress.bar.fg");
+    font-size: mvar("progressbar.fs");
+    color: mvar("progressbar.fg");
     font-weight: 400;
 
     transition: opacity 0.3s ease;

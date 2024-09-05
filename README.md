@@ -1,7 +1,7 @@
 ## Mielo UI
 Modern UI framework for web, inspired desktop design.
 
-![logo](https://raw.githubusercontent.com/mielo-ui/mielo.css/main/logo.png)
+![logo](https://raw.githubusercontent.com/mielo-ui/mielo.css/main/media/preview.webp)
 
 ## Documentation
 Browse the [online documentation and demo here.](https://mielo-ui.github.io/)

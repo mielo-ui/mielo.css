@@ -1,7 +1,7 @@
 @use "../../variables";
 @use "../../utils" as *;
 
-.mie.progress-bar.indeterminate {
+.mie.progressbar.indeterminate {
   &::before {
     border-radius: mvar("progress.rounded");
     position: absolute;
@@ -20,28 +20,28 @@
     animation-name: progress-pulsating;
     animation-duration: 2s;
 
-    background-color: mvar("progress.bar.indeterminate.bg");
+    background-color: mvar("progressbar.indeterminate.bg");
   }
 
   &.filling::before {
     animation-name: progress-filling;
     animation-duration: 2s;
 
-    background-color: mvar("progress.bar.indeterminate.bg");
+    background-color: mvar("progressbar.indeterminate.bg");
   }
 
   &.sliding::before {
     animation-name: progress-sliding;
     animation-duration: 3s;
 
-    background-color: mvar("progress.bar.indeterminate.bg");
+    background-color: mvar("progressbar.indeterminate.bg");
   }
 
   &.swinging::before {
     animation-name: progress-swinging;
     animation-duration: 3s;
 
-    background-color: mvar("progress.bar.indeterminate.bg");
+    background-color: mvar("progressbar.indeterminate.bg");
   }
 }
 

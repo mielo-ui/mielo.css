@@ -1,11 +1,11 @@
 // prettier-ignore
 $components: (
-  "button", "checkbox", "divider", "entry", "header", "icon", "image", "index", "item",
-  "label", "progress", "radio", "select", "slider", "text", "toggle",
+  "button", "checkbox", "divider", "entry", "header", "icon", "image", "item",
+  "label", "progress", "progressbar", "radio", "select", "slider", "text", "toggle",
 );
 
 // prettier-ignore
 $containers: (
-  "activatable", "clamp", "dialog", "headerbar", "index", "message", "rows", "row-item",
+  "activatable", "clamp", "dialog", "headerbar", "message", "rows", "row.item",
   "scrollbar", "shadow", "sidebar", "splitview", "view", "window", "tabs", "tab",
 );

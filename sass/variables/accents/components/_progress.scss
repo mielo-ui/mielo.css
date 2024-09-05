@@ -14,7 +14,7 @@ $progress-default-accent: (
   ),
 ) !default;
 
-$progress-bar-default-accent: (
+$progressbar-default-accent: (
   "dark": (
     "indeterminate-bg": rgb(#000, 0.3),
     "bg": #15539e,
@@ -33,7 +33,7 @@ $progress-bar-default-accent: (
   @return ("bg": rgba($bg, 0.2));
 }
 
-@function map-to-progress-bar($theme, $accent, $colors) {
+@function map-to-progressbar($theme, $accent, $colors) {
   $bg: map.get($colors, "bg");
 
   @return ("indeterminate-bg": $bg, "bg": $bg);

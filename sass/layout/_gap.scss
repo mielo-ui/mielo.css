@@ -6,7 +6,7 @@
 @use "../utils" as *;
 
 .mie {
-  @each $name, $size in $indent {
+  @each $name, $size in $indent-size {
     $size-postfix: if($name != "medium", "-" + $name, "");
 
     &.g#{$size-postfix} {
@@ -17,7 +17,7 @@
   @each $direction in ("column", "row") {
     $direction-short-key: string.slice($direction, 1, 1); // get "c" or "r"
 
-    @each $name, $size in $indent {
+    @each $name, $size in $indent-size {
       $size-postfix: if($name != "medium", "-" + $name, "");
       $class-name: $direction-short-key + $size-postfix;
 

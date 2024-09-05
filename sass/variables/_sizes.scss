@@ -43,7 +43,7 @@ $rounded-size: (
 ) !default;
 
 // margin/padding for views
-$indent: (
+$indent-size: (
   "none": 0rem,
   "mini": 0.4rem,
   "tiny": 0.8rem,
@@ -65,7 +65,7 @@ $indent: (
 }
 
 @function indent($name: medium) {
-  @return map.get($indent, quote($name));
+  @return map.get($indent-size, quote($name));
 }
 
 @function rcorners($name: medium) {
