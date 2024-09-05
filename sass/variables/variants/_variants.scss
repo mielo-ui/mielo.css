@@ -20,7 +20,7 @@ $variants-meta: map.merge(
 // @in: global context
 // @out: VariantsContext
 @function variants-context-collect() {
-  $elements: list.join($containers, $components);
+  $elements: list.join($components, $containers);
   $context: ();
 
   @each $key, $variants in $variants-meta {
@@ -46,11 +46,11 @@ $variants-meta: map.merge(
 //   $variants-context: VariantsContext
 //   $disabled: string[]
 @mixin apply-variants-preset($variants-context, $disabled: ()) {
-  $elements: list.join($containers, $components);
+  $elements: list.join($components, $containers);
   $elements: list-exclude($elements, $disabled);
 
   @each $component in $elements {
-    $groups: map.get($variants-context, $component);
+    $groups: map.get($variants-context, kebab-case($component));
 
     @if $groups != null and length($groups) > 0 {
       @each $group, $variants in $groups {

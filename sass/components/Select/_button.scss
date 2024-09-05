@@ -31,7 +31,7 @@
 
       @include flex(row, space-between, center);
       border-radius: mvar("select.rounded");
-      height: mvar("select.height");
+      height: mvar("select.h");
       transition: outline 0.2s ease;
 
       outline-color: mvar("select.bg.outline");
@@ -43,7 +43,7 @@
       }
 
       > .header {
-        padding: 0 mvar("select.padding");
+        padding: 0 mvar("select.p");
         @include flex(column, center);
         position: relative;
         height: 100%;
@@ -60,7 +60,7 @@
         }
 
         > .value {
-          margin-top: mvar("select.value.margin");
+          margin-top: mvar("select.value.m");
           font-size: mvar("select.value.fs");
           color: mvar("select.value.fg");
         }
@@ -70,8 +70,8 @@
         @include flex(row, flex-end, center);
 
         > .arrow {
-          margin-left: mvar("select.indicator.right");
-          margin-right: mvar("select.padding");
+          margin-left: mvar("select.indicator.r");
+          margin-right: mvar("select.p");
 
           transition: transform 0.2s ease-in-out;
           color: mvar("select.value.fg");

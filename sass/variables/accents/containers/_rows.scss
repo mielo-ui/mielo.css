@@ -5,7 +5,7 @@
 @use "../../palette" as *;
 @use "../../text" as *;
 
-$row-item-default-accent: (
+$row-default-accent: (
   "light": (
     "overlay": transparent,
     "bg": #fff,
@@ -25,7 +25,7 @@ $rows-default-accent: (
   ),
 ) !default;
 
-@function map-to-row-item($theme, $accent, $colors) {
+@function map-to-row($theme, $accent, $colors) {
   $bg: map.get($colors, "bg");
 
   @return ("overlay": rgba($bg, 0.08), "outline": $bg);

@@ -31,7 +31,7 @@
     z-index: 15;
 
     &.opened {
-      top: calc(#{mvar("select.height")} + #{mvar("select.menu.offset")});
+      top: calc(#{mvar("select.h")} + #{mvar("select.menu.offset")});
       min-height: mvar("select.menu.h");
       overflow-y: auto;
       opacity: 1;

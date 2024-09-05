@@ -2,10 +2,11 @@
 @use "../../utils" as *;
 
 .mie.select {
+  box-sizing: border-box;
   position: relative;
   margin: 0;
 
-  min-width: mvar("select.min.width");
+  min-width: mvar("select.mw");
 
   // Show outline when focused
   &.opened,
@@ -18,7 +19,8 @@
   }
 
   > .content {
-    height: mvar("select.height");
+    height: mvar("select.h");
+    box-sizing: border-box;
     position: relative;
     width: 100%;
   }

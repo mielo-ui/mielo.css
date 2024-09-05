@@ -27,6 +27,8 @@ $accent-elements-meta: map.merge(
 // @in: $name: string, $meta: AccentsContextMeta
 // @out: AccentContextPair
 @function accents-context-pair($name, $meta) {
+  $name: kebab-case($name);
+  
   $default: map.get($meta, "#{$name}-default-accent");
   $mapper: map.get($meta, "map-to-#{$name}");
 

@@ -24,6 +24,16 @@
 
   @include flex(row, space-between, stretch);
 
+  &:focus {
+    z-index: 15;
+
+    > .field {
+      > input, > textarea {
+        z-index: 15;
+      }
+    }
+  }
+
   > .field {
     position: relative;
     flex: 1;
@@ -49,6 +59,7 @@
     > textarea {
       transition: outline-width 100ms ease;
       color: mvar("entry.value.fg");
+      position: relative;
       background: none;
       display: block;
 
@@ -65,7 +76,7 @@
       &:focus {
         color: mvar("entry.value.fg");
         outline-width: 0.2rem;
-        z-index: 100;
+        z-index: 15;
       }
 
       &:focus ~ label,

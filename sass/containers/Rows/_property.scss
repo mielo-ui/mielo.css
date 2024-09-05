@@ -7,17 +7,17 @@
   // prettier-ignore
   background-image:
     linear-gradient(
-        mvar("row.item.overlay"),
-        mvar("row.item.overlay")
+        mvar("row.overlay"),
+        mvar("row.overlay")
     ),
     linear-gradient(
-        mvar("row.item.bg"),
-        mvar("row.item.bg")
+        mvar("row.bg"),
+        mvar("row.bg")
     );
 
   @include flex(row, none, center);
-  padding: 0 mvar("row.item.ph");
-  height: mvar("row.item.mh");
+  padding: 0 mvar("row.ph");
+  height: mvar("row.mh");
 
   &:last-child {
     border-bottom: none;

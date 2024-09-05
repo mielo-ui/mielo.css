@@ -2,9 +2,35 @@
 @use "../../utils" as *;
 
 .mie.rows > .mie.row {
-  border-bottom: 0.1rem solid mvar("rows.border");
+  &:not(.entry) {
+    border-bottom: 0.1rem solid mvar("rows.border");
 
-  &:last-child {
-    border-bottom: none;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &.entry {
+    @include mdvar("entry.h", mvar("row.mh"), true);
+
+    .field {
+      border-bottom: 0.1rem solid mvar("rows.border");
+    }
+    
+    &:last-child .field {
+      border-bottom: none;
+    }
+  }
+
+  &.select {
+    @include mdvar("select.h", mvar("row.mh"), true);
+
+    > .content, > .content > .base {
+      border-bottom: 0.1rem solid mvar("rows.border");
+    }
+    
+    &:last-child > .content > .base, &:last-child > .content {
+      border-bottom: none;
+    }
   }
 }
